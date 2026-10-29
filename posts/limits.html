@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>极限：无限接近不是最后取到｜数学札记</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><div class="kicker">Calculus · 01</div><h1>极限：无限接近不是“最后取到”</h1><p>极限把“变化过程”变成了可以精确讨论的数学对象。</p></div></header>
+  <nav class="top-nav"><div class="nav-inner"><a href="../index.html">首页</a><a href="../index.html#roadmap">学习路线</a><a href="../index.html#posts">文章</a><a href="math-history.html">数学史</a></div></nav>
+  <main>
+    <article class="article">
+      <div class="article-header"><div class="meta">CALCULUS · 2026-10-29</div><h1>极限：无限接近不是“最后取到”</h1><p>关键词：数列、函数、连续、ε-δ 语言</p></div>
+      <h2>1. 直觉</h2>
+      <p>考虑数列：1，1/2，1/3，1/4，……。它的每一项都大于 0，但项会越来越接近 0。这里的“接近”描述的是一个过程，而不是说某一项真的等于 0。</p>
+      <div class="formula">当 n → ∞ 时，1 / n → 0</div>
+      <p>极限关心的是：当自变量足够接近某个位置时，函数值是否会稳定地接近某个数。</p>
+
+      <h2>2. 定义</h2>
+      <p>如果对于任意给定的正数 ε，都能找到一个正数 δ，使得当 0 &lt; |x − a| &lt; δ 时，总有 |f(x) − L| &lt; ε，那么称：</p>
+      <div class="formula">lim<sub>x→a</sub> f(x) = L</div>
+      <p>这个定义强调两件事：x 不必等于 a；只要 x 足够接近 a，f(x) 就能任意接近 L。</p>
+
+      <div class="theorem"><strong>极限的四则运算法则</strong><br>若 lim f(x) = A，lim g(x) = B，则在分母极限不为 0 时：<br>lim(f ± g) = A ± B；lim(fg) = AB；lim(f/g) = A/B。</div>
+
+      <h2>3. 连续</h2>
+      <p>函数 f 在点 a 连续，需要同时满足：</p>
+      <ul><li>f(a) 有定义；</li><li>lim<sub>x→a</sub> f(x) 存在；</li><li>lim<sub>x→a</sub> f(x) = f(a)。</li></ul>
+      <p>直观上，连续意味着“靠近输入不会突然造成输出跳跃”。多项式、指数函数、三角函数在各自定义域内都是连续的。</p>
+
+      <h2>4. 一个简单例子</h2>
+      <p>直接代入无法计算下式，因为分子和分母都为 0：</p>
+      <div class="formula">lim<sub>x→1</sub> (x² − 1) / (x − 1)</div>
+      <p>因式分解得到 x² − 1 = (x − 1)(x + 1)。在 x ≠ 1 时，原式等于 x + 1，因此：</p>
+      <div class="formula">lim<sub>x→1</sub> (x² − 1)/(x − 1) = lim<sub>x→1</sub>(x + 1) = 2</div>
+      <p>注意：极限只要求研究 a 附近的行为，不要求函数在 a 点本身必须使用原来的表达式有定义。</p>
+
+      <div class="history"><strong>历史小记：</strong>古希腊的穷竭法已经在处理“无限逼近”的思想。阿基米德用不断内接、外切的多边形逼近圆，估计圆周率和面积。直到 19 世纪，柯西、魏尔斯特拉斯等人用严格的极限语言重建了微积分。</div>
+
+      <h2>5. 记忆卡片</h2>
+      <ul><li>极限描述的是附近的趋势，不一定等于函数在该点的值。</li><li>连续性把“极限值”和“函数值”连接起来。</li><li>ε-δ 定义把“无限接近”变成了量化陈述。</li><li>导数、积分、级数的严格定义都建立在极限上。</li></ul>
+      <a class="back" href="../index.html">← 返回数学札记首页</a>
+    </article>
+  </main>
+  <footer class="site-footer">数学札记 · 极限专题</footer>
+</body>
+</html>
