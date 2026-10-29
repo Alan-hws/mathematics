@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>导数与中值定理：变化率的数学｜数学札记</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><div class="kicker">Calculus · 02</div><h1>导数与中值定理：变化率的数学</h1><p>导数把“局部变化有多快”变成了一个数，中值定理则把局部信息连接到整体行为。</p></div></header>
+  <nav class="top-nav"><div class="nav-inner"><a href="../index.html">首页</a><a href="../index.html#roadmap">学习路线</a><a href="limits.html">上一篇：极限</a><a href="linear-algebra.html">下一篇：线性代数</a></div></nav>
+  <main>
+    <article class="article">
+      <div class="article-header"><div class="meta">CALCULUS · 2026-10-29</div><h1>导数与中值定理：变化率的数学</h1><p>关键词：切线、局部线性、单调性、极值、中值定理</p></div>
+      <h2>1. 从平均变化率到瞬时变化率</h2>
+      <p>如果物体在时间区间 [t, t+h] 内的位置从 s(t) 变为 s(t+h)，平均速度是：</p>
+      <div class="formula">平均速度 = [s(t+h) − s(t)] / h</div>
+      <p>当 h 趋近于 0，平均速度就逼近某一时刻的瞬时速度。这就是导数的来源。</p>
+      <div class="formula">f′(x) = lim<sub>h→0</sub> [f(x+h) − f(x)] / h</div>
+      <p>几何上，导数是曲线在某一点处切线的斜率；代数上，它是函数在该点的局部线性近似系数。</p>
+
+      <h2>2. 常用求导法则</h2>
+      <div class="formula">(xⁿ)′ = n xⁿ⁻¹　　(sin x)′ = cos x　　(eˣ)′ = eˣ</div>
+      <div class="formula">(f + g)′ = f′ + g′　　(fg)′ = f′g + fg′</div>
+      <div class="formula">[f(g(x))]′ = f′(g(x)) · g′(x)</div>
+      <p>最后一个公式是链式法则。它是反向传播、复合模型和多元微积分的基础。</p>
+
+      <h2>3. 拉格朗日中值定理</h2>
+      <div class="theorem"><strong>定理：</strong>若函数 f 在闭区间 [a,b] 上连续，在开区间 (a,b) 内可导，则存在 ξ ∈ (a,b)，使得：<div class="formula">f′(ξ) = [f(b) − f(a)] / (b − a)</div></div>
+      <p>右侧是整段区间的平均变化率，左侧是某个中间点的瞬时变化率。定理说：只要函数足够光滑，平均变化率一定会在某处被“实现”。</p>
+
+      <h2>4. 用导数判断函数行为</h2>
+      <ul><li>若在区间内 f′(x) &gt; 0，则 f 在该区间单调递增。</li><li>若在区间内 f′(x) &lt; 0，则 f 在该区间单调递减。</li><li>若 f′(x₀)=0，x₀ 可能是极值点，也可能只是水平拐点。</li><li>二阶导数反映斜率变化：f″(x) &gt; 0 通常对应局部向上弯曲。</li></ul>
+      <p>注意，f′(x₀)=0 只是极值的候选条件，不是充分条件。还需要检查导数左右符号或使用更高阶信息。</p>
+
+      <h2>5. 一个例子：抛物线的最小值</h2>
+      <p>设 f(x)=x²−4x+5。求导得 f′(x)=2x−4。令 f′(x)=0，得到 x=2；再由 f″(x)=2&gt;0，可知此处取得极小值。</p>
+      <div class="formula">f(2) = 2² − 4×2 + 5 = 1</div>
+      <p>这类“建立目标函数 → 求梯度 → 找到驻点 → 判断性质”的流程，正是机器学习优化的基本原型。</p>
+
+      <div class="history"><strong>历史小记：</strong>费马在研究极值问题时已经使用了类似导数的思想；牛顿把变化率用于力学和运动研究，莱布尼茨则发展出今天仍在使用的微分记号。两人的工作让导数成为描述自然变化的通用语言。</div>
+
+      <h2>6. 记忆卡片</h2>
+      <ul><li>导数是瞬时变化率，也是局部线性近似。</li><li>中值定理把整体平均变化率和局部瞬时变化率联系起来。</li><li>导数符号为 0 只能说明“可能”是极值点。</li><li>梯度是多元函数导数的向量版本。</li></ul>
+      <a class="back" href="../index.html">← 返回数学札记首页</a>
+    </article>
+  </main>
+  <footer class="site-footer">数学札记 · 导数专题</footer>
+</body>
+</html>
