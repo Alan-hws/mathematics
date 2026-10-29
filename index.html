@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="数学知识、公式定理与数学史的独立博客。">
+  <title>数学札记｜从基础到机器学习</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="kicker">Mathematics Notes</div>
+      <h1>数学札记</h1>
+      <p>把数学写成可以复习、推导和讲给别人听的博客：知识点、公式、定理，以及它们背后的历史。</p>
+    </div>
+  </header>
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html">首页</a>
+      <a href="#roadmap">学习路线</a>
+      <a href="#posts">文章</a>
+      <a href="#index">知识索引</a>
+      <a href="posts/math-history.html">数学史</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="intro">
+      <div class="panel">
+        <h2>这个博客怎么读</h2>
+        <p>每篇文章尽量遵循“直觉 → 定义 → 公式 → 定理 → 例子 → 历史”的顺序。先看文章正文，再合上页面，尝试自己写出公式、定理条件和一个例子。</p>
+      </div>
+      <div class="stats">
+        <div><strong>4</strong>篇首批文章</div>
+        <div><strong>4</strong>条主线</div>
+        <div><strong>∞</strong>可持续补充</div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <h2 class="section-title">学习路线</h2>
+      <p class="section-intro">从初高中基础开始，逐步衔接考研数学和机器学习数学。</p>
+      <div class="index-grid">
+        <article class="index-card"><span class="tag">01 · 基础</span><h3>代数、函数与三角</h3><p>先解决表达式、方程、不等式、函数图像和三角恒等变形。</p></article>
+        <article class="index-card"><span class="tag">02 · 微积分</span><h3>极限、导数与积分</h3><p>理解变化率、累积量和极限，而不是只记计算套路。</p></article>
+        <article class="index-card"><span class="tag green">03 · 线代</span><h3>向量、矩阵与变换</h3><p>从线性方程组走向空间、投影、特征值和 SVD。</p></article>
+        <article class="index-card"><span class="tag gold">04 · 概率</span><h3>随机性与统计推断</h3><p>建立条件概率、期望、方差、似然和贝叶斯思维。</p></article>
+      </div>
+    </section>
+
+    <section id="posts">
+      <h2 class="section-title">文章</h2>
+      <p class="section-intro">先从四篇基础文章开始，后续可以继续添加数列、微分方程、优化和信息论专题。</p>
+      <div class="post-grid">
+        <article class="post-card">
+          <div class="meta">CALCULUS · 01</div>
+          <h3>极限：无限接近不是“最后取到”</h3>
+          <p>从数列与函数的直觉出发，理解极限、连续和 ε-δ 语言。</p>
+          <a class="read-more" href="posts/limits.html">阅读文章 →</a>
+        </article>
+        <article class="post-card">
+          <div class="meta">CALCULUS · 02</div>
+          <h3>导数与中值定理：变化率的数学</h3>
+          <p>导数、切线、单调性、极值，以及拉格朗日中值定理的逻辑。</p>
+          <a class="read-more" href="posts/derivatives.html">阅读文章 →</a>
+        </article>
+        <article class="post-card">
+          <div class="meta">LINEAR ALGEBRA · 03</div>
+          <h3>向量空间：矩阵背后的结构</h3>
+          <p>从线性组合和基开始，理解维数、线性映射与机器学习中的投影。</p>
+          <a class="read-more" href="posts/linear-algebra.html">阅读文章 →</a>
+        </article>
+        <article class="post-card">
+          <div class="meta">PROBABILITY · 04</div>
+          <h3>贝叶斯公式：在信息到来后更新判断</h3>
+          <p>条件概率、全概率和贝叶斯公式，连接概率论与统计学习。</p>
+          <a class="read-more" href="posts/probability.html">阅读文章 →</a>
+        </article>
+        <article class="post-card">
+          <div class="meta">HISTORY · 05</div>
+          <h3>数学史的一条主线</h3>
+          <p>从测量、天文和贸易，到微积分、代数结构与现代数学。</p>
+          <a class="read-more" href="posts/math-history.html">阅读文章 →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="index">
+      <h2 class="section-title">知识索引</h2>
+      <div class="index-grid">
+        <article class="index-card"><h3>微积分</h3><p><a href="posts/limits.html">极限</a> · <a href="posts/derivatives.html">导数</a> · 积分 · 级数 · 多元函数 · 微分方程</p></article>
+        <article class="index-card"><h3>线性代数</h3><p><a href="posts/linear-algebra.html">向量空间</a> · 矩阵 · 特征值 · 正交投影 · SVD · PCA</p></article>
+        <article class="index-card"><h3>概率统计</h3><p><a href="posts/probability.html">条件概率</a> · 贝叶斯 · 随机变量 · 期望 · 方差 · 似然</p></article>
+        <article class="index-card"><h3>数学史</h3><p><a href="posts/math-history.html">古代数学</a> · 代数化 · 微积分 · 严格化 · 现代数学</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">数学札记 · 一个独立的本地静态博客。直接打开本目录下的 <code>index.html</code> 即可浏览。</footer>
+</body>
+</html>
