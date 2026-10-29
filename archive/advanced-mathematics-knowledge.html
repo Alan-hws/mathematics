@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>大学高等数学｜数学札记</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/archive.css">
+  <script>
+window.MathJax = {
+  tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]},
+  options: {skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><div class="kicker">Study Archive</div><h1>大学高等数学</h1><p>从初高中基础到大学数学与机器学习的学习资料。</p></div></header>
+  <nav class="top-nav"><div class="nav-inner"><a href="../index.html">博客首页</a><a href="index.html">学习资料归档</a><a href="../downloads/math-study-documents.zip" download>下载 Markdown 合集</a></div></nav>
+  <main><article class="article archive-article"><p><a href="../docs/advanced-mathematics-knowledge.md" download>下载此文 Markdown 原稿</a></p><h1>大学高等数学：知识点、公式与定理</h1>
+<blockquote>
+<p>整理日期：2026-10-29<br />
+主教材：李忠、周建莹《高等数学》上下册。按知识主题组织，不对应某一版的具体页码或章号。<br />
+定位：系统学习与复习查阅，覆盖常见大学高数核心及部分扩展内容；不代替教材中的证明、例题与练习，也不等同于某年度考试大纲。<br />
+配套：<a href="math-study-schedule.html">学习计划</a> · <a href="math-foundations-knowledge.html">初高中基础</a></p>
+</blockquote>
+<h2>1. 全局框架与阅读方法</h2>
+<p>高数主要研究四个问题：</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>工具</th>
+<th>直观含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无限接近时发生什么？</td>
+<td>极限、连续</td>
+<td>给变化过程一个精确的终点描述</td>
+</tr>
+<tr>
+<td>此刻变化多快？</td>
+<td>导数、微分</td>
+<td>用局部线性关系近似变化</td>
+</tr>
+<tr>
+<td>微小贡献累计多少？</td>
+<td>积分</td>
+<td>将连续分布的贡献累加</td>
+</tr>
+<tr>
+<td>变化规律如何决定整体行为？</td>
+<td>微分方程、级数</td>
+<td>从局部规律或简单项重建函数</td>
+</tr>
+</tbody>
+</table>
+<p>学习顺序：极限与连续 → 一元微分 → 一元积分 → 多元微分与重积分；微分方程、级数可在一元积分后学习；曲线曲面积分需要空间几何与多元微积分基础。</p>
+<p>优先级：<strong>A 必须扎实掌握</strong>；<strong>B 系统掌握</strong>；<strong>C 按教材和目标范围深化</strong>。每个公式都要检查定义域、连续性、可导性以及收敛条件。</p>
+<p>本文件主要讨论实数范围；角度均使用弧度。涉及复数、向量值函数等扩展时另作说明。</p>
+<h2>2. 函数、数列与极限【A】</h2>
+<h3>2.1 基本概念</h3>
+<ul>
+<li>函数：定义域、值域、复合、反函数、分段函数；有界、单调、奇偶与周期性。</li>
+<li>数列是以正整数为自变量的函数；有界与收敛不同，收敛必有界，有界未必收敛。</li>
+<li>单侧极限、双侧极限、无穷远处的极限；双侧极限存在当且仅当左右极限存在且相等。</li>
+<li>无穷小是极限为零的变量，不是固定的“极小实数”；无穷大不是实数，不能直接按普通数运算。</li>
+</ul>
+<h3>2.2 极限的精确定义</h3>
+<p>数列收敛：\(a_n\to A\) 指对任意 \(\varepsilon&gt;0\)，存在正整数 N，使 n&gt;N 时都有</p>
+<p>\[
+|a_n-A|&lt;\varepsilon.
+\]</p>
+<p>函数极限：\(\lim_{x\to a}f(x)=L\) 指对任意 \(\varepsilon&gt;0\)，存在 \(\delta&gt;0\)，使定义域内满足 \(0&lt;|x-a|&lt;\delta\) 的 x 都有</p>
+<p>\[
+|f(x)-L|&lt;\varepsilon.
+\]</p>
+<p>理解重点：要求“足够接近以后全部满足”，不是挑选一些接近的点。</p>
+<h3>2.3 核心定理</h3>
+<table>
+<thead>
+<tr>
+<th>定理</th>
+<th>内容与条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>唯一性</td>
+<td>极限存在时唯一</td>
+</tr>
+<tr>
+<td>四则运算法则</td>
+<td>两函数分别趋于有限值 A、B，则和差积趋于相应结果；商要求 B≠0</td>
+</tr>
+<tr>
+<td>局部有界性</td>
+<td>有限极限存在，则在该点某个去心邻域内有界</td>
+</tr>
+<tr>
+<td>保号性</td>
+<td>极限 L&gt;0，则充分接近时函数值&gt;0；L&lt;0 同理</td>
+</tr>
+<tr>
+<td>夹逼定理</td>
+<td>g≤f≤h，且 g、h 趋于同一有限值 L，则 f→L</td>
+</tr>
+<tr>
+<td>单调有界定理</td>
+<td>单调且有界的实数数列必收敛</td>
+</tr>
+<tr>
+<td>柯西收敛准则</td>
+<td>实数数列收敛，当且仅当其足够靠后的任意两项之差可任意小</td>
+</tr>
+</tbody>
+</table>
+<h3>2.4 常用极限与等价无穷小</h3>
+<p>\[
+\lim_{x\to0}\frac{\sin x}{x}=1,\quad
+\lim_{x\to0}\frac{e^x-1}{x}=1,\quad
+\lim_{x\to0}\frac{\ln(1+x)}x=1,
+\]
+\[
+\lim_{x\to0}(1+x)^{1/x}=e,\qquad
+\lim_{n\to\infty}\left(1+\frac1n\right)^n=e.
+\]</p>
+<p>当 x→0：</p>
+<p>\[
+\sin x\sim x,\quad\tan x\sim x,\quad\arcsin x\sim x,\quad\arctan x\sim x,
+\]
+\[
+1-\cos x\sim\frac{x^2}{2},\quad e^x-1\sim x,\quad
+\ln(1+x)\sim x,\quad (1+x)^\alpha-1\sim\alpha x\quad(\alpha\neq0\text{ 为常数}).
+\]</p>
+<p>\(f\sim g\) 表示 f/g→1。等价替换适合乘除结构，不能在可能发生抵消的加减项中盲目替换。例如求 sin x−x 的高阶变化时，不能直接把 sin x 换成 x。</p>
+<p>常用方法：直接代入 → 因式分解、通分、有理化 → 重要极限与等价替换 → 夹逼 → 符合条件的洛必达法则 → 泰勒展开。</p>
+<h2>3. 连续性【A】</h2>
+<p>点 a 处连续：\(\lim_{x\to a}f(x)=f(a)\)，端点使用定义域内的单侧极限。</p>
+<ul>
+<li>连续要求函数有定义、极限存在、极限等于函数值。</li>
+<li>初等函数在自身定义区间内连续；复合函数需检查内外层定义条件。</li>
+<li>可去间断：有限极限存在，但函数值缺失或不等于极限。</li>
+<li>跳跃间断：左右有限极限存在但不相等。无穷间断、振荡间断另论。</li>
+</ul>
+<p>闭区间连续函数的三个重要结论：</p>
+<ol>
+<li><strong>有界与最值定理：</strong> 在闭有界区间 [a,b] 上连续，必有界且取得最大、最小值。</li>
+<li><strong>介值定理：</strong> 能取得 f(a)、f(b) 之间的所有值。</li>
+<li><strong>零点定理：</strong> 若 f(a)f(b)&lt;0，则在 (a,b) 内至少有一个零点；不保证唯一。</li>
+</ol>
+<p>开区间、无界区间或不连续时，不能不加检查地套用上述结论。</p>
+<h2>4. 导数与微分【A】</h2>
+<h3>4.1 定义与意义</h3>
+<p>\[
+f&#x27;(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}h.
+\]</p>
+<ul>
+<li>意义：瞬时变化率、切线斜率、局部一阶近似的系数。</li>
+<li>可导必连续；连续未必可导，如 |x| 在 0 处。</li>
+<li>可导等价于 \(\Delta y=f&#x27;(x_0)\Delta x+o(\Delta x)\)。</li>
+<li>微分：\(dy=f&#x27;(x)dx\)；小增量近似：\(\Delta y\approx f&#x27;(x)\Delta x\)。</li>
+<li>切线：\(y-f(x_0)=f&#x27;(x_0)(x-x_0)\)。</li>
+</ul>
+<h3>4.2 基本求导公式</h3>
+<table>
+<thead>
+<tr>
+<th>f(x)</th>
+<th>f′(x)</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>0</td>
+<td>常数</td>
+</tr>
+<tr>
+<td>x^α</td>
+<td>αx^(α−1)</td>
+<td>一般实数 α 先在 x&gt;0 使用；整数幂可扩大范围</td>
+</tr>
+<tr>
+<td>e^x</td>
+<td>e^x</td>
+<td></td>
+</tr>
+<tr>
+<td>a^x</td>
+<td>a^x ln a</td>
+<td>a&gt;0，a≠1</td>
+</tr>
+<tr>
+<td>ln x</td>
+<td>1/x</td>
+<td>x&gt;0</td>
+</tr>
+<tr>
+<td>\(\ln\lvert x\rvert\)</td>
+<td>1/x</td>
+<td>x≠0</td>
+</tr>
+<tr>
+<td>log_a x</td>
+<td>1/(x ln a)</td>
+<td>x&gt;0，a&gt;0、a≠1</td>
+</tr>
+<tr>
+<td>sin x、cos x</td>
+<td>cos x、−sin x</td>
+<td></td>
+</tr>
+<tr>
+<td>tan x、cot x</td>
+<td>1/cos²x、−1/sin²x</td>
+<td>相应分母非零</td>
+</tr>
+<tr>
+<td>arcsin x、arccos x</td>
+<td>1/√(1−x²)、−1/√(1−x²)</td>
+<td>−1&lt;x&lt;1</td>
+</tr>
+<tr>
+<td>arctan x</td>
+<td>1/(1+x²)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>4.3 求导法则</h3>
+<p>\[
+(u\pm v)&#x27;=u&#x27;\pm v&#x27;,\quad(uv)&#x27;=u&#x27;v+uv&#x27;,\quad
+(u/v)&#x27;=\frac{u&#x27;v-uv&#x27;}{v^2},\quad
+[f(g(x))]&#x27;=f&#x27;(g(x))g&#x27;(x).
+\]</p>
+<p>商要求 v≠0，各法则要求相应可导性。</p>
+<ul>
+<li>反函数：\((f^{-1})&#x27;(y_0)=1/f&#x27;(x_0)\)，需有局部反函数及适当可导条件，且 f′(x₀)≠0。</li>
+<li>参数方程：\(dy/dx=y&#x27;(t)/x&#x27;(t)\)，要求 x′(t)≠0。</li>
+<li>隐函数：F(x,y)=0 时，若 F 有连续偏导且 F_y≠0，则局部 \(y&#x27;=-F_x/F_y\)。</li>
+<li>对数求导：y&gt;0 时先取 ln y，再用链式法则；变号函数可在非零区间考虑 ln|y|。</li>
+<li>高阶导数：f″、f‴、f^(n)。参数曲线的二阶导数为 \((d/dt)(dy/dx)/x&#x27;(t)\)，不能直接写成 y″(t)/x″(t)。</li>
+<li>莱布尼茨公式：\((uv)^{(n)}=\sum_{k=0}^n\binom nk u^{(k)}v^{(n-k)}\)。</li>
+</ul>
+<h2>5. 中值定理、泰勒公式与导数应用【A】</h2>
+<h3>5.1 中值定理</h3>
+<table>
+<thead>
+<tr>
+<th>定理</th>
+<th>条件</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>费马定理</td>
+<td>内点取得局部极值，且该点可导</td>
+<td>f′(x₀)=0；逆命题不成立</td>
+</tr>
+<tr>
+<td>罗尔定理</td>
+<td>[a,b] 连续，(a,b) 可导，f(a)=f(b)</td>
+<td>存在 ξ∈(a,b)，f′(ξ)=0</td>
+</tr>
+<tr>
+<td>拉格朗日中值定理</td>
+<td>[a,b] 连续，(a,b) 可导</td>
+<td>存在 ξ，f(b)−f(a)=f′(ξ)(b−a)</td>
+</tr>
+<tr>
+<td>柯西中值定理</td>
+<td>f、g 在闭区间连续、开区间可导</td>
+<td>存在 ξ，[f(b)−f(a)]g′(ξ)=[g(b)−g(a)]f′(ξ)</td>
+</tr>
+</tbody>
+</table>
+<h3>5.2 洛必达法则</h3>
+<p>针对 0/0 或 ∞/∞ 型，若在相关单侧去心邻域内 f、g 可导，g′≠0，并满足相应版本的未定式条件，且 \(f&#x27;/g&#x27;\to L\)（有限或无穷），则 \(f/g\to L\)。</p>
+<ul>
+<li>双侧极限可分别检查两侧；无穷远有对应版本。</li>
+<li>只有分子分母分别求导，不是对整个商求导。</li>
+<li>导数比的极限不存在时，不能据此断言原极限不存在。</li>
+<li>0·∞、∞−∞、1^∞ 等先变形成合适的商；幂指型通常先取对数。</li>
+</ul>
+<h3>5.3 泰勒公式</h3>
+<p>若 f 在包含 x₀、x 的区间上具有足够阶的连续导数，则存在两点之间的 ξ，使</p>
+<p>\[
+f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k
++\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}.
+\]</p>
+<p>最后一项为拉格朗日余项。局部也常写成 n 阶多项式加 \(o((x-x_0)^n)\)，需满足相应可微条件。</p>
+<p>常用局部展开（x→0）：</p>
+<p>\[
+\begin{aligned}
+e^x&amp;=1+x+x^2/2+x^3/6+o(x^3),\\
+\sin x&amp;=x-x^3/6+o(x^3),\\
+\cos x&amp;=1-x^2/2+x^4/24+o(x^4),\\
+\ln(1+x)&amp;=x-x^2/2+x^3/3+o(x^3),\\
+(1+x)^\alpha&amp;=1+\alpha x+\alpha(\alpha-1)x^2/2+o(x^2).
+\end{aligned}
+\]</p>
+<p>有限阶近似不自动意味着无限级数处处等于原函数，见级数部分。</p>
+<h3>5.4 单调、极值、凹凸与最值</h3>
+<ul>
+<li>在区间上 f′≥0 ⇒ 单调不减；f′&gt;0 ⇒ 严格递增。严格递增函数的导数不必处处&gt;0。</li>
+<li>临界点两侧 f′ 由正变负 ⇒ 极大；由负变正 ⇒ 极小。</li>
+<li>f′(x₀)=0 且 f″(x₀)&gt;0 ⇒ 局部极小；f″(x₀)&lt;0 ⇒ 局部极大；f″=0 时不能据此判断。</li>
+<li>f″&gt;0：曲线向上弯，斜率递增；f″&lt;0：向下弯。不同教材对“凹、凸”用词可能不同，先看定义。</li>
+<li>拐点要求曲线弯曲方向改变；f″=0 只是候选条件，不是充分条件，也不是普遍必要条件。</li>
+<li>闭区间最值：检查内部驻点、不可导点及端点。</li>
+<li>水平渐近线：x→±∞ 时 f(x)→b；斜渐近线 y=kx+b 要求 f(x)−kx−b→0；垂直渐近线由单侧无穷极限判断。</li>
+</ul>
+<h2>6. 不定积分【A】</h2>
+<p>原函数 F 满足 F′=f；在一个区间上，所有原函数相差一个常数：</p>
+<p>\[
+\int f(x)\,dx=F(x)+C.
+\]</p>
+<h3>6.1 基本积分表</h3>
+<p>\[
+\begin{aligned}
+\int x^\alpha dx&amp;=\frac{x^{\alpha+1}}{\alpha+1}+C\quad(\alpha\neq-1),\\
+\int\frac{dx}{x}&amp;=\ln|x|+C,\\
+\int e^x dx&amp;=e^x+C,\qquad \int a^x dx=\frac{a^x}{\ln a}+C,\\
+\int\sin x\,dx&amp;=-\cos x+C,\qquad\int\cos x\,dx=\sin x+C,\\
+\int\frac{dx}{\cos^2x}&amp;=\tan x+C,\qquad\int\frac{dx}{\sin^2x}=-\cot x+C,\\
+\int\frac{dx}{1+x^2}&amp;=\arctan x+C,\\
+\int\frac{dx}{\sqrt{1-x^2}}&amp;=\arcsin x+C.
+\end{aligned}
+\]</p>
+<p>幂函数公式在函数有定义的区间上使用；对一般实数指数可先取 x&gt;0。对数和三角积分要避开奇点；最后一式在 −1&lt;x&lt;1 使用；a&gt;0、a≠1。</p>
+<h3>6.2 核心方法</h3>
+<ul>
+<li>线性：\(\int(af+bg)dx=a\int fdx+b\int gdx\)。</li>
+<li>换元：\(\int f(g(x))g&#x27;(x)dx=F(g(x))+C\)，其中 F′=f。</li>
+<li>分部积分：\(\int u\,dv=uv-\int v\,du\)。</li>
+<li>有理函数：多项式除法、因式分解、部分分式。</li>
+<li>三角代换：\(\sqrt{a^2-x^2}\) 可考虑 x=a sin t，\(\sqrt{a^2+x^2}\) 可考虑 x=a tan t，需限制区间处理符号。</li>
+<li>积分结果通过求导检验；不是每个初等函数的原函数都能写成初等函数，例如 e^(−x²)。</li>
+</ul>
+<h2>7. 定积分与微积分基本定理【A】</h2>
+<h3>7.1 定义与性质</h3>
+<p>黎曼积分通过分割区间、求和并取极限定义：</p>
+<p>\[
+\int_a^b f(x)dx=\lim_{\max\Delta x_i\to0}\sum_i f(\xi_i)\Delta x_i,
+\]</p>
+<p>要求极限与分割和取点方式无关。连续函数在闭有界区间上可积；有界且仅有有限个间断点也可积。</p>
+<ul>
+<li>线性、区间可加性、交换上下限变号。</li>
+<li>f≤g ⇒ ∫f≤∫g（相同区间，上限大于下限）。</li>
+<li>\(\left|\int_a^b f\right|\leq\int_a^b|f|\)。</li>
+<li>奇函数在 [−a,a] 上积分为0，偶函数为 \(2\int_0^a f\)，要求可积且 a&gt;0。</li>
+<li>积分中值定理：f 在 [a,b] 连续，a&lt;b，则存在 ξ∈[a,b]，使 ∫f=f(ξ)(b−a)。</li>
+</ul>
+<h3>7.2 基本定理</h3>
+<p>若 f 连续，\(A(x)=\int_a^x f(t)dt\)，则</p>
+<p>\[
+A&#x27;(x)=f(x).
+\]</p>
+<p>若 F′=f 且 f 连续，则牛顿—莱布尼茨公式为</p>
+<p>\[
+\boxed{\int_a^b f(x)dx=F(b)-F(a)}.
+\]</p>
+<p>连续性是此处采用的便于学习的充分条件，不是所有版本所需的最弱条件。</p>
+<p>变上限：若 f 连续、u 和 v 可导，则</p>
+<p>\[
+\frac d{dx}\int_{u(x)}^{v(x)}f(t)dt=f(v(x))v&#x27;(x)-f(u(x))u&#x27;(x).
+\]</p>
+<p>若被积函数本身还含参数 x，不能只套上式，通常还需对被积函数求偏导并检查交换条件。</p>
+<h3>7.3 换元与分部积分</h3>
+<p>\[
+\int_a^b f(g(t))g&#x27;(t)dt=\int_{g(a)}^{g(b)}f(u)du,
+\]</p>
+<p>例如 f 连续、g 连续可导时成立。换元后上下限和微分必须同步改变。</p>
+<p>\[
+\int_a^b u v&#x27;\,dx=[uv]_a^b-\int_a^b u&#x27;v\,dx.
+\]</p>
+<h3>7.4 应用</h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>公式与条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平面面积</td>
+<td>\(\int_a^b\lvert f-g\rvert dx\)，有交点时按需分段</td>
+</tr>
+<tr>
+<td>旋转体体积</td>
+<td>绕 x 轴：\(\pi\int_a^b[R(x)^2-r(x)^2]dx\)，0≤r≤R</td>
+</tr>
+<tr>
+<td>截面体积</td>
+<td>\(V=\int_a^b A(x)dx\)</td>
+</tr>
+<tr>
+<td>图像弧长</td>
+<td>\(L=\int_a^b\sqrt{1+[f&#x27;(x)]^2}dx\)，f 连续可导</td>
+</tr>
+<tr>
+<td>函数平均值</td>
+<td>\(\bar f=(b-a)^{-1}\int_a^b f(x)dx\)</td>
+</tr>
+<tr>
+<td>位移与路程</td>
+<td>位移 ∫v dt，路程 ∫∣v∣dt</td>
+</tr>
+<tr>
+<td>变力做功</td>
+<td>一维有向位移下 \(W=\int F(x)dx\)</td>
+</tr>
+</tbody>
+</table>
+<h2>8. 反常积分【B】</h2>
+<p>分为无穷区间和被积函数无界两类，均通过极限定义。</p>
+<p>\[
+\int_a^\infty f(x)dx=\lim_{R\to\infty}\int_a^R f(x)dx.
+\]</p>
+<ul>
+<li>有限极限存在才称收敛。</li>
+<li>整条实轴上的积分需要在某点拆成左右两项，分别收敛；对称截断的主值存在不等于反常积分收敛。</li>
+<li>区间内部有奇点时必须在奇点处分开，两侧分别检查。</li>
+</ul>
+<p>基本判别：</p>
+<p>\[
+\int_1^\infty\frac{dx}{x^p}\text{ 收敛}\iff p&gt;1,\qquad
+\int_0^1\frac{dx}{x^p}\text{ 收敛}\iff p&lt;1.
+\]</p>
+<p>非负函数可用比较判别和极限比较；绝对收敛 ∫|f|&lt;∞ 可推出收敛，反之不一定。</p>
+<h2>9. 空间几何与向量【B】</h2>
+<ul>
+<li>内积：\(\mathbf a\cdot\mathbf b=\sum a_ib_i=|\mathbf a||\mathbf b|\cos\theta\)。</li>
+<li>叉积：\(\mathbf a\times\mathbf b\) 垂直于两向量，模为平行四边形面积；方向按右手规则。</li>
+<li>混合积：\(\mathbf a\cdot(\mathbf b\times\mathbf c)\)，绝对值为平行六面体体积，等于0表示三个向量共面。</li>
+<li>空间直线：\(\mathbf r=\mathbf r_0+t\mathbf v\)，v≠0。</li>
+<li>平面：\(\mathbf n\cdot(\mathbf r-\mathbf r_0)=0\)，n≠0；n 是法向量。</li>
+<li>点到平面距离：\(d=|Ax_0+By_0+Cz_0+D|/\sqrt{A^2+B^2+C^2}\)。</li>
+<li>常见曲面：球面、椭球面、柱面、锥面、抛物面；用截面理解三维形状。</li>
+</ul>
+<h2>10. 多元函数微分【A】</h2>
+<h3>10.1 极限、偏导与可微</h3>
+<p>多元极限要求沿定义域内所有趋近路径得到同一值；两条路径结果不同即可证明不存在，若干条路径相同不能证明存在。</p>
+<p>\[
+f_x(x,y)=\lim_{h\to0}\frac{f(x+h,y)-f(x,y)}h.
+\]</p>
+<p>偏导是固定其他变量时的变化率。全微分存在指</p>
+<p>\[
+\Delta f=f_x\Delta x+f_y\Delta y+o\!\left(\sqrt{(\Delta x)^2+(\Delta y)^2}\right).
+\]</p>
+<ul>
+<li>可微 ⇒ 连续且各偏导存在。</li>
+<li>各偏导存在不一定连续，更不一定可微。</li>
+<li>各偏导在某邻域存在并在该点连续，是该点可微的充分条件。</li>
+<li>若二阶混合偏导在邻域连续，则 f_xy=f_yx。</li>
+</ul>
+<h3>10.2 链式法则、梯度与方向导数</h3>
+<p>若 z=f(x,y)，x=x(t)、y=y(t)，且满足可微条件：</p>
+<p>\[
+\frac{dz}{dt}=f_x\frac{dx}{dt}+f_y\frac{dy}{dt}.
+\]</p>
+<p>\[
+\nabla f=(f_{x_1},\ldots,f_{x_n}),\qquad
+D_{\mathbf u}f=\nabla f\cdot\mathbf u\quad(|\mathbf u|=1).
+\]</p>
+<p>后式要求 f 在该点可微。梯度非零时指向上升最快方向，最大方向导数为 |∇f|；梯度垂直于该点的正则等值面。</p>
+<p>曲面 z=f(x,y) 的切平面：</p>
+<p>\[
+z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0).
+\]</p>
+<h3>10.3 隐函数与雅可比矩阵</h3>
+<ul>
+<li>F(x,y)=0：F 连续可微且 F_y≠0 ⇒ 局部可解 y=y(x)，y′=−F_x/F_y。</li>
+<li>F(x,y,z)=0 且 F_z≠0：z_x=−F_x/F_z，z_y=−F_y/F_z。</li>
+<li>雅可比矩阵 J 收集向量值函数的一阶偏导，描述局部线性变换；复合映射的雅可比按矩阵乘法连接。</li>
+<li>逆函数定理：连续可微映射在一点的雅可比行列式非零，则该点附近有连续可微的局部逆映射。非零行列式不直接保证全局一一对应。</li>
+</ul>
+<h3>10.4 多元泰勒与极值</h3>
+<p>f 二阶连续可微时：</p>
+<p>\[
+f(\mathbf x+\mathbf h)=f(\mathbf x)+\nabla f(\mathbf x)^T\mathbf h
++\tfrac12\mathbf h^TH(\mathbf x)\mathbf h+o(|\mathbf h|^2).
+\]</p>
+<p>H 是 Hessian 矩阵。内点局部极值且可微 ⇒ ∇f=0。</p>
+<ul>
+<li>驻点 Hessian 正定 ⇒ 严格局部极小；负定 ⇒ 严格局部极大；不定 ⇒ 鞍点；半正定或半负定一般不能直接判定。</li>
+<li>二元情形：D=f_xx f_yy−f_xy²。在二阶连续可微的驻点，D&gt;0、f_xx&gt;0 为极小；D&gt;0、f_xx&lt;0 为极大；D&lt;0 为鞍点；D=0 待定。</li>
+<li>拉格朗日乘数法：单个等式约束 g=c 下，正则内点约束极值满足 ∇f=λ∇g，前提 ∇g≠0；候选点仍需比较，边界与奇异点另查。</li>
+<li>紧集上连续函数取得最值；多元最值不能遗漏边界。</li>
+</ul>
+<h2>11. 二重与三重积分【A/B】</h2>
+<p>意义：在平面区域或空间区域内累加面积、体积、质量等贡献。</p>
+<p>若 D={(x,y): a≤x≤b，φ₁(x)≤y≤φ₂(x)}，例如 f 连续、边界适当规则，则</p>
+<p>\[
+\iint_D f(x,y)dA=\int_a^b\left[\int_{\phi_1(x)}^{\phi_2(x)}f(x,y)dy\right]dx.
+\]</p>
+<p>换序先画区域，再重新确定上下限；不能只把 dx、dy 调换。</p>
+<h3>11.1 换元公式</h3>
+<p>在适当光滑、局部雅可比非零且在区域上无重复覆盖的变换下：</p>
+<p>\[
+\iint_D f(x,y)dxdy
+=\iint_G f(x(u,v),y(u,v))\left|\frac{\partial(x,y)}{\partial(u,v)}\right|dudv.
+\]</p>
+<p>允许的边界或零测集例外按具体定理处理。</p>
+<table>
+<thead>
+<tr>
+<th>坐标</th>
+<th>变换</th>
+<th>面积或体积元</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>极坐标</td>
+<td>x=r cosθ，y=r sinθ</td>
+<td>dA=r dr dθ，r≥0</td>
+</tr>
+<tr>
+<td>柱坐标</td>
+<td>x=r cosθ，y=r sinθ，z=z</td>
+<td>dV=r dr dθ dz</td>
+</tr>
+<tr>
+<td>球坐标</td>
+<td>x=ρ sinφ cosθ，y=ρ sinφ sinθ，z=ρ cosφ</td>
+<td>dV=ρ² sinφ dρ dφ dθ；φ 从正 z 轴量起，0≤φ≤π</td>
+</tr>
+</tbody>
+</table>
+<p>球坐标角度命名随教材不同，先检查定义。换元常见错误是漏乘雅可比绝对值。</p>
+<h3>11.2 应用</h3>
+<p>\[
+\text{面积}=\iint_D1\,dA,\quad
+\text{体积}=\iiint_\Omega1\,dV,\quad
+m=\iint_D\rho(x,y)dA.
+\]</p>
+<p>平面薄片质心：\(\bar x=m^{-1}\iint_Dx\rho dA\)，\(\bar y=m^{-1}\iint_Dy\rho dA\)，要求质量 m&gt;0。空间情形类似。</p>
+<h2>12. 曲线积分、曲面积分与场论【C；按目标范围重点学习】</h2>
+<h3>12.1 两类曲线积分</h3>
+<p>曲线参数 r(t)，a≤t≤b，分段光滑：</p>
+<p>\[
+\int_C f\,ds=\int_a^b f(\mathbf r(t))|\mathbf r&#x27;(t)|dt,
+\]
+\[
+\int_C\mathbf F\cdot d\mathbf r
+=\int_a^b\mathbf F(\mathbf r(t))\cdot\mathbf r&#x27;(t)dt.
+\]</p>
+<p>第一类按弧长累加，不随方向反转而变号；第二类表示沿路径做功等，方向反转会变号。</p>
+<h3>12.2 格林公式与势函数</h3>
+<p>P、Q 在包含有界平面区域 D 的邻域内有连续一阶偏导，边界分段光滑、取正向时：</p>
+<p>\[
+\oint_{\partial D}Pdx+Qdy
+=\iint_D(Q_x-P_y)dA.
+\]</p>
+<p>正向指行进时区域在左侧：外边界逆时针，孔洞边界顺时针。</p>
+<p>若 F=∇φ，则</p>
+<p>\[
+\int_C\mathbf F\cdot d\mathbf r=\phi(B)-\phi(A).
+\]</p>
+<p>这时路径无关，闭合积分为0。二维开单连通区域内，连续可微场满足 P_y=Q_x，可推出存在势函数；有孔区域不能只凭偏导相等就下结论。</p>
+<h3>12.3 两类曲面积分</h3>
+<p>光滑参数曲面 r(u,v)，取不重复覆盖的参数区域 G：</p>
+<p>\[
+\iint_S f\,dS=\iint_G f(\mathbf r(u,v))|\mathbf r_u\times\mathbf r_v|dudv.
+\]</p>
+<p>z=g(x,y) 时，\(dS=\sqrt{1+g_x^2+g_y^2}\,dxdy\)。</p>
+<p>通量：\(\iint_S\mathbf F\cdot\mathbf n\,dS\)，n 为指定的单位法向量；改变定向，通量变号。</p>
+<h3>12.4 高斯与斯托克斯公式</h3>
+<p>F 连续可微，区域、曲面与边界具备相应分段光滑性：</p>
+<p>\[
+\oiint_{\partial\Omega}\mathbf F\cdot\mathbf n\,dS
+=\iiint_\Omega\operatorname{div}\mathbf F\,dV,
+\]</p>
+<p>边界取外法向。若 F=(P,Q,R)，则 div F=P_x+Q_y+R_z。</p>
+<p>\[
+\oint_{\partial S}\mathbf F\cdot d\mathbf r
+=\iint_S(\nabla\times\mathbf F)\cdot\mathbf n\,dS,
+\]</p>
+<p>曲线与曲面方向按右手规则一致，S 为可定向的适当光滑曲面。</p>
+<p>\[
+\nabla\times\mathbf F=(R_y-Q_z,\ P_z-R_x,\ Q_x-P_y).
+\]</p>
+<p>直观：散度衡量局部净流出，旋度刻画局部环流。若场在区域内有奇点，必须先检查定理能否使用。</p>
+<h2>13. 常微分方程【B】</h2>
+<p>微分方程把未知函数与其导数联系起来；通解含任意常数，初始条件用来选定具体解。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>方法或公式</th>
+<th>条件与提醒</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可分离变量</td>
+<td>y′=f(x)g(y) ⇒ ∫dy/g(y)=∫f(x)dx</td>
+<td>除以 g(y) 前先保留 g(y)=0 对应的常值解</td>
+</tr>
+<tr>
+<td>一阶线性</td>
+<td>y′+p(x)y=q(x)</td>
+<td>积分因子 μ=e^(∫p dx)，得到 (μy)′=μq</td>
+</tr>
+<tr>
+<td>齐次型</td>
+<td>y′=F(y/x)</td>
+<td>令 y=ux，在 x≠0 的区间化为可分离形式</td>
+</tr>
+<tr>
+<td>伯努利方程</td>
+<td>y′+py=qy^n，n≠0、1</td>
+<td>在允许的非零区间令 z=y^(1−n)，另查零解</td>
+</tr>
+</tbody>
+</table>
+<p>一阶线性方程的解：</p>
+<p>\[
+y=e^{-\int p(x)dx}\left[C+\int q(x)e^{\int p(x)dx}dx\right].
+\]</p>
+<h3>13.1 二阶常系数线性方程</h3>
+<p>齐次方程 y″+py′+qy=0 的特征方程 r²+pr+q=0：</p>
+<ul>
+<li>不同实根 r₁、r₂：\(y=C_1e^{r_1x}+C_2e^{r_2x}\)。</li>
+<li>重根 r：\(y=(C_1+C_2x)e^{rx}\)。</li>
+<li>共轭复根 α±iβ，β&gt;0：\(y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)\)。</li>
+</ul>
+<p>非齐次线性方程：通解=对应齐次通解+一个特解。待定系数法适用于特定形式的右端函数；共振时试探式需乘适当次数的 x。</p>
+<h3>13.2 存在唯一性与模型</h3>
+<p>局部存在唯一性的一个充分条件：y′=f(x,y) 中，f 与 f_y 在初值附近连续。它保证局部解，不自动保证所有时间都存在。</p>
+<ul>
+<li>指数增长衰减：y′=ky ⇒ y=Ce^(kt)。</li>
+<li>牛顿冷却模型：T′=−k(T−T_env)，恒定环境温度且 k&gt;0 时，T=T_env+Ce^(−kt)。</li>
+<li>无阻尼振动：y″+ω²y=0 ⇒ y=A cosωt+B sinωt。</li>
+</ul>
+<h2>14. 数项级数【B】</h2>
+<p>\(\sum_{n=1}^\infty a_n\) 收敛，指部分和 S_N 有有限极限。</p>
+<ul>
+<li>收敛的必要条件：a_n→0；反之不成立，例如调和级数 ∑1/n。</li>
+<li>等比级数 ∑[n=0 到∞] ar^n，在 |r|&lt;1 时和为 a/(1−r)；a=0 为平凡例外。</li>
+<li>p 级数 ∑1/n^p 当且仅当 p&gt;1 时收敛。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>判别法</th>
+<th>条件与结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>比较法</td>
+<td>0≤a_n≤b_n：∑b_n 收敛 ⇒ ∑a_n 收敛；∑a_n 发散 ⇒ ∑b_n 发散</td>
+</tr>
+<tr>
+<td>极限比较</td>
+<td>正项 a_n/b_n→c∈(0,∞)，两级数同敛散</td>
+</tr>
+<tr>
+<td>比值法</td>
+<td>非零项最终满足 ∣a_(n+1)/a_n∣→L；L&lt;1 绝对收敛，L&gt;1 发散，L=1 待定</td>
+</tr>
+<tr>
+<td>根值法</td>
+<td>limsup ∣a_n∣^(1/n)=L；L&lt;1 绝对收敛，L&gt;1 发散，L=1 待定</td>
+</tr>
+<tr>
+<td>积分判别</td>
+<td>f 连续、正、递减，a_n=f(n)，则 ∑a_n 与对应无穷积分同敛散</td>
+</tr>
+<tr>
+<td>交错级数判别</td>
+<td>b_n≥0、单调不增且趋于0，则 ∑(−1)^(n−1)b_n 收敛，余项绝对值≤下一项 b_(N+1)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>绝对收敛：∑|a_n| 收敛；可推出 ∑a_n 收敛。</li>
+<li>条件收敛：原级数收敛但绝对值级数发散；重排可能改变结果。</li>
+</ul>
+<h2>15. 幂级数与傅里叶级数【B/C】</h2>
+<h3>15.1 幂级数</h3>
+<p>\[
+\sum_{n=0}^\infty c_n(x-x_0)^n.
+\]</p>
+<p>存在收敛半径 R：|x−x₀|&lt;R 绝对收敛，|x−x₀|&gt;R 发散；两个端点必须分别检查。</p>
+<p>\[
+\frac1R=\limsup_{n\to\infty}|c_n|^{1/n}.
+\]</p>
+<p>采用 1/0=∞、1/∞=0 的约定。若相邻系数绝对值之比的极限存在且适用，可据此求 R。</p>
+<p>在收敛区间内部可逐项求导、积分，所得级数收敛半径相同，端点情况可能改变。</p>
+<p>常用展开：</p>
+<p>\[
+\begin{aligned}
+\frac1{1-x}&amp;=\sum_{n=0}^\infty x^n,&amp;&amp;|x|&lt;1,\\
+e^x&amp;=\sum_{n=0}^\infty\frac{x^n}{n!},&amp;&amp;x\in\mathbb R,\\
+\sin x&amp;=\sum_{n=0}^\infty\frac{(-1)^nx^{2n+1}}{(2n+1)!},&amp;&amp;x\in\mathbb R,\\
+\cos x&amp;=\sum_{n=0}^\infty\frac{(-1)^nx^{2n}}{(2n)!},&amp;&amp;x\in\mathbb R,\\
+\ln(1+x)&amp;=\sum_{n=1}^\infty\frac{(-1)^{n-1}x^n}{n},&amp;&amp;-1&lt;x\leq1,\\
+\arctan x&amp;=\sum_{n=0}^\infty\frac{(-1)^nx^{2n+1}}{2n+1},&amp;&amp;-1\leq x\leq1.
+\end{aligned}
+\]</p>
+<p>函数无限次可导不代表其泰勒级数一定等于它；还需证明余项趋于0等条件。</p>
+<h3>15.2 傅里叶级数</h3>
+<p>对周期 2π 的适当可积函数：</p>
+<p>\[
+f(x)\sim\frac{a_0}2+\sum_{n=1}^\infty(a_n\cos nx+b_n\sin nx),
+\]
+\[
+a_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\cos nx\,dx,\qquad
+b_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx.
+\]</p>
+<p>这里的“∼”表示傅里叶展开形式，不是第2节的等价无穷小。不能无条件改成处处相等。</p>
+<ul>
+<li>例如周期延拓后的函数分段光滑时，级数在点 x 收敛到 [f(x−)+f(x+)]/2；连续点收敛到 f(x)。</li>
+<li>偶函数只有余弦项，奇函数只有正弦项（常数项也为0）。</li>
+<li>其他周期通过变量缩放处理；意义是用基本频率及其倍频分解周期信号。</li>
+</ul>
+<h2>16. 机器学习中的高数对应关系</h2>
+<table>
+<thead>
+<tr>
+<th>高数知识</th>
+<th>用途</th>
+<th>必须理解的部分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>导数与偏导</td>
+<td>损失对参数的敏感程度</td>
+<td>固定其他参数、检查链式依赖</td>
+</tr>
+<tr>
+<td>链式法则</td>
+<td>反向传播</td>
+<td>多条依赖路径的贡献需要相加</td>
+</tr>
+<tr>
+<td>梯度</td>
+<td>参数更新方向</td>
+<td>负梯度是欧氏空间的一阶最速下降方向，步长仍需控制</td>
+</tr>
+<tr>
+<td>Hessian 与泰勒近似</td>
+<td>曲率、局部优化</td>
+<td>驻点不一定是最小值，正定性是局部判别工具</td>
+</tr>
+<tr>
+<td>积分</td>
+<td>连续概率、期望</td>
+<td>累计量与密度的关系；概率系统学习见概率论</td>
+</tr>
+<tr>
+<td>级数与近似</td>
+<td>数值近似、误差理解</td>
+<td>近似范围与余项，不只看前几项</td>
+</tr>
+<tr>
+<td>微分方程</td>
+<td>连续时间模型</td>
+<td>初始条件、稳定性与数值解的区别</td>
+</tr>
+</tbody>
+</table>
+<p>梯度下降基本式：\(\mathbf w_{k+1}=\mathbf w_k-\eta\nabla L(\mathbf w_k)\)。不能据此保证任意步长下损失下降，更不能无条件保证找到全局最小值。</p>
+<h2>17. 常见误区速查</h2>
+<ol>
+<li>极限存在不代表该点有定义；连续才要求函数值与极限一致。</li>
+<li>连续不一定可导；多元偏导存在不一定可微。</li>
+<li>等价无穷小不能在抵消的加减结构中随意替换。</li>
+<li>洛必达法则有条件，不能见到分式就分别求导。</li>
+<li>导数为零不等于极值；局部极值不等于全局最值。</li>
+<li>积分是有符号累计量；几何面积与路程要处理绝对值或分段。</li>
+<li>不定积分要加 C；反常积分必须先查收敛。</li>
+<li>换元要改上下限并乘正确的微分因子或雅可比。</li>
+<li>多元极限不能只检查有限条路径。</li>
+<li>曲线曲面积分要检查方向，场有奇点时不能直接套积分定理。</li>
+<li>级数通项趋于0不保证收敛；幂级数端点必须另查。</li>
+<li>会背结论不等于会用：定理的定义域、条件和结论应一起记。</li>
+</ol>
+<h2>18. 阶段验收与记录</h2>
+<ul>
+<li>[ ] 能从定义解释极限、导数、定积分，而不是只背公式。</li>
+<li>[ ] 能说明每个主要定理的条件，并给出缺少条件时的反例。</li>
+<li>[ ] 能独立完成求导、积分及常规应用题，求完能验证。</li>
+<li>[ ] 能区分一元可导、多元偏导与全微分。</li>
+<li>[ ] 能画积分区域，再选坐标、写上下限。</li>
+<li>[ ] 能分别检查反常积分与级数的收敛。</li>
+<li>[ ] 能对微分方程通解代入检验，并利用初值确定常数。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>主题</th>
+<th>会解释概念</th>
+<th>会独立计算</th>
+<th>会检查定理条件</th>
+<th>下次复习</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>推荐第一轮重点：第2–7节 → 第9–11节 → 第13–15节；第8节配合一元积分学习，第12节在多元积分后按目标范围安排。线性代数与概率统计属于独立课程，应另行系统学习。</p>
+</article></main>
+  <footer class="site-footer">数学札记 · 学习资料归档</footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.archive-article { max-width: 1040px; overflow-wrap: anywhere; }
+.archive-article h2, .archive-article h3 { scroll-margin-top: 90px; }
+.archive-article table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 20px 0; font-size: 15px; }
+.archive-article th, .archive-article td { border: 1px solid var(--line); padding: 10px 14px; text-align: left; min-width: 100px; }
+.archive-article th { background: var(--blue-soft); }
+.archive-article pre { overflow-x: auto; padding: 16px; background: #eef2f7; border-radius: 10px; }
+.archive-article pre code { padding: 0; }
+.archive-article blockquote { margin-left: 0; padding: 12px 20px; border-left: 4px solid var(--blue); background: #f7faff; }
+.archive-article mjx-container[display="true"] { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: 8px 0; }
+.archive-grid { display: grid; gap: 16px; }
+.archive-grid h2 { margin-top: 0; font-size: 22px; }
