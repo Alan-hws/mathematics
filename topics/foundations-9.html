@@ -34,4 +34,28 @@
 <li>二项分布均值 np、方差 np(1−p)。</li>
 <li>正态分布的钟形图像、均值与标准差；大学阶段进一步学习密度和积分。</li>
 <li>样本抽取方法、散点图、相关性、线性回归初步；相关关系不能直接推出因果关系。</li>
-</ul><nav class="page-turn" aria-label="相邻主题"><a href="foundations-8.html">← 高中：不等式与数列</a><a href="foundations-10.html">高中：复数与导数初步 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">9.1 排列组合与二项式【A】</a><a class="toc-h3" href="#section-2">9.1.1 二项式定理为什么有组合数？</a><a class="toc-h3" href="#section-3">9.2 概率【A】</a><a class="toc-h3" href="#section-4">9.3 随机变量与统计【B】</a></aside></div></div></body></html>
+</ul>
+<h3 id="section-5">9.3.1 分位数与分层随机抽样</h3>
+<p><strong>分位数：</strong> 把一组数据从小到大排序；第 \(p\) 分位数用于描述数据中约有 \(p\%\) 位于该值或其下方。不同教材、软件对样本分位数的插值与边界约定可能不同，实际计算应先说明采用的规则。</p>
+<p><strong>分层随机抽样：</strong> 将总体按与研究目标相关的特点划分为互不重叠的层，再在各层内随机抽样；若按各层总体数量比例分配样本量，可使不同层按规模进入样本。例如学校按年级分层调查学习时间。</p>
+<p><strong>数学思想：</strong> 分类与整体、统计建模。抽样方法应依据实际目标确定；抽样随机不保证不存在不回答或测量偏差。</p>
+<h3 id="section-6">9.3.2 超几何分布：不放回抽样</h3>
+<p>总体有 \(N\) 个对象，其中 \(M\) 个属于目标类，不放回抽取 \(n\) 个，记目标类数量为 \(X\)。在每个大小为 \(n\) 的子集等可能时：</p>
+<p>\[
+P(X=k)=\frac{\binom Mk\binom{N-M}{n-k}}{\binom Nn},
+\quad\max(0,n-(N-M))\le k\le\min(n,M).
+\]</p>
+<p><strong>推导与数学思想：</strong> 分类计数、整体与部分。从目标类中选 \(k\) 个、从其余对象中选 \(n-k\) 个，分步乘法给出有利结果数；所有大小为 \(n\) 的无序样本共有 \(\binom Nn\) 个。该模型与独立重复试验的二项分布不同。</p>
+<h3 id="section-7">9.3.3 成对数据与一元线性回归</h3>
+<p>每个对象同时测量 \((x_i,y_i)\)，可画散点图观察关系；相关关系不自动意味着因果关系。用直线 \(\hat y=a+bx\) 拟合时，最小二乘选择使 \(\sum_i(y_i-a-bx_i)^2\) 最小的系数。若 \(x_i\) 不全相同，</p>
+<p>\[
+\hat b=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},\qquad
+\hat a=\bar y-\hat b\bar x.
+\]</p>
+<p><strong>推导思路与数学思想：</strong> 化归、最优化。先令 \(y_i-\bar y=Y_i\)、\(x_i-\bar x=X_i\)，对固定 \(b\)，平方和关于截距的最小值在 \(a=\bar y-b\bar x\) 取得；代入后对 \(b\) 配方，得到上式。拟合前应检查异常值与预测范围。</p>
+<h3 id="section-8">9.3.4 列联表与独立性检验入门</h3>
+<p>列联表按两个分类变量交叉统计频数。若样本设计和独立性模型合适，在独立假设下第 \((i,j)\) 格的期望频数为“第 \(i\) 行总数 × 第 \(j\) 列总数 ÷ 样本总数”。对 2×2 表，可通过</p>
+<p>\[
+\chi^2=\sum_{i,j}\frac{(O_{ij}-E_{ij})^2}{E_{ij}}
+\]</p>
+<p>衡量观测与独立模型的偏差，其中 \(E_{ij}&gt;0\)。<strong>数学思想：</strong> 模型与数据比较、从假设推论；统计结论依赖抽样与近似条件，相关也不直接等于因果。</p><nav class="page-turn" aria-label="相邻主题"><a href="foundations-8.html">← 高中：不等式与数列</a><a href="foundations-10.html">高中：复数与导数初步 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">9.1 排列组合与二项式【A】</a><a class="toc-h3" href="#section-2">9.1.1 二项式定理为什么有组合数？</a><a class="toc-h3" href="#section-3">9.2 概率【A】</a><a class="toc-h3" href="#section-4">9.3 随机变量与统计【B】</a><a class="toc-h3" href="#section-5">9.3.1 分位数与分层随机抽样</a><a class="toc-h3" href="#section-6">9.3.2 超几何分布：不放回抽样</a><a class="toc-h3" href="#section-7">9.3.3 成对数据与一元线性回归</a><a class="toc-h3" href="#section-8">9.3.4 列联表与独立性检验入门</a></aside></div></div></body></html>
