@@ -46,6 +46,11 @@ def collect():
    formulas,hs=headings(render(source[start:end]))
    topics.append(dict(title='公式与定理速查',path='topics/foundations-formulas.html',body=formulas,headings=hs))
   subjects.append(dict(key=key,title=title,desc=desc,topics=topics,slug=slug))
+ # The high-school textbook catalog is a separate, complete index sourced from the A-edition TOCs.
+ catalog=(ROOT/'docs/high-school-textbook-catalog.md').read_text(encoding='utf-8')
+ catalog= re.sub(r'^## .+\n', '', catalog, count=1, flags=re.M).strip()
+ catalog_body,catalog_headings=headings(render(catalog))
+ subjects[0]['topics'].append(dict(title='高中人教 A 版教材目录',path='topics/high-school-textbook-catalog.html',body=catalog_body,headings=catalog_headings))
  history=(ROOT/'posts/math-history.html').read_text()
  article=re.search(r'<article(?: [^>]*)?>(.*?)</article>',history,re.S)[1]
  matches=list(re.finditer(r'<h2(?: [^>]*)?>(.*?)</h2>',article,re.S)); topics=[]
