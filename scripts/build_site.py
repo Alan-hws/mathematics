@@ -34,7 +34,7 @@ def collect():
    num=int(re.match(r'\d+',m[1])[0])
    if num not in nums: continue
    section=source[m.end():matches[i+1].start() if i+1<len(matches) else len(source)]
-   if key=='foundations' and num in (11,12,13): continue
+   if key=='foundations' and num in (12,13): continue
    body=render(section)
    for slug_name in ['math-study-schedule','math-foundations-knowledge','advanced-mathematics-knowledge','linear-algebra-knowledge','probability-statistics-knowledge']:
     body=body.replace(f'href="{slug_name}.html"', f'href="../archive/{slug_name}.html"')
