@@ -32,6 +32,12 @@ def render_catalog(source):
   '必修第一册':[5,8,5,5,6], '必修第二册':[7,10,7,9,9],
   '选择性必修第一册':[7,7,7], '选择性必修第二册':[8,10],
   '选择性必修第三册':[9,9,9],
+  '七年级上册（2024秋版）':[2,2,2,2,2,4],
+  '七年级下册（2025春版）':[4,2,3,2,2,4],
+  '八年级上册（2025秋版）':[4,4,4,2,2,2],
+  '八年级下册（2026春版）':[2,4,4,3,3,4],
+  '九年级上册（2026秋版）':[2,3,3,4,4,4],
+  '九年级下册':[3,4,4,4],
  }
  offsets={'必修第一册':1,'必修第二册':6,'选择性必修第一册':1,'选择性必修第二册':4,'选择性必修第三册':6}
  for line in source.splitlines():
@@ -52,7 +58,7 @@ def render_catalog(source):
   if not chapter_open:continue
   entry=line.removeprefix('- ').strip()
   if entry in ('小结','习题课') or entry.startswith(('复习参考题','函数的基本性质习题课','平面向量习题课','向量线性运算习题课')):continue
-  m=re.match(r'^(\d+\.\d+(?:\.\d+)?\*?)\s*(.*)',entry)
+  m=re.match(r'^(\*?\d+\.\d+(?:\.\d+)?\*?)\s*(.*)',entry)
   if m:
    code,name=m.groups();depth=' catalog-subsection' if code.count('.')==2 else ''
    parts.append(f'<div class="catalog-entry{depth}"><span class="catalog-code">{html.escape(code)}</span><span>{html.escape(name)}</span></div>')
@@ -82,6 +88,10 @@ def collect():
    formulas,hs=headings(render(source[start:end]))
    topics.append(dict(title='公式与定理速查',path='topics/foundations-formulas.html',body=formulas,headings=hs))
   subjects.append(dict(key=key,title=title,desc=desc,topics=topics,slug=slug))
+ # Junior-school textbook catalog shares the same chapter navigation.
+ junior=(ROOT/'docs/junior-textbook-catalog.md').read_text(encoding='utf-8')
+ junior_body,junior_headings=render_catalog(junior)
+ subjects[0]['topics'].append(dict(title='初中人教版教材目录',path='topics/junior-textbook-catalog.html',body=junior_body,headings=junior_headings))
  # The high-school textbook catalog is a separate, complete index sourced from the A-edition TOCs.
  catalog=(ROOT/'docs/high-school-textbook-catalog.md').read_text(encoding='utf-8')
  catalog= re.sub(r'^## .+\n', '', catalog, count=1, flags=re.M).strip()
