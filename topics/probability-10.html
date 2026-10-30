@@ -16,4 +16,10 @@
 <li>中心极限定理不表示原始数据本身变成正态。</li>
 <li>“样本量30就一定可用”不是普遍定理；偏态、重尾、依赖性都会影响近似。</li>
 <li>二项正态近似处理整数范围时，可按需使用连续性校正。</li>
-</ul><nav class="page-turn" aria-label="相邻主题"><a href="probability-9.html">← 期望、方差、协方差</a><a href="probability-11.html">样本与抽样分布 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a href="#content">阅读正文</a></aside></div></div></body></html>
+</ul>
+<h3 id="section-1">大数定律的一个直接证明</h3>
+<p>若 \(X_1,\dots,X_n\) 独立同分布，均值为 \(\mu\)、有限方差为 \(\sigma^2\)，则 \(E\bar X=\mu\)、\(Var(\bar X)=\sigma^2/n\)。对任意 \(\varepsilon&gt;0\)，切比雪夫不等式给出</p>
+<p>\[
+P(|\bar X-\mu|\ge\varepsilon)\le\frac{\sigma^2}{n\varepsilon^2}\longrightarrow0.
+\]</p>
+<p>这证明样本均值依概率趋近总体均值。<strong>应用：</strong> 重复抽样估计平均需求；如果样本存在系统性偏差，样本更多也不能自动消除偏差。</p><nav class="page-turn" aria-label="相邻主题"><a href="probability-9.html">← 期望、方差、协方差</a><a href="probability-11.html">样本与抽样分布 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">大数定律的一个直接证明</a></aside></div></div></body></html>

@@ -25,4 +25,10 @@ p=Px,\qquad P=A(A^TA)^{-1}A^T.
 <p>\[
 u_k=v_k-\sum_{j&lt;k}(q_j^Tv_k)q_j,\qquad q_k=u_k/\|u_k\|.
 \]</p>
-<p>输入线性无关时每个 u_k 非零。A 列满秩时可分解 A=QR，Q 列正交归一，R 为可逆上三角矩阵；数值实现通常采用更稳定的正交化方法。</p><nav class="page-turn" aria-label="相邻主题"><a href="linear-7.html">← 线性映射与换基</a><a href="linear-9.html">最小二乘 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">8.1 Gram–Schmidt 与 QR</a></aside></div></div></body></html>
+<p>输入线性无关时每个 u_k 非零。A 列满秩时可分解 A=QR，Q 列正交归一，R 为可逆上三角矩阵；数值实现通常采用更稳定的正交化方法。</p>
+<h3 id="section-2">投影公式的推导：把力分解到指定方向</h3>
+<p>设非零向量 \(u\) 为前进方向，向量 \(x\) 表示受力。寻找最接近 \(x\) 的方向分量 \(cu\)，使残差 \(x-cu\) 垂直于 \(u\)：</p>
+<p>\[
+u^T(x-cu)=0\quad\Rightarrow\quad c=\frac{u^Tx}{u^Tu}.
+\]</p>
+<p>因此投影是 \((u^Tx/u^Tu)u\)。这个公式也用于信号分解和最小二乘；分母非零依赖 \(u\ne0\)。</p><nav class="page-turn" aria-label="相邻主题"><a href="linear-7.html">← 线性映射与换基</a><a href="linear-9.html">最小二乘 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">8.1 Gram–Schmidt 与 QR</a><a class="toc-h3" href="#section-2">投影公式的推导：把力分解到指定方向</a></aside></div></div></body></html>

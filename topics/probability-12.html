@@ -68,4 +68,10 @@ L(\theta;x)=\prod_{i=1}^n f_\theta(x_i),\qquad
 </tbody>
 </table>
 <p>非正态样本的均值区间有时可用大样本近似，但需检查假设。</p>
-<p><strong>解释：</strong> 频率学派的95%置信度描述重复抽样时区间构造方法覆盖真参数的比例；不是在给定区间后，说固定参数有95%的随机概率在其中。区间宽度反映精度，还取决于样本量、波动和置信水平。</p><nav class="page-turn" aria-label="相邻主题"><a href="probability-11.html">← 样本与抽样分布</a><a href="probability-13.html">假设检验 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">12.1 点估计</a><a class="toc-h3" href="#section-2">12.2 置信区间</a></aside></div></div></body></html>
+<p><strong>解释：</strong> 频率学派的95%置信度描述重复抽样时区间构造方法覆盖真参数的比例；不是在给定区间后，说固定参数有95%的随机概率在其中。区间宽度反映精度，还取决于样本量、波动和置信水平。</p>
+<h3 id="section-3">最大似然例子：从抛硬币数据估计概率</h3>
+<p>若独立抛掷 \(n\) 次，出现 \(s\) 次正面，似然（忽略与 \(p\) 无关的因子）为 \(L(p)=p^s(1-p)^{n-s}\)。当 \(0&lt;s&lt;n\)，对数似然求导：</p>
+<p>\[
+\ell&#x27;(p)=\frac{s}{p}-\frac{n-s}{1-p}=0\quad\Rightarrow\quad\hat p=\frac{s}{n}.
+\]</p>
+<p>二阶导数为负，故该驻点为最大值；全部成功或全部失败时最大值分别在边界 \(p=1\) 或 \(p=0\)。这种估计用于从观测数据学习模型参数，但它不自动提供估计的不确定性。</p><nav class="page-turn" aria-label="相邻主题"><a href="probability-11.html">← 样本与抽样分布</a><a href="probability-13.html">假设检验 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">12.1 点估计</a><a class="toc-h3" href="#section-2">12.2 置信区间</a><a class="toc-h3" href="#section-3">最大似然例子：从抛硬币数据估计概率</a></aside></div></div></body></html>

@@ -23,4 +23,6 @@
 \begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}^{-1}
 =\frac1{ad-bc}\begin{pmatrix}d&amp;-b\\-c&amp;a\end{pmatrix},\qquad ad-bc\neq0.
 \]</p>
-<p>数值求解 Ax=b 通常用分解与求解算法，不必显式计算逆矩阵。</p><nav class="page-turn" aria-label="相邻主题"><a href="linear-2.html">← 向量与线性组合</a><a href="linear-4.html">消元与线性方程组 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">3.1 运算规则</a><a class="toc-h3" href="#section-2">3.2 逆矩阵</a></aside></div></div></body></html>
+<p>数值求解 Ax=b 通常用分解与求解算法，不必显式计算逆矩阵。</p>
+<h3 id="section-3">矩阵乘法为什么要这样定义？</h3>
+<p>假设某工厂两种商品的原料用量由矩阵 \(A\) 表示，订单数量为 \(x\)。第 \(i\) 种原料总量是 \(\sum_j a_{ij}x_j\)，正是向量 \(Ax\) 的第 \(i\) 项。若先由 \(B\) 把客户订单转成商品数量，再由 \(A\) 转成原料用量，结果是 \(A(Bx)=(AB)x\)。这个“连续执行两个变换”的要求决定了矩阵乘法的行列求和形式。</p><nav class="page-turn" aria-label="相邻主题"><a href="linear-2.html">← 向量与线性组合</a><a href="linear-4.html">消元与线性方程组 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">3.1 运算规则</a><a class="toc-h3" href="#section-2">3.2 逆矩阵</a><a class="toc-h3" href="#section-3">矩阵乘法为什么要这样定义？</a></aside></div></div></body></html>

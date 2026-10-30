@@ -81,14 +81,16 @@
 =\frac1{ad-bc}\begin{pmatrix}d&amp;-b\\-c&amp;a\end{pmatrix},\qquad ad-bc\neq0.
 \]</p>
 <p>数值求解 Ax=b 通常用分解与求解算法，不必显式计算逆矩阵。</p>
-<h2 id="section-6">4. 消元与线性方程组【核心】</h2>
+<h3 id="section-6">矩阵乘法为什么要这样定义？</h3>
+<p>假设某工厂两种商品的原料用量由矩阵 \(A\) 表示，订单数量为 \(x\)。第 \(i\) 种原料总量是 \(\sum_j a_{ij}x_j\)，正是向量 \(Ax\) 的第 \(i\) 项。若先由 \(B\) 把客户订单转成商品数量，再由 \(A\) 转成原料用量，结果是 \(A(Bx)=(AB)x\)。这个“连续执行两个变换”的要求决定了矩阵乘法的行列求和形式。</p>
+<h2 id="section-7">4. 消元与线性方程组【核心】</h2>
 <p>三种初等行变换：交换两行；一行乘非零常数；一行加另一行的倍数。它们保持方程组解集。</p>
 <ul>
 <li>阶梯形、简化行阶梯形、主元、自由变量。</li>
 <li>增广矩阵 [A|b]；对整个增广矩阵同步进行行变换。</li>
 <li>主元数等于秩 r；齐次解的自由变量数为 n−r。</li>
 </ul>
-<h3 id="section-7">4.1 解的存在与数量</h3>
+<h3 id="section-8">4.1 解的存在与数量</h3>
 <table>
 <thead>
 <tr>
@@ -120,9 +122,12 @@
 x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 \]</p>
 <p>例：x+y=2、2x+2y=4 只提供一个独立约束，通解为 (2−t,t)^T。</p>
-<h3 id="section-8">4.2 方阵可逆的等价条件</h3>
+<h3 id="section-9">4.2 方阵可逆的等价条件</h3>
 <p>对 n×n 矩阵，下列条件等价：可逆；秩为 n；行列式非零；零空间只有零向量；列向量构成 Rⁿ 的基；对每个 b，Ax=b 都有唯一解；0 不是特征值。</p>
-<h2 id="section-9">5. 行列式【核心】</h2>
+<h3 id="section-10">为什么消元不会改变解？</h3>
+<p>交换两个方程、把一个方程乘非零数、或把一个方程的倍数加到另一个方程，都能通过反向操作恢复原方程组，因此变换前后的解集相同。消元把复杂约束逐步化简，同时保留解。</p>
+<p>例如 \(x+y=3,\;2x-y=0\)，第二式减去第一式的2倍得到 \(-3y=-6\)，所以 \(y=2,x=1\)。这类方程组用于库存配比、网络流量和电路分析。</p>
+<h2 id="section-11">5. 行列式【核心】</h2>
 <p>只对方阵定义，可理解为有向体积缩放因子。</p>
 <ul>
 <li>det(I)=1；det(A^T)=det(A)；det(AB)=det(A)det(B)。</li>
@@ -136,7 +141,7 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 <li>克拉默法则：det(A)≠0 时 x_i=det(A_i)/det(A)，A_i 用 b 替换第 i 列。</li>
 </ul>
 <p><strong>易错：</strong> det(A+B) 一般不等于 det(A)+det(B)；行列式非零说明可逆，不说明元素都非零。</p>
-<h2 id="section-10">6. 子空间、秩与四个基本空间【核心】</h2>
+<h2 id="section-12">6. 子空间、秩与四个基本空间【核心】</h2>
 <p>子空间需包含零向量，并对向量加法、数乘封闭。非齐次解集通常是仿射空间，不是子空间。</p>
 <table>
 <thead>
@@ -182,7 +187,7 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 <li>子空间维数公式：dim(U+V)=dim U+dim V−dim(U∩V)。</li>
 <li>正交关系：Null(A)=Row(A) 的正交补，Null(A^T)=Col(A) 的正交补。</li>
 </ul>
-<h2 id="section-11">7. 线性映射与换基【核心】</h2>
+<h2 id="section-13">7. 线性映射与换基【核心】</h2>
 <p>T 是线性映射，指 T(αx+βy)=αT(x)+βT(y)。在有限维、选定基后可以用矩阵表示。</p>
 <ul>
 <li>核 Ker(T)：被映到零的向量；像 Im(T)：所有可能输出。</li>
@@ -192,7 +197,7 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 <li>同一线性算子的新矩阵：B=P⁻¹AP，称 A、B 相似。</li>
 <li>相似矩阵有相同特征多项式、特征值、迹、行列式；相同特征值不保证相似。</li>
 </ul>
-<h2 id="section-12">8. 内积、正交与投影【核心；机器学习重点】</h2>
+<h2 id="section-14">8. 内积、正交与投影【核心；机器学习重点】</h2>
 <p>\[
 \langle x,y\rangle=x^Ty,\quad\|x\|_2=\sqrt{x^Tx},\quad
 \cos\theta=\frac{x^Ty}{\|x\|\|y\|}.
@@ -213,12 +218,18 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 p=Px,\qquad P=A(A^TA)^{-1}A^T.
 \]</p>
 <p>若 Q 的列为该子空间的一组标准正交基，则 P=QQ^T。正交投影矩阵满足 P²=P、P^T=P，残差 x−p 与子空间正交。</p>
-<h3 id="section-13">8.1 Gram–Schmidt 与 QR</h3>
+<h3 id="section-15">8.1 Gram–Schmidt 与 QR</h3>
 <p>\[
 u_k=v_k-\sum_{j&lt;k}(q_j^Tv_k)q_j,\qquad q_k=u_k/\|u_k\|.
 \]</p>
 <p>输入线性无关时每个 u_k 非零。A 列满秩时可分解 A=QR，Q 列正交归一，R 为可逆上三角矩阵；数值实现通常采用更稳定的正交化方法。</p>
-<h2 id="section-14">9. 最小二乘【核心；机器学习重点】</h2>
+<h3 id="section-16">投影公式的推导：把力分解到指定方向</h3>
+<p>设非零向量 \(u\) 为前进方向，向量 \(x\) 表示受力。寻找最接近 \(x\) 的方向分量 \(cu\)，使残差 \(x-cu\) 垂直于 \(u\)：</p>
+<p>\[
+u^T(x-cu)=0\quad\Rightarrow\quad c=\frac{u^Tx}{u^Tu}.
+\]</p>
+<p>因此投影是 \((u^Tx/u^Tu)u\)。这个公式也用于信号分解和最小二乘；分母非零依赖 \(u\ne0\)。</p>
+<h2 id="section-17">9. 最小二乘【核心；机器学习重点】</h2>
 <p>方程 Ax=b 可能无解，改为求：</p>
 <p>\[
 \min_x\|Ax-b\|_2^2.
@@ -240,9 +251,9 @@ A^TA\hat x=A^Tb.
 \hat x=(A^TA+\lambda I)^{-1}A^Tb.
 \]</p>
 <p>即使 A 秩亏，上式也唯一；此写法对所有参数施加惩罚，实际模型有时不惩罚截距。</p>
-<h3 id="section-15">实际问题：如何拟合没有精确解的数据？</h3>
+<h3 id="section-18">实际问题：如何拟合没有精确解的数据？</h3>
 <p>测量直线上三个点可能因为噪声而不能同时精确落在同一条线上。令参数为 \(x\)，设计矩阵为 \(A\)，观测值为 \(b\)，选择使平方误差 \(\|Ax-b\|^2\) 最小的解。</p>
-<h3 id="section-16">正规方程的推导</h3>
+<h3 id="section-19">正规方程的推导</h3>
 <p>将误差展开：</p>
 <p>\[
 L(x)=(Ax-b)^T(Ax-b)=x^TA^TAx-2b^TAx+b^Tb.
@@ -253,7 +264,7 @@ A^TA\hat x=A^Tb.
 \]</p>
 <p>反过来，若 \(\hat x\) 满足正规方程，则任意 \(h\) 有 \(L(\hat x+h)=L(\hat x)+\|Ah\|^2\)，因此它确是全局最小点。若 A 列满秩，则 \(A^TA\) 正定，解唯一；否则仍有最小二乘解，但参数可能不唯一。</p>
 <p><strong>几何解释：</strong> \(A^T(b-A\hat x)=0\) 表示残差与 A 每一列垂直，即预测 \(A\hat x\) 是观测值在列空间中的正交投影。线性回归、传感器标定和数据拟合均可采用这一思想。</p>
-<h2 id="section-17">10. 特征值与对角化【核心】</h2>
+<h2 id="section-20">10. 特征值与对角化【核心】</h2>
 <p>\[
 Av=\lambda v,\qquad v\neq0.
 \]</p>
@@ -269,7 +280,10 @@ Av=\lambda v,\qquad v\neq0.
 <li>特征值按重数计，和为 tr(A)，积为 det(A)，可在复数域理解。</li>
 <li>对角化后 A^k=PD^kP⁻¹，适合研究重复变换和线性递推。</li>
 </ul>
-<h2 id="section-18">11. 对称矩阵、谱定理与二次型【核心】</h2>
+<h3 id="section-21">特征值解决什么问题？</h3>
+<p>重复作用 \(x_{k+1}=Ax_k\) 时，若 \(Av=\lambda v\)，则 \(A^kv=\lambda^kv\)：特征方向上的变化被简化成标量乘方。它可用于研究离散动力系统与矩阵反复变换，但整体稳定性还取决于全部相关方向和矩阵结构。</p>
+<p><strong>计算例子：</strong> \(A=\begin{pmatrix}2&amp;0\\0&amp;1/2\end{pmatrix}\)，两个坐标轴分别是特征方向，重复作用 \(k\) 次后坐标变为 \((2^kx_1,2^{-k}x_2)\)。第一方向放大，第二方向缩小。</p>
+<h2 id="section-22">11. 对称矩阵、谱定理与二次型【核心】</h2>
 <p>实对称矩阵 A=A^T：</p>
 <ol>
 <li>特征值全为实数。</li>
@@ -316,7 +330,7 @@ Av=\lambda v,\qquad v\neq0.
 <li>惯性定律：可逆实合同变换保持正、负、零惯性指数。</li>
 </ul>
 <p>与高数联系：对称 A 下，f(x)=½x^TAx−b^Tx 的梯度为 Ax−b，Hessian 为 A；A 正定时存在唯一全局最小点 A⁻¹b。</p>
-<h2 id="section-19">12. SVD、伪逆与低秩近似【扩展重点】</h2>
+<h2 id="section-23">12. SVD、伪逆与低秩近似【扩展重点】</h2>
 <p>任意实 m×n 矩阵均有奇异值分解：</p>
 <p>\[
 A=U\Sigma V^T.
@@ -330,7 +344,7 @@ A=U\Sigma V^T.
 <li>截断 SVD：A_k=Σ[i=1到k] σ_i u_i v_i^T。它是谱范数、Frobenius 范数下的最佳秩至多 k 近似；最优解不一定唯一。</li>
 <li>Frobenius 误差：‖A−A_k‖_F²=Σ[i&gt;k]σ_i²。</li>
 </ul>
-<h2 id="section-20">13. PCA 与数据表示【应用】</h2>
+<h2 id="section-24">13. PCA 与数据表示【应用】</h2>
 <p>数据矩阵 X：每行为一个样本、每列为一个特征，先对各列减去均值，得到中心化矩阵 X_c。</p>
 <p>\[
 S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
@@ -344,7 +358,7 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <li>量纲差异大时需决定是否标准化；标准化改变问题中的距离与方差含义。</li>
 <li>PCA 保留大方差方向，不保证保留最有助于预测标签的信息。</li>
 </ul>
-<h2 id="section-21">14. 矩阵分解与数值意识【扩展】</h2>
+<h2 id="section-25">14. 矩阵分解与数值意识【扩展】</h2>
 <table>
 <thead>
 <tr>
@@ -382,7 +396,7 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 </tbody>
 </table>
 <p>可逆矩阵的2范数条件数 κ₂(A)=σ_max/σ_min。很小的奇异值意味着某些方向被强烈压缩，反推输入时误差可能被放大。</p>
-<h2 id="section-22">15. 易错点与验收</h2>
+<h2 id="section-26">15. 易错点与验收</h2>
 <ul>
 <li>维度不匹配不能相乘；AB 与 BA 次序不同。</li>
 <li>行变换保持解集与行空间，但列空间本身可能改变。</li>
@@ -393,7 +407,7 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <li>机器学习中数值稳定性与纸笔公式正确性需要同时考虑。</li>
 </ul>
 <p>验收：能独立消元、判定解的数量、寻找基与维数、解释投影、推导正规方程、计算特征值与二次型，并说明 SVD 和 PCA 各自解决的问题。</p>
-<h2 id="section-23">16. 练习与参考答案</h2>
+<h2 id="section-27">16. 练习与参考答案</h2>
 <ol>
 <li>A 的两行为 (1,2)、(2,4)，求秩与零空间。</li>
 <li>将 b=(3,1)^T 投影到 u=(1,1)^T 张成的直线上。</li>
@@ -407,7 +421,7 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <li>特征值2、−1；对称但不定。</li>
 <li>A^TA 的两行为 (3,3)、(3,5)，A^Tb=(5,6)^T；解为截距7/6、斜率1/2。</li>
 </ol>
-<h2 id="section-24">17. 学习资源与记录</h2>
+<h2 id="section-28">17. 学习资源与记录</h2>
 <p>中文主教材选一套大学基础线性代数教材即可；<a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/">MIT 18.06</a> 配合系统理解，<a href="https://www.3blue1brown.com/topics/linear-algebra">3Blue1Brown</a> 补几何直觉。</p>
 <table>
 <thead>
@@ -428,4 +442,4 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <td></td>
 </tr>
 </tbody>
-</table></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h2" href="#section-1">1. 核心问题与学习顺序</a><a class="toc-h2" href="#section-2">2. 向量与线性组合【基础】</a><a class="toc-h2" href="#section-3">3. 矩阵与运算【基础】</a><a class="toc-h3" href="#section-4">3.1 运算规则</a><a class="toc-h3" href="#section-5">3.2 逆矩阵</a><a class="toc-h2" href="#section-6">4. 消元与线性方程组【核心】</a><a class="toc-h3" href="#section-7">4.1 解的存在与数量</a><a class="toc-h3" href="#section-8">4.2 方阵可逆的等价条件</a><a class="toc-h2" href="#section-9">5. 行列式【核心】</a><a class="toc-h2" href="#section-10">6. 子空间、秩与四个基本空间【核心】</a><a class="toc-h2" href="#section-11">7. 线性映射与换基【核心】</a><a class="toc-h2" href="#section-12">8. 内积、正交与投影【核心；机器学习重点】</a><a class="toc-h3" href="#section-13">8.1 Gram–Schmidt 与 QR</a><a class="toc-h2" href="#section-14">9. 最小二乘【核心；机器学习重点】</a><a class="toc-h3" href="#section-15">实际问题：如何拟合没有精确解的数据？</a><a class="toc-h3" href="#section-16">正规方程的推导</a><a class="toc-h2" href="#section-17">10. 特征值与对角化【核心】</a><a class="toc-h2" href="#section-18">11. 对称矩阵、谱定理与二次型【核心】</a><a class="toc-h2" href="#section-19">12. SVD、伪逆与低秩近似【扩展重点】</a><a class="toc-h2" href="#section-20">13. PCA 与数据表示【应用】</a><a class="toc-h2" href="#section-21">14. 矩阵分解与数值意识【扩展】</a><a class="toc-h2" href="#section-22">15. 易错点与验收</a><a class="toc-h2" href="#section-23">16. 练习与参考答案</a><a class="toc-h2" href="#section-24">17. 学习资源与记录</a></aside></div></div></body></html>
+</table></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h2" href="#section-1">1. 核心问题与学习顺序</a><a class="toc-h2" href="#section-2">2. 向量与线性组合【基础】</a><a class="toc-h2" href="#section-3">3. 矩阵与运算【基础】</a><a class="toc-h3" href="#section-4">3.1 运算规则</a><a class="toc-h3" href="#section-5">3.2 逆矩阵</a><a class="toc-h3" href="#section-6">矩阵乘法为什么要这样定义？</a><a class="toc-h2" href="#section-7">4. 消元与线性方程组【核心】</a><a class="toc-h3" href="#section-8">4.1 解的存在与数量</a><a class="toc-h3" href="#section-9">4.2 方阵可逆的等价条件</a><a class="toc-h3" href="#section-10">为什么消元不会改变解？</a><a class="toc-h2" href="#section-11">5. 行列式【核心】</a><a class="toc-h2" href="#section-12">6. 子空间、秩与四个基本空间【核心】</a><a class="toc-h2" href="#section-13">7. 线性映射与换基【核心】</a><a class="toc-h2" href="#section-14">8. 内积、正交与投影【核心；机器学习重点】</a><a class="toc-h3" href="#section-15">8.1 Gram–Schmidt 与 QR</a><a class="toc-h3" href="#section-16">投影公式的推导：把力分解到指定方向</a><a class="toc-h2" href="#section-17">9. 最小二乘【核心；机器学习重点】</a><a class="toc-h3" href="#section-18">实际问题：如何拟合没有精确解的数据？</a><a class="toc-h3" href="#section-19">正规方程的推导</a><a class="toc-h2" href="#section-20">10. 特征值与对角化【核心】</a><a class="toc-h3" href="#section-21">特征值解决什么问题？</a><a class="toc-h2" href="#section-22">11. 对称矩阵、谱定理与二次型【核心】</a><a class="toc-h2" href="#section-23">12. SVD、伪逆与低秩近似【扩展重点】</a><a class="toc-h2" href="#section-24">13. PCA 与数据表示【应用】</a><a class="toc-h2" href="#section-25">14. 矩阵分解与数值意识【扩展】</a><a class="toc-h2" href="#section-26">15. 易错点与验收</a><a class="toc-h2" href="#section-27">16. 练习与参考答案</a><a class="toc-h2" href="#section-28">17. 学习资源与记录</a></aside></div></div></body></html>

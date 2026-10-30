@@ -15,4 +15,7 @@ Av=\lambda v,\qquad v\neq0.
 <li>在实数域对角化还要求能选出实特征值与实特征向量；实矩阵可能只有复特征值。</li>
 <li>特征值按重数计，和为 tr(A)，积为 det(A)，可在复数域理解。</li>
 <li>对角化后 A^k=PD^kP⁻¹，适合研究重复变换和线性递推。</li>
-</ul><nav class="page-turn" aria-label="相邻主题"><a href="linear-9.html">← 最小二乘</a><a href="linear-11.html">对称矩阵、谱定理与二次型 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a href="#content">阅读正文</a></aside></div></div></body></html>
+</ul>
+<h3 id="section-1">特征值解决什么问题？</h3>
+<p>重复作用 \(x_{k+1}=Ax_k\) 时，若 \(Av=\lambda v\)，则 \(A^kv=\lambda^kv\)：特征方向上的变化被简化成标量乘方。它可用于研究离散动力系统与矩阵反复变换，但整体稳定性还取决于全部相关方向和矩阵结构。</p>
+<p><strong>计算例子：</strong> \(A=\begin{pmatrix}2&amp;0\\0&amp;1/2\end{pmatrix}\)，两个坐标轴分别是特征方向，重复作用 \(k\) 次后坐标变为 \((2^kx_1,2^{-k}x_2)\)。第一方向放大，第二方向缩小。</p><nav class="page-turn" aria-label="相邻主题"><a href="linear-9.html">← 最小二乘</a><a href="linear-11.html">对称矩阵、谱定理与二次型 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">特征值解决什么问题？</a></aside></div></div></body></html>

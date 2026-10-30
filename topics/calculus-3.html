@@ -14,4 +14,8 @@
 <li><strong>介值定理：</strong> 能取得 f(a)、f(b) 之间的所有值。</li>
 <li><strong>零点定理：</strong> 若 f(a)f(b)&lt;0，则在 (a,b) 内至少有一个零点；不保证唯一。</li>
 </ol>
-<p>开区间、无界区间或不连续时，不能不加检查地套用上述结论。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-2.html">← 函数、数列与极限</a><a href="calculus-4.html">导数与微分 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a href="#content">阅读正文</a></aside></div></div></body></html>
+<p>开区间、无界区间或不连续时，不能不加检查地套用上述结论。</p>
+<h3 id="section-1">实际问题与证明：二分法找方程的根</h3>
+<p>若连续函数在区间两端异号，可不断计算中点的函数值，并保留异号的半个区间。每一步区间长度减半，因此可以近似定位一个零点。连续性不可省：\(f(x)=-1\)（\(x&lt;0\)）、\(f(x)=1\)（\(x\ge0\)）两端异号，却没有零点。</p>
+<p><strong>零点定理证明思路：</strong> 设 \(f(a)&lt;0&lt;f(b)\)。以二分法构造嵌套闭区间，始终在两端保持异号；区间长度趋于零，完备性保证它们收缩到同一点 \(c\)。由连续性，左右端函数值都趋于 \(f(c)\)，从而同时有 \(f(c)\le0\)、\(f(c)\ge0\)，即 \(f(c)=0\)。</p>
+<p><strong>历史背景：</strong> 连续性与极限的严格处理是19世纪分析学发展的核心工作之一；<a href="https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/">微积分史</a>介绍了这条发展脉络。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-2.html">← 函数、数列与极限</a><a href="calculus-4.html">导数与微分 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">实际问题与证明：二分法找方程的根</a></aside></div></div></body></html>

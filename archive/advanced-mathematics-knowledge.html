@@ -121,7 +121,11 @@
 \]</p>
 <p>\(f\sim g\) 表示 f/g→1。等价替换适合乘除结构，不能在可能发生抵消的加减项中盲目替换。例如求 sin x−x 的高阶变化时，不能直接把 sin x 换成 x。</p>
 <p>常用方法：直接代入 → 因式分解、通分、有理化 → 重要极限与等价替换 → 夹逼 → 符合条件的洛必达法则 → 泰勒展开。</p>
-<h2 id="section-7">3. 连续性【A】</h2>
+<h3 id="section-7">实际问题、推导与历史：瞬时变化的极限</h3>
+<p>一辆车在时刻 \(t\) 的位移是 \(s(t)=t^2\)。第 \(t\) 秒后的 \(h\) 秒内平均速度为 \(((t+h)^2-t^2)/h=2t+h\)；当 \(h\to0\)，极限为 \(2t\)，这才给出瞬时速度。必须先令 \(h\ne0\)，再取极限。</p>
+<p><strong>夹逼定理怎么用：</strong> \(-x^2\le x^2\sin(1/x)\le x^2\)（\(x\ne0\)），两侧均趋于0，所以中间也趋于0。夹逼用于难以直接计算但能找到上下界的情况。</p>
+<p><strong>历史：</strong> 极限思想经历了很长的发展：古希腊数学中的穷竭法以逐步逼近处理面积问题；后来微积分形成后，极限与收敛又逐步被严格化。<a href="https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/">圣安德鲁斯大学数学史</a></p>
+<h2 id="section-8">3. 连续性【A】</h2>
 <p>点 a 处连续：\(\lim_{x\to a}f(x)=f(a)\)，端点使用定义域内的单侧极限。</p>
 <ul>
 <li>连续要求函数有定义、极限存在、极限等于函数值。</li>
@@ -136,8 +140,12 @@
 <li><strong>零点定理：</strong> 若 f(a)f(b)&lt;0，则在 (a,b) 内至少有一个零点；不保证唯一。</li>
 </ol>
 <p>开区间、无界区间或不连续时，不能不加检查地套用上述结论。</p>
-<h2 id="section-8">4. 导数与微分【A】</h2>
-<h3 id="section-9">4.1 定义与意义</h3>
+<h3 id="section-9">实际问题与证明：二分法找方程的根</h3>
+<p>若连续函数在区间两端异号，可不断计算中点的函数值，并保留异号的半个区间。每一步区间长度减半，因此可以近似定位一个零点。连续性不可省：\(f(x)=-1\)（\(x&lt;0\)）、\(f(x)=1\)（\(x\ge0\)）两端异号，却没有零点。</p>
+<p><strong>零点定理证明思路：</strong> 设 \(f(a)&lt;0&lt;f(b)\)。以二分法构造嵌套闭区间，始终在两端保持异号；区间长度趋于零，完备性保证它们收缩到同一点 \(c\)。由连续性，左右端函数值都趋于 \(f(c)\)，从而同时有 \(f(c)\le0\)、\(f(c)\ge0\)，即 \(f(c)=0\)。</p>
+<p><strong>历史背景：</strong> 连续性与极限的严格处理是19世纪分析学发展的核心工作之一；<a href="https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/">微积分史</a>介绍了这条发展脉络。</p>
+<h2 id="section-10">4. 导数与微分【A】</h2>
+<h3 id="section-11">4.1 定义与意义</h3>
 <p>\[
 f&#x27;(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}h.
 \]</p>
@@ -148,7 +156,7 @@ f&#x27;(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}h.
 <li>微分：\(dy=f&#x27;(x)dx\)；小增量近似：\(\Delta y\approx f&#x27;(x)\Delta x\)。</li>
 <li>切线：\(y-f(x_0)=f&#x27;(x_0)(x-x_0)\)。</li>
 </ul>
-<h3 id="section-10">4.2 基本求导公式</h3>
+<h3 id="section-12">4.2 基本求导公式</h3>
 <table>
 <thead>
 <tr>
@@ -215,7 +223,7 @@ f&#x27;(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}h.
 </tr>
 </tbody>
 </table>
-<h3 id="section-11">4.3 求导法则</h3>
+<h3 id="section-13">4.3 求导法则</h3>
 <p>\[
 (u\pm v)&#x27;=u&#x27;\pm v&#x27;,\quad(uv)&#x27;=u&#x27;v+uv&#x27;,\quad
 (u/v)&#x27;=\frac{u&#x27;v-uv&#x27;}{v^2},\quad
@@ -230,13 +238,13 @@ f&#x27;(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}h.
 <li>高阶导数：f″、f‴、f^(n)。参数曲线的二阶导数为 \((d/dt)(dy/dx)/x&#x27;(t)\)，不能直接写成 y″(t)/x″(t)。</li>
 <li>莱布尼茨公式：\((uv)^{(n)}=\sum_{k=0}^n\binom nk u^{(k)}v^{(n-k)}\)。</li>
 </ul>
-<h3 id="section-12">从实际问题理解导数：测量瞬时速度</h3>
+<h3 id="section-14">从实际问题理解导数：测量瞬时速度</h3>
 <p>车辆在时刻 \(t\) 的位置是 \(s(t)=t^2\) 米。第 2 秒的速度不能直接用一段路程除以零时间；先计算从 2 到 \(2+h\) 秒的平均速度，再令非零的 \(h\) 趋近零：</p>
 <p>\[
 \frac{s(2+h)-s(2)}h=\frac{(2+h)^2-4}h=4+h\longrightarrow4\text{ 米/秒}.
 \]</p>
 <p>同样对任意 \(t\)，差商为 \(2t+h\)，所以 \(s&#x27;(t)=2t\)。这个推导说明瞬时速度如何从平均速度得到；它不适用于没有速度极限的时刻。</p>
-<h3 id="section-13">乘积法则的推导与应用</h3>
+<h3 id="section-15">乘积法则的推导与应用</h3>
 <p>矩形面积 \(A=uv\)，两边都变化时，应如何估计面积变化？设两边增量为 \(\Delta u,\Delta v\)，则</p>
 <p>\[
 \Delta(uv)=v\Delta u+u\Delta v+\Delta u\Delta v.
@@ -246,13 +254,13 @@ f&#x27;(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}h.
 (uv)&#x27;=u&#x27;v+uv&#x27;.
 \]</p>
 <p>例如半径 \(r(t)\) 和高度 \(h(t)\) 同时变化的圆柱水箱，体积 \(V=\pi r^2h\) 的变化率是 \(V&#x27;=2\pi rr&#x27;h+\pi r^2h&#x27;\)。</p>
-<h3 id="section-14">链式法则：一层变化引起另一层变化</h3>
+<h3 id="section-16">链式法则：一层变化引起另一层变化</h3>
 <p>函数 \(y=f(u)\)、\(u=g(x)\) 在相应点可导时，\(\Delta u=g&#x27;(x)\Delta x+o(\Delta x)\)，而 \(\Delta y=f&#x27;(u)\Delta u+o(\Delta u)\)。代入可得 \(\Delta y=f&#x27;(u)g&#x27;(x)\Delta x+o(\Delta x)\)，因此 \(dy/dx=f&#x27;(g(x))g&#x27;(x)\)。这个证明也覆盖 \(g&#x27;(x)=0\) 的情况，不需要除以可能为零的 \(\Delta u\)。</p>
 <p><strong>应用：</strong> 神经网络把输入经过多层变换，链式法则把损失对输出的影响逐层传回各参数，即反向传播的基础。</p>
-<h3 id="section-15">定积分与导数：从速度累计位移</h3>
+<h3 id="section-17">定积分与导数：从速度累计位移</h3>
 <p>设速度 \(v(t)=2t\) 米/秒，前 3 秒位移是 \(\int_0^3 2t\,dt\)。由于 \((t^2)&#x27;=2t\)，微积分基本定理给出 \([t^2]_0^3=9\) 米。定理的核心理由是：若 \(A(x)=\int_0^xv(t)dt\)，连续性保证增量 \(A(x+h)-A(x)\) 等于区间内速度乘 \(h\) 的平均值，故差商趋于 \(v(x)\)，即 \(A&#x27;=v\)。这里积分得到有符号位移；总路程要积分 \(|v|\)。</p>
-<h2 id="section-16">5. 中值定理、泰勒公式与导数应用【A】</h2>
-<h3 id="section-17">5.1 中值定理</h3>
+<h2 id="section-18">5. 中值定理、泰勒公式与导数应用【A】</h2>
+<h3 id="section-19">5.1 中值定理</h3>
 <table>
 <thead>
 <tr>
@@ -284,7 +292,7 @@ f&#x27;(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}h.
 </tr>
 </tbody>
 </table>
-<h3 id="section-18">5.2 洛必达法则</h3>
+<h3 id="section-20">5.2 洛必达法则</h3>
 <p>针对 0/0 或 ∞/∞ 型，若在相关单侧去心邻域内 f、g 可导，g′≠0，并满足相应版本的未定式条件，且 \(f&#x27;/g&#x27;\to L\)（有限或无穷），则 \(f/g\to L\)。</p>
 <ul>
 <li>双侧极限可分别检查两侧；无穷远有对应版本。</li>
@@ -292,7 +300,7 @@ f&#x27;(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}h.
 <li>导数比的极限不存在时，不能据此断言原极限不存在。</li>
 <li>0·∞、∞−∞、1^∞ 等先变形成合适的商；幂指型通常先取对数。</li>
 </ul>
-<h3 id="section-19">5.3 泰勒公式</h3>
+<h3 id="section-21">5.3 泰勒公式</h3>
 <p>若 f 在包含 x₀、x 的区间上具有足够阶的连续导数，则存在两点之间的 ξ，使</p>
 <p>\[
 f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k
@@ -310,7 +318,7 @@ e^x&amp;=1+x+x^2/2+x^3/6+o(x^3),\\
 \end{aligned}
 \]</p>
 <p>有限阶近似不自动意味着无限级数处处等于原函数，见级数部分。</p>
-<h3 id="section-20">5.4 单调、极值、凹凸与最值</h3>
+<h3 id="section-22">5.4 单调、极值、凹凸与最值</h3>
 <ul>
 <li>在区间上 f′≥0 ⇒ 单调不减；f′&gt;0 ⇒ 严格递增。严格递增函数的导数不必处处&gt;0。</li>
 <li>临界点两侧 f′ 由正变负 ⇒ 极大；由负变正 ⇒ 极小。</li>
@@ -320,12 +328,18 @@ e^x&amp;=1+x+x^2/2+x^3/6+o(x^3),\\
 <li>闭区间最值：检查内部驻点、不可导点及端点。</li>
 <li>水平渐近线：x→±∞ 时 f(x)→b；斜渐近线 y=kx+b 要求 f(x)−kx−b→0；垂直渐近线由单侧无穷极限判断。</li>
 </ul>
-<h2 id="section-21">6. 不定积分【A】</h2>
+<h3 id="section-23">拉格朗日中值定理：把平均速度联系到瞬时速度</h3>
+<p>汽车两小时行驶120千米，平均速度为60千米/时。如果位置函数在整段时间连续、途中可导，那么某个瞬间速度恰好是60千米/时。这不意味着这个速度只出现一次。</p>
+<p><strong>推导：</strong> 设 \(k=[f(b)-f(a)]/(b-a)\)，构造 \(g(x)=f(x)-kx\)。它在 \([a,b]\) 连续、\((a,b)\) 可导，且 \(g(a)=g(b)\)。由罗尔定理，存在 \(\xi\in(a,b)\) 使 \(g&#x27;(\xi)=0\)，因此 \(f&#x27;(\xi)=k\)。</p>
+<p>罗尔定理本身可从闭区间最值定理和费马定理证明：若函数不恒定，在两端等值时必有一个最大值或最小值在内部，内点可导极值处导数为零。</p>
+<h3 id="section-24">泰勒近似：把复杂曲线换成附近的多项式</h3>
+<p>例如 \(\sin x=x-x^3/6+o(x^3)\)。它来自在0处依次计算 \(\sin x\) 的函数值及前三阶导数，再代入泰勒公式。\(x\) 必须用弧度。工程中用它近似小角度摆动；实际精度需用余项控制，不能将局部近似当作全局等式。</p>
+<h2 id="section-25">6. 不定积分【A】</h2>
 <p>原函数 F 满足 F′=f；在一个区间上，所有原函数相差一个常数：</p>
 <p>\[
 \int f(x)\,dx=F(x)+C.
 \]</p>
-<h3 id="section-22">6.1 基本积分表</h3>
+<h3 id="section-26">6.1 基本积分表</h3>
 <p>\[
 \begin{aligned}
 \int x^\alpha dx&amp;=\frac{x^{\alpha+1}}{\alpha+1}+C\quad(\alpha\neq-1),\\
@@ -338,7 +352,7 @@ e^x&amp;=1+x+x^2/2+x^3/6+o(x^3),\\
 \end{aligned}
 \]</p>
 <p>幂函数公式在函数有定义的区间上使用；对一般实数指数可先取 x&gt;0。对数和三角积分要避开奇点；最后一式在 −1&lt;x&lt;1 使用；a&gt;0、a≠1。</p>
-<h3 id="section-23">6.2 核心方法</h3>
+<h3 id="section-27">6.2 核心方法</h3>
 <ul>
 <li>线性：\(\int(af+bg)dx=a\int fdx+b\int gdx\)。</li>
 <li>换元：\(\int f(g(x))g&#x27;(x)dx=F(g(x))+C\)，其中 F′=f。</li>
@@ -347,8 +361,14 @@ e^x&amp;=1+x+x^2/2+x^3/6+o(x^3),\\
 <li>三角代换：\(\sqrt{a^2-x^2}\) 可考虑 x=a sin t，\(\sqrt{a^2+x^2}\) 可考虑 x=a tan t，需限制区间处理符号。</li>
 <li>积分结果通过求导检验；不是每个初等函数的原函数都能写成初等函数，例如 e^(−x²)。</li>
 </ul>
-<h2 id="section-24">7. 定积分与微积分基本定理【A】</h2>
-<h3 id="section-25">7.1 定义与性质</h3>
+<h3 id="section-28">为什么分部积分成立？</h3>
+<p>乘积求导 \((uv)&#x27;=u&#x27;v+uv&#x27;\)，两边积分并移项，得到 \(\int u\,dv=uv-\int v\,du\)。例如：</p>
+<p>\[
+\int x e^x\,dx=xe^x-\int e^x\,dx=(x-1)e^x+C.
+\]</p>
+<p>这里取 \(u=x\)、\(dv=e^x dx\)。它适合把一个乘积化成更容易求的积分；最后对结果求导可检验。</p>
+<h2 id="section-29">7. 定积分与微积分基本定理【A】</h2>
+<h3 id="section-30">7.1 定义与性质</h3>
 <p>黎曼积分通过分割区间、求和并取极限定义：</p>
 <p>\[
 \int_a^b f(x)dx=\lim_{\max\Delta x_i\to0}\sum_i f(\xi_i)\Delta x_i,
@@ -361,7 +381,7 @@ e^x&amp;=1+x+x^2/2+x^3/6+o(x^3),\\
 <li>奇函数在 [−a,a] 上积分为0，偶函数为 \(2\int_0^a f\)，要求可积且 a&gt;0。</li>
 <li>积分中值定理：f 在 [a,b] 连续，a&lt;b，则存在 ξ∈[a,b]，使 ∫f=f(ξ)(b−a)。</li>
 </ul>
-<h3 id="section-26">7.2 基本定理</h3>
+<h3 id="section-31">7.2 基本定理</h3>
 <p>若 f 连续，\(A(x)=\int_a^x f(t)dt\)，则</p>
 <p>\[
 A&#x27;(x)=f(x).
@@ -376,7 +396,7 @@ A&#x27;(x)=f(x).
 \frac d{dx}\int_{u(x)}^{v(x)}f(t)dt=f(v(x))v&#x27;(x)-f(u(x))u&#x27;(x).
 \]</p>
 <p>若被积函数本身还含参数 x，不能只套上式，通常还需对被积函数求偏导并检查交换条件。</p>
-<h3 id="section-27">7.3 换元与分部积分</h3>
+<h3 id="section-32">7.3 换元与分部积分</h3>
 <p>\[
 \int_a^b f(g(t))g&#x27;(t)dt=\int_{g(a)}^{g(b)}f(u)du,
 \]</p>
@@ -384,7 +404,7 @@ A&#x27;(x)=f(x).
 <p>\[
 \int_a^b u v&#x27;\,dx=[uv]_a^b-\int_a^b u&#x27;v\,dx.
 \]</p>
-<h3 id="section-28">7.4 应用</h3>
+<h3 id="section-33">7.4 应用</h3>
 <table>
 <thead>
 <tr>
@@ -423,7 +443,13 @@ A&#x27;(x)=f(x).
 </tr>
 </tbody>
 </table>
-<h2 id="section-29">8. 反常积分【B】</h2>
+<h3 id="section-34">从小矩形累加到定积分</h3>
+<p>以 \(f(x)=x\) 在 \([0,1]\) 下的面积为例，均分为 \(n\) 段，取右端点，则和为</p>
+<p>\[
+\frac1n\sum_{i=1}^{n}\frac{i}{n}=\frac{n+1}{2n}\longrightarrow\frac12.
+\]</p>
+<p>连续函数的黎曼和在分割最细长度趋零时给出同一个积分。这解释面积、流量和质量等累积计算；函数为负时积分是有符号量。微积分基本定理再把此累积和与原函数相连。<a href="https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/">微积分历史</a></p>
+<h2 id="section-35">8. 反常积分【B】</h2>
 <p>分为无穷区间和被积函数无界两类，均通过极限定义。</p>
 <p>\[
 \int_a^\infty f(x)dx=\lim_{R\to\infty}\int_a^R f(x)dx.
@@ -439,7 +465,7 @@ A&#x27;(x)=f(x).
 \int_0^1\frac{dx}{x^p}\text{ 收敛}\iff p&lt;1.
 \]</p>
 <p>非负函数可用比较判别和极限比较；绝对收敛 ∫|f|&lt;∞ 可推出收敛，反之不一定。</p>
-<h2 id="section-30">9. 空间几何与向量【B】</h2>
+<h2 id="section-36">9. 空间几何与向量【B】</h2>
 <ul>
 <li>内积：\(\mathbf a\cdot\mathbf b=\sum a_ib_i=|\mathbf a||\mathbf b|\cos\theta\)。</li>
 <li>叉积：\(\mathbf a\times\mathbf b\) 垂直于两向量，模为平行四边形面积；方向按右手规则。</li>
@@ -449,8 +475,8 @@ A&#x27;(x)=f(x).
 <li>点到平面距离：\(d=|Ax_0+By_0+Cz_0+D|/\sqrt{A^2+B^2+C^2}\)。</li>
 <li>常见曲面：球面、椭球面、柱面、锥面、抛物面；用截面理解三维形状。</li>
 </ul>
-<h2 id="section-31">10. 多元函数微分【A】</h2>
-<h3 id="section-32">10.1 极限、偏导与可微</h3>
+<h2 id="section-37">10. 多元函数微分【A】</h2>
+<h3 id="section-38">10.1 极限、偏导与可微</h3>
 <p>多元极限要求沿定义域内所有趋近路径得到同一值；两条路径结果不同即可证明不存在，若干条路径相同不能证明存在。</p>
 <p>\[
 f_x(x,y)=\lim_{h\to0}\frac{f(x+h,y)-f(x,y)}h.
@@ -465,7 +491,7 @@ f_x(x,y)=\lim_{h\to0}\frac{f(x+h,y)-f(x,y)}h.
 <li>各偏导在某邻域存在并在该点连续，是该点可微的充分条件。</li>
 <li>若二阶混合偏导在邻域连续，则 f_xy=f_yx。</li>
 </ul>
-<h3 id="section-33">10.2 链式法则、梯度与方向导数</h3>
+<h3 id="section-39">10.2 链式法则、梯度与方向导数</h3>
 <p>若 z=f(x,y)，x=x(t)、y=y(t)，且满足可微条件：</p>
 <p>\[
 \frac{dz}{dt}=f_x\frac{dx}{dt}+f_y\frac{dy}{dt}.
@@ -479,14 +505,14 @@ D_{\mathbf u}f=\nabla f\cdot\mathbf u\quad(|\mathbf u|=1).
 <p>\[
 z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0).
 \]</p>
-<h3 id="section-34">10.3 隐函数与雅可比矩阵</h3>
+<h3 id="section-40">10.3 隐函数与雅可比矩阵</h3>
 <ul>
 <li>F(x,y)=0：F 连续可微且 F_y≠0 ⇒ 局部可解 y=y(x)，y′=−F_x/F_y。</li>
 <li>F(x,y,z)=0 且 F_z≠0：z_x=−F_x/F_z，z_y=−F_y/F_z。</li>
 <li>雅可比矩阵 J 收集向量值函数的一阶偏导，描述局部线性变换；复合映射的雅可比按矩阵乘法连接。</li>
 <li>逆函数定理：连续可微映射在一点的雅可比行列式非零，则该点附近有连续可微的局部逆映射。非零行列式不直接保证全局一一对应。</li>
 </ul>
-<h3 id="section-35">10.4 多元泰勒与极值</h3>
+<h3 id="section-41">10.4 多元泰勒与极值</h3>
 <p>f 二阶连续可微时：</p>
 <p>\[
 f(\mathbf x+\mathbf h)=f(\mathbf x)+\nabla f(\mathbf x)^T\mathbf h
@@ -499,14 +525,17 @@ f(\mathbf x+\mathbf h)=f(\mathbf x)+\nabla f(\mathbf x)^T\mathbf h
 <li>拉格朗日乘数法：单个等式约束 g=c 下，正则内点约束极值满足 ∇f=λ∇g，前提 ∇g≠0；候选点仍需比较，边界与奇异点另查。</li>
 <li>紧集上连续函数取得最值；多元最值不能遗漏边界。</li>
 </ul>
-<h2 id="section-36">11. 二重与三重积分【A/B】</h2>
+<h3 id="section-42">梯度为什么指向上升最快的方向？</h3>
+<p>可微函数在 \(x\) 处沿单位方向 \(u\) 的变化率为 \(D_uf=\nabla f\cdot u\)。柯西—施瓦茨不等式给出 \(D_uf\le\|\nabla f\|\)。当梯度非零，取 \(u=\nabla f/\|\nabla f\|\) 时取等号，因此梯度是欧氏距离下的最速上升方向；负梯度是最速下降方向。</p>
+<p><strong>应用：</strong> 调整机器学习参数时，用负梯度减少损失。该结论只描述局部一阶变化；步长太大仍可能使损失上升。</p>
+<h2 id="section-43">11. 二重与三重积分【A/B】</h2>
 <p>意义：在平面区域或空间区域内累加面积、体积、质量等贡献。</p>
 <p>若 D={(x,y): a≤x≤b，φ₁(x)≤y≤φ₂(x)}，例如 f 连续、边界适当规则，则</p>
 <p>\[
 \iint_D f(x,y)dA=\int_a^b\left[\int_{\phi_1(x)}^{\phi_2(x)}f(x,y)dy\right]dx.
 \]</p>
 <p>换序先画区域，再重新确定上下限；不能只把 dx、dy 调换。</p>
-<h3 id="section-37">11.1 换元公式</h3>
+<h3 id="section-44">11.1 换元公式</h3>
 <p>在适当光滑、局部雅可比非零且在区域上无重复覆盖的变换下：</p>
 <p>\[
 \iint_D f(x,y)dxdy
@@ -540,15 +569,15 @@ f(\mathbf x+\mathbf h)=f(\mathbf x)+\nabla f(\mathbf x)^T\mathbf h
 </tbody>
 </table>
 <p>球坐标角度命名随教材不同，先检查定义。换元常见错误是漏乘雅可比绝对值。</p>
-<h3 id="section-38">11.2 应用</h3>
+<h3 id="section-45">11.2 应用</h3>
 <p>\[
 \text{面积}=\iint_D1\,dA,\quad
 \text{体积}=\iiint_\Omega1\,dV,\quad
 m=\iint_D\rho(x,y)dA.
 \]</p>
 <p>平面薄片质心：\(\bar x=m^{-1}\iint_Dx\rho dA\)，\(\bar y=m^{-1}\iint_Dy\rho dA\)，要求质量 m&gt;0。空间情形类似。</p>
-<h2 id="section-39">12. 曲线积分、曲面积分与场论【C；按目标范围重点学习】</h2>
-<h3 id="section-40">12.1 两类曲线积分</h3>
+<h2 id="section-46">12. 曲线积分、曲面积分与场论【C；按目标范围重点学习】</h2>
+<h3 id="section-47">12.1 两类曲线积分</h3>
 <p>曲线参数 r(t)，a≤t≤b，分段光滑：</p>
 <p>\[
 \int_C f\,ds=\int_a^b f(\mathbf r(t))|\mathbf r&#x27;(t)|dt,
@@ -558,7 +587,7 @@ m=\iint_D\rho(x,y)dA.
 =\int_a^b\mathbf F(\mathbf r(t))\cdot\mathbf r&#x27;(t)dt.
 \]</p>
 <p>第一类按弧长累加，不随方向反转而变号；第二类表示沿路径做功等，方向反转会变号。</p>
-<h3 id="section-41">12.2 格林公式与势函数</h3>
+<h3 id="section-48">12.2 格林公式与势函数</h3>
 <p>P、Q 在包含有界平面区域 D 的邻域内有连续一阶偏导，边界分段光滑、取正向时：</p>
 <p>\[
 \oint_{\partial D}Pdx+Qdy
@@ -570,14 +599,14 @@ m=\iint_D\rho(x,y)dA.
 \int_C\mathbf F\cdot d\mathbf r=\phi(B)-\phi(A).
 \]</p>
 <p>这时路径无关，闭合积分为0。二维开单连通区域内，连续可微场满足 P_y=Q_x，可推出存在势函数；有孔区域不能只凭偏导相等就下结论。</p>
-<h3 id="section-42">12.3 两类曲面积分</h3>
+<h3 id="section-49">12.3 两类曲面积分</h3>
 <p>光滑参数曲面 r(u,v)，取不重复覆盖的参数区域 G：</p>
 <p>\[
 \iint_S f\,dS=\iint_G f(\mathbf r(u,v))|\mathbf r_u\times\mathbf r_v|dudv.
 \]</p>
 <p>z=g(x,y) 时，\(dS=\sqrt{1+g_x^2+g_y^2}\,dxdy\)。</p>
 <p>通量：\(\iint_S\mathbf F\cdot\mathbf n\,dS\)，n 为指定的单位法向量；改变定向，通量变号。</p>
-<h3 id="section-43">12.4 高斯与斯托克斯公式</h3>
+<h3 id="section-50">12.4 高斯与斯托克斯公式</h3>
 <p>F 连续可微，区域、曲面与边界具备相应分段光滑性：</p>
 <p>\[
 \oiint_{\partial\Omega}\mathbf F\cdot\mathbf n\,dS
@@ -593,7 +622,7 @@ m=\iint_D\rho(x,y)dA.
 \nabla\times\mathbf F=(R_y-Q_z,\ P_z-R_x,\ Q_x-P_y).
 \]</p>
 <p>直观：散度衡量局部净流出，旋度刻画局部环流。若场在区域内有奇点，必须先检查定理能否使用。</p>
-<h2 id="section-44">13. 常微分方程【B】</h2>
+<h2 id="section-51">13. 常微分方程【B】</h2>
 <p>微分方程把未知函数与其导数联系起来；通解含任意常数，初始条件用来选定具体解。</p>
 <table>
 <thead>
@@ -630,7 +659,7 @@ m=\iint_D\rho(x,y)dA.
 <p>\[
 y=e^{-\int p(x)dx}\left[C+\int q(x)e^{\int p(x)dx}dx\right].
 \]</p>
-<h3 id="section-45">13.1 二阶常系数线性方程</h3>
+<h3 id="section-52">13.1 二阶常系数线性方程</h3>
 <p>齐次方程 y″+py′+qy=0 的特征方程 r²+pr+q=0：</p>
 <ul>
 <li>不同实根 r₁、r₂：\(y=C_1e^{r_1x}+C_2e^{r_2x}\)。</li>
@@ -638,14 +667,14 @@ y=e^{-\int p(x)dx}\left[C+\int q(x)e^{\int p(x)dx}dx\right].
 <li>共轭复根 α±iβ，β&gt;0：\(y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)\)。</li>
 </ul>
 <p>非齐次线性方程：通解=对应齐次通解+一个特解。待定系数法适用于特定形式的右端函数；共振时试探式需乘适当次数的 x。</p>
-<h3 id="section-46">13.2 存在唯一性与模型</h3>
+<h3 id="section-53">13.2 存在唯一性与模型</h3>
 <p>局部存在唯一性的一个充分条件：y′=f(x,y) 中，f 与 f_y 在初值附近连续。它保证局部解，不自动保证所有时间都存在。</p>
 <ul>
 <li>指数增长衰减：y′=ky ⇒ y=Ce^(kt)。</li>
 <li>牛顿冷却模型：T′=−k(T−T_env)，恒定环境温度且 k&gt;0 时，T=T_env+Ce^(−kt)。</li>
 <li>无阻尼振动：y″+ω²y=0 ⇒ y=A cosωt+B sinωt。</li>
 </ul>
-<h2 id="section-47">14. 数项级数【B】</h2>
+<h2 id="section-54">14. 数项级数【B】</h2>
 <p>\(\sum_{n=1}^\infty a_n\) 收敛，指部分和 S_N 有有限极限。</p>
 <ul>
 <li>收敛的必要条件：a_n→0；反之不成立，例如调和级数 ∑1/n。</li>
@@ -690,8 +719,8 @@ y=e^{-\int p(x)dx}\left[C+\int q(x)e^{\int p(x)dx}dx\right].
 <li>绝对收敛：∑|a_n| 收敛；可推出 ∑a_n 收敛。</li>
 <li>条件收敛：原级数收敛但绝对值级数发散；重排可能改变结果。</li>
 </ul>
-<h2 id="section-48">15. 幂级数与傅里叶级数【B/C】</h2>
-<h3 id="section-49">15.1 幂级数</h3>
+<h2 id="section-55">15. 幂级数与傅里叶级数【B/C】</h2>
+<h3 id="section-56">15.1 幂级数</h3>
 <p>\[
 \sum_{n=0}^\infty c_n(x-x_0)^n.
 \]</p>
@@ -713,7 +742,7 @@ e^x&amp;=\sum_{n=0}^\infty\frac{x^n}{n!},&amp;&amp;x\in\mathbb R,\\
 \end{aligned}
 \]</p>
 <p>函数无限次可导不代表其泰勒级数一定等于它；还需证明余项趋于0等条件。</p>
-<h3 id="section-50">15.2 傅里叶级数</h3>
+<h3 id="section-57">15.2 傅里叶级数</h3>
 <p>对周期 2π 的适当可积函数：</p>
 <p>\[
 f(x)\sim\frac{a_0}2+\sum_{n=1}^\infty(a_n\cos nx+b_n\sin nx),
@@ -728,7 +757,7 @@ b_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx.
 <li>偶函数只有余弦项，奇函数只有正弦项（常数项也为0）。</li>
 <li>其他周期通过变量缩放处理；意义是用基本频率及其倍频分解周期信号。</li>
 </ul>
-<h2 id="section-51">16. 机器学习中的高数对应关系</h2>
+<h2 id="section-58">16. 机器学习中的高数对应关系</h2>
 <table>
 <thead>
 <tr>
@@ -776,7 +805,7 @@ b_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx.
 </tbody>
 </table>
 <p>梯度下降基本式：\(\mathbf w_{k+1}=\mathbf w_k-\eta\nabla L(\mathbf w_k)\)。不能据此保证任意步长下损失下降，更不能无条件保证找到全局最小值。</p>
-<h2 id="section-52">17. 常见误区速查</h2>
+<h2 id="section-59">17. 常见误区速查</h2>
 <ol>
 <li>极限存在不代表该点有定义；连续才要求函数值与极限一致。</li>
 <li>连续不一定可导；多元偏导存在不一定可微。</li>
@@ -791,7 +820,7 @@ b_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx.
 <li>级数通项趋于0不保证收敛；幂级数端点必须另查。</li>
 <li>会背结论不等于会用：定理的定义域、条件和结论应一起记。</li>
 </ol>
-<h2 id="section-53">18. 阶段验收与记录</h2>
+<h2 id="section-60">18. 阶段验收与记录</h2>
 <ul>
 <li>[ ] 能从定义解释极限、导数、定积分，而不是只背公式。</li>
 <li>[ ] 能说明每个主要定理的条件，并给出缺少条件时的反例。</li>
@@ -823,4 +852,4 @@ b_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx.
 </tr>
 </tbody>
 </table>
-<p>推荐第一轮重点：第2–7节 → 第9–11节 → 第13–15节；第8节配合一元积分学习，第12节在多元积分后按目标范围安排。线性代数与概率统计属于独立课程，应另行系统学习。</p></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h2" href="#section-1">1. 全局框架与阅读方法</a><a class="toc-h2" href="#section-2">2. 函数、数列与极限【A】</a><a class="toc-h3" href="#section-3">2.1 基本概念</a><a class="toc-h3" href="#section-4">2.2 极限的精确定义</a><a class="toc-h3" href="#section-5">2.3 核心定理</a><a class="toc-h3" href="#section-6">2.4 常用极限与等价无穷小</a><a class="toc-h2" href="#section-7">3. 连续性【A】</a><a class="toc-h2" href="#section-8">4. 导数与微分【A】</a><a class="toc-h3" href="#section-9">4.1 定义与意义</a><a class="toc-h3" href="#section-10">4.2 基本求导公式</a><a class="toc-h3" href="#section-11">4.3 求导法则</a><a class="toc-h3" href="#section-12">从实际问题理解导数：测量瞬时速度</a><a class="toc-h3" href="#section-13">乘积法则的推导与应用</a><a class="toc-h3" href="#section-14">链式法则：一层变化引起另一层变化</a><a class="toc-h3" href="#section-15">定积分与导数：从速度累计位移</a><a class="toc-h2" href="#section-16">5. 中值定理、泰勒公式与导数应用【A】</a><a class="toc-h3" href="#section-17">5.1 中值定理</a><a class="toc-h3" href="#section-18">5.2 洛必达法则</a><a class="toc-h3" href="#section-19">5.3 泰勒公式</a><a class="toc-h3" href="#section-20">5.4 单调、极值、凹凸与最值</a><a class="toc-h2" href="#section-21">6. 不定积分【A】</a><a class="toc-h3" href="#section-22">6.1 基本积分表</a><a class="toc-h3" href="#section-23">6.2 核心方法</a><a class="toc-h2" href="#section-24">7. 定积分与微积分基本定理【A】</a><a class="toc-h3" href="#section-25">7.1 定义与性质</a><a class="toc-h3" href="#section-26">7.2 基本定理</a><a class="toc-h3" href="#section-27">7.3 换元与分部积分</a><a class="toc-h3" href="#section-28">7.4 应用</a><a class="toc-h2" href="#section-29">8. 反常积分【B】</a><a class="toc-h2" href="#section-30">9. 空间几何与向量【B】</a><a class="toc-h2" href="#section-31">10. 多元函数微分【A】</a><a class="toc-h3" href="#section-32">10.1 极限、偏导与可微</a><a class="toc-h3" href="#section-33">10.2 链式法则、梯度与方向导数</a><a class="toc-h3" href="#section-34">10.3 隐函数与雅可比矩阵</a><a class="toc-h3" href="#section-35">10.4 多元泰勒与极值</a><a class="toc-h2" href="#section-36">11. 二重与三重积分【A/B】</a><a class="toc-h3" href="#section-37">11.1 换元公式</a><a class="toc-h3" href="#section-38">11.2 应用</a><a class="toc-h2" href="#section-39">12. 曲线积分、曲面积分与场论【C；按目标范围重点学习】</a><a class="toc-h3" href="#section-40">12.1 两类曲线积分</a><a class="toc-h3" href="#section-41">12.2 格林公式与势函数</a><a class="toc-h3" href="#section-42">12.3 两类曲面积分</a><a class="toc-h3" href="#section-43">12.4 高斯与斯托克斯公式</a><a class="toc-h2" href="#section-44">13. 常微分方程【B】</a><a class="toc-h3" href="#section-45">13.1 二阶常系数线性方程</a><a class="toc-h3" href="#section-46">13.2 存在唯一性与模型</a><a class="toc-h2" href="#section-47">14. 数项级数【B】</a><a class="toc-h2" href="#section-48">15. 幂级数与傅里叶级数【B/C】</a><a class="toc-h3" href="#section-49">15.1 幂级数</a><a class="toc-h3" href="#section-50">15.2 傅里叶级数</a><a class="toc-h2" href="#section-51">16. 机器学习中的高数对应关系</a><a class="toc-h2" href="#section-52">17. 常见误区速查</a><a class="toc-h2" href="#section-53">18. 阶段验收与记录</a></aside></div></div></body></html>
+<p>推荐第一轮重点：第2–7节 → 第9–11节 → 第13–15节；第8节配合一元积分学习，第12节在多元积分后按目标范围安排。线性代数与概率统计属于独立课程，应另行系统学习。</p></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h2" href="#section-1">1. 全局框架与阅读方法</a><a class="toc-h2" href="#section-2">2. 函数、数列与极限【A】</a><a class="toc-h3" href="#section-3">2.1 基本概念</a><a class="toc-h3" href="#section-4">2.2 极限的精确定义</a><a class="toc-h3" href="#section-5">2.3 核心定理</a><a class="toc-h3" href="#section-6">2.4 常用极限与等价无穷小</a><a class="toc-h3" href="#section-7">实际问题、推导与历史：瞬时变化的极限</a><a class="toc-h2" href="#section-8">3. 连续性【A】</a><a class="toc-h3" href="#section-9">实际问题与证明：二分法找方程的根</a><a class="toc-h2" href="#section-10">4. 导数与微分【A】</a><a class="toc-h3" href="#section-11">4.1 定义与意义</a><a class="toc-h3" href="#section-12">4.2 基本求导公式</a><a class="toc-h3" href="#section-13">4.3 求导法则</a><a class="toc-h3" href="#section-14">从实际问题理解导数：测量瞬时速度</a><a class="toc-h3" href="#section-15">乘积法则的推导与应用</a><a class="toc-h3" href="#section-16">链式法则：一层变化引起另一层变化</a><a class="toc-h3" href="#section-17">定积分与导数：从速度累计位移</a><a class="toc-h2" href="#section-18">5. 中值定理、泰勒公式与导数应用【A】</a><a class="toc-h3" href="#section-19">5.1 中值定理</a><a class="toc-h3" href="#section-20">5.2 洛必达法则</a><a class="toc-h3" href="#section-21">5.3 泰勒公式</a><a class="toc-h3" href="#section-22">5.4 单调、极值、凹凸与最值</a><a class="toc-h3" href="#section-23">拉格朗日中值定理：把平均速度联系到瞬时速度</a><a class="toc-h3" href="#section-24">泰勒近似：把复杂曲线换成附近的多项式</a><a class="toc-h2" href="#section-25">6. 不定积分【A】</a><a class="toc-h3" href="#section-26">6.1 基本积分表</a><a class="toc-h3" href="#section-27">6.2 核心方法</a><a class="toc-h3" href="#section-28">为什么分部积分成立？</a><a class="toc-h2" href="#section-29">7. 定积分与微积分基本定理【A】</a><a class="toc-h3" href="#section-30">7.1 定义与性质</a><a class="toc-h3" href="#section-31">7.2 基本定理</a><a class="toc-h3" href="#section-32">7.3 换元与分部积分</a><a class="toc-h3" href="#section-33">7.4 应用</a><a class="toc-h3" href="#section-34">从小矩形累加到定积分</a><a class="toc-h2" href="#section-35">8. 反常积分【B】</a><a class="toc-h2" href="#section-36">9. 空间几何与向量【B】</a><a class="toc-h2" href="#section-37">10. 多元函数微分【A】</a><a class="toc-h3" href="#section-38">10.1 极限、偏导与可微</a><a class="toc-h3" href="#section-39">10.2 链式法则、梯度与方向导数</a><a class="toc-h3" href="#section-40">10.3 隐函数与雅可比矩阵</a><a class="toc-h3" href="#section-41">10.4 多元泰勒与极值</a><a class="toc-h3" href="#section-42">梯度为什么指向上升最快的方向？</a><a class="toc-h2" href="#section-43">11. 二重与三重积分【A/B】</a><a class="toc-h3" href="#section-44">11.1 换元公式</a><a class="toc-h3" href="#section-45">11.2 应用</a><a class="toc-h2" href="#section-46">12. 曲线积分、曲面积分与场论【C；按目标范围重点学习】</a><a class="toc-h3" href="#section-47">12.1 两类曲线积分</a><a class="toc-h3" href="#section-48">12.2 格林公式与势函数</a><a class="toc-h3" href="#section-49">12.3 两类曲面积分</a><a class="toc-h3" href="#section-50">12.4 高斯与斯托克斯公式</a><a class="toc-h2" href="#section-51">13. 常微分方程【B】</a><a class="toc-h3" href="#section-52">13.1 二阶常系数线性方程</a><a class="toc-h3" href="#section-53">13.2 存在唯一性与模型</a><a class="toc-h2" href="#section-54">14. 数项级数【B】</a><a class="toc-h2" href="#section-55">15. 幂级数与傅里叶级数【B/C】</a><a class="toc-h3" href="#section-56">15.1 幂级数</a><a class="toc-h3" href="#section-57">15.2 傅里叶级数</a><a class="toc-h2" href="#section-58">16. 机器学习中的高数对应关系</a><a class="toc-h2" href="#section-59">17. 常见误区速查</a><a class="toc-h2" href="#section-60">18. 阶段验收与记录</a></aside></div></div></body></html>
