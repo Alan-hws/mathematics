@@ -21,4 +21,17 @@ P(B_j\mid A)=\frac{P(A\mid B_j)P(B_j)}{\sum_iP(A\mid B_i)P(B_i)},\qquad P(A)&gt;
 <p>\[
 \frac{0.9\times0.01}{0.9\times0.01+0.05\times0.99}\approx15.4\%.
 \]</p>
-<p>这说明 P(阳性|故障) 与 P(故障|阳性) 不同，基础发生率不能忽略。</p><nav class="page-turn" aria-label="相邻主题"><a href="probability-2.html">← 随机事件与概率公理</a><a href="probability-4.html">随机变量与分布 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a href="#content">阅读正文</a></aside></div></div></body></html>
+<p>这说明 P(阳性|故障) 与 P(故障|阳性) 不同，基础发生率不能忽略。</p>
+<h3 id="section-1">实际问题：检测呈阳性，究竟多可能有故障？</h3>
+<p>假设故障率为 1%，故障时阳性率 90%，正常时误报率 5%。在 10000 个对象中，按期望频数约有 100 个故障，其中 90 个阳性；9900 个正常，其中 495 个误报。因此阳性总数约 585，阳性者确有故障的比例约 \(90/585=15.4\%\)。这是按模型计算，不是对每一组实际观测数量的保证。</p>
+<h3 id="section-2">全概率与贝叶斯公式的推导</h3>
+<p>设故障事件为 \(B\)，阳性事件为 \(A\)。\(B\) 与 \(B^c\) 把样本空间分成互斥部分，所以</p>
+<p>\[
+P(A)=P(A\cap B)+P(A\cap B^c)
+=P(A\mid B)P(B)+P(A\mid B^c)P(B^c).
+\]</p>
+<p>由条件概率定义，\(P(B\mid A)=P(A\cap B)/P(A)\)。将乘法公式与上式代入，得到</p>
+<p>\[
+P(B\mid A)=\frac{P(A\mid B)P(B)}{P(A\mid B)P(B)+P(A\mid B^c)P(B^c)}.
+\]</p>
+<p>条件概率的分母需大于零。方法的作用是把检测结果与原始故障率结合，避免把“故障时阳性概率”误认成“阳性时故障概率”。</p><nav class="page-turn" aria-label="相邻主题"><a href="probability-2.html">← 随机事件与概率公理</a><a href="probability-4.html">随机变量与分布 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">实际问题：检测呈阳性，究竟多可能有故障？</a><a class="toc-h3" href="#section-2">全概率与贝叶斯公式的推导</a></aside></div></div></body></html>
