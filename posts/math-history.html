@@ -1,49 +1,33 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>数学史的一条主线｜数学札记</title>
-  <link rel="stylesheet" href="../assets/styles.css">
-</head>
-<body>
-  <header class="site-header"><div class="header-inner"><div class="kicker">History · 05</div><h1>数学史的一条主线</h1><p>数学不是突然出现的公式集合，而是人类为了测量、预测、计算和理解结构而不断发明的语言。</p></div></header>
-  <nav class="top-nav"><div class="nav-inner"><a href="../index.html">首页</a><a href="../index.html#roadmap">学习路线</a><a href="limits.html">极限</a><a href="../index.html#posts">文章索引</a></div></nav>
-  <main>
-    <article class="article">
-      <div class="article-header"><div class="meta">HISTORY · 2026-10-29</div><h1>数学史的一条主线</h1><p>关键词：测量、证明、代数化、微积分、结构</p></div>
-      <h2>1. 从计数和测量开始</h2>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数学史的一条主线｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
+ <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
+ <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="../topics/foundations-2.html">初中：数与代数</a><a class="topic-link"  href="../topics/foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="../topics/foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="../topics/foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="../topics/foundations-6.html">高中：三角函数</a><a class="topic-link"  href="../topics/foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="../topics/foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="../topics/foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="../topics/foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="../topics/foundations-formulas.html">公式与定理速查</a></div></details><details class="subject" ><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="../topics/calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="../topics/calculus-3.html">连续性</a><a class="topic-link"  href="../topics/calculus-4.html">导数与微分</a><a class="topic-link"  href="../topics/calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="../topics/calculus-6.html">不定积分</a><a class="topic-link"  href="../topics/calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="../topics/calculus-8.html">反常积分</a><a class="topic-link"  href="../topics/calculus-9.html">空间几何与向量</a><a class="topic-link"  href="../topics/calculus-10.html">多元函数微分</a><a class="topic-link"  href="../topics/calculus-11.html">二重与三重积分</a><a class="topic-link"  href="../topics/calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="../topics/calculus-13.html">常微分方程</a><a class="topic-link"  href="../topics/calculus-14.html">数项级数</a><a class="topic-link"  href="../topics/calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="../topics/linear-2.html">向量与线性组合</a><a class="topic-link"  href="../topics/linear-3.html">矩阵与运算</a><a class="topic-link"  href="../topics/linear-4.html">消元与线性方程组</a><a class="topic-link"  href="../topics/linear-5.html">行列式</a><a class="topic-link"  href="../topics/linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="../topics/linear-7.html">线性映射与换基</a><a class="topic-link"  href="../topics/linear-8.html">内积、正交与投影</a><a class="topic-link"  href="../topics/linear-9.html">最小二乘</a><a class="topic-link"  href="../topics/linear-10.html">特征值与对角化</a><a class="topic-link"  href="../topics/linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="../topics/linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="../topics/linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="../topics/linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="../topics/probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="../topics/probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="../topics/probability-4.html">随机变量与分布</a><a class="topic-link"  href="../topics/probability-5.html">常见离散分布</a><a class="topic-link"  href="../topics/probability-6.html">常见连续分布</a><a class="topic-link"  href="../topics/probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="../topics/probability-8.html">多维分布与独立性</a><a class="topic-link"  href="../topics/probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="../topics/probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="../topics/probability-11.html">样本与抽样分布</a><a class="topic-link"  href="../topics/probability-12.html">参数估计</a><a class="topic-link"  href="../topics/probability-13.html">假设检验</a><a class="topic-link"  href="../topics/probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="../topics/probability-15.html">贝叶斯统计</a><a class="topic-link"  href="../topics/probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="../topics/probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="../topics/history-1.html">从计数和测量开始</a><a class="topic-link"  href="../topics/history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="../topics/history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="../topics/history-4.html">解析几何与微积分</a><a class="topic-link"  href="../topics/history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="../topics/history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="../topics/history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="../archive/math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 数学史的一条主线</div><div class="reading-layout"><main id="content" class="content"><article><div class="article-header"><div class="meta">HISTORY · 2026-10-29</div><h1>数学史的一条主线</h1><p>关键词：测量、证明、代数化、微积分、结构</p></div>
+      <h2 id="section-1">1. 从计数和测量开始</h2>
       <p>最早的数学与生存直接相关：数羊、分配粮食、测量土地、预测季节。古埃及的土地测量和古巴比伦的天文计算，都推动了算术、几何和数表的发展。</p>
       <p>这一阶段的数学通常是“算法式”的：给出一类问题，提供一套可重复的计算步骤。</p>
 
-      <h2>2. 希腊传统：从计算到证明</h2>
+      <h2 id="section-2">2. 希腊传统：从计算到证明</h2>
       <p>古希腊数学的重要变化，是开始追问“为什么一定如此”。欧几里得在《几何原本》中用定义、公理和命题组织几何知识，形成了公理化证明的经典范式。</p>
       <div class="quote"><p>数学知识的力量，不只在于得到一个数，还在于知道这个结论为什么必然成立。</p></div>
       <p>阿基米德的穷竭法则已经接近极限思想：用越来越精细的内接和外切图形逼近圆的面积与周长。</p>
 
-      <h2>3. 印度、阿拉伯与代数化</h2>
+      <h2 id="section-3">3. 印度、阿拉伯与代数化</h2>
       <p>十进位制和零的使用极大改变了计算。随着印度数学知识传播到阿拉伯世界，方程求解、代数运算和三角函数逐渐形成体系。“代数”一词与花拉子米的著作有关，他的名字也成为 algorithm 一词的词源之一。</p>
       <p>代数化的意义在于：几何关系可以转写成符号和方程，复杂问题因此能被一般化。</p>
 
-      <h2>4. 解析几何与微积分</h2>
+      <h2 id="section-4">4. 解析几何与微积分</h2>
       <p>笛卡尔和费马把几何图形与坐标、方程联系起来。曲线不再只是图画，也可以是一个函数的图像。</p>
       <p>17 世纪，牛顿和莱布尼茨分别发展了微积分。导数描述瞬时变化，积分描述累积总量；微积分基本定理把二者连接起来：</p>
       <div class="formula">微分与积分是互为逆过程的两种运算</div>
       <p>微积分随后成为力学、天文学、工程和经济学的共同工具。</p>
 
-      <h2>5. 19 世纪：严格化与抽象化</h2>
+      <h2 id="section-5">5. 19 世纪：严格化与抽象化</h2>
       <p>早期微积分非常成功，但许多概念依赖直觉。柯西、魏尔斯特拉斯等数学家用极限、连续和收敛的严格定义重新建立分析学。与此同时，群、环、向量空间等抽象结构开始出现。</p>
       <p>抽象化并不是远离现实，而是把不同问题中反复出现的共同结构提炼出来。</p>
 
-      <h2>6. 20 世纪至今：结构、计算与数据</h2>
+      <h2 id="section-6">6. 20 世纪至今：结构、计算与数据</h2>
       <p>希尔伯特提出问题清单，诺特推动结构化代数，哥德尔改变了人们对形式系统的认识，图灵把数学与计算联系起来。概率、统计、优化和线性代数进一步进入科学计算、信号处理和机器学习。</p>
       <div class="history"><strong>一条值得记住的线：</strong>测量产生数，比较产生几何，未知量产生代数，变化产生微积分，关系产生线性代数，不确定性产生概率，重复结构产生抽象代数，计算能力则把这些理论变成可以运行的算法。</div>
 
-      <h2>7. 学数学时为什么要看历史</h2>
-      <ul><li>它解释一个概念最初要解决什么问题。</li><li>它帮助我们区分直觉、计算技巧和严格定义。</li><li>它能看到不同学科之间如何互相推动。</li><li>它提醒我们：公式不是终点，问题意识才是数学的起点。</li></ul>
-      <a class="back" href="../index.html">← 返回数学札记首页</a>
-    </article>
-  </main>
-  <footer class="site-footer">数学札记 · 数学史专题</footer>
-</body>
-</html>
+      <h2 id="section-7">7. 学数学时为什么要看历史</h2>
+      <ul><li>它解释一个概念最初要解决什么问题。</li><li>它帮助我们区分直觉、计算技巧和严格定义。</li><li>它能看到不同学科之间如何互相推动。</li><li>它提醒我们：公式不是终点，问题意识才是数学的起点。</li></ul></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h2" href="#section-1">1. 从计数和测量开始</a><a class="toc-h2" href="#section-2">2. 希腊传统：从计算到证明</a><a class="toc-h2" href="#section-3">3. 印度、阿拉伯与代数化</a><a class="toc-h2" href="#section-4">4. 解析几何与微积分</a><a class="toc-h2" href="#section-5">5. 19 世纪：严格化与抽象化</a><a class="toc-h2" href="#section-6">6. 20 世纪至今：结构、计算与数据</a><a class="toc-h2" href="#section-7">7. 学数学时为什么要看历史</a></aside></div></div></body></html>

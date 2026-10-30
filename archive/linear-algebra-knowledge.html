@@ -1,29 +1,13 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>线性代数｜数学札记</title>
-  <link rel="stylesheet" href="../assets/styles.css">
-  <link rel="stylesheet" href="../assets/archive.css">
-  <script>
-window.MathJax = {
-  tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]},
-  options: {skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']}
-};
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
-</head>
-<body>
-  <header class="site-header"><div class="header-inner"><div class="kicker">Study Archive</div><h1>线性代数</h1><p>从初高中基础到大学数学与机器学习的学习资料。</p></div></header>
-  <nav class="top-nav"><div class="nav-inner"><a href="../index.html">博客首页</a><a href="index.html">学习资料归档</a><a href="../downloads/math-study-documents.zip" download>下载 Markdown 合集</a></div></nav>
-  <main><article class="article archive-article"><p><a href="../docs/linear-algebra-knowledge.md" download>下载此文 Markdown 原稿</a></p><h1>线性代数：知识点、公式与定理</h1>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>线性代数｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
+ <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
+ <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="../topics/foundations-2.html">初中：数与代数</a><a class="topic-link"  href="../topics/foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="../topics/foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="../topics/foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="../topics/foundations-6.html">高中：三角函数</a><a class="topic-link"  href="../topics/foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="../topics/foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="../topics/foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="../topics/foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="../topics/foundations-formulas.html">公式与定理速查</a></div></details><details class="subject" ><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="../topics/calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="../topics/calculus-3.html">连续性</a><a class="topic-link"  href="../topics/calculus-4.html">导数与微分</a><a class="topic-link"  href="../topics/calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="../topics/calculus-6.html">不定积分</a><a class="topic-link"  href="../topics/calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="../topics/calculus-8.html">反常积分</a><a class="topic-link"  href="../topics/calculus-9.html">空间几何与向量</a><a class="topic-link"  href="../topics/calculus-10.html">多元函数微分</a><a class="topic-link"  href="../topics/calculus-11.html">二重与三重积分</a><a class="topic-link"  href="../topics/calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="../topics/calculus-13.html">常微分方程</a><a class="topic-link"  href="../topics/calculus-14.html">数项级数</a><a class="topic-link"  href="../topics/calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="../topics/linear-2.html">向量与线性组合</a><a class="topic-link"  href="../topics/linear-3.html">矩阵与运算</a><a class="topic-link"  href="../topics/linear-4.html">消元与线性方程组</a><a class="topic-link"  href="../topics/linear-5.html">行列式</a><a class="topic-link"  href="../topics/linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="../topics/linear-7.html">线性映射与换基</a><a class="topic-link"  href="../topics/linear-8.html">内积、正交与投影</a><a class="topic-link"  href="../topics/linear-9.html">最小二乘</a><a class="topic-link"  href="../topics/linear-10.html">特征值与对角化</a><a class="topic-link"  href="../topics/linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="../topics/linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="../topics/linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="../topics/linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="../topics/probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="../topics/probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="../topics/probability-4.html">随机变量与分布</a><a class="topic-link"  href="../topics/probability-5.html">常见离散分布</a><a class="topic-link"  href="../topics/probability-6.html">常见连续分布</a><a class="topic-link"  href="../topics/probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="../topics/probability-8.html">多维分布与独立性</a><a class="topic-link"  href="../topics/probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="../topics/probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="../topics/probability-11.html">样本与抽样分布</a><a class="topic-link"  href="../topics/probability-12.html">参数估计</a><a class="topic-link"  href="../topics/probability-13.html">假设检验</a><a class="topic-link"  href="../topics/probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="../topics/probability-15.html">贝叶斯统计</a><a class="topic-link"  href="../topics/probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="../topics/probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="../topics/history-1.html">从计数和测量开始</a><a class="topic-link"  href="../topics/history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="../topics/history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="../topics/history-4.html">解析几何与微积分</a><a class="topic-link"  href="../topics/history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="../topics/history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="../topics/history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 线性代数</div><div class="reading-layout"><main id="content" class="content"><article><p><a href="../docs/linear-algebra-knowledge.md" download>下载此文 Markdown 原稿</a></p><h1>线性代数：知识点、公式与定理</h1>
 <blockquote>
 <p>用途：系统学习大学线性代数，衔接考研与机器学习。<br />
 范围：常见大学基础课程核心，补充最小二乘、SVD、PCA；不是特定年度考试大纲。<br />
 配套：<a href="math-study-schedule.html">学习计划</a> · <a href="advanced-mathematics-knowledge.html">高等数学</a> · <a href="probability-statistics-knowledge.html">概率统计</a></p>
 </blockquote>
-<h2>1. 核心问题与学习顺序</h2>
+<h2 id="section-1">1. 核心问题与学习顺序</h2>
 <p>线性代数研究向量、线性关系与线性变换。矩阵既能记录数据，也能表示“把一个向量变成另一个向量”的规则。</p>
 <table>
 <thead>
@@ -61,7 +45,7 @@ window.MathJax = {
 </table>
 <p>建议：向量与矩阵 → 消元与方程组 → 秩与空间 → 行列式 → 正交与投影 → 特征值 → 二次型 → SVD与应用。教材顺序不同可按教材推进。</p>
 <p>默认实数域，向量为列向量；A 为 m×n 矩阵。复数域需将转置换为共轭转置等。</p>
-<h2>2. 向量与线性组合【基础】</h2>
+<h2 id="section-2">2. 向量与线性组合【基础】</h2>
 <ul>
 <li>向量 x=(x₁,…,xₙ)^T；相加与数乘按分量进行。</li>
 <li>线性组合：c₁v₁+…+cₖvₖ。</li>
@@ -73,8 +57,8 @@ window.MathJax = {
 <li>同一向量在不同基下坐标不同；坐标改变不等于几何向量改变。</li>
 </ul>
 <p><strong>例：</strong> (1,0)、(0,1) 是 R² 的一组基；(2,3)=2(1,0)+3(0,1)。向量 (1,2)、(2,4) 只能张成一条直线。</p>
-<h2>3. 矩阵与运算【基础】</h2>
-<h3>3.1 运算规则</h3>
+<h2 id="section-3">3. 矩阵与运算【基础】</h2>
+<h3 id="section-4">3.1 运算规则</h3>
 <p>\[
 (A+B)_{ij}=a_{ij}+b_{ij},\qquad (AB)_{ij}=\sum_k a_{ik}b_{kj}.
 \]</p>
@@ -86,7 +70,7 @@ window.MathJax = {
 <li>单位矩阵 I 满足 AI=A、IA=A，注意各自尺寸。</li>
 <li>迹 tr(A)=对角元之和；A、B 尺寸使 AB、BA 都为方阵时，tr(AB)=tr(BA)。</li>
 </ul>
-<h3>3.2 逆矩阵</h3>
+<h3 id="section-5">3.2 逆矩阵</h3>
 <p>方阵 A 可逆指存在 A⁻¹ 使 AA⁻¹=A⁻¹A=I。</p>
 <p>\[
 (AB)^{-1}=B^{-1}A^{-1},\qquad(A^T)^{-1}=(A^{-1})^T.
@@ -97,14 +81,14 @@ window.MathJax = {
 =\frac1{ad-bc}\begin{pmatrix}d&amp;-b\\-c&amp;a\end{pmatrix},\qquad ad-bc\neq0.
 \]</p>
 <p>数值求解 Ax=b 通常用分解与求解算法，不必显式计算逆矩阵。</p>
-<h2>4. 消元与线性方程组【核心】</h2>
+<h2 id="section-6">4. 消元与线性方程组【核心】</h2>
 <p>三种初等行变换：交换两行；一行乘非零常数；一行加另一行的倍数。它们保持方程组解集。</p>
 <ul>
 <li>阶梯形、简化行阶梯形、主元、自由变量。</li>
 <li>增广矩阵 [A|b]；对整个增广矩阵同步进行行变换。</li>
 <li>主元数等于秩 r；齐次解的自由变量数为 n−r。</li>
 </ul>
-<h3>4.1 解的存在与数量</h3>
+<h3 id="section-7">4.1 解的存在与数量</h3>
 <table>
 <thead>
 <tr>
@@ -136,9 +120,9 @@ window.MathJax = {
 x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 \]</p>
 <p>例：x+y=2、2x+2y=4 只提供一个独立约束，通解为 (2−t,t)^T。</p>
-<h3>4.2 方阵可逆的等价条件</h3>
+<h3 id="section-8">4.2 方阵可逆的等价条件</h3>
 <p>对 n×n 矩阵，下列条件等价：可逆；秩为 n；行列式非零；零空间只有零向量；列向量构成 Rⁿ 的基；对每个 b，Ax=b 都有唯一解；0 不是特征值。</p>
-<h2>5. 行列式【核心】</h2>
+<h2 id="section-9">5. 行列式【核心】</h2>
 <p>只对方阵定义，可理解为有向体积缩放因子。</p>
 <ul>
 <li>det(I)=1；det(A^T)=det(A)；det(AB)=det(A)det(B)。</li>
@@ -152,7 +136,7 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 <li>克拉默法则：det(A)≠0 时 x_i=det(A_i)/det(A)，A_i 用 b 替换第 i 列。</li>
 </ul>
 <p><strong>易错：</strong> det(A+B) 一般不等于 det(A)+det(B)；行列式非零说明可逆，不说明元素都非零。</p>
-<h2>6. 子空间、秩与四个基本空间【核心】</h2>
+<h2 id="section-10">6. 子空间、秩与四个基本空间【核心】</h2>
 <p>子空间需包含零向量，并对向量加法、数乘封闭。非齐次解集通常是仿射空间，不是子空间。</p>
 <table>
 <thead>
@@ -198,7 +182,7 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 <li>子空间维数公式：dim(U+V)=dim U+dim V−dim(U∩V)。</li>
 <li>正交关系：Null(A)=Row(A) 的正交补，Null(A^T)=Col(A) 的正交补。</li>
 </ul>
-<h2>7. 线性映射与换基【核心】</h2>
+<h2 id="section-11">7. 线性映射与换基【核心】</h2>
 <p>T 是线性映射，指 T(αx+βy)=αT(x)+βT(y)。在有限维、选定基后可以用矩阵表示。</p>
 <ul>
 <li>核 Ker(T)：被映到零的向量；像 Im(T)：所有可能输出。</li>
@@ -208,7 +192,7 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 <li>同一线性算子的新矩阵：B=P⁻¹AP，称 A、B 相似。</li>
 <li>相似矩阵有相同特征多项式、特征值、迹、行列式；相同特征值不保证相似。</li>
 </ul>
-<h2>8. 内积、正交与投影【核心；机器学习重点】</h2>
+<h2 id="section-12">8. 内积、正交与投影【核心；机器学习重点】</h2>
 <p>\[
 \langle x,y\rangle=x^Ty,\quad\|x\|_2=\sqrt{x^Tx},\quad
 \cos\theta=\frac{x^Ty}{\|x\|\|y\|}.
@@ -229,12 +213,12 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 p=Px,\qquad P=A(A^TA)^{-1}A^T.
 \]</p>
 <p>若 Q 的列为该子空间的一组标准正交基，则 P=QQ^T。正交投影矩阵满足 P²=P、P^T=P，残差 x−p 与子空间正交。</p>
-<h3>8.1 Gram–Schmidt 与 QR</h3>
+<h3 id="section-13">8.1 Gram–Schmidt 与 QR</h3>
 <p>\[
 u_k=v_k-\sum_{j&lt;k}(q_j^Tv_k)q_j,\qquad q_k=u_k/\|u_k\|.
 \]</p>
 <p>输入线性无关时每个 u_k 非零。A 列满秩时可分解 A=QR，Q 列正交归一，R 为可逆上三角矩阵；数值实现通常采用更稳定的正交化方法。</p>
-<h2>9. 最小二乘【核心；机器学习重点】</h2>
+<h2 id="section-14">9. 最小二乘【核心；机器学习重点】</h2>
 <p>方程 Ax=b 可能无解，改为求：</p>
 <p>\[
 \min_x\|Ax-b\|_2^2.
@@ -256,7 +240,7 @@ A^TA\hat x=A^Tb.
 \hat x=(A^TA+\lambda I)^{-1}A^Tb.
 \]</p>
 <p>即使 A 秩亏，上式也唯一；此写法对所有参数施加惩罚，实际模型有时不惩罚截距。</p>
-<h2>10. 特征值与对角化【核心】</h2>
+<h2 id="section-15">10. 特征值与对角化【核心】</h2>
 <p>\[
 Av=\lambda v,\qquad v\neq0.
 \]</p>
@@ -272,7 +256,7 @@ Av=\lambda v,\qquad v\neq0.
 <li>特征值按重数计，和为 tr(A)，积为 det(A)，可在复数域理解。</li>
 <li>对角化后 A^k=PD^kP⁻¹，适合研究重复变换和线性递推。</li>
 </ul>
-<h2>11. 对称矩阵、谱定理与二次型【核心】</h2>
+<h2 id="section-16">11. 对称矩阵、谱定理与二次型【核心】</h2>
 <p>实对称矩阵 A=A^T：</p>
 <ol>
 <li>特征值全为实数。</li>
@@ -319,7 +303,7 @@ Av=\lambda v,\qquad v\neq0.
 <li>惯性定律：可逆实合同变换保持正、负、零惯性指数。</li>
 </ul>
 <p>与高数联系：对称 A 下，f(x)=½x^TAx−b^Tx 的梯度为 Ax−b，Hessian 为 A；A 正定时存在唯一全局最小点 A⁻¹b。</p>
-<h2>12. SVD、伪逆与低秩近似【扩展重点】</h2>
+<h2 id="section-17">12. SVD、伪逆与低秩近似【扩展重点】</h2>
 <p>任意实 m×n 矩阵均有奇异值分解：</p>
 <p>\[
 A=U\Sigma V^T.
@@ -333,7 +317,7 @@ A=U\Sigma V^T.
 <li>截断 SVD：A_k=Σ[i=1到k] σ_i u_i v_i^T。它是谱范数、Frobenius 范数下的最佳秩至多 k 近似；最优解不一定唯一。</li>
 <li>Frobenius 误差：‖A−A_k‖_F²=Σ[i&gt;k]σ_i²。</li>
 </ul>
-<h2>13. PCA 与数据表示【应用】</h2>
+<h2 id="section-18">13. PCA 与数据表示【应用】</h2>
 <p>数据矩阵 X：每行为一个样本、每列为一个特征，先对各列减去均值，得到中心化矩阵 X_c。</p>
 <p>\[
 S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
@@ -347,7 +331,7 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <li>量纲差异大时需决定是否标准化；标准化改变问题中的距离与方差含义。</li>
 <li>PCA 保留大方差方向，不保证保留最有助于预测标签的信息。</li>
 </ul>
-<h2>14. 矩阵分解与数值意识【扩展】</h2>
+<h2 id="section-19">14. 矩阵分解与数值意识【扩展】</h2>
 <table>
 <thead>
 <tr>
@@ -385,7 +369,7 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 </tbody>
 </table>
 <p>可逆矩阵的2范数条件数 κ₂(A)=σ_max/σ_min。很小的奇异值意味着某些方向被强烈压缩，反推输入时误差可能被放大。</p>
-<h2>15. 易错点与验收</h2>
+<h2 id="section-20">15. 易错点与验收</h2>
 <ul>
 <li>维度不匹配不能相乘；AB 与 BA 次序不同。</li>
 <li>行变换保持解集与行空间，但列空间本身可能改变。</li>
@@ -396,7 +380,7 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <li>机器学习中数值稳定性与纸笔公式正确性需要同时考虑。</li>
 </ul>
 <p>验收：能独立消元、判定解的数量、寻找基与维数、解释投影、推导正规方程、计算特征值与二次型，并说明 SVD 和 PCA 各自解决的问题。</p>
-<h2>16. 练习与参考答案</h2>
+<h2 id="section-21">16. 练习与参考答案</h2>
 <ol>
 <li>A 的两行为 (1,2)、(2,4)，求秩与零空间。</li>
 <li>将 b=(3,1)^T 投影到 u=(1,1)^T 张成的直线上。</li>
@@ -410,7 +394,7 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <li>特征值2、−1；对称但不定。</li>
 <li>A^TA 的两行为 (3,3)、(3,5)，A^Tb=(5,6)^T；解为截距7/6、斜率1/2。</li>
 </ol>
-<h2>17. 学习资源与记录</h2>
+<h2 id="section-22">17. 学习资源与记录</h2>
 <p>中文主教材选一套大学基础线性代数教材即可；<a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/">MIT 18.06</a> 配合系统理解，<a href="https://www.3blue1brown.com/topics/linear-algebra">3Blue1Brown</a> 补几何直觉。</p>
 <table>
 <thead>
@@ -431,8 +415,4 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <td></td>
 </tr>
 </tbody>
-</table>
-</article></main>
-  <footer class="site-footer">数学札记 · 学习资料归档</footer>
-</body>
-</html>
+</table></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h2" href="#section-1">1. 核心问题与学习顺序</a><a class="toc-h2" href="#section-2">2. 向量与线性组合【基础】</a><a class="toc-h2" href="#section-3">3. 矩阵与运算【基础】</a><a class="toc-h3" href="#section-4">3.1 运算规则</a><a class="toc-h3" href="#section-5">3.2 逆矩阵</a><a class="toc-h2" href="#section-6">4. 消元与线性方程组【核心】</a><a class="toc-h3" href="#section-7">4.1 解的存在与数量</a><a class="toc-h3" href="#section-8">4.2 方阵可逆的等价条件</a><a class="toc-h2" href="#section-9">5. 行列式【核心】</a><a class="toc-h2" href="#section-10">6. 子空间、秩与四个基本空间【核心】</a><a class="toc-h2" href="#section-11">7. 线性映射与换基【核心】</a><a class="toc-h2" href="#section-12">8. 内积、正交与投影【核心；机器学习重点】</a><a class="toc-h3" href="#section-13">8.1 Gram–Schmidt 与 QR</a><a class="toc-h2" href="#section-14">9. 最小二乘【核心；机器学习重点】</a><a class="toc-h2" href="#section-15">10. 特征值与对角化【核心】</a><a class="toc-h2" href="#section-16">11. 对称矩阵、谱定理与二次型【核心】</a><a class="toc-h2" href="#section-17">12. SVD、伪逆与低秩近似【扩展重点】</a><a class="toc-h2" href="#section-18">13. PCA 与数据表示【应用】</a><a class="toc-h2" href="#section-19">14. 矩阵分解与数值意识【扩展】</a><a class="toc-h2" href="#section-20">15. 易错点与验收</a><a class="toc-h2" href="#section-21">16. 练习与参考答案</a><a class="toc-h2" href="#section-22">17. 学习资源与记录</a></aside></div></div></body></html>

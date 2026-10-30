@@ -1,135 +1,8 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="从初高中基础到考研数学和机器学习数学的学习路线与免费资源清单。">
-  <title>数学学习路线｜基础 · 考研 · 机器学习</title>
-  <style>
-    :root {
-      --ink: #172033;
-      --muted: #627086;
-      --line: #dce4ee;
-      --paper: #ffffff;
-      --bg: #f4f7fb;
-      --blue: #2563eb;
-      --blue-soft: #eaf1ff;
-      --green: #087f5b;
-      --green-soft: #e8f8f1;
-      --orange: #b45309;
-      --orange-soft: #fff4df;
-      --shadow: 0 14px 40px rgba(22, 39, 70, .08);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--bg);
-      font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    }
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .hero {
-      background: linear-gradient(135deg, #102c56 0%, #1d4ed8 58%, #4f8cff 100%);
-      color: white;
-      padding: 64px 24px 70px;
-    }
-    .hero-inner, main { max-width: 1120px; margin: 0 auto; }
-    .eyebrow { letter-spacing: .12em; text-transform: uppercase; font-size: 12px; opacity: .78; }
-    h1 { margin: 10px 0 12px; font-size: clamp(32px, 5vw, 56px); line-height: 1.15; letter-spacing: -.04em; }
-    .hero p { max-width: 720px; margin: 0; color: #e8efff; font-size: 18px; }
-    .hero-note { display: inline-block; margin-top: 25px; padding: 8px 13px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; color: #f4f7ff; font-size: 14px; }
-    nav {
-      position: sticky; top: 0; z-index: 2;
-      background: rgba(255,255,255,.94); border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
-    }
-    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 10px 24px; display: flex; gap: 18px; flex-wrap: wrap; }
-    nav a { color: var(--muted); font-size: 14px; font-weight: 600; }
-    nav a:hover { color: var(--blue); text-decoration: none; }
-    main { padding: 38px 24px 70px; }
-    section { margin: 0 0 50px; scroll-margin-top: 70px; }
-    h2 { margin: 0 0 10px; font-size: 28px; letter-spacing: -.025em; }
-    h3 { margin: 0 0 8px; font-size: 19px; }
-    .section-lead { margin: 0 0 22px; color: var(--muted); }
-    .card, .route, .resource, .callout {
-      background: var(--paper); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow);
-    }
-    .route { padding: 20px; overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; min-width: 680px; }
-    th, td { padding: 13px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
-    tr:last-child td { border-bottom: 0; }
-    th { background: #f8faff; color: #3f4e66; font-size: 13px; }
-    td:first-child { font-weight: 700; white-space: nowrap; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .resource { padding: 20px; box-shadow: none; }
-    .resource h3 { display: flex; align-items: center; gap: 8px; }
-    .resource p { margin: 8px 0 0; color: var(--muted); }
-    .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; line-height: 1.5; font-weight: 700; background: var(--blue-soft); color: var(--blue); }
-    .tag.green { background: var(--green-soft); color: var(--green); }
-    .tag.orange { background: var(--orange-soft); color: var(--orange); }
-    .resource ul, .card ul { margin: 10px 0 0; padding-left: 20px; }
-    .resource li { margin: 3px 0; }
-    .callout { padding: 18px 20px; box-shadow: none; border-left: 5px solid var(--blue); }
-    .callout.green { border-left-color: var(--green); background: #f8fffc; }
-    .callout.orange { border-left-color: var(--orange); background: #fffaf0; }
-    .callout p { margin: 0; }
-    .timeline { display: grid; gap: 12px; }
-    .step { display: grid; grid-template-columns: 92px 1fr; gap: 16px; align-items: start; }
-    .step-time { padding: 8px 10px; border-radius: 10px; background: var(--blue-soft); color: var(--blue); font-weight: 700; font-size: 14px; text-align: center; }
-    .step-body { padding: 12px 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
-    .step-body strong { display: block; }
-    .step-body span { color: var(--muted); }
-    .checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 22px; }
-    .checklist label { display: block; padding: 10px 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
-    .checklist input { accent-color: var(--blue); margin-right: 8px; }
-    footer { max-width: 1120px; margin: 0 auto; padding: 0 24px 46px; color: var(--muted); font-size: 13px; }
-    @media (max-width: 720px) {
-      .hero { padding: 46px 20px 52px; }
-      main { padding: 30px 18px 52px; }
-      .nav-inner { padding: 9px 18px; gap: 12px; }
-      .grid, .checklist { grid-template-columns: 1fr; }
-      .step { grid-template-columns: 1fr; gap: 7px; }
-      .step-time { text-align: left; width: fit-content; }
-    }
-    @media print {
-      body { background: white; font-size: 11pt; }
-      nav { display: none; }
-      .hero { color: #111; background: white; padding: 20px 0; border-bottom: 2px solid #111; }
-      .hero p, .hero-note { color: #333; }
-      .card, .route, .resource, .callout, .step-body { box-shadow: none; }
-      a { color: #111; text-decoration: underline; }
-      section { break-inside: avoid; }
-    }
-  </style>
-</head>
-<body>
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Self-study roadmap · 18–24 months</div>
-      <h1>数学学习路线</h1>
-      <p>从初高中基础，走到考研数学，再衔接机器学习所需要的线性代数、微积分、概率统计与优化。</p>
-      <div class="hero-note">高等数学主线避开同济版 · 优先使用免费公开资源</div>
-    </div>
-  </header>
-
-  <nav>
-    <div class="nav-inner">
-      <a href="#overview">总览</a>
-      <a href="#foundation">基础</a>
-      <a href="#calculus">高等数学</a>
-      <a href="#linear-algebra">线性代数</a>
-      <a href="#probability">概率统计</a>
-      <a href="#exam">考研数学</a>
-      <a href="#ml">机器学习数学</a>
-      <a href="#schedule">执行安排</a>
-    </div>
-  </nav>
-
-  <main>
-    <section id="overview">
-      <h2>路线总览</h2>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数学学习路线｜数学札记</title><link rel="stylesheet" href="assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="assets/notebook.js"></script></head><body>
+ <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
+ <aside id="sidebar" class="sidebar"><a class="brand" href="index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="topics/foundations-2.html">初中：数与代数</a><a class="topic-link"  href="topics/foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="topics/foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="topics/foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="topics/foundations-6.html">高中：三角函数</a><a class="topic-link"  href="topics/foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="topics/foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="topics/foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="topics/foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="topics/foundations-formulas.html">公式与定理速查</a></div></details><details class="subject" ><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="topics/calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="topics/calculus-3.html">连续性</a><a class="topic-link"  href="topics/calculus-4.html">导数与微分</a><a class="topic-link"  href="topics/calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="topics/calculus-6.html">不定积分</a><a class="topic-link"  href="topics/calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="topics/calculus-8.html">反常积分</a><a class="topic-link"  href="topics/calculus-9.html">空间几何与向量</a><a class="topic-link"  href="topics/calculus-10.html">多元函数微分</a><a class="topic-link"  href="topics/calculus-11.html">二重与三重积分</a><a class="topic-link"  href="topics/calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="topics/calculus-13.html">常微分方程</a><a class="topic-link"  href="topics/calculus-14.html">数项级数</a><a class="topic-link"  href="topics/calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="topics/linear-2.html">向量与线性组合</a><a class="topic-link"  href="topics/linear-3.html">矩阵与运算</a><a class="topic-link"  href="topics/linear-4.html">消元与线性方程组</a><a class="topic-link"  href="topics/linear-5.html">行列式</a><a class="topic-link"  href="topics/linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="topics/linear-7.html">线性映射与换基</a><a class="topic-link"  href="topics/linear-8.html">内积、正交与投影</a><a class="topic-link"  href="topics/linear-9.html">最小二乘</a><a class="topic-link"  href="topics/linear-10.html">特征值与对角化</a><a class="topic-link"  href="topics/linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="topics/linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="topics/linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="topics/linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="topics/probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="topics/probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="topics/probability-4.html">随机变量与分布</a><a class="topic-link"  href="topics/probability-5.html">常见离散分布</a><a class="topic-link"  href="topics/probability-6.html">常见连续分布</a><a class="topic-link"  href="topics/probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="topics/probability-8.html">多维分布与独立性</a><a class="topic-link"  href="topics/probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="topics/probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="topics/probability-11.html">样本与抽样分布</a><a class="topic-link"  href="topics/probability-12.html">参数估计</a><a class="topic-link"  href="topics/probability-13.html">假设检验</a><a class="topic-link"  href="topics/probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="topics/probability-15.html">贝叶斯统计</a><a class="topic-link"  href="topics/probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="topics/probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="topics/history-1.html">从计数和测量开始</a><a class="topic-link"  href="topics/history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="topics/history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="topics/history-4.html">解析几何与微积分</a><a class="topic-link"  href="topics/history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="topics/history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="topics/history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="reference.html">公式与定理速查</a><a href="archive/math-study-schedule.html">学习计划</a><a href="downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 数学学习路线</div><div class="reading-layout"><main id="content" class="content"><article><section id="overview">
+      <h2 id="section-1">路线总览</h2>
       <p class="section-lead">默认每周学习 12–15 小时。基础薄弱时先保证代数、函数和三角，不要急着刷考研难题。</p>
       <div class="route">
         <table>
@@ -145,56 +18,56 @@
     </section>
 
     <section id="foundation">
-      <h2>一、初高中基础</h2>
+      <h2 id="section-2">一、初高中基础</h2>
       <p class="section-lead">目标不是做竞赛题，而是补齐后续学习必需的代数操作、函数意识和三角工具。</p>
       <div class="grid">
-        <article class="resource">
-          <h3>国家中小学智慧教育平台 <span class="tag green">中文·免费</span></h3>
+
+          <h3 id="section-3">国家中小学智慧教育平台 <span class="tag green">中文·免费</span></h3>
           <p>可查初中、高中数学教材和配套课程，适合按教材顺序系统补基础。</p>
           <p><a href="https://basic.smartedu.cn/" target="_blank" rel="noopener">打开平台 →</a></p>
-        </article>
-        <article class="resource">
-          <h3>Khan Academy Math <span class="tag">免费练习</span></h3>
+
+
+          <h3 id="section-4">Khan Academy Math <span class="tag">免费练习</span></h3>
           <p>覆盖代数、几何、三角、预备微积分、统计和概率，练习反馈很方便。</p>
           <p><a href="https://en.khanacademy.org/mission/math" target="_blank" rel="noopener">查看数学课程 →</a></p>
-        </article>
-        <article class="resource">
-          <h3>OpenStax Algebra / Precalculus <span class="tag green">开放教材</span></h3>
+
+
+          <h3 id="section-5">OpenStax Algebra / Precalculus <span class="tag green">开放教材</span></h3>
           <p>英文免费教材，适合把函数、三角、向量、矩阵和极限前置内容系统学一遍。</p>
           <p><a href="https://openstax.org/details/books/college-algebra-2e" target="_blank" rel="noopener">College Algebra</a> · <a href="https://openstax.org/details/books/precalculus-2e" target="_blank" rel="noopener">Precalculus</a></p>
-        </article>
-        <article class="resource">
-          <h3>Paul’s Online Math Notes <span class="tag orange">补漏</span></h3>
+
+
+          <h3 id="section-6">Paul’s Online Math Notes <span class="tag orange">补漏</span></h3>
           <p>有 Algebra/Trig Review，适合开始微积分前快速检查代数和三角短板。</p>
           <p><a href="https://tutorial.math.lamar.edu/" target="_blank" rel="noopener">打开笔记 →</a></p>
-        </article>
+
       </div>
     </section>
 
     <section id="calculus">
-      <h2>二、高等数学与微积分</h2>
+      <h2 id="section-7">二、高等数学与微积分</h2>
       <p class="section-lead">不使用同济版。推荐中文课程负责跟学，MIT/OpenStax 负责补充讲义、习题和英文术语。</p>
       <div class="grid">
-        <article class="resource">
-          <h3>西安交通大学《高等数学（一）》 <span class="tag green">中文·免费旁听</span></h3>
+
+          <h3 id="section-8">西安交通大学《高等数学（一）》 <span class="tag green">中文·免费旁听</span></h3>
           <p>覆盖一元微积分、常微分方程和数学实验，适合作为中文主线课程。</p>
           <p><a href="https://www.icourse163.org/course/XJTU-1001744016" target="_blank" rel="noopener">打开中国大学MOOC →</a></p>
-        </article>
-        <article class="resource">
-          <h3>MIT 18.01SC Single Variable Calculus <span class="tag green">开放课程</span></h3>
+
+
+          <h3 id="section-9">MIT 18.01SC Single Variable Calculus <span class="tag green">开放课程</span></h3>
           <p>一元微积分，含视频、讲义、习题、解答和考试，适合独立学习。</p>
           <p><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" target="_blank" rel="noopener">打开课程 →</a></p>
-        </article>
-        <article class="resource">
-          <h3>MIT 18.02SC Multivariable Calculus <span class="tag green">开放课程</span></h3>
+
+
+          <h3 id="section-10">MIT 18.02SC Multivariable Calculus <span class="tag green">开放课程</span></h3>
           <p>偏导数、梯度、重积分、向量分析和多元函数，是机器学习数学的核心前置。</p>
           <p><a href="https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/" target="_blank" rel="noopener">打开课程 →</a></p>
-        </article>
-        <article class="resource">
-          <h3>OpenStax Calculus <span class="tag green">开放教材</span></h3>
+
+
+          <h3 id="section-11">OpenStax Calculus <span class="tag green">开放教材</span></h3>
           <p>免费在线教材，分卷覆盖极限、导数、积分、多元微积分、级数和向量微积分。</p>
           <p><a href="https://openstax.org/books/calculus-volume-1/pages/index" target="_blank" rel="noopener">打开教材 →</a></p>
-        </article>
+
       </div>
       <div class="callout" style="margin-top:18px">
         <p><strong>纸质教材候选：</strong>赵树嫄《高等数学》偏应试和工科；华东师范大学数学系《数学分析》理论性更强。两者选一本即可，不需要重复购买。</p>
@@ -202,19 +75,19 @@
     </section>
 
     <section id="linear-algebra">
-      <h2>三、线性代数</h2>
+      <h2 id="section-12">三、线性代数</h2>
       <p class="section-lead">重点从“会算行列式”升级到理解线性变换、投影、特征值和 SVD。</p>
       <div class="grid">
-        <article class="resource">
-          <h3>MIT 18.06SC Linear Algebra <span class="tag green">开放课程</span></h3>
+
+          <h3 id="section-13">MIT 18.06SC Linear Algebra <span class="tag green">开放课程</span></h3>
           <p>矩阵、线性方程组、向量空间、最小二乘、正交投影、特征值、正定矩阵和奇异值分解。</p>
           <p><a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/" target="_blank" rel="noopener">打开课程 →</a></p>
-        </article>
-        <article class="resource">
-          <h3>3Blue1Brown：Essence of Linear Algebra <span class="tag">直觉视频</span></h3>
+
+
+          <h3 id="section-14">3Blue1Brown：Essence of Linear Algebra <span class="tag">直觉视频</span></h3>
           <p>用动画解释向量、矩阵、基变换、行列式和特征向量，适合先建立几何直觉。</p>
           <p><a href="https://www.youtube.com/watch?v=kjBOesZCoqc" target="_blank" rel="noopener">打开系列介绍 →</a></p>
-        </article>
+
       </div>
       <div class="callout green" style="margin-top:18px">
         <p><strong>推荐顺序：</strong>先看 3Blue1Brown 建立直觉 → 学 MIT 18.06 → 做线代题 → 用 NumPy 实现最小二乘、PCA 和 SVD。</p>
@@ -222,19 +95,19 @@
     </section>
 
     <section id="probability">
-      <h2>四、概率论与数理统计</h2>
+      <h2 id="section-15">四、概率论与数理统计</h2>
       <p class="section-lead">考研和机器学习都需要概率，但机器学习还要特别重视期望、协方差、似然和信息论。</p>
       <div class="grid">
-        <article class="resource">
-          <h3>MIT 18.05 Probability and Statistics <span class="tag green">开放课程</span></h3>
+
+          <h3 id="section-16">MIT 18.05 Probability and Statistics <span class="tag green">开放课程</span></h3>
           <p>组合概率、随机变量、概率分布、贝叶斯推断、假设检验、置信区间和线性回归。</p>
           <p><a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" target="_blank" rel="noopener">打开课程 →</a></p>
-        </article>
-        <article class="resource">
-          <h3>OpenStax Introductory Statistics <span class="tag green">CC BY 4.0</span></h3>
+
+
+          <h3 id="section-17">OpenStax Introductory Statistics <span class="tag green">CC BY 4.0</span></h3>
           <p>免费统计学教材，适合学习描述统计、概率分布、置信区间和假设检验。</p>
           <p><a href="https://openstax.org/details/books/introductory-statistics-2e" target="_blank" rel="noopener">打开教材 →</a></p>
-        </article>
+
       </div>
       <div class="callout orange" style="margin-top:18px">
         <p><strong>中文教材候选：</strong>茆诗松《概率论与数理统计教程》或盛骤《概率论与数理统计》。机器学习阶段重点补最大似然、最大后验、熵、交叉熵和 KL 散度。</p>
@@ -242,7 +115,7 @@
     </section>
 
     <section id="exam">
-      <h2>五、考研数学</h2>
+      <h2 id="section-18">五、考研数学</h2>
       <p class="section-lead">先完成大学数学基础，再进入考研专项。数学一、数学二、数学三应以目标院校和当年考试大纲为准。</p>
       <div class="timeline">
         <div class="step"><div class="step-time">第一轮<br>8–10周</div><div class="step-body"><strong>基础梳理</strong><span>按章节整理定义、公式、定理和典型题；不要一开始追求偏题难题。</span></div></div>
@@ -255,44 +128,44 @@
     </section>
 
     <section id="ml">
-      <h2>六、机器学习数学</h2>
+      <h2 id="section-19">六、机器学习数学</h2>
       <p class="section-lead">机器学习阶段的目标是能解释和推导算法，而不是只会调用库。</p>
       <div class="grid">
-        <article class="resource">
-          <h3>Mathematics for Machine Learning <span class="tag green">官方免费 PDF</span></h3>
+
+          <h3 id="section-20">Mathematics for Machine Learning <span class="tag green">官方免费 PDF</span></h3>
           <p>覆盖线性代数、矩阵分解、向量微积分、概率、优化和基础机器学习算法。</p>
           <p><a href="https://mml-book.github.io/" target="_blank" rel="noopener">官方网站</a> · <a href="https://mml-book.github.io/book/mml-book.pdf" target="_blank" rel="noopener">PDF</a></p>
-        </article>
-        <article class="resource">
-          <h3>MIT Matrix Calculus <span class="tag green">开放课程</span></h3>
+
+
+          <h3 id="section-21">MIT Matrix Calculus <span class="tag green">开放课程</span></h3>
           <p>讲解梯度、Jacobian、Hessian、线性化和反向传播，适合神经网络数学。</p>
           <p><a href="https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/" target="_blank" rel="noopener">打开课程 →</a></p>
-        </article>
-        <article class="resource">
-          <h3>Boyd《Convex Optimization》 <span class="tag green">官方在线教材</span></h3>
+
+
+          <h3 id="section-22">Boyd《Convex Optimization》 <span class="tag green">官方在线教材</span></h3>
           <p>学习凸集、凸函数、对偶、KKT 条件和优化算法，是深入理解训练过程的好材料。</p>
           <p><a href="https://web.stanford.edu/~boyd/cvxbook/" target="_blank" rel="noopener">打开教材 →</a></p>
-        </article>
-        <article class="resource">
-          <h3>Stanford CS229 <span class="tag green">免费讲义</span></h3>
+
+
+          <h3 id="section-23">Stanford CS229 <span class="tag green">免费讲义</span></h3>
           <p>覆盖线性回归、逻辑回归、生成模型、SVM、正则化、PCA、EM 和强化学习。</p>
           <p><a href="https://see.stanford.edu/Course/CS229/" target="_blank" rel="noopener">课程资料</a> · <a href="https://cs229.stanford.edu/main_notes.pdf" target="_blank" rel="noopener">讲义 PDF</a></p>
-        </article>
-        <article class="resource">
-          <h3>Introduction to Statistical Learning <span class="tag green">官方免费 PDF</span></h3>
+
+
+          <h3 id="section-24">Introduction to Statistical Learning <span class="tag green">官方免费 PDF</span></h3>
           <p>适合从统计学习入门，包含配套实验和自学课程，数学门槛低于 CS229。</p>
           <p><a href="https://trevorhastie.github.io/ISLR/" target="_blank" rel="noopener">打开官方网站 →</a></p>
-        </article>
-        <article class="resource">
-          <h3>Dive into Deep Learning <span class="tag green">开源教材</span></h3>
+
+
+          <h3 id="section-25">Dive into Deep Learning <span class="tag green">开源教材</span></h3>
           <p>免费在线教材、PDF、Jupyter Notebook 和代码，适合从线性回归一路学到深度学习。</p>
           <p><a href="https://d2l.smola.org/" target="_blank" rel="noopener">打开教材 →</a></p>
-        </article>
+
       </div>
     </section>
 
     <section id="schedule">
-      <h2>七、每周执行模板</h2>
+      <h2 id="section-26">七、每周执行模板</h2>
       <div class="route">
         <table>
           <thead><tr><th>时间</th><th>任务</th><th>建议方式</th></tr></thead>
@@ -305,7 +178,7 @@
           </tbody>
         </table>
       </div>
-      <h3 style="margin-top:24px">阶段验收清单</h3>
+      <h3 id="section-27">阶段验收清单</h3>
       <div class="checklist">
         <label><input type="checkbox">能熟练处理函数、方程、不等式和三角恒等变形</label>
         <label><input type="checkbox">能独立求导、积分并解释梯度的几何意义</label>
@@ -318,11 +191,4 @@
 
     <div class="callout green">
       <p><strong>最简主线：</strong>国家智慧教育平台 → 中国大学MOOC高等数学 → MIT 18.06 → MIT 18.05 → 一套考研资料与真题 → Mathematics for Machine Learning → CS229 / Dive into Deep Learning。</p>
-    </div>
-  </main>
-
-  <footer>
-    页面为个人学习规划整理。公开课程、教材和网站的访问方式可能变化；使用时请以资源官方网站的最新说明和目标院校当年考试大纲为准。
-  </footer>
-</body>
-</html>
+    </div></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h2" href="#section-1">路线总览</a><a class="toc-h2" href="#section-2">一、初高中基础</a><a class="toc-h3" href="#section-3">国家中小学智慧教育平台 中文·免费</a><a class="toc-h3" href="#section-4">Khan Academy Math 免费练习</a><a class="toc-h3" href="#section-5">OpenStax Algebra / Precalculus 开放教材</a><a class="toc-h3" href="#section-6">Paul’s Online Math Notes 补漏</a><a class="toc-h2" href="#section-7">二、高等数学与微积分</a><a class="toc-h3" href="#section-8">西安交通大学《高等数学（一）》 中文·免费旁听</a><a class="toc-h3" href="#section-9">MIT 18.01SC Single Variable Calculus 开放课程</a><a class="toc-h3" href="#section-10">MIT 18.02SC Multivariable Calculus 开放课程</a><a class="toc-h3" href="#section-11">OpenStax Calculus 开放教材</a><a class="toc-h2" href="#section-12">三、线性代数</a><a class="toc-h3" href="#section-13">MIT 18.06SC Linear Algebra 开放课程</a><a class="toc-h3" href="#section-14">3Blue1Brown：Essence of Linear Algebra 直觉视频</a><a class="toc-h2" href="#section-15">四、概率论与数理统计</a><a class="toc-h3" href="#section-16">MIT 18.05 Probability and Statistics 开放课程</a><a class="toc-h3" href="#section-17">OpenStax Introductory Statistics CC BY 4.0</a><a class="toc-h2" href="#section-18">五、考研数学</a><a class="toc-h2" href="#section-19">六、机器学习数学</a><a class="toc-h3" href="#section-20">Mathematics for Machine Learning 官方免费 PDF</a><a class="toc-h3" href="#section-21">MIT Matrix Calculus 开放课程</a><a class="toc-h3" href="#section-22">Boyd《Convex Optimization》 官方在线教材</a><a class="toc-h3" href="#section-23">Stanford CS229 免费讲义</a><a class="toc-h3" href="#section-24">Introduction to Statistical Learning 官方免费 PDF</a><a class="toc-h3" href="#section-25">Dive into Deep Learning 开源教材</a><a class="toc-h2" href="#section-26">七、每周执行模板</a><a class="toc-h3" href="#section-27">阶段验收清单</a></aside></div></div></body></html>

@@ -33,3 +33,9 @@ mathematics/
 4. 例子或推导
 5. 数学史
 6. 记忆卡片
+
+## 学科目录改版
+
+首页使用左侧学科与主题目录。主题页位于 `topics/`，公式定理速查位于 `reference.html`。
+
+更新 `docs/` 原稿后，先安装 `scripts/requirements.txt` 中的依赖，再运行 `python3 scripts/build_site.py` 重新生成完整站点。生成的 HTML 可直接静态托管；在线公式渲染需要加载 MathJax。原文章路径仍然可访问。

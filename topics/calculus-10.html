@@ -1,0 +1,52 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>多元函数微分｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
+ <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
+ <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="foundations-2.html">初中：数与代数</a><a class="topic-link"  href="foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="foundations-6.html">高中：三角函数</a><a class="topic-link"  href="foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="foundations-formulas.html">公式与定理速查</a></div></details><details class="subject" open><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="calculus-3.html">连续性</a><a class="topic-link"  href="calculus-4.html">导数与微分</a><a class="topic-link"  href="calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="calculus-6.html">不定积分</a><a class="topic-link"  href="calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="calculus-8.html">反常积分</a><a class="topic-link"  href="calculus-9.html">空间几何与向量</a><a class="topic-link active" aria-current="page" href="calculus-10.html">多元函数微分</a><a class="topic-link"  href="calculus-11.html">二重与三重积分</a><a class="topic-link"  href="calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="calculus-13.html">常微分方程</a><a class="topic-link"  href="calculus-14.html">数项级数</a><a class="topic-link"  href="calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="linear-2.html">向量与线性组合</a><a class="topic-link"  href="linear-3.html">矩阵与运算</a><a class="topic-link"  href="linear-4.html">消元与线性方程组</a><a class="topic-link"  href="linear-5.html">行列式</a><a class="topic-link"  href="linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="linear-7.html">线性映射与换基</a><a class="topic-link"  href="linear-8.html">内积、正交与投影</a><a class="topic-link"  href="linear-9.html">最小二乘</a><a class="topic-link"  href="linear-10.html">特征值与对角化</a><a class="topic-link"  href="linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="probability-4.html">随机变量与分布</a><a class="topic-link"  href="probability-5.html">常见离散分布</a><a class="topic-link"  href="probability-6.html">常见连续分布</a><a class="topic-link"  href="probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="probability-8.html">多维分布与独立性</a><a class="topic-link"  href="probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="probability-11.html">样本与抽样分布</a><a class="topic-link"  href="probability-12.html">参数估计</a><a class="topic-link"  href="probability-13.html">假设检验</a><a class="topic-link"  href="probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="probability-15.html">贝叶斯统计</a><a class="topic-link"  href="probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="history-1.html">从计数和测量开始</a><a class="topic-link"  href="history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="history-4.html">解析几何与微积分</a><a class="topic-link"  href="history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="../archive/math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 多元函数微分</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>多元函数微分</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">10.1 极限、偏导与可微</h3>
+<p>多元极限要求沿定义域内所有趋近路径得到同一值；两条路径结果不同即可证明不存在，若干条路径相同不能证明存在。</p>
+<p>\[
+f_x(x,y)=\lim_{h\to0}\frac{f(x+h,y)-f(x,y)}h.
+\]</p>
+<p>偏导是固定其他变量时的变化率。全微分存在指</p>
+<p>\[
+\Delta f=f_x\Delta x+f_y\Delta y+o\!\left(\sqrt{(\Delta x)^2+(\Delta y)^2}\right).
+\]</p>
+<ul>
+<li>可微 ⇒ 连续且各偏导存在。</li>
+<li>各偏导存在不一定连续，更不一定可微。</li>
+<li>各偏导在某邻域存在并在该点连续，是该点可微的充分条件。</li>
+<li>若二阶混合偏导在邻域连续，则 f_xy=f_yx。</li>
+</ul>
+<h3 id="section-2">10.2 链式法则、梯度与方向导数</h3>
+<p>若 z=f(x,y)，x=x(t)、y=y(t)，且满足可微条件：</p>
+<p>\[
+\frac{dz}{dt}=f_x\frac{dx}{dt}+f_y\frac{dy}{dt}.
+\]</p>
+<p>\[
+\nabla f=(f_{x_1},\ldots,f_{x_n}),\qquad
+D_{\mathbf u}f=\nabla f\cdot\mathbf u\quad(|\mathbf u|=1).
+\]</p>
+<p>后式要求 f 在该点可微。梯度非零时指向上升最快方向，最大方向导数为 |∇f|；梯度垂直于该点的正则等值面。</p>
+<p>曲面 z=f(x,y) 的切平面：</p>
+<p>\[
+z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0).
+\]</p>
+<h3 id="section-3">10.3 隐函数与雅可比矩阵</h3>
+<ul>
+<li>F(x,y)=0：F 连续可微且 F_y≠0 ⇒ 局部可解 y=y(x)，y′=−F_x/F_y。</li>
+<li>F(x,y,z)=0 且 F_z≠0：z_x=−F_x/F_z，z_y=−F_y/F_z。</li>
+<li>雅可比矩阵 J 收集向量值函数的一阶偏导，描述局部线性变换；复合映射的雅可比按矩阵乘法连接。</li>
+<li>逆函数定理：连续可微映射在一点的雅可比行列式非零，则该点附近有连续可微的局部逆映射。非零行列式不直接保证全局一一对应。</li>
+</ul>
+<h3 id="section-4">10.4 多元泰勒与极值</h3>
+<p>f 二阶连续可微时：</p>
+<p>\[
+f(\mathbf x+\mathbf h)=f(\mathbf x)+\nabla f(\mathbf x)^T\mathbf h
++\tfrac12\mathbf h^TH(\mathbf x)\mathbf h+o(|\mathbf h|^2).
+\]</p>
+<p>H 是 Hessian 矩阵。内点局部极值且可微 ⇒ ∇f=0。</p>
+<ul>
+<li>驻点 Hessian 正定 ⇒ 严格局部极小；负定 ⇒ 严格局部极大；不定 ⇒ 鞍点；半正定或半负定一般不能直接判定。</li>
+<li>二元情形：D=f_xx f_yy−f_xy²。在二阶连续可微的驻点，D&gt;0、f_xx&gt;0 为极小；D&gt;0、f_xx&lt;0 为极大；D&lt;0 为鞍点；D=0 待定。</li>
+<li>拉格朗日乘数法：单个等式约束 g=c 下，正则内点约束极值满足 ∇f=λ∇g，前提 ∇g≠0；候选点仍需比较，边界与奇异点另查。</li>
+<li>紧集上连续函数取得最值；多元最值不能遗漏边界。</li>
+</ul><nav class="page-turn" aria-label="相邻主题"><a href="calculus-9.html">← 空间几何与向量</a><a href="calculus-11.html">二重与三重积分 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">10.1 极限、偏导与可微</a><a class="toc-h3" href="#section-2">10.2 链式法则、梯度与方向导数</a><a class="toc-h3" href="#section-3">10.3 隐函数与雅可比矩阵</a><a class="toc-h3" href="#section-4">10.4 多元泰勒与极值</a></aside></div></div></body></html>

@@ -3,7 +3,7 @@
 from pathlib import Path
 import html
 import re
-from zipfile import ZipFile, ZIP_DEFLATED
+from zipfile import ZipFile, ZIP_DEFLATED, ZipInfo
 
 from markdown_it import MarkdownIt
 
@@ -82,15 +82,20 @@ def main():
     download.mkdir(exist_ok=True)
     cards = []
     with ZipFile(download / "math-study-documents.zip", "w", ZIP_DEFLATED) as bundle:
+        def add_file(name, data):
+            entry = ZipInfo("math-study-documents/" + name, (2026, 10, 29, 0, 0, 0))
+            entry.compress_type = ZIP_DEFLATED
+            bundle.writestr(entry, data)
+
         for slug, title, description in DOCUMENTS:
             source = ROOT / "docs" / (slug + ".md")
             body = '<p><a href="../docs/' + slug + '.md" download>下载此文 Markdown 原稿</a></p>'
             body += render(source.read_text(encoding="utf-8"))
             (out / (slug + ".html")).write_text(page(title, body, math=True), encoding="utf-8")
-            bundle.write(source, "math-study-documents/" + source.name)
+            add_file(source.name, source.read_bytes())
             cards.append(f'<article class="index-card"><h2><a href="{slug}.html">{title}</a></h2><p>{description}</p></article>')
         readme = "# 数学学习文档合集\n\n" + "\n".join(f"{i}. {title}：{slug}.md" for i, (slug, title, _) in enumerate(DOCUMENTS, 1))
-        bundle.writestr("math-study-documents/README.md", readme + "\n\n部分公式采用 LaTeX，请使用支持数学公式的 Markdown 阅读器。\n")
+        add_file("README.md", readme + "\n\n部分公式采用 LaTeX，请使用支持数学公式的 Markdown 阅读器。\n")
     intro = '<h1>数学学习资料归档</h1><p>按学习顺序整理的五份资料，包含知识点、公式定理、适用条件和自测题。点击标题在线阅读，也可下载原稿。</p><p>公式由 MathJax 渲染，首次访问需要联网加载；离线时仍保留公式源码。</p>'
     (out / "index.html").write_text(page("学习资料归档", intro + '<div class="archive-grid">' + "".join(cards) + '</div>'), encoding="utf-8")
 

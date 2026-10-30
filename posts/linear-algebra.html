@@ -1,52 +1,36 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>向量空间：矩阵背后的结构｜数学札记</title>
-  <link rel="stylesheet" href="../assets/styles.css">
-</head>
-<body>
-  <header class="site-header"><div class="header-inner"><div class="kicker">Linear Algebra · 03</div><h1>向量空间：矩阵背后的结构</h1><p>线性代数不只是计算行列式，而是研究“线性组合”和“线性变换”的语言。</p></div></header>
-  <nav class="top-nav"><div class="nav-inner"><a href="../index.html">首页</a><a href="derivatives.html">上一篇：导数</a><a href="probability.html">下一篇：概率</a><a href="../index.html#posts">文章索引</a></div></nav>
-  <main>
-    <article class="article">
-      <div class="article-header"><div class="meta">LINEAR ALGEBRA · 2026-10-29</div><h1>向量空间：矩阵背后的结构</h1><p>关键词：线性组合、基、维数、线性映射、投影、特征值</p></div>
-      <h2>1. 向量不只是箭头</h2>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>向量空间：矩阵背后的结构｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
+ <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
+ <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="../topics/foundations-2.html">初中：数与代数</a><a class="topic-link"  href="../topics/foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="../topics/foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="../topics/foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="../topics/foundations-6.html">高中：三角函数</a><a class="topic-link"  href="../topics/foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="../topics/foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="../topics/foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="../topics/foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="../topics/foundations-formulas.html">公式与定理速查</a></div></details><details class="subject" ><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="../topics/calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="../topics/calculus-3.html">连续性</a><a class="topic-link"  href="../topics/calculus-4.html">导数与微分</a><a class="topic-link"  href="../topics/calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="../topics/calculus-6.html">不定积分</a><a class="topic-link"  href="../topics/calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="../topics/calculus-8.html">反常积分</a><a class="topic-link"  href="../topics/calculus-9.html">空间几何与向量</a><a class="topic-link"  href="../topics/calculus-10.html">多元函数微分</a><a class="topic-link"  href="../topics/calculus-11.html">二重与三重积分</a><a class="topic-link"  href="../topics/calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="../topics/calculus-13.html">常微分方程</a><a class="topic-link"  href="../topics/calculus-14.html">数项级数</a><a class="topic-link"  href="../topics/calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="../topics/linear-2.html">向量与线性组合</a><a class="topic-link"  href="../topics/linear-3.html">矩阵与运算</a><a class="topic-link"  href="../topics/linear-4.html">消元与线性方程组</a><a class="topic-link"  href="../topics/linear-5.html">行列式</a><a class="topic-link"  href="../topics/linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="../topics/linear-7.html">线性映射与换基</a><a class="topic-link"  href="../topics/linear-8.html">内积、正交与投影</a><a class="topic-link"  href="../topics/linear-9.html">最小二乘</a><a class="topic-link"  href="../topics/linear-10.html">特征值与对角化</a><a class="topic-link"  href="../topics/linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="../topics/linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="../topics/linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="../topics/linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="../topics/probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="../topics/probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="../topics/probability-4.html">随机变量与分布</a><a class="topic-link"  href="../topics/probability-5.html">常见离散分布</a><a class="topic-link"  href="../topics/probability-6.html">常见连续分布</a><a class="topic-link"  href="../topics/probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="../topics/probability-8.html">多维分布与独立性</a><a class="topic-link"  href="../topics/probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="../topics/probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="../topics/probability-11.html">样本与抽样分布</a><a class="topic-link"  href="../topics/probability-12.html">参数估计</a><a class="topic-link"  href="../topics/probability-13.html">假设检验</a><a class="topic-link"  href="../topics/probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="../topics/probability-15.html">贝叶斯统计</a><a class="topic-link"  href="../topics/probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="../topics/probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="../topics/history-1.html">从计数和测量开始</a><a class="topic-link"  href="../topics/history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="../topics/history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="../topics/history-4.html">解析几何与微积分</a><a class="topic-link"  href="../topics/history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="../topics/history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="../topics/history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="../archive/math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 向量空间：矩阵背后的结构</div><div class="reading-layout"><main id="content" class="content"><article><div class="article-header"><div class="meta">LINEAR ALGEBRA · 2026-10-29</div><h1>向量空间：矩阵背后的结构</h1><p>关键词：线性组合、基、维数、线性映射、投影、特征值</p></div>
+      <h2 id="section-1">1. 向量不只是箭头</h2>
       <p>在平面几何里，向量可以表示有方向的位移；在数据分析里，一个样本也可以表示成向量；在机器学习里，一张图片、一段文本或一个用户都可能被编码成高维向量。</p>
       <p>向量最重要的操作不是“画箭头”，而是线性组合：</p>
       <div class="formula">c₁v₁ + c₂v₂ + ··· + cₖvₖ</div>
       <p>如果一组向量可以通过线性组合生成一个空间，我们称它们张成这个空间。</p>
 
-      <h2>2. 向量空间、基与维数</h2>
+      <h2 id="section-2">2. 向量空间、基与维数</h2>
       <p>一个向量空间需要对向量加法和数乘保持封闭。基是一组既能张成整个空间、又彼此线性无关的向量。</p>
       <div class="theorem"><strong>基的意义：</strong>一旦选定一组基，空间中的每个向量都能被唯一表示为基向量的线性组合。基中向量的个数就是空间的维数。</div>
       <p>例如，平面中的标准基 e₁=(1,0)、e₂=(0,1)。任意点 (x,y) 都可以写为 x e₁ + y e₂。</p>
 
-      <h2>3. 矩阵是线性变换的坐标表达</h2>
+      <h2 id="section-3">3. 矩阵是线性变换的坐标表达</h2>
       <p>矩阵 A 可以把一个向量 x 变成另一个向量 Ax。矩阵乘法的本质，是先完成一个线性变换，再完成另一个线性变换。</p>
       <div class="formula">A(x + y) = Ax + Ay　　A(cx) = cAx</div>
       <p>二维矩阵可以实现旋转、缩放、剪切、投影等操作。矩阵的列向量告诉我们：标准基向量经过变换后去了哪里。</p>
 
-      <h2>4. 投影与最小二乘</h2>
+      <h2 id="section-4">4. 投影与最小二乘</h2>
       <p>当方程 Ax=b 没有精确解时，可以寻找一个 Ax，使它尽可能接近 b。这就是最小二乘思想：</p>
       <div class="formula">min<sub>x</sub> ‖Ax − b‖²</div>
       <p>几何上，Ax 是 b 在 A 的列空间上的正交投影。若 A 的列向量线性无关，最小二乘解满足正规方程：</p>
       <div class="formula">AᵀAx = Aᵀb</div>
       <p>线性回归、数据拟合和许多机器学习算法都可以从这个问题出发。</p>
 
-      <h2>5. 特征值的直觉</h2>
+      <h2 id="section-5">5. 特征值的直觉</h2>
       <p>大多数向量经过矩阵变换后方向会改变，但有些特殊方向只被拉伸或压缩，不改变方向：</p>
       <div class="formula">Av = λv</div>
       <p>其中 v 是特征向量，λ 是对应的特征值。特征向量提供了一个“变换最自然的坐标系”。对称矩阵具有良好的正交特征分解，这也是 PCA 能够工作的原因之一。</p>
 
       <div class="history"><strong>历史小记：</strong>线性代数的思想来自线性方程组、几何和力学。高斯消元源自解方程组的实际需要；19 世纪，格拉斯曼提出了更抽象的多维空间思想；后来矩阵和线性变换成为物理、统计、计算机图形学和机器学习的共同语言。</div>
 
-      <h2>6. 记忆卡片</h2>
-      <ul><li>向量空间的核心是线性组合的结构。</li><li>基负责表示，维数负责计数。</li><li>矩阵是线性变换在选定基下的表示。</li><li>最小二乘是投影问题，也是线性回归的基础。</li><li>特征值描述变换中的特殊方向和伸缩比例。</li></ul>
-      <a class="back" href="../index.html">← 返回数学札记首页</a>
-    </article>
-  </main>
-  <footer class="site-footer">数学札记 · 线性代数专题</footer>
-</body>
-</html>
+      <h2 id="section-6">6. 记忆卡片</h2>
+      <ul><li>向量空间的核心是线性组合的结构。</li><li>基负责表示，维数负责计数。</li><li>矩阵是线性变换在选定基下的表示。</li><li>最小二乘是投影问题，也是线性回归的基础。</li><li>特征值描述变换中的特殊方向和伸缩比例。</li></ul></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h2" href="#section-1">1. 向量不只是箭头</a><a class="toc-h2" href="#section-2">2. 向量空间、基与维数</a><a class="toc-h2" href="#section-3">3. 矩阵是线性变换的坐标表达</a><a class="toc-h2" href="#section-4">4. 投影与最小二乘</a><a class="toc-h2" href="#section-5">5. 特征值的直觉</a><a class="toc-h2" href="#section-6">6. 记忆卡片</a></aside></div></div></body></html>

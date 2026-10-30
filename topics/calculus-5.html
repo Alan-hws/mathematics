@@ -1,0 +1,71 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>中值定理、泰勒公式与导数应用｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
+ <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
+ <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="foundations-2.html">初中：数与代数</a><a class="topic-link"  href="foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="foundations-6.html">高中：三角函数</a><a class="topic-link"  href="foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="foundations-formulas.html">公式与定理速查</a></div></details><details class="subject" open><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="calculus-3.html">连续性</a><a class="topic-link"  href="calculus-4.html">导数与微分</a><a class="topic-link active" aria-current="page" href="calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="calculus-6.html">不定积分</a><a class="topic-link"  href="calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="calculus-8.html">反常积分</a><a class="topic-link"  href="calculus-9.html">空间几何与向量</a><a class="topic-link"  href="calculus-10.html">多元函数微分</a><a class="topic-link"  href="calculus-11.html">二重与三重积分</a><a class="topic-link"  href="calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="calculus-13.html">常微分方程</a><a class="topic-link"  href="calculus-14.html">数项级数</a><a class="topic-link"  href="calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="linear-2.html">向量与线性组合</a><a class="topic-link"  href="linear-3.html">矩阵与运算</a><a class="topic-link"  href="linear-4.html">消元与线性方程组</a><a class="topic-link"  href="linear-5.html">行列式</a><a class="topic-link"  href="linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="linear-7.html">线性映射与换基</a><a class="topic-link"  href="linear-8.html">内积、正交与投影</a><a class="topic-link"  href="linear-9.html">最小二乘</a><a class="topic-link"  href="linear-10.html">特征值与对角化</a><a class="topic-link"  href="linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="probability-4.html">随机变量与分布</a><a class="topic-link"  href="probability-5.html">常见离散分布</a><a class="topic-link"  href="probability-6.html">常见连续分布</a><a class="topic-link"  href="probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="probability-8.html">多维分布与独立性</a><a class="topic-link"  href="probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="probability-11.html">样本与抽样分布</a><a class="topic-link"  href="probability-12.html">参数估计</a><a class="topic-link"  href="probability-13.html">假设检验</a><a class="topic-link"  href="probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="probability-15.html">贝叶斯统计</a><a class="topic-link"  href="probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="history-1.html">从计数和测量开始</a><a class="topic-link"  href="history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="history-4.html">解析几何与微积分</a><a class="topic-link"  href="history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="../archive/math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 中值定理、泰勒公式与导数应用</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>中值定理、泰勒公式与导数应用</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">5.1 中值定理</h3>
+<table>
+<thead>
+<tr>
+<th>定理</th>
+<th>条件</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>费马定理</td>
+<td>内点取得局部极值，且该点可导</td>
+<td>f′(x₀)=0；逆命题不成立</td>
+</tr>
+<tr>
+<td>罗尔定理</td>
+<td>[a,b] 连续，(a,b) 可导，f(a)=f(b)</td>
+<td>存在 ξ∈(a,b)，f′(ξ)=0</td>
+</tr>
+<tr>
+<td>拉格朗日中值定理</td>
+<td>[a,b] 连续，(a,b) 可导</td>
+<td>存在 ξ，f(b)−f(a)=f′(ξ)(b−a)</td>
+</tr>
+<tr>
+<td>柯西中值定理</td>
+<td>f、g 在闭区间连续、开区间可导</td>
+<td>存在 ξ，[f(b)−f(a)]g′(ξ)=[g(b)−g(a)]f′(ξ)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-2">5.2 洛必达法则</h3>
+<p>针对 0/0 或 ∞/∞ 型，若在相关单侧去心邻域内 f、g 可导，g′≠0，并满足相应版本的未定式条件，且 \(f&#x27;/g&#x27;\to L\)（有限或无穷），则 \(f/g\to L\)。</p>
+<ul>
+<li>双侧极限可分别检查两侧；无穷远有对应版本。</li>
+<li>只有分子分母分别求导，不是对整个商求导。</li>
+<li>导数比的极限不存在时，不能据此断言原极限不存在。</li>
+<li>0·∞、∞−∞、1^∞ 等先变形成合适的商；幂指型通常先取对数。</li>
+</ul>
+<h3 id="section-3">5.3 泰勒公式</h3>
+<p>若 f 在包含 x₀、x 的区间上具有足够阶的连续导数，则存在两点之间的 ξ，使</p>
+<p>\[
+f(x)=\sum_{k=0}^n\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k
++\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}.
+\]</p>
+<p>最后一项为拉格朗日余项。局部也常写成 n 阶多项式加 \(o((x-x_0)^n)\)，需满足相应可微条件。</p>
+<p>常用局部展开（x→0）：</p>
+<p>\[
+\begin{aligned}
+e^x&amp;=1+x+x^2/2+x^3/6+o(x^3),\\
+\sin x&amp;=x-x^3/6+o(x^3),\\
+\cos x&amp;=1-x^2/2+x^4/24+o(x^4),\\
+\ln(1+x)&amp;=x-x^2/2+x^3/3+o(x^3),\\
+(1+x)^\alpha&amp;=1+\alpha x+\alpha(\alpha-1)x^2/2+o(x^2).
+\end{aligned}
+\]</p>
+<p>有限阶近似不自动意味着无限级数处处等于原函数，见级数部分。</p>
+<h3 id="section-4">5.4 单调、极值、凹凸与最值</h3>
+<ul>
+<li>在区间上 f′≥0 ⇒ 单调不减；f′&gt;0 ⇒ 严格递增。严格递增函数的导数不必处处&gt;0。</li>
+<li>临界点两侧 f′ 由正变负 ⇒ 极大；由负变正 ⇒ 极小。</li>
+<li>f′(x₀)=0 且 f″(x₀)&gt;0 ⇒ 局部极小；f″(x₀)&lt;0 ⇒ 局部极大；f″=0 时不能据此判断。</li>
+<li>f″&gt;0：曲线向上弯，斜率递增；f″&lt;0：向下弯。不同教材对“凹、凸”用词可能不同，先看定义。</li>
+<li>拐点要求曲线弯曲方向改变；f″=0 只是候选条件，不是充分条件，也不是普遍必要条件。</li>
+<li>闭区间最值：检查内部驻点、不可导点及端点。</li>
+<li>水平渐近线：x→±∞ 时 f(x)→b；斜渐近线 y=kx+b 要求 f(x)−kx−b→0；垂直渐近线由单侧无穷极限判断。</li>
+</ul><nav class="page-turn" aria-label="相邻主题"><a href="calculus-4.html">← 导数与微分</a><a href="calculus-6.html">不定积分 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">5.1 中值定理</a><a class="toc-h3" href="#section-2">5.2 洛必达法则</a><a class="toc-h3" href="#section-3">5.3 泰勒公式</a><a class="toc-h3" href="#section-4">5.4 单调、极值、凹凸与最值</a></aside></div></div></body></html>
