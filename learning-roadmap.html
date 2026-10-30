@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从初高中基础到考研数学和机器学习数学的学习路线与免费资源清单。">
+  <title>数学学习路线｜基础 · 考研 · 机器学习</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #627086;
+      --line: #dce4ee;
+      --paper: #ffffff;
+      --bg: #f4f7fb;
+      --blue: #2563eb;
+      --blue-soft: #eaf1ff;
+      --green: #087f5b;
+      --green-soft: #e8f8f1;
+      --orange: #b45309;
+      --orange-soft: #fff4df;
+      --shadow: 0 14px 40px rgba(22, 39, 70, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .hero {
+      background: linear-gradient(135deg, #102c56 0%, #1d4ed8 58%, #4f8cff 100%);
+      color: white;
+      padding: 64px 24px 70px;
+    }
+    .hero-inner, main { max-width: 1120px; margin: 0 auto; }
+    .eyebrow { letter-spacing: .12em; text-transform: uppercase; font-size: 12px; opacity: .78; }
+    h1 { margin: 10px 0 12px; font-size: clamp(32px, 5vw, 56px); line-height: 1.15; letter-spacing: -.04em; }
+    .hero p { max-width: 720px; margin: 0; color: #e8efff; font-size: 18px; }
+    .hero-note { display: inline-block; margin-top: 25px; padding: 8px 13px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; color: #f4f7ff; font-size: 14px; }
+    nav {
+      position: sticky; top: 0; z-index: 2;
+      background: rgba(255,255,255,.94); border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 10px 24px; display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { color: var(--muted); font-size: 14px; font-weight: 600; }
+    nav a:hover { color: var(--blue); text-decoration: none; }
+    main { padding: 38px 24px 70px; }
+    section { margin: 0 0 50px; scroll-margin-top: 70px; }
+    h2 { margin: 0 0 10px; font-size: 28px; letter-spacing: -.025em; }
+    h3 { margin: 0 0 8px; font-size: 19px; }
+    .section-lead { margin: 0 0 22px; color: var(--muted); }
+    .card, .route, .resource, .callout {
+      background: var(--paper); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow);
+    }
+    .route { padding: 20px; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 680px; }
+    th, td { padding: 13px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    tr:last-child td { border-bottom: 0; }
+    th { background: #f8faff; color: #3f4e66; font-size: 13px; }
+    td:first-child { font-weight: 700; white-space: nowrap; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .resource { padding: 20px; box-shadow: none; }
+    .resource h3 { display: flex; align-items: center; gap: 8px; }
+    .resource p { margin: 8px 0 0; color: var(--muted); }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; line-height: 1.5; font-weight: 700; background: var(--blue-soft); color: var(--blue); }
+    .tag.green { background: var(--green-soft); color: var(--green); }
+    .tag.orange { background: var(--orange-soft); color: var(--orange); }
+    .resource ul, .card ul { margin: 10px 0 0; padding-left: 20px; }
+    .resource li { margin: 3px 0; }
+    .callout { padding: 18px 20px; box-shadow: none; border-left: 5px solid var(--blue); }
+    .callout.green { border-left-color: var(--green); background: #f8fffc; }
+    .callout.orange { border-left-color: var(--orange); background: #fffaf0; }
+    .callout p { margin: 0; }
+    .timeline { display: grid; gap: 12px; }
+    .step { display: grid; grid-template-columns: 92px 1fr; gap: 16px; align-items: start; }
+    .step-time { padding: 8px 10px; border-radius: 10px; background: var(--blue-soft); color: var(--blue); font-weight: 700; font-size: 14px; text-align: center; }
+    .step-body { padding: 12px 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
+    .step-body strong { display: block; }
+    .step-body span { color: var(--muted); }
+    .checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 22px; }
+    .checklist label { display: block; padding: 10px 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
+    .checklist input { accent-color: var(--blue); margin-right: 8px; }
+    footer { max-width: 1120px; margin: 0 auto; padding: 0 24px 46px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 720px) {
+      .hero { padding: 46px 20px 52px; }
+      main { padding: 30px 18px 52px; }
+      .nav-inner { padding: 9px 18px; gap: 12px; }
+      .grid, .checklist { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 1fr; gap: 7px; }
+      .step-time { text-align: left; width: fit-content; }
+    }
+    @media print {
+      body { background: white; font-size: 11pt; }
+      nav { display: none; }
+      .hero { color: #111; background: white; padding: 20px 0; border-bottom: 2px solid #111; }
+      .hero p, .hero-note { color: #333; }
+      .card, .route, .resource, .callout, .step-body { box-shadow: none; }
+      a { color: #111; text-decoration: underline; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Self-study roadmap · 18–24 months</div>
+      <h1>数学学习路线</h1>
+      <p>从初高中基础，走到考研数学，再衔接机器学习所需要的线性代数、微积分、概率统计与优化。</p>
+      <div class="hero-note">高等数学主线避开同济版 · 优先使用免费公开资源</div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#overview">总览</a>
+      <a href="#foundation">基础</a>
+      <a href="#calculus">高等数学</a>
+      <a href="#linear-algebra">线性代数</a>
+      <a href="#probability">概率统计</a>
+      <a href="#exam">考研数学</a>
+      <a href="#ml">机器学习数学</a>
+      <a href="#schedule">执行安排</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h2>路线总览</h2>
+      <p class="section-lead">默认每周学习 12–15 小时。基础薄弱时先保证代数、函数和三角，不要急着刷考研难题。</p>
+      <div class="route">
+        <table>
+          <thead><tr><th>阶段</th><th>建议时间</th><th>核心内容</th><th>阶段目标</th></tr></thead>
+          <tbody>
+            <tr><td>初高中基础</td><td>2–3个月</td><td>代数、函数、三角、解析几何、数列、初等概率</td><td>能顺利进入大学数学</td></tr>
+            <tr><td>大学数学</td><td>7–9个月</td><td>微积分、线性代数、概率论、微分方程</td><td>达到考研数学基础水平</td></tr>
+            <tr><td>考研专项</td><td>4–6个月</td><td>题型、真题、限时训练、错题复盘</td><td>适配数学一/二/三的目标大纲</td></tr>
+            <tr><td>机器学习数学</td><td>4–6个月</td><td>矩阵微积分、概率统计、优化、信息论</td><td>能推导并实现常见 ML 算法</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="foundation">
+      <h2>一、初高中基础</h2>
+      <p class="section-lead">目标不是做竞赛题，而是补齐后续学习必需的代数操作、函数意识和三角工具。</p>
+      <div class="grid">
+        <article class="resource">
+          <h3>国家中小学智慧教育平台 <span class="tag green">中文·免费</span></h3>
+          <p>可查初中、高中数学教材和配套课程，适合按教材顺序系统补基础。</p>
+          <p><a href="https://basic.smartedu.cn/" target="_blank" rel="noopener">打开平台 →</a></p>
+        </article>
+        <article class="resource">
+          <h3>Khan Academy Math <span class="tag">免费练习</span></h3>
+          <p>覆盖代数、几何、三角、预备微积分、统计和概率，练习反馈很方便。</p>
+          <p><a href="https://en.khanacademy.org/mission/math" target="_blank" rel="noopener">查看数学课程 →</a></p>
+        </article>
+        <article class="resource">
+          <h3>OpenStax Algebra / Precalculus <span class="tag green">开放教材</span></h3>
+          <p>英文免费教材，适合把函数、三角、向量、矩阵和极限前置内容系统学一遍。</p>
+          <p><a href="https://openstax.org/details/books/college-algebra-2e" target="_blank" rel="noopener">College Algebra</a> · <a href="https://openstax.org/details/books/precalculus-2e" target="_blank" rel="noopener">Precalculus</a></p>
+        </article>
+        <article class="resource">
+          <h3>Paul’s Online Math Notes <span class="tag orange">补漏</span></h3>
+          <p>有 Algebra/Trig Review，适合开始微积分前快速检查代数和三角短板。</p>
+          <p><a href="https://tutorial.math.lamar.edu/" target="_blank" rel="noopener">打开笔记 →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="calculus">
+      <h2>二、高等数学与微积分</h2>
+      <p class="section-lead">不使用同济版。推荐中文课程负责跟学，MIT/OpenStax 负责补充讲义、习题和英文术语。</p>
+      <div class="grid">
+        <article class="resource">
+          <h3>西安交通大学《高等数学（一）》 <span class="tag green">中文·免费旁听</span></h3>
+          <p>覆盖一元微积分、常微分方程和数学实验，适合作为中文主线课程。</p>
+          <p><a href="https://www.icourse163.org/course/XJTU-1001744016" target="_blank" rel="noopener">打开中国大学MOOC →</a></p>
+        </article>
+        <article class="resource">
+          <h3>MIT 18.01SC Single Variable Calculus <span class="tag green">开放课程</span></h3>
+          <p>一元微积分，含视频、讲义、习题、解答和考试，适合独立学习。</p>
+          <p><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" target="_blank" rel="noopener">打开课程 →</a></p>
+        </article>
+        <article class="resource">
+          <h3>MIT 18.02SC Multivariable Calculus <span class="tag green">开放课程</span></h3>
+          <p>偏导数、梯度、重积分、向量分析和多元函数，是机器学习数学的核心前置。</p>
+          <p><a href="https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/" target="_blank" rel="noopener">打开课程 →</a></p>
+        </article>
+        <article class="resource">
+          <h3>OpenStax Calculus <span class="tag green">开放教材</span></h3>
+          <p>免费在线教材，分卷覆盖极限、导数、积分、多元微积分、级数和向量微积分。</p>
+          <p><a href="https://openstax.org/books/calculus-volume-1/pages/index" target="_blank" rel="noopener">打开教材 →</a></p>
+        </article>
+      </div>
+      <div class="callout" style="margin-top:18px">
+        <p><strong>纸质教材候选：</strong>赵树嫄《高等数学》偏应试和工科；华东师范大学数学系《数学分析》理论性更强。两者选一本即可，不需要重复购买。</p>
+      </div>
+    </section>
+
+    <section id="linear-algebra">
+      <h2>三、线性代数</h2>
+      <p class="section-lead">重点从“会算行列式”升级到理解线性变换、投影、特征值和 SVD。</p>
+      <div class="grid">
+        <article class="resource">
+          <h3>MIT 18.06SC Linear Algebra <span class="tag green">开放课程</span></h3>
+          <p>矩阵、线性方程组、向量空间、最小二乘、正交投影、特征值、正定矩阵和奇异值分解。</p>
+          <p><a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/" target="_blank" rel="noopener">打开课程 →</a></p>
+        </article>
+        <article class="resource">
+          <h3>3Blue1Brown：Essence of Linear Algebra <span class="tag">直觉视频</span></h3>
+          <p>用动画解释向量、矩阵、基变换、行列式和特征向量，适合先建立几何直觉。</p>
+          <p><a href="https://www.youtube.com/watch?v=kjBOesZCoqc" target="_blank" rel="noopener">打开系列介绍 →</a></p>
+        </article>
+      </div>
+      <div class="callout green" style="margin-top:18px">
+        <p><strong>推荐顺序：</strong>先看 3Blue1Brown 建立直觉 → 学 MIT 18.06 → 做线代题 → 用 NumPy 实现最小二乘、PCA 和 SVD。</p>
+      </div>
+    </section>
+
+    <section id="probability">
+      <h2>四、概率论与数理统计</h2>
+      <p class="section-lead">考研和机器学习都需要概率，但机器学习还要特别重视期望、协方差、似然和信息论。</p>
+      <div class="grid">
+        <article class="resource">
+          <h3>MIT 18.05 Probability and Statistics <span class="tag green">开放课程</span></h3>
+          <p>组合概率、随机变量、概率分布、贝叶斯推断、假设检验、置信区间和线性回归。</p>
+          <p><a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" target="_blank" rel="noopener">打开课程 →</a></p>
+        </article>
+        <article class="resource">
+          <h3>OpenStax Introductory Statistics <span class="tag green">CC BY 4.0</span></h3>
+          <p>免费统计学教材，适合学习描述统计、概率分布、置信区间和假设检验。</p>
+          <p><a href="https://openstax.org/details/books/introductory-statistics-2e" target="_blank" rel="noopener">打开教材 →</a></p>
+        </article>
+      </div>
+      <div class="callout orange" style="margin-top:18px">
+        <p><strong>中文教材候选：</strong>茆诗松《概率论与数理统计教程》或盛骤《概率论与数理统计》。机器学习阶段重点补最大似然、最大后验、熵、交叉熵和 KL 散度。</p>
+      </div>
+    </section>
+
+    <section id="exam">
+      <h2>五、考研数学</h2>
+      <p class="section-lead">先完成大学数学基础，再进入考研专项。数学一、数学二、数学三应以目标院校和当年考试大纲为准。</p>
+      <div class="timeline">
+        <div class="step"><div class="step-time">第一轮<br>8–10周</div><div class="step-body"><strong>基础梳理</strong><span>按章节整理定义、公式、定理和典型题；不要一开始追求偏题难题。</span></div></div>
+        <div class="step"><div class="step-time">第二轮<br>8–10周</div><div class="step-body"><strong>强化训练</strong><span>训练极限、中值定理、积分、多元函数、微分方程、线代和概率的综合题。</span></div></div>
+        <div class="step"><div class="step-time">第三轮<br>8–12周</div><div class="step-body"><strong>真题与限时</strong><span>按套卷完成真题，记录概念错误、计算错误、思路错误和时间问题。</span></div></div>
+      </div>
+      <div class="callout" style="margin-top:18px">
+        <p><strong>资料策略：</strong>考研专项教材在张宇和李永乐体系中选一套即可。公开课程可用于听课，真题尽量使用目标院校、研招网、图书馆或正版资料；不建议下载版权不明的扫描教材。</p>
+      </div>
+    </section>
+
+    <section id="ml">
+      <h2>六、机器学习数学</h2>
+      <p class="section-lead">机器学习阶段的目标是能解释和推导算法，而不是只会调用库。</p>
+      <div class="grid">
+        <article class="resource">
+          <h3>Mathematics for Machine Learning <span class="tag green">官方免费 PDF</span></h3>
+          <p>覆盖线性代数、矩阵分解、向量微积分、概率、优化和基础机器学习算法。</p>
+          <p><a href="https://mml-book.github.io/" target="_blank" rel="noopener">官方网站</a> · <a href="https://mml-book.github.io/book/mml-book.pdf" target="_blank" rel="noopener">PDF</a></p>
+        </article>
+        <article class="resource">
+          <h3>MIT Matrix Calculus <span class="tag green">开放课程</span></h3>
+          <p>讲解梯度、Jacobian、Hessian、线性化和反向传播，适合神经网络数学。</p>
+          <p><a href="https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/" target="_blank" rel="noopener">打开课程 →</a></p>
+        </article>
+        <article class="resource">
+          <h3>Boyd《Convex Optimization》 <span class="tag green">官方在线教材</span></h3>
+          <p>学习凸集、凸函数、对偶、KKT 条件和优化算法，是深入理解训练过程的好材料。</p>
+          <p><a href="https://web.stanford.edu/~boyd/cvxbook/" target="_blank" rel="noopener">打开教材 →</a></p>
+        </article>
+        <article class="resource">
+          <h3>Stanford CS229 <span class="tag green">免费讲义</span></h3>
+          <p>覆盖线性回归、逻辑回归、生成模型、SVM、正则化、PCA、EM 和强化学习。</p>
+          <p><a href="https://see.stanford.edu/Course/CS229/" target="_blank" rel="noopener">课程资料</a> · <a href="https://cs229.stanford.edu/main_notes.pdf" target="_blank" rel="noopener">讲义 PDF</a></p>
+        </article>
+        <article class="resource">
+          <h3>Introduction to Statistical Learning <span class="tag green">官方免费 PDF</span></h3>
+          <p>适合从统计学习入门，包含配套实验和自学课程，数学门槛低于 CS229。</p>
+          <p><a href="https://trevorhastie.github.io/ISLR/" target="_blank" rel="noopener">打开官方网站 →</a></p>
+        </article>
+        <article class="resource">
+          <h3>Dive into Deep Learning <span class="tag green">开源教材</span></h3>
+          <p>免费在线教材、PDF、Jupyter Notebook 和代码，适合从线性回归一路学到深度学习。</p>
+          <p><a href="https://d2l.smola.org/" target="_blank" rel="noopener">打开教材 →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <h2>七、每周执行模板</h2>
+      <div class="route">
+        <table>
+          <thead><tr><th>时间</th><th>任务</th><th>建议方式</th></tr></thead>
+          <tbody>
+            <tr><td>4小时</td><td>新知识</td><td>看一节课，手写定义、定理和例题推导</td></tr>
+            <tr><td>6小时</td><td>习题训练</td><td>基础题 → 典型题 → 综合题，先独立思考再看答案</td></tr>
+            <tr><td>2小时</td><td>错题复盘</td><td>标记概念、计算、思路和时间四类错误</td></tr>
+            <tr><td>2小时</td><td>编程或推导</td><td>用 NumPy 实现线性回归、PCA、梯度下降等小算法</td></tr>
+            <tr><td>1小时</td><td>阶段测试</td><td>每周做一次混合测试，每月做一次限时测试</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 style="margin-top:24px">阶段验收清单</h3>
+      <div class="checklist">
+        <label><input type="checkbox">能熟练处理函数、方程、不等式和三角恒等变形</label>
+        <label><input type="checkbox">能独立求导、积分并解释梯度的几何意义</label>
+        <label><input type="checkbox">能解释特征值、投影、最小二乘和 SVD</label>
+        <label><input type="checkbox">能使用条件概率、期望、方差和最大似然</label>
+        <label><input type="checkbox">能限时完成一套考研数学真题</label>
+        <label><input type="checkbox">能手算线性回归、逻辑回归和神经网络梯度</label>
+      </div>
+    </section>
+
+    <div class="callout green">
+      <p><strong>最简主线：</strong>国家智慧教育平台 → 中国大学MOOC高等数学 → MIT 18.06 → MIT 18.05 → 一套考研资料与真题 → Mathematics for Machine Learning → CS229 / Dive into Deep Learning。</p>
+    </div>
+  </main>
+
+  <footer>
+    页面为个人学习规划整理。公开课程、教材和网站的访问方式可能变化；使用时请以资源官方网站的最新说明和目标院校当年考试大纲为准。
+  </footer>
+</body>
+</html>
