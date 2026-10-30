@@ -54,6 +54,10 @@ def collect():
   body=re.sub(r'<a class="back".*?</a>','',body,flags=re.S)
   body,hs=headings(body.strip())
   topics.append(dict(title=clean(m[1]),path=f'topics/history-{i+1}.html',body=body,headings=hs))
+ timeline=(ROOT/'docs/mathematics-history-timeline.md').read_text(encoding='utf-8')
+ timeline=timeline.split('\n',1)[1].lstrip()
+ timeline_body,timeline_headings=headings(render(timeline))
+ topics.insert(0,dict(title='数学发展时间轴',path='topics/history-timeline.html',body=timeline_body,headings=timeline_headings))
  subjects.append(dict(key='history',title='数学史',desc='从问题的起源理解概念与方法的发展',topics=topics,slug=None))
  return subjects
 
@@ -83,7 +87,7 @@ def main():
    links=[]
    if i: links.append(f'<a href="{Path(s["topics"][i-1]["path"]).name}">← {s["topics"][i-1]["title"]}</a>')
    if i+1<len(s['topics']): links.append(f'<a href="{Path(s["topics"][i+1]["path"]).name}">{s["topics"][i+1]["title"]} →</a>')
-   source=f'<a href="../docs/{s["slug"]}.md" download>下载本学科完整笔记</a>' if s['slug'] else '<a href="../posts/math-history.html">阅读数学史原文</a>'
+   source=(f'<a href="../docs/{s["slug"]}.md" download>下载本学科完整笔记</a>' if s['slug'] else ('<a href="../docs/mathematics-history-timeline.md" download>下载时间轴原稿</a>' if t['path']=='topics/history-timeline.html' else '<a href="../posts/math-history.html">阅读数学史原文</a>'))
    body=f'<div class="eyebrow">{s["title"]}</div><h1>{t["title"]}</h1><p class="page-note">{source}</p>'+t['body']+'<nav class="page-turn" aria-label="相邻主题">'+''.join(links)+'</nav>'
    write(t['path'],layout(t['path'],t['title'],body,subjects,t,t['headings'],s['title']+' / '+t['title']))
  # Reading-first home with subject rows instead of duplicate archive/article grids.
