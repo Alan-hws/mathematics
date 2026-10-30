@@ -89,12 +89,19 @@ def main():
 
         for slug, title, description in DOCUMENTS:
             source = ROOT / "docs" / (slug + ".md")
-            body = '<p><a href="../docs/' + slug + '.md" download>下载此文 Markdown 原稿</a></p>'
-            body += render(source.read_text(encoding="utf-8"))
+            if slug == "math-foundations-knowledge":
+                files = [ROOT / "docs" / "foundations" / f"{n}.md" for n in range(1, 17)]
+                body = '<p>初高中基础已按主题拆分，原稿包含在文档合集中。</p>'
+                body += render("\n\n".join(f.read_text(encoding="utf-8") for f in files))
+                for f in files:
+                    add_file("foundations/" + f.name, f.read_bytes())
+            else:
+                body = '<p><a href="../docs/' + slug + '.md" download>下载此文 Markdown 原稿</a></p>'
+                body += render(source.read_text(encoding="utf-8"))
+                add_file(source.name, source.read_bytes())
             (out / (slug + ".html")).write_text(page(title, body, math=True), encoding="utf-8")
-            add_file(source.name, source.read_bytes())
             cards.append(f'<article class="index-card"><h2><a href="{slug}.html">{title}</a></h2><p>{description}</p></article>')
-        readme = "# 数学学习文档合集\n\n" + "\n".join(f"{i}. {title}：{slug}.md" for i, (slug, title, _) in enumerate(DOCUMENTS, 1))
+        readme = "# 数学学习文档合集\n\n" + "\n".join(f"{i}. {title}：{"foundations/" if slug == "math-foundations-knowledge" else slug + ".md"}" for i, (slug, title, _) in enumerate(DOCUMENTS, 1))
         add_file("README.md", readme + "\n\n部分公式采用 LaTeX，请使用支持数学公式的 Markdown 阅读器。\n")
     intro = '<h1>数学学习资料归档</h1><p>按学习顺序整理的五份资料，包含知识点、公式定理、适用条件和自测题。点击标题在线阅读，也可下载原稿。</p><p>公式由 MathJax 渲染，首次访问需要联网加载；离线时仍保留公式源码。</p>'
     (out / "index.html").write_text(page("学习资料归档", intro + '<div class="archive-grid">' + "".join(cards) + '</div>'), encoding="utf-8")

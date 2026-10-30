@@ -80,4 +80,18 @@
 <h3 id="section-5">实际问题、推导与历史：瞬时变化的极限</h3>
 <p>一辆车在时刻 \(t\) 的位移是 \(s(t)=t^2\)。第 \(t\) 秒后的 \(h\) 秒内平均速度为 \(((t+h)^2-t^2)/h=2t+h\)；当 \(h\to0\)，极限为 \(2t\)，这才给出瞬时速度。必须先令 \(h\ne0\)，再取极限。</p>
 <p><strong>夹挤定理怎么用：</strong> \(-x^2\le x^2\sin(1/x)\le x^2\)（\(x\ne0\)），两侧均趋于0，所以中间也趋于0。夹挤用于难以直接计算但能找到上下界的情况。</p>
-<p><strong>历史：</strong> 极限思想经历了很长的发展：古希腊数学中的穷竭法以逐步逼近处理面积问题；后来微积分形成后，极限与收敛又逐步被严格化。<a href="https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/">圣安德鲁斯大学数学史</a></p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-3.html">连续性 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">2.1 基本概念</a><a class="toc-h3" href="#section-2">2.2 极限的精确定义</a><a class="toc-h3" href="#section-3">2.3 核心定理</a><a class="toc-h3" href="#section-4">2.4 常用极限与等价无穷小</a><a class="toc-h3" href="#section-5">实际问题、推导与历史：瞬时变化的极限</a></aside></div></div></body></html>
+<p><strong>历史：</strong> 极限思想经历了很长的发展：古希腊数学中的穷竭法以逐步逼近处理面积问题；后来微积分形成后，极限与收敛又逐步被严格化。<a href="https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/">圣安德鲁斯大学数学史</a></p>
+<h3 id="section-6">指数对数、增长与二分法</h3>
+<p>指数从整数次幂经正根、分数指数推广到实指数，保持指数运算律；当 \(a&gt;0\) 时定义 \(a^x\)，且 \(a^{x+y}=a^xa^y\)。对数是指数运算的逆运算：\(\log_a x=y\iff a^y=x\)，条件 \(a&gt;0,a\ne1,x&gt;0\)。运算式如 \(\log_a(xy)=\log_a x+\log_a y\) 源于 \(a^{u+v}=a^ua^v\)。指数增长模型 \(N(t)=N_0a^t\) 可描述复利、细菌繁殖或放射性衰减；取对数可把乘方中的未知指数转成可解变量。指数、幂函数、对数函数增长速度不同；比较增长时可看比值或取对数，不能仅凭有限几个点判断长期趋势。</p>
+<p>若连续函数 \(f\) 在 \([a,b]\) 上满足 \(f(a)f(b)&lt;0\)，介值定理保证区间内至少有零点。二分法不断取中点并保留变号子区间；第 \(n\) 次后区间长度为 \((b-a)/2^n\)，故中点近似误差不超过该长度的一半。此法用于无法写出精确根的方程数值求解；变号只保证存在奇数重数型过零，不涵盖不变号的偶重根，实际找根前需先定位合适区间。</p>
+<h3 id="section-7">频率、概率与随机模拟</h3>
+<p>在重复条件稳定的独立试验中，事件频率会随次数增加而趋近其概率（大数定律的直观表达）；有限次数的频率仍有随机波动。随机模拟用计算机生成符合模型的样本，估计复杂事件概率或分布，例如重复掷骰并统计和大于阈值的比例。模拟结果是近似值，误差通常随试验次数增加而下降，不能替代可行的精确计数或证明。</p>
+<p>有限等可能样本空间中 \(P(A)=|A|/|\Omega|\)。先定义样本空间和事件，再判断结果是否等可能；不等可能时直接数结果会错。独立事件满足 \(P(A\cap B)=P(A)P(B)\)，而互斥是交集为空。若事件都具有正概率，互斥事件不可能独立。</p>
+<h3 id="section-8">正态分布、相关和回归模型</h3>
+<p>正态曲线以 \(\mu\) 为中心、\(\sigma\) 控制宽窄；标准化 \(Z=(X-\mu)/\sigma\) 将变量转成标准正态刻度。约 68%、95%、99.7% 分别落在均值左右 1、2、3 个标准差内是经验近似，适用于正态模型而非任意数据。相关系数在 −1 到 1 之间，只度量线性关联；非线性关系可能相关系数接近零，离群点也会显著改变它。</p>
+<p>简单线性回归以残差平方和最小确定直线。令 \(\hat y=a+bx\)，对 \(\sum_i(y_i-a-bx_i)^2\) 分别对 \(a,b\) 求最小，得到
+\[
+b=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},\qquad a=\bar y-b\bar x.
+\]
+斜率是样本范围内的线性趋势，外推到观测范围外风险大。相关和回归不能单独证明因果，因果判断还需实验设计或控制混杂因素。</p>
+<p>列联表记录两个分类变量的联合频数。在独立假设下，单元格期望频数为“行总数×列总数÷总数”；卡方统计量衡量观察和期望的总体差异。独立性检验结论是对模型和样本证据的判断，需要查看期望频数条件及显著性水平；不能把“未拒绝独立”表述为“已证明独立”。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-3.html">连续性 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">2.1 基本概念</a><a class="toc-h3" href="#section-2">2.2 极限的精确定义</a><a class="toc-h3" href="#section-3">2.3 核心定理</a><a class="toc-h3" href="#section-4">2.4 常用极限与等价无穷小</a><a class="toc-h3" href="#section-5">实际问题、推导与历史：瞬时变化的极限</a><a class="toc-h3" href="#section-6">指数对数、增长与二分法</a><a class="toc-h3" href="#section-7">频率、概率与随机模拟</a><a class="toc-h3" href="#section-8">正态分布、相关和回归模型</a></aside></div></div></body></html>

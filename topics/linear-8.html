@@ -31,4 +31,11 @@ u_k=v_k-\sum_{j&lt;k}(q_j^Tv_k)q_j,\qquad q_k=u_k/\|u_k\|.
 <p>\[
 u^T(x-cu)=0\quad\Rightarrow\quad c=\frac{u^Tx}{u^Tu}.
 \]</p>
-<p>因此投影是 \((u^Tx/u^Tu)u\)。这个公式也用于信号分解和最小二乘；分母非零依赖 \(u\ne0\)。</p><nav class="page-turn" aria-label="相邻主题"><a href="linear-7.html">← 线性映射与换基</a><a href="linear-9.html">最小二乘 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">8.1 Gram–Schmidt 与 QR</a><a class="toc-h3" href="#section-2">投影公式的推导：把力分解到指定方向</a></aside></div></div></body></html>
+<p>因此投影是 \((u^Tx/u^Tu)u\)。这个公式也用于信号分解和最小二乘；分母非零依赖 \(u\ne0\)。</p>
+<h3 id="section-3">空间向量、距离和夹角</h3>
+<p>空间直角坐标中 \(\mathbf a=(a_1,a_2,a_3)\)，\(\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3\)，\(|\mathbf a|=\sqrt{a_1^2+a_2^2+a_3^2}\)。两非零向量夹角满足 \(\cos\theta=(\mathbf a\cdot\mathbf b)/(|\mathbf a||\mathbf b|)\)。直线方向向量平行可判线线方向一致；平面法向量垂直于平面内任意方向向量。两平面夹角可用法向量夹角的锐角或直角解释，线面角则是直线与其在平面上射影的夹角。</p>
+<p>点 \(P\) 到平面 \(Ax+By+Cz+D=0\) 的距离为
+\[
+d=\frac{|Ax_P+By_P+Cz_P+D|}{\sqrt{A^2+B^2+C^2}}.
+\]
+这是点到平面的法向投影长度。空间几何向量化的流程是：建立坐标系、写出方向/法向量、用点积表达垂直或夹角，最后核对角的定义范围。建筑净空、最短距离和光线夹角都可转成该类计算。</p><nav class="page-turn" aria-label="相邻主题"><a href="linear-7.html">← 线性映射与换基</a><a href="linear-9.html">最小二乘 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">8.1 Gram–Schmidt 与 QR</a><a class="toc-h3" href="#section-2">投影公式的推导：把力分解到指定方向</a><a class="toc-h3" href="#section-3">空间向量、距离和夹角</a></aside></div></div></body></html>

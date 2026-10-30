@@ -12,4 +12,8 @@ F_X(x)=P(X\leq x).
 <li>连续型（此处指绝对连续分布）：存在密度 f≥0，∫f=1，F(x)=∫[−∞到x]f(t)dt。</li>
 <li>连续密度值可以&gt;1；区间积分才是概率，P(X=x)=0。</li>
 <li>并非所有分布都只有“纯离散”或“有密度连续”两种；也有混合分布等。</li>
-</ul><nav class="page-turn" aria-label="相邻主题"><a href="probability-3.html">← 条件概率、独立与贝叶斯</a><a href="probability-5.html">常见离散分布 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a href="#content">阅读正文</a></aside></div></div></body></html>
+</ul>
+<h3 id="section-1">随机变量、条件概率与常见分布</h3>
+<p>条件概率 \(P(A|B)=P(A\cap B)/P(B)\) 的分母是已经发生的条件事件 \(B\)，要求 \(P(B)&gt;0\)。将样本空间限制到 \(B\) 后重新归一化，便得到该式。若 \(B_i\) 两两互斥且并成全集，则全概率公式 \(P(A)=\sum_iP(A|B_i)P(B_i)\)；贝叶斯公式反向更新原因概率 \(P(B_j|A)=P(A|B_j)P(B_j)/P(A)\)。医疗检测的阳性预测、质量缺陷追因可用此模型，但须使用真实基准率和检测准确率。</p>
+<p>离散随机变量分布列列出取值与概率，均值 \(E(X)=\sum x_ip_i\)，方差 \(D(X)=\sum(x_i-E(X))^2p_i\)。均值是长期平均，方差是波动大小。若 \(X\sim B(n,p)\)，则 \(P(X=k)=C_n^kp^k(1-p)^{n-k}\)，\(E(X)=np\)，\(D(X)=np(1-p)\)；前提为固定次数、相互独立、每次成功概率相同。超几何分布用于有限总体不放回抽样，\(P(X=k)=C_M^kC_{N-M}^{n-k}/C_N^n\)。两分布的区别正是抽样后是否改变后续成功概率。</p>
+<p>正态分布 \(N(\mu,\sigma^2)\) 以均值定位、以标准差描述散布，数据常近似钟形但并非所有数据都正态。成对数据用散点图观察相关方向和强弱，样本相关系数刻画线性关联；相关不等于因果。线性回归 \(\hat y=a+bx\) 用最小二乘使残差平方和最小。分类变量用列联表，独立性检验比较观察频数与独立假设下期望频数；结论受样本量、抽样设计和检验近似条件约束。</p><nav class="page-turn" aria-label="相邻主题"><a href="probability-3.html">← 条件概率、独立与贝叶斯</a><a href="probability-5.html">常见离散分布 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">随机变量、条件概率与常见分布</a></aside></div></div></body></html>

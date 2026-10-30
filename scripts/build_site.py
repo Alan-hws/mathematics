@@ -28,7 +28,7 @@ def headings(body):
 def collect():
  subjects=[]
  for key,title,slug,nums,desc in SUBJECTS:
-  source=(ROOT/'docs'/f'{slug}.md').read_text()
+  source=('\n\n'.join((ROOT/'docs/foundations'/f'{n}.md').read_text() for n in range(1,17)) if key=='foundations' else (ROOT/'docs'/f'{slug}.md').read_text())
   matches=list(re.finditer(r'^## (.+)$',source,re.M)); topics=[]
   for i,m in enumerate(matches):
    num=int(re.match(r'\d+',m[1])[0])
@@ -92,7 +92,7 @@ def main():
    links=[]
    if i: links.append(f'<a href="{Path(s["topics"][i-1]["path"]).name}">← {s["topics"][i-1]["title"]}</a>')
    if i+1<len(s['topics']): links.append(f'<a href="{Path(s["topics"][i+1]["path"]).name}">{s["topics"][i+1]["title"]} →</a>')
-   source=(f'<a href="../docs/{s["slug"]}.md" download>下载本学科完整笔记</a>' if s['slug'] else ('<a href="../docs/mathematics-history-timeline.md" download>下载时间轴原稿</a>' if t['path']=='topics/history-timeline.html' else '<a href="../posts/math-history.html">阅读数学史原文</a>'))
+   source=('<a href="../downloads/math-study-documents.zip" download>下载按主题整理的原稿</a>' if s['key']=='foundations' else f'<a href="../docs/{s["slug"]}.md" download>下载本学科完整笔记</a>' if s['slug'] else ('<a href="../docs/mathematics-history-timeline.md" download>下载时间轴原稿</a>' if t['path']=='topics/history-timeline.html' else '<a href="../posts/math-history.html">阅读数学史原文</a>'))
    body=f'<div class="eyebrow">{s["title"]}</div><h1>{t["title"]}</h1><p class="page-note">{source}</p>'+t['body']+'<nav class="page-turn" aria-label="相邻主题">'+''.join(links)+'</nav>'
    write(t['path'],layout(t['path'],t['title'],body,subjects,t,t['headings'],s['title']+' / '+t['title']))
  # Reading-first home with subject rows instead of duplicate archive/article grids.
