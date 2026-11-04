@@ -101,6 +101,9 @@ def main():
                 add_file(source.name, source.read_bytes())
             (out / (slug + ".html")).write_text(page(title, body, math=True), encoding="utf-8")
             cards.append(f'<article class="index-card"><h2><a href="{slug}.html">{title}</a></h2><p>{description}</p></article>')
+        # Foundation Markdown refers to these illustrations via ../assets/figures/.
+        for figure in sorted((ROOT / "assets" / "figures").glob("*.svg")):
+            add_file("assets/figures/" + figure.name, figure.read_bytes())
         readme = "# 数学学习文档合集\n\n" + "\n".join(f"{i}. {title}：{"foundations/" if slug == "math-foundations-knowledge" else slug + ".md"}" for i, (slug, title, _) in enumerate(DOCUMENTS, 1))
         add_file("README.md", readme + "\n\n部分公式采用 LaTeX，请使用支持数学公式的 Markdown 阅读器。\n")
     intro = '<h1>数学学习资料归档</h1><p>按学习顺序整理的五份资料，包含知识点、公式定理、适用条件和自测题。点击标题在线阅读，也可下载原稿。</p><p>公式由 MathJax 渲染，首次访问需要联网加载；离线时仍保留公式源码。</p>'
