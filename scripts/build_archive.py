@@ -98,7 +98,11 @@ def main():
             else:
                 body = '<p><a href="../docs/' + slug + '.md" download>下载此文 Markdown 原稿</a></p>'
                 body += render(source.read_text(encoding="utf-8"))
-                add_file(source.name, source.read_bytes())
+                # Root-level Markdown files sit beside assets/ in the ZIP.
+                # In the repository they sit under docs/, so their image paths
+                # must be adjusted without changing the rendered web pages.
+                downloadable = source.read_text(encoding="utf-8").replace("../assets/figures/", "assets/figures/")
+                add_file(source.name, downloadable.encode("utf-8"))
             (out / (slug + ".html")).write_text(page(title, body, math=True), encoding="utf-8")
             cards.append(f'<article class="index-card"><h2><a href="{slug}.html">{title}</a></h2><p>{description}</p></article>')
         # Foundation Markdown refers to these illustrations via ../assets/figures/.

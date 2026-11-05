@@ -1,11 +1,14 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>不定积分｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
  <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
  <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="foundations-2.html">初中：数与代数</a><a class="topic-link"  href="foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="foundations-6.html">高中：三角函数</a><a class="topic-link"  href="foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="foundations-11.html">数学思想与解题方法</a><a class="topic-link"  href="foundations-formulas.html">公式与定理速查</a><a class="topic-link"  href="junior-textbook-catalog.html">初中人教版教材目录</a><a class="topic-link"  href="high-school-textbook-catalog.html">高中人教 A 版教材目录</a></div></details><details class="subject" open><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="calculus-3.html">连续性</a><a class="topic-link"  href="calculus-4.html">导数与微分</a><a class="topic-link"  href="calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link active" aria-current="page" href="calculus-6.html">不定积分</a><a class="topic-link"  href="calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="calculus-8.html">反常积分</a><a class="topic-link"  href="calculus-9.html">空间几何与向量</a><a class="topic-link"  href="calculus-10.html">多元函数微分</a><a class="topic-link"  href="calculus-11.html">二重与三重积分</a><a class="topic-link"  href="calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="calculus-13.html">常微分方程</a><a class="topic-link"  href="calculus-14.html">数项级数</a><a class="topic-link"  href="calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="linear-2.html">向量与线性组合</a><a class="topic-link"  href="linear-3.html">矩阵与运算</a><a class="topic-link"  href="linear-4.html">消元与线性方程组</a><a class="topic-link"  href="linear-5.html">行列式</a><a class="topic-link"  href="linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="linear-7.html">线性映射与换基</a><a class="topic-link"  href="linear-8.html">内积、正交与投影</a><a class="topic-link"  href="linear-9.html">最小二乘</a><a class="topic-link"  href="linear-10.html">特征值与对角化</a><a class="topic-link"  href="linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="probability-4.html">随机变量与分布</a><a class="topic-link"  href="probability-5.html">常见离散分布</a><a class="topic-link"  href="probability-6.html">常见连续分布</a><a class="topic-link"  href="probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="probability-8.html">多维分布与独立性</a><a class="topic-link"  href="probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="probability-11.html">样本与抽样分布</a><a class="topic-link"  href="probability-12.html">参数估计</a><a class="topic-link"  href="probability-13.html">假设检验</a><a class="topic-link"  href="probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="probability-15.html">贝叶斯统计</a><a class="topic-link"  href="probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="history-timeline.html">数学发展时间轴</a><a class="topic-link"  href="history-1.html">从计数和测量开始</a><a class="topic-link"  href="history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="history-4.html">解析几何与微积分</a><a class="topic-link"  href="history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="../archive/math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
- <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 不定积分</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>不定积分</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><p>原函数 F 满足 F′=f；在一个区间上，所有原函数相差一个常数：</p>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 不定积分</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>不定积分</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">初学者先理解什么？</h3>
+<p><strong>原函数</strong>是求导后得到给定函数的函数；<strong>不定积分</strong>表示全部原函数，通常写成 \(\int f(x)\,dx=F(x)+C\)。其中 \(C\) 是任意常数，因为常数的导数为 0。</p>
+<p>例如 \(\int 2x\,dx=x^2+C\)，可通过求导检验。这个写法讨论的区间上必须确实有该原函数；不定积分是函数族，不是一个数。</p>
+<p>原函数 F 满足 F′=f；在一个区间上，所有原函数相差一个常数：</p>
 <p>\[
 \int f(x)\,dx=F(x)+C.
 \]</p>
-<h3 id="section-1">6.1 基本积分表</h3>
+<h3 id="section-2">6.1 基本积分表</h3>
 <p>\[
 \begin{aligned}
 \int x^\alpha dx&amp;=\frac{x^{\alpha+1}}{\alpha+1}+C\quad(\alpha\neq-1),\\
@@ -18,18 +21,28 @@
 \end{aligned}
 \]</p>
 <p>幂函数公式在函数有定义的区间上使用；对一般实数指数可先取 x&gt;0。对数和三角积分要避开奇点；最后一式在 −1&lt;x&lt;1 使用；a&gt;0、a≠1。</p>
-<h3 id="section-2">6.2 核心方法</h3>
+<h3 id="section-3">基本积分表逐项反向检验</h3>
+<p>下列等式都在所述被积函数连续的<strong>一个连通区间内</strong>检验；不相连区间上的积分常数可以分别取值。对每个右端求导，即独立检查它是否为原函数。</p>
+<ol>
+<li>当 \(x&gt;0,\alpha\ne-1\)，\(d[x^{\alpha+1}/(\alpha+1)]/dx=x^\alpha\)；整数指数的其他实数定义区间可另查。\(x\ne0\) 时 \(d(\ln|x|)/dx=1/x\)，分别适用于正、负半轴。</li>
+<li>\((e^x)&#x27;=e^x\)；\(a&gt;0,a\ne1\) 时，\(d[a^x/\ln a]/dx=a^x\)。</li>
+<li>\(( -\cos x)&#x27;=\sin x\)，\((\sin x)&#x27;=\cos x\)。</li>
+<li>\((\tan x)&#x27;=1/\cos^2x\) 要求 \(\cos x\ne0\)；\((-\cot x)&#x27;=1/\sin^2x\) 要求 \(\sin x\ne0\)。跨奇点不能用同一连通区间上的原函数直接套公式。</li>
+<li>\((\arctan x)&#x27;=1/(1+x^2)\)；当 \(-1&lt;x&lt;1\)，\((\arcsin x)&#x27;=1/\sqrt{1-x^2}\)。</li>
+</ol>
+<p>反向求导证明这些表达式确为原函数；同一区间上的任意两个原函数之差为常数，才得到各行的 \(+C\)。这个核验依赖上一节已经列出的求导结果，并不声称重新证明了所依赖的基本极限。</p>
+<h3 id="section-4">6.2 核心方法</h3>
 <ul>
-<li>线性：\(\int(af+bg)dx=a\int fdx+b\int gdx\)。</li>
+<li>线性：若 \(F&#x27;=f,G&#x27;=g\)，则 \(\int(af+bg)dx=aF+bG+C\)，常数 a、b 可同时为零。这样写保留了任意积分常数；不宜把原函数族直接当作普通数相加。</li>
 <li>换元：\(\int f(g(x))g&#x27;(x)dx=F(g(x))+C\)，其中 F′=f。</li>
-<li>分部积分：\(\int u\,dv=uv-\int v\,du\)。</li>
-<li>有理函数：多项式除法、因式分解、部分分式。</li>
-<li>三角代换：\(\sqrt{a^2-x^2}\) 可考虑 x=a sin t，\(\sqrt{a^2+x^2}\) 可考虑 x=a tan t，需限制区间处理符号。</li>
-<li>积分结果通过求导检验；不是每个初等函数的原函数都能写成初等函数，例如 e^(−x²)。</li>
+<li>分部积分：\(\int u\,dv=uv-\int v\,du\)，例如 u、v 连续可导时成立。</li>
+<li>有理函数：分母非零的有理函数先做多项式除法；余项分母在实数域分解为一次和不可约二次因子的幂，再以互素因子的 Bézout 恒等式逐次拆分，得到部分分式。分解依赖代数基本定理及多项式 Bézout 定理；各项积分均在避开分母零点的区间处理。</li>
+<li>三角代换：当 a&gt;0，\(\sqrt{a^2-x^2}\) 可考虑 x=a sin t，\(\sqrt{a^2+x^2}\) 可考虑 x=a tan t；代入分别得 \(a|\cos t|\)、\(a|\sec t|\)，故需限制区间处理符号并检查换元的一一性。</li>
+<li>积分结果通过求导检验；例如 \(e^{-x^2}\) 没有初等原函数。证明需用微分代数中的 Liouville 初等积分判据：对有理函数 f 和非常数有理函数 g，若 \(fe^g\) 有初等原函数，则存在有理函数 R 满足 \(R&#x27;+g&#x27;R=f\)。取 f=1、g=−x²，须有 \(R&#x27;-2xR=1\)。若复有理函数 R 在有限点有 m 阶极点，则 R′ 在该点有 m+1 阶极点，而 2xR 的极点阶至多为 m，不能相消；所以 R 无有限极点，由代数基本定理 R 是多项式。但非零多项式的 \(R&#x27;-2xR\) 次数比 R 高一，不可能恒为 1；零多项式也不满足。故无所需 R。此处明确将 Liouville 判据及代数基本定理作为依赖，详见 <a href="https://math.stanford.edu/~conrad/papers/elemint.pdf">Stanford：初等积分的不可能性定理</a>。</li>
 </ul>
-<h3 id="section-3">为什么分部积分成立？</h3>
+<h3 id="section-5">为什么分部积分成立？</h3>
 <p>乘积求导 \((uv)&#x27;=u&#x27;v+uv&#x27;\)，两边积分并移项，得到 \(\int u\,dv=uv-\int v\,du\)。例如：</p>
 <p>\[
 \int x e^x\,dx=xe^x-\int e^x\,dx=(x-1)e^x+C.
 \]</p>
-<p>这里取 \(u=x\)、\(dv=e^x dx\)。它适合把一个乘积化成更容易求的积分；最后对结果求导可检验。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-5.html">← 中值定理、泰勒公式与导数应用</a><a href="calculus-7.html">定积分与微积分基本定理 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">6.1 基本积分表</a><a class="toc-h3" href="#section-2">6.2 核心方法</a><a class="toc-h3" href="#section-3">为什么分部积分成立？</a></aside></div></div></body></html>
+<p>这里取 \(u=x\)、\(dv=e^x dx\)。它适合把一个乘积化成更容易求的积分；最后对结果求导可检验。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-5.html">← 中值定理、泰勒公式与导数应用</a><a href="calculus-7.html">定积分与微积分基本定理 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">初学者先理解什么？</a><a class="toc-h3" href="#section-2">6.1 基本积分表</a><a class="toc-h3" href="#section-3">基本积分表逐项反向检验</a><a class="toc-h3" href="#section-4">6.2 核心方法</a><a class="toc-h3" href="#section-5">为什么分部积分成立？</a></aside></div></div></body></html>

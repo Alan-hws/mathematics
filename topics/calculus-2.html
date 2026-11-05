@@ -1,24 +1,30 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>函数、数列与极限｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
  <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
  <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="foundations-2.html">初中：数与代数</a><a class="topic-link"  href="foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="foundations-6.html">高中：三角函数</a><a class="topic-link"  href="foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="foundations-11.html">数学思想与解题方法</a><a class="topic-link"  href="foundations-formulas.html">公式与定理速查</a><a class="topic-link"  href="junior-textbook-catalog.html">初中人教版教材目录</a><a class="topic-link"  href="high-school-textbook-catalog.html">高中人教 A 版教材目录</a></div></details><details class="subject" open><summary>高等数学</summary><div class="topic-list"><a class="topic-link active" aria-current="page" href="calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="calculus-3.html">连续性</a><a class="topic-link"  href="calculus-4.html">导数与微分</a><a class="topic-link"  href="calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="calculus-6.html">不定积分</a><a class="topic-link"  href="calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="calculus-8.html">反常积分</a><a class="topic-link"  href="calculus-9.html">空间几何与向量</a><a class="topic-link"  href="calculus-10.html">多元函数微分</a><a class="topic-link"  href="calculus-11.html">二重与三重积分</a><a class="topic-link"  href="calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="calculus-13.html">常微分方程</a><a class="topic-link"  href="calculus-14.html">数项级数</a><a class="topic-link"  href="calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="linear-2.html">向量与线性组合</a><a class="topic-link"  href="linear-3.html">矩阵与运算</a><a class="topic-link"  href="linear-4.html">消元与线性方程组</a><a class="topic-link"  href="linear-5.html">行列式</a><a class="topic-link"  href="linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="linear-7.html">线性映射与换基</a><a class="topic-link"  href="linear-8.html">内积、正交与投影</a><a class="topic-link"  href="linear-9.html">最小二乘</a><a class="topic-link"  href="linear-10.html">特征值与对角化</a><a class="topic-link"  href="linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="probability-4.html">随机变量与分布</a><a class="topic-link"  href="probability-5.html">常见离散分布</a><a class="topic-link"  href="probability-6.html">常见连续分布</a><a class="topic-link"  href="probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="probability-8.html">多维分布与独立性</a><a class="topic-link"  href="probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="probability-11.html">样本与抽样分布</a><a class="topic-link"  href="probability-12.html">参数估计</a><a class="topic-link"  href="probability-13.html">假设检验</a><a class="topic-link"  href="probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="probability-15.html">贝叶斯统计</a><a class="topic-link"  href="probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="history-timeline.html">数学发展时间轴</a><a class="topic-link"  href="history-1.html">从计数和测量开始</a><a class="topic-link"  href="history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="history-4.html">解析几何与微积分</a><a class="topic-link"  href="history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="../archive/math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
- <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 函数、数列与极限</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>函数、数列与极限</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">2.1 基本概念</h3>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 函数、数列与极限</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>函数、数列与极限</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">初学者先理解什么？</h3>
+<p><strong>极限</strong>描述输入越来越接近某个位置时，函数值靠近哪个数；<strong>数列极限</strong>则观察项的序号越来越大时的趋势。“趋近”不要求中间某一项恰好等于目标值。</p>
+<p>例如 \(a_n=1/n\) 依次为 1、1/2、1/3……，虽然每项都大于 0，仍有 \(a_n\to0\)。函数可以在 \(x=1\) 处另行定义为 2，而其他位置取 \(f(x)=x\)：当 \(x\to1\) 时极限为 1，函数值却为 2。<strong>函数值、极限是否存在、两者是否相等要分别检查。</strong></p>
+<p><img src="../assets/figures/calculus-limit.svg" alt="函数极限为一但该点函数值为二的示意图" /></p>
+<p><strong>跟着算一遍：先化简，再求极限。</strong> 当 \(x\ne1\) 时，\((x^2-1)/(x-1)=x+1\)，因此 \(\lim_{x\to1}(x^2-1)/(x-1)=2\)。原式在 \(x=1\) 没有定义，但求极限只需要研究附近允许的点。数列 \(1/n\to0\) 的严格含义是：无论给定多小的 \(\varepsilon&gt;0\)，选正整数 \(N&gt;1/\varepsilon\)，以后所有 \(n\ge N\) 都有 \(|1/n|&lt;\varepsilon\)。</p>
+<h3 id="section-2">2.1 基本概念</h3>
 <ul>
 <li>函数：定义域、值域、复合、反函数、分段函数；有界、单调、奇偶与周期性。</li>
 <li>数列是以正整数为自变量的函数；有界与收敛不同，收敛必有界，有界未必收敛。</li>
-<li>单侧极限、双侧极限、无穷远处的极限；双侧极限存在当且仅当左右极限存在且相等。</li>
+<li>单侧极限、双侧极限、无穷远处的极限；当定义域在该点两侧均有点任意接近时，双侧极限存在当且仅当左右极限存在且相等。</li>
 <li>无穷小是极限为零的变量，不是固定的“极小实数”；无穷大不是实数，不能直接按普通数运算。</li>
 </ul>
-<h3 id="section-2">2.2 极限的精确定义</h3>
+<h3 id="section-3">2.2 极限的精确定义</h3>
 <p>数列收敛：\(a_n\to A\) 指对任意 \(\varepsilon&gt;0\)，存在正整数 N，使 n&gt;N 时都有</p>
 <p>\[
 |a_n-A|&lt;\varepsilon.
 \]</p>
-<p>函数极限：\(\lim_{x\to a}f(x)=L\) 指对任意 \(\varepsilon&gt;0\)，存在 \(\delta&gt;0\)，使定义域内满足 \(0&lt;|x-a|&lt;\delta\) 的 x 都有</p>
+<p>函数极限：要求 a 是定义域的聚点，即任意去心邻域内都有定义域中的点。\(\lim_{x\to a}f(x)=L\) 指对任意 \(\varepsilon&gt;0\)，存在 \(\delta&gt;0\)，使定义域内满足 \(0&lt;|x-a|&lt;\delta\) 的 x 都有</p>
 <p>\[
 |f(x)-L|&lt;\varepsilon.
 \]</p>
 <p>理解重点：要求“足够接近以后全部满足”，不是挑选一些接近的点。</p>
-<h3 id="section-3">2.3 核心定理</h3>
+<p>聚点条件不可省：如果 a 是定义域中的孤立点，充分小的去心邻域没有可检验的 x，上述条件会对任意 L 空真，不能据此断言极限唯一。讨论双侧极限时，两侧都应有定义域中的点任意接近 a；否则应明确采用相对定义域的单侧极限。</p>
+<h3 id="section-4">2.3 核心定理</h3>
 <table>
 <thead>
 <tr>
@@ -57,7 +63,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="section-4">2.4 常用极限与等价无穷小</h3>
+<p><strong>这些结论的证明。</strong> 唯一性：若两个极限 A、B 不等，取 \(\varepsilon=|A-B|/3\)，同一个充分靠后的项或充分靠近聚点的定义域点必须同时距离 A、B 小于 ε，与三角不等式矛盾。局部有界性取 ε=1 得 \(|f|\le |L|+1\)；保号性对 L&gt;0 取 ε=L/2。夹挤定理中两端最终都落入 \((L-\varepsilon,L+\varepsilon)\)，中间项亦如此。</p>
+<p>四则法则：差的绝对值受各项误差之和控制；乘积写为 \(fg-AB=f(g-B)+B(f-A)\)，用 f 的局部有界性控制第一项。若 B≠0，保号性给出充分靠近时 \(|g|\ge |B|/2\)，于是 \(|1/g-1/B|\le2|g-B|/|B|^2\)，再用乘积法则处理商。对数列，以上论证把“足够靠近”换成“充分靠后”即可。</p>
+<p>单调有界定理：递增有上界时令 \(s=\sup\{a_n\}\)。任意 ε&gt;0，由上确界定义存在 N 使 \(a_N&gt;s-\varepsilon\)，此后 \(s-\varepsilon&lt;a_n\le s\)，因此收敛到 s；递减情况对 \(-a_n\) 使用同一证明。这一步使用实数的上确界完备性。柯西准则的必要性由 \(|a_m-a_n|\le|a_m-A|+|a_n-A|\) 得到；充分性先令 ε=1 得尾部有界，连同有限个前项使整个数列有界。从有界区间反复二分、选择包含无穷多项的半区间，可构造趋于某个 A 的子列；嵌套区间有唯一公共点依赖实数完备性。再用柯西性质令全部充分靠后的项接近该子列中足够靠后的项，便得整个数列趋于 A。</p>
+<h3 id="section-5">2.4 常用极限与等价无穷小</h3>
 <p>\[
 \lim_{x\to0}\frac{\sin x}{x}=1,\quad
 \lim_{x\to0}\frac{e^x-1}{x}=1,\quad
@@ -77,21 +86,23 @@
 \]</p>
 <p>\(f\sim g\) 表示 f/g→1。等价替换适合乘除结构，不能在可能发生抵消的加减项中盲目替换。例如求 sin x−x 的高阶变化时，不能直接把 sin x 换成 x。</p>
 <p>常用方法：直接代入 → 因式分解、通分、有理化 → 重要极限与等价替换 → 夹挤 → 符合条件的洛必达法则 → 泰勒展开。</p>
-<h3 id="section-5">实际问题、推导与历史：瞬时变化的极限</h3>
+<p><strong>常用极限与等价无穷小的核验。</strong> 正弦与指数基本极限的独立推导见“基本求导公式逐项核验”。由连续性 \(\cos x\to1\)，所以 \(\tan x/x=(\sin x/x)/\cos x\to1\)。令 \(t=\arcsin x\to0\)，则 \(\arcsin x/x=t/\sin t\to1\)；令 \(t=\arctan x\to0\)，同理 \(t/\tan t\to1\)。半角公式给出 \((1-\cos x)/(x^2/2)=[\sin(x/2)/(x/2)]^2\to1\)。</p>
+<p>令 \(u=\ln(1+x)\to0\)，则 \(x=e^u-1\)，所以 \(\ln(1+x)/x=u/(e^u-1)\to1\)。对固定 \(\alpha\ne0\)，写 \((1+x)^\alpha=e^{\alpha\ln(1+x)}\)，把 \([(1+x)^\alpha-1]/(\alpha x)\) 拆成 \((e^u-1)/u\) 与 \(\ln(1+x)/x\)，其中 \(u=\alpha\ln(1+x)\)，两因子均趋于 1。又 \(\ln[(1+x)^{1/x}]=\ln(1+x)/x\to1\)，由指数函数连续性得极限 \(e\)；令 \(x=1/n\) 得数列形式。上述对数表达式要求 \(x\) 足够接近 0，使 \(1+x&gt;0\)。</p>
+<h3 id="section-6">实际问题、推导与历史：瞬时变化的极限</h3>
 <p>一辆车在时刻 \(t\) 的位移是 \(s(t)=t^2\)。第 \(t\) 秒后的 \(h\) 秒内平均速度为 \(((t+h)^2-t^2)/h=2t+h\)；当 \(h\to0\)，极限为 \(2t\)，这才给出瞬时速度。必须先令 \(h\ne0\)，再取极限。</p>
 <p><strong>夹挤定理怎么用：</strong> \(-x^2\le x^2\sin(1/x)\le x^2\)（\(x\ne0\)），两侧均趋于0，所以中间也趋于0。夹挤用于难以直接计算但能找到上下界的情况。</p>
 <p><strong>历史：</strong> 极限思想经历了很长的发展：古希腊数学中的穷竭法以逐步逼近处理面积问题；后来微积分形成后，极限与收敛又逐步被严格化。<a href="https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/">圣安德鲁斯大学数学史</a></p>
-<h3 id="section-6">指数对数、增长与二分法</h3>
+<h3 id="section-7">指数对数、增长与二分法</h3>
 <p>指数从整数次幂经正根、分数指数推广到实指数，保持指数运算律；当 \(a&gt;0\) 时定义 \(a^x\)，且 \(a^{x+y}=a^xa^y\)。对数是指数运算的逆运算：\(\log_a x=y\iff a^y=x\)，条件 \(a&gt;0,a\ne1,x&gt;0\)。运算式如 \(\log_a(xy)=\log_a x+\log_a y\) 源于 \(a^{u+v}=a^ua^v\)。指数增长模型 \(N(t)=N_0a^t\) 可描述复利、细菌繁殖或放射性衰减；取对数可把乘方中的未知指数转成可解变量。指数、幂函数、对数函数增长速度不同；比较增长时可看比值或取对数，不能仅凭有限几个点判断长期趋势。</p>
-<p>若连续函数 \(f\) 在 \([a,b]\) 上满足 \(f(a)f(b)&lt;0\)，介值定理保证区间内至少有零点。二分法不断取中点并保留变号子区间；第 \(n\) 次后区间长度为 \((b-a)/2^n\)，故中点近似误差不超过该长度的一半。此法用于无法写出精确根的方程数值求解；变号只保证存在奇数重数型过零，不涵盖不变号的偶重根，实际找根前需先定位合适区间。</p>
-<h3 id="section-7">频率、概率与随机模拟</h3>
+<p>若连续函数 \(f\) 在 \([a,b]\) 上满足 \(f(a)f(b)&lt;0\)，介值定理保证区间内至少有零点。二分法不断取中点并保留变号子区间；第 \(n\) 次后区间长度为 \((b-a)/2^n\)，故中点近似误差不超过该长度的一半。此法用于无法写出精确根的方程数值求解；端点变号保证至少存在零点，但不保证唯一。一般连续函数的零点不一定能用多项式根的重数描述，而没有变号也可能有零点，例如 \(f(x)=x^2\) 在 0 处的零点。</p>
+<h3 id="section-8">频率、概率与随机模拟</h3>
 <p>在重复条件稳定的独立试验中，事件频率会随次数增加而趋近其概率（大数定律的直观表达）；有限次数的频率仍有随机波动。随机模拟用计算机生成符合模型的样本，估计复杂事件概率或分布，例如重复掷骰并统计和大于阈值的比例。模拟结果是近似值，误差通常随试验次数增加而下降，不能替代可行的精确计数或证明。</p>
 <p>有限等可能样本空间中 \(P(A)=|A|/|\Omega|\)。先定义样本空间和事件，再判断结果是否等可能；不等可能时直接数结果会错。独立事件满足 \(P(A\cap B)=P(A)P(B)\)，而互斥是交集为空。若事件都具有正概率，互斥事件不可能独立。</p>
-<h3 id="section-8">正态分布、相关和回归模型</h3>
+<h3 id="section-9">正态分布、相关和回归模型</h3>
 <p>正态曲线以 \(\mu\) 为中心、\(\sigma\) 控制宽窄；标准化 \(Z=(X-\mu)/\sigma\) 将变量转成标准正态刻度。约 68%、95%、99.7% 分别落在均值左右 1、2、3 个标准差内是经验近似，适用于正态模型而非任意数据。相关系数在 −1 到 1 之间，只度量线性关联；非线性关系可能相关系数接近零，离群点也会显著改变它。</p>
 <p>简单线性回归以残差平方和最小确定直线。令 \(\hat y=a+bx\)，对 \(\sum_i(y_i-a-bx_i)^2\) 分别对 \(a,b\) 求最小，得到
 \[
 b=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},\qquad a=\bar y-b\bar x.
 \]
-斜率是样本范围内的线性趋势，外推到观测范围外风险大。相关和回归不能单独证明因果，因果判断还需实验设计或控制混杂因素。</p>
-<p>列联表记录两个分类变量的联合频数。在独立假设下，单元格期望频数为“行总数×列总数÷总数”；卡方统计量衡量观察和期望的总体差异。独立性检验结论是对模型和样本证据的判断，需要查看期望频数条件及显著性水平；不能把“未拒绝独立”表述为“已证明独立”。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-3.html">连续性 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">2.1 基本概念</a><a class="toc-h3" href="#section-2">2.2 极限的精确定义</a><a class="toc-h3" href="#section-3">2.3 核心定理</a><a class="toc-h3" href="#section-4">2.4 常用极限与等价无穷小</a><a class="toc-h3" href="#section-5">实际问题、推导与历史：瞬时变化的极限</a><a class="toc-h3" href="#section-6">指数对数、增长与二分法</a><a class="toc-h3" href="#section-7">频率、概率与随机模拟</a><a class="toc-h3" href="#section-8">正态分布、相关和回归模型</a></aside></div></div></body></html>
+上式要求 \(\sum_i(x_i-\bar x)^2&gt;0\)，即样本的横坐标不全相同，否则斜率不能由此公式确定。斜率描述样本范围内的线性趋势，外推到观测范围外风险大。相关和回归不能单独证明因果，因果判断还需实验设计或控制混杂因素。</p>
+<p>列联表记录两个分类变量的联合频数。在独立假设下，用样本行、列比例估计后，单元格拟合期望频数为“行总数×列总数÷总数”；真实期望频数依赖未知的总体行、列概率。卡方统计量衡量观察和拟合期望的总体差异。独立性检验结论是对模型和样本证据的判断，需要查看期望频数条件及显著性水平；不能把“未拒绝独立”表述为“已证明独立”。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-3.html">连续性 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">初学者先理解什么？</a><a class="toc-h3" href="#section-2">2.1 基本概念</a><a class="toc-h3" href="#section-3">2.2 极限的精确定义</a><a class="toc-h3" href="#section-4">2.3 核心定理</a><a class="toc-h3" href="#section-5">2.4 常用极限与等价无穷小</a><a class="toc-h3" href="#section-6">实际问题、推导与历史：瞬时变化的极限</a><a class="toc-h3" href="#section-7">指数对数、增长与二分法</a><a class="toc-h3" href="#section-8">频率、概率与随机模拟</a><a class="toc-h3" href="#section-9">正态分布、相关和回归模型</a></aside></div></div></body></html>

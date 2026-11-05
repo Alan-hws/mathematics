@@ -1,10 +1,13 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>期望、方差、协方差｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
  <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
  <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="foundations-2.html">初中：数与代数</a><a class="topic-link"  href="foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="foundations-6.html">高中：三角函数</a><a class="topic-link"  href="foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="foundations-11.html">数学思想与解题方法</a><a class="topic-link"  href="foundations-formulas.html">公式与定理速查</a><a class="topic-link"  href="junior-textbook-catalog.html">初中人教版教材目录</a><a class="topic-link"  href="high-school-textbook-catalog.html">高中人教 A 版教材目录</a></div></details><details class="subject" ><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="calculus-3.html">连续性</a><a class="topic-link"  href="calculus-4.html">导数与微分</a><a class="topic-link"  href="calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="calculus-6.html">不定积分</a><a class="topic-link"  href="calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="calculus-8.html">反常积分</a><a class="topic-link"  href="calculus-9.html">空间几何与向量</a><a class="topic-link"  href="calculus-10.html">多元函数微分</a><a class="topic-link"  href="calculus-11.html">二重与三重积分</a><a class="topic-link"  href="calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="calculus-13.html">常微分方程</a><a class="topic-link"  href="calculus-14.html">数项级数</a><a class="topic-link"  href="calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="linear-2.html">向量与线性组合</a><a class="topic-link"  href="linear-3.html">矩阵与运算</a><a class="topic-link"  href="linear-4.html">消元与线性方程组</a><a class="topic-link"  href="linear-5.html">行列式</a><a class="topic-link"  href="linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="linear-7.html">线性映射与换基</a><a class="topic-link"  href="linear-8.html">内积、正交与投影</a><a class="topic-link"  href="linear-9.html">最小二乘</a><a class="topic-link"  href="linear-10.html">特征值与对角化</a><a class="topic-link"  href="linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" open><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="probability-4.html">随机变量与分布</a><a class="topic-link"  href="probability-5.html">常见离散分布</a><a class="topic-link"  href="probability-6.html">常见连续分布</a><a class="topic-link"  href="probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="probability-8.html">多维分布与独立性</a><a class="topic-link active" aria-current="page" href="probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="probability-11.html">样本与抽样分布</a><a class="topic-link"  href="probability-12.html">参数估计</a><a class="topic-link"  href="probability-13.html">假设检验</a><a class="topic-link"  href="probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="probability-15.html">贝叶斯统计</a><a class="topic-link"  href="probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="history-timeline.html">数学发展时间轴</a><a class="topic-link"  href="history-1.html">从计数和测量开始</a><a class="topic-link"  href="history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="history-4.html">解析几何与微积分</a><a class="topic-link"  href="history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="../archive/math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
- <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 概率统计 / 期望、方差、协方差</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">概率统计</div><h1>期望、方差、协方差</h1><p class="page-note"><a href="../docs/probability-statistics-knowledge.md" download>下载本学科完整笔记</a></p><p>\[
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 概率统计 / 期望、方差、协方差</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">概率统计</div><h1>期望、方差、协方差</h1><p class="page-note"><a href="../docs/probability-statistics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">初学者先理解什么？</h3>
+<p><strong>期望</strong>是概率加权的平均，<strong>方差</strong>衡量相对期望的平方偏离；<strong>协方差</strong>描述两个变量相对各自均值共同变化的方向。</p>
+<p>若 \(X\) 以相同概率取 0 和 2，则 \(E(X)=1\)、\(\operatorname{Var}(X)=1\)。对常数 \(a,b\)，\(E(aX+b)=aE(X)+b\)，\(\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)\)。</p>
+<p>\[
 E[g(X)]=\sum_x g(x)p(x)\quad\text{或}\quad\int g(x)f(x)dx.
 \]</p>
-<p>对有限期望，检查绝对可积性。无需先求 g(X) 的分布就能算期望。</p>
+<p>对有限期望，检查绝对可积性。无需先求 g(X) 的分布就能算期望。证明思路：对指标函数 \(g=\mathbf1_B\)，等式就是 \(P(X\in B)\) 的分布定义；有限线性组合得到简单函数情形，再以非负简单函数单调逼近可测 g，并对一般可积 g 分别处理正、负部分。连续情形最后用密度表示 X 的分布；该推广依赖积分的单调收敛定理。</p>
 <p>\[
 Var(X)=E[(X-E X)^2]=E(X^2)-(EX)^2,
 \]
@@ -17,10 +20,10 @@ Cov(X,Y)=E[(X-EX)(Y-EY)]=E(XY)-EX\,EY.
 <li>Var(X+Y)=Var(X)+Var(Y)+2Cov(X,Y)。</li>
 <li>独立且相关矩存在 ⇒ Cov=0；Cov=0 一般不能反推独立。</li>
 <li>相关系数 ρ=Cov(X,Y)/(σ_Xσ_Y)，要求两个方差有限且&gt;0；−1≤ρ≤1。</li>
-<li>|ρ|=1 当且仅当二者几乎处处存在线性关系（在上述非退化条件下）。</li>
+<li>|ρ|=1 当且仅当存在常数 a≠0、b，使 Y=aX+b 几乎处处成立（在上述非退化条件下）。</li>
 <li>联合正态时不相关可推出独立，不能只要求各自边缘正态。</li>
 </ul>
-<h3 id="section-1">9.1 条件期望与总体分解</h3>
+<h3 id="section-2">9.1 条件期望与总体分解</h3>
 <p>\[
 E[X]=E[E(X\mid Y)],
 \]
@@ -28,14 +31,25 @@ E[X]=E[E(X\mid Y)],
 Var(X)=E[Var(X\mid Y)]+Var(E[X\mid Y]).
 \]</p>
 <p>分别要求适当可积或有限二阶矩。条件期望给出“知道 Y 后，对 X 的平均预测”。在平方损失下，它是所有基于 Y 的预测中均方误差最小的预测。</p>
-<h3 id="section-2">9.2 协方差矩阵</h3>
+<h3 id="section-3">9.2 协方差矩阵</h3>
 <p>\[
 \Sigma=E[(X-\mu)(X-\mu)^T],\qquad Cov(AX+b)=A\Sigma A^T.
 \]</p>
 <p>Σ 对称半正定，对角元是各分量方差。PCA、线性模型与多元正态均会用到。</p>
-<h3 id="section-3">方差公式如何推出来？</h3>
+<h3 id="section-4">方差公式如何推出来？</h3>
 <p>令 \(\mu=E(X)\)，假设二阶矩有限，展开平方并使用期望的线性性：</p>
 <p>\[
 E[(X-\mu)^2]=E(X^2)-2\mu E(X)+\mu^2=E(X^2)-\mu^2.
 \]</p>
-<p>方差衡量数据围绕均值的平方偏离；单位是原单位的平方，取平方根得到与原数据相同单位的标准差。两组均值相同的数据仍可能具有截然不同的波动。</p><nav class="page-turn" aria-label="相邻主题"><a href="probability-8.html">← 多维分布与独立性</a><a href="probability-10.html">概率不等式与极限定理 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">9.1 条件期望与总体分解</a><a class="toc-h3" href="#section-2">9.2 协方差矩阵</a><a class="toc-h3" href="#section-3">方差公式如何推出来？</a></aside></div></div></body></html>
+<p>方差衡量数据围绕均值的平方偏离；单位是原单位的平方，取平方根得到与原数据相同单位的标准差。两组均值相同的数据仍可能具有截然不同的波动。</p>
+<p><strong>协方差、相关和全方差的核验。</strong> 令 \(U=X-EX,V=Y-EY\)，展开 \(E(UV)\) 得 \(\operatorname{Cov}(X,Y)=E(XY)-EX\,EY\)；展开 \(E[(U+V)^2]\) 得和的方差公式。\(aX+b\) 的中心化形式是 \(a(X-EX)\)，故方差乘 \(a^2\)。若 \(X,Y\) 独立且相关期望存在，联合分布分解使 \(E(XY)=EX\,EY\)，所以协方差为零。</p>
+<p>对非零标准差，柯西—施瓦茨不等式给出 \(|E(UV)|\le\sqrt{EU^2}\sqrt{EV^2}\)，故 \(|\rho|\le1\)；等号当且仅当中心化变量几乎处处成比例，此时两个非退化变量几乎处处存在线性关系。若 \(m(Y)=E(X\mid Y)\)，先把 \(X-EX=[X-m(Y)]+[m(Y)-EX]\) 平方；因为 \(E[X-m(Y)\mid Y]=0\)，交叉项的期望为零。由条件期望的塔式性质得到 \(\operatorname{Var}(X)=E[\operatorname{Var}(X\mid Y)]+\operatorname{Var}(E[X\mid Y])\)。对任意平方可积的 \(Y\) 的函数 \(g\)，同样展开可得 \(E[(X-g)^2]=E[(X-m)^2]+E[(m-g)^2]\)，所以条件期望使均方误差最小。以上方差、相关和投影论证要求相应二阶矩有限，并依赖条件期望的定义与塔式性质。</p>
+<p>对于随机向量，\(AX+b-E(AX+b)=A(X-\mu)\)，因此 \(\operatorname{Cov}(AX+b)=E[A(X-\mu)(X-\mu)^TA^T]=A\Sigma A^T\)。任意向量 \(c\) 满足 \(c^T\Sigma c=E[(c^T(X-\mu))^2]\ge0\)，所以协方差矩阵半正定。</p>
+<p><strong>条件期望及塔式性质的核验。</strong> 在有限或可数个正概率事件 \(B_j=\{Y=y_j\}\) 构成划分的情形，定义 \(m(Y)=\sum_j E[X\mathbf1_{B_j}]\mathbf1_{B_j}/P(B_j)\)，并要求 \(E|X|&lt;\infty\)。直接相加得到 \(E[m(Y)]=\sum_jE[X\mathbf1_{B_j}]=EX\)，即全期望公式；对任意以 \(B_j\) 为单位组合出的事件 C，也有 \(E[m(Y)\mathbf1_C]=E[X\mathbf1_C]\)。若 Z 给出更粗的划分，其每个事件是若干 \(B_j\) 的并，按上式对该并求和得 \(E[E(X\mid Y)\mid Z]=E(X\mid Z)\)。这里的 Z 必须由 Y 决定（更准确地说 \(\sigma(Z)\subseteq\sigma(Y)\)），不能对任意两个随机变量省略这一条件。</p>
+<p>一般可积随机变量的条件期望定义为 \(\sigma(Y)\) 可测、且对每个 \(C\in\sigma(Y)\) 都满足 \(E[m\mathbf1_C]=E[X\mathbf1_C]\) 的随机变量 m，它在几乎处处意义下唯一。取 \(C=\Omega\) 立即得到全期望；若 \(\mathcal H\subseteq\mathcal G\)，令 \(m=E[X\mid\mathcal G]\)，则对每个 \(C\in\mathcal H\)，\(E[m\mathbf1_C]=E[X\mathbf1_C]\)，而 \(E[m\mid\mathcal H]\) 也对 C 有相同积分，由唯一性即 \(E[E[X\mid\mathcal G]\mid\mathcal H]=E[X\mid\mathcal H]\)。存在性依赖条件期望存在定理（可由 Radon–Nikodym 定理建立），不从上面的代数运算自动得到。</p>
+<p><strong>相关系数边界的独立证明。</strong> 令中心化随机变量为 U、V，且两者方差有限且非零。对任意实数 t，\(E(U-tV)^2=EU^2-2tE(UV)+t^2EV^2\ge0\)。令 \(t=E(UV)/EV^2\)，得到 \([E(UV)]^2\le EU^2EV^2\)，即 \(|\rho|\le1\)。等号成立当且仅当所选 t 使非负变量 \((U-tV)^2\) 的期望为零，即 U=tV 几乎处处；反之这样的非退化线性关系立即给出 \(|\rho|=1\)。不相关并不必然独立：令 X 在 −1、0、1 上等概率取值，Y=X²，则 EX=0、E(XY)=E(X³)=0，但 \(P(Y=0\mid X=0)=1\ne P(Y=0)=1/3\)。</p>
+<p><strong>联合正态时不相关为什么推出独立。</strong> 对联合正态向量 \((X,Y)\)，联合特征函数具有形式
+\[
+\varphi(s,t)=\exp\!\left(i(s\mu_X+t\mu_Y)-\tfrac12(s^2\sigma_X^2+2st\operatorname{Cov}(X,Y)+t^2\sigma_Y^2)\right).
+\]
+若协方差为零，它分解为 X、Y 各自的一维正态特征函数之积；特征函数的唯一性定理说明联合分布等于边缘分布的乘积分布，因此独立。推理也适用于退化正态分量；若讨论相关系数则仍需两个方差非零。这里以联合正态特征函数公式及唯一性定理为基础，单独的两个正态边缘并不能保证该公式成立。</p><nav class="page-turn" aria-label="相邻主题"><a href="probability-8.html">← 多维分布与独立性</a><a href="probability-10.html">概率不等式与极限定理 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">初学者先理解什么？</a><a class="toc-h3" href="#section-2">9.1 条件期望与总体分解</a><a class="toc-h3" href="#section-3">9.2 协方差矩阵</a><a class="toc-h3" href="#section-4">方差公式如何推出来？</a></aside></div></div></body></html>

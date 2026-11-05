@@ -44,24 +44,39 @@
 </tbody>
 </table>
 <p>建议：向量与矩阵 → 消元与方程组 → 秩与空间 → 行列式 → 正交与投影 → 特征值 → 二次型 → SVD与应用。教材顺序不同可按教材推进。</p>
-<p>默认实数域，向量为列向量；A 为 m×n 矩阵。复数域需将转置换为共轭转置等。</p>
+<p>默认实数域，向量为列向量；A 为 m×n 矩阵。在复数域处理内积、正交和 Hermitian 矩阵时需使用共轭转置；一般矩阵的普通转置恒等式仍使用普通转置，不能一概替换。</p>
 <h2 id="section-2">2. 向量与线性组合【基础】</h2>
+<h3 id="section-3">初学者先理解什么？</h3>
+<p>本节的<strong>坐标向量</strong>由有顺序的数构成；更一般的向量也可以是函数、多项式等向量空间中的元素。<strong>线性组合</strong>是对若干向量数乘后相加，<strong>张成</strong>表示所有可能的线性组合。</p>
+<p>例如 \((3,2)=3(1,0)+2(0,1)\)，所以两个坐标方向可以组成整个平面；\((1,2)\) 与 \((2,4)\) 方向重复，只张成一条直线。<strong>线性无关</strong>意味着没有向量可由其余向量线性表示。</p>
 <ul>
 <li>向量 x=(x₁,…,xₙ)^T；相加与数乘按分量进行。</li>
 <li>线性组合：c₁v₁+…+cₖvₖ。</li>
 <li>张成空间 span(v₁,…,vₖ)：所有线性组合的集合。</li>
 <li>线性无关：c₁v₁+…+cₖvₖ=0 只有全零系数解；否则线性相关。</li>
 <li>含零向量的向量组必相关；在 Rⁿ 中超过 n 个向量必相关。</li>
-<li>一组向量相关，当且仅当至少一个向量能由其余向量线性表示。</li>
+<li>一组向量相关，当且仅当至少一个向量能由其余向量线性表示。证明：若存在不全为零的关系 \(\sum_i c_iv_i=0\)，选 \(c_j\ne0\) 并移项除以它即可表示 \(v_j\)；反过来将表示式移到等式一侧，就得到非平凡线性关系。</li>
 <li>基是既张成整个空间又线性无关的向量组；基的向量数为维数。</li>
 <li>同一向量在不同基下坐标不同；坐标改变不等于几何向量改变。</li>
 </ul>
 <p><strong>例：</strong> (1,0)、(0,1) 是 R² 的一组基；(2,3)=2(1,0)+3(0,1)。向量 (1,2)、(2,4) 只能张成一条直线。</p>
-<h3 id="section-3">平面向量数量积与解三角形</h3>
-<p>平面向量基本定理：平面内任意向量都能唯一写成两个不共线向量的线性组合。取互相垂直的单位向量作基底，向量即对应坐标。数量积 \(\mathbf a\cdot\mathbf b=|\mathbf a||\mathbf b|\cos\theta\)，也等于坐标分量乘积之和；这同时表达方向夹角和投影长度。若 \(\mathbf a\cdot\mathbf b=0\) 且两向量非零，则垂直。力做功 \(W=\mathbf F\cdot\mathbf s\) 只取力在位移方向上的分量，解释了为何垂直力不做功。</p>
+<h3 id="section-4">平面向量数量积与解三角形</h3>
+<p>平面向量基本定理：平面内任意向量都能唯一写成两个不共线向量的线性组合。取互相垂直的单位向量作基底，向量即对应坐标。数量积等于坐标分量乘积之和；当 a、b 均非零时，还等于 \(|\mathbf a||\mathbf b|\cos\theta\)，表达方向夹角和投影长度，零向量没有夹角。若 \(\mathbf a\cdot\mathbf b=0\) 且两向量非零，则垂直。力做功 \(W=\mathbf F\cdot\mathbf s\) 只取力在位移方向上的分量，解释了为何垂直力不做功。</p>
 <p>三角形面积公式 \(S=\tfrac12 ab\sin C\) 来自“底乘高除以二”，高为 \(b\sin C\)。海伦公式 \(S=\sqrt{s(s-a)(s-b)(s-c)}\)（\(s=(a+b+c)/2\)）可由余弦定理先得 \(\cos C\)，再用 \(\sin^2C=1-\cos^2C\) 化简得到。海伦和秦九韶分别代表中西古代用边长直接求面积的成就；三边已知而角度难测时，这一公式尤其便利。</p>
-<h2 id="section-4">3. 矩阵与运算【基础】</h2>
-<h3 id="section-5">3.1 运算规则</h3>
+<p><strong>海伦公式逐步核验。</strong> 对非退化三角形，\(a,b,c&gt;0\) 且满足严格三角不等式。余弦定理给出 \(2ab\cos C=a^2+b^2-c^2\)，因此
+\[
+16S^2=4a^2b^2\sin^2C
+=4a^2b^2-(a^2+b^2-c^2)^2
+=[(a+b)^2-c^2][c^2-(a-b)^2].
+\]
+两个方括号分别因式分解，得到 \((a+b+c)(a+b-c)(a-b+c)(-a+b+c)=16s(s-a)(s-b)(s-c)\)。面积非负，取非负平方根即得所列公式。退化三角形取等号时面积为零；不满足三角不等式的三数不能当作真实三角形边长套用几何解释。</p>
+<h2 id="section-5">3. 矩阵与运算【基础】</h2>
+<h3 id="section-6">初学者先理解什么？</h3>
+<p><strong>矩阵</strong>是按行列排列的数表；\(m\times n\) 表示 \(m\) 行、\(n\) 列。矩阵乘向量可理解为把向量变成另一个向量，乘法时内部维数必须匹配。</p>
+<p><img src="../assets/figures/linear-transform-grid.svg" alt="矩阵将横坐标拉伸两倍" /></p>
+<p>例如 \(A=\operatorname{diag}(2,1)\) 把 \((1,1)^T\) 变为 \((2,1)^T\)。先检查维度，再计算各行与输入向量的内积；矩阵乘法通常不能交换顺序。</p>
+<p><strong>跟着算一遍。</strong> 设 \(A=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}\)，\(x=(3,4)^T\)。\(A\) 有两列，\(x\) 有两个分量，维度匹配；第一行算 \(1\cdot3+2\cdot4=11\)，第二行算 \(0\cdot3+1\cdot4=4\)，因此 \(Ax=(11,4)^T\)。也可理解为 \(3(1,0)^T+4(2,1)^T=(11,4)^T\)。</p>
+<h3 id="section-7">3.1 运算规则</h3>
 <p>\[
 (A+B)_{ij}=a_{ij}+b_{ij},\qquad (AB)_{ij}=\sum_k a_{ik}b_{kj}.
 \]</p>
@@ -73,7 +88,14 @@
 <li>单位矩阵 I 满足 AI=A、IA=A，注意各自尺寸。</li>
 <li>迹 tr(A)=对角元之和；A、B 尺寸使 AB、BA 都为方阵时，tr(AB)=tr(BA)。</li>
 </ul>
-<h3 id="section-6">3.2 逆矩阵</h3>
+<h3 id="section-8">矩阵运算公式的逐项核验</h3>
+<ol>
+<li><strong>乘法与结合律：</strong> 若 \(A\) 为 \(m\times n\)、\(B\) 为 \(n\times p\)、\(C\) 为 \(p\times q\)，则 \(((AB)C)_{ij}=\sum_k(\sum_l a_{il}b_{lk})c_{kj}=\sum_l a_{il}(\sum_k b_{lk}c_{kj})=(A(BC))_{ij}\)。有限和可交换求和顺序，故 \((AB)C=A(BC)\)。将元素公式对 \(B+C\) 展开，同理得分配律；前提是相关尺寸匹配。</li>
+<li><strong>转置：</strong> \(((AB)^T)_{ij}=(AB)_{ji}=\sum_k a_{jk}b_{ki}=(B^TA^T)_{ij}\)，因此 \((AB)^T=B^TA^T\)。按元素直接展开同样得到 \((A+B)^T=A^T+B^T\)。</li>
+<li><strong>迹：</strong> 若 \(A\) 为 \(m\times n\)、\(B\) 为 \(n\times m\)，则 \(\operatorname{tr}(AB)=\sum_{i=1}^{m}\sum_{j=1}^{n}a_{ij}b_{ji}=\operatorname{tr}(BA)\)。两个乘积可为不同尺寸的方阵，但迹都是数。</li>
+<li><strong>不满足交换律与消去律的反例：</strong> \(A=\begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix}\)、\(B=\begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix}\) 时，\(AB=B\) 而 \(BA=0\)。同时 \(B\ne0,A\ne0\) 却 \(BA=0\)，说明不能把数的零乘积性质直接用于矩阵。</li>
+</ol>
+<h3 id="section-9">3.2 逆矩阵</h3>
 <p>方阵 A 可逆指存在 A⁻¹ 使 AA⁻¹=A⁻¹A=I。</p>
 <p>\[
 (AB)^{-1}=B^{-1}A^{-1},\qquad(A^T)^{-1}=(A^{-1})^T.
@@ -84,16 +106,26 @@
 =\frac1{ad-bc}\begin{pmatrix}d&amp;-b\\-c&amp;a\end{pmatrix},\qquad ad-bc\neq0.
 \]</p>
 <p>数值求解 Ax=b 通常用分解与求解算法，不必显式计算逆矩阵。</p>
-<h3 id="section-7">矩阵乘法为什么要这样定义？</h3>
+<p><strong>逆矩阵公式核验。</strong> 对可逆方阵 \(A,B\)，直接计算 \((AB)(B^{-1}A^{-1})=A(BB^{-1})A^{-1}=I\)，反向相乘也为 \(I\)，故 \((AB)^{-1}=B^{-1}A^{-1}\)。将 \(AA^{-1}=A^{-1}A=I\) 分别转置，可见 \((A^{-1})^T\) 与 \(A^T\) 的双侧乘积均为 \(I\)。二阶公式则由直接相乘验证：
+\[
+\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}\begin{pmatrix}d&amp;-b\\-c&amp;a\end{pmatrix}
+=(ad-bc)I.
+\]
+当 \(ad-bc\ne0\) 才能除以它；若其为零，则矩阵列向量相关、不可逆。</p>
+<h3 id="section-10">矩阵乘法为什么要这样定义？</h3>
 <p>假设某工厂两种商品的原料用量由矩阵 \(A\) 表示，订单数量为 \(x\)。第 \(i\) 种原料总量是 \(\sum_j a_{ij}x_j\)，正是向量 \(Ax\) 的第 \(i\) 项。若先由 \(B\) 把客户订单转成商品数量，再由 \(A\) 转成原料用量，结果是 \(A(Bx)=(AB)x\)。这个“连续执行两个变换”的要求决定了矩阵乘法的行列求和形式。</p>
-<h2 id="section-8">4. 消元与线性方程组【核心】</h2>
+<h2 id="section-11">4. 消元与线性方程组【核心】</h2>
+<h3 id="section-12">初学者先理解什么？</h3>
+<p><strong>线性方程组</strong>是一组要求同时成立的线性约束。<strong>消元</strong>用不改变解集的行变换简化它；<strong>主元</strong>对应被约束的方向，<strong>自由变量</strong>可在解允许的范围内自行选取。</p>
+<p>例如 \(x+y=2,\ x-y=0\) 相加得 \(2x=2\)，再得 \((x,y)=(1,1)\)。若两式化简为 \(0=1\)，则无解；若有自由变量且方程组相容，实数域下有无穷多解。</p>
+<p><strong>跟着算一遍：增广矩阵。</strong> 把方程组写作 \(\left[\begin{smallmatrix}1&amp;1&amp;|&amp;2\\1&amp;-1&amp;|&amp;0\end{smallmatrix}\right]\)，第二行减第一行得到 \(\left[\begin{smallmatrix}1&amp;1&amp;|&amp;2\\0&amp;-2&amp;|&amp;-2\end{smallmatrix}\right]\)，所以 \(y=1,x=1\)。右侧常数列必须一起做行变换；最后将解代回原方程检验。</p>
 <p>三种初等行变换：交换两行；一行乘非零常数；一行加另一行的倍数。它们保持方程组解集。</p>
 <ul>
 <li>阶梯形、简化行阶梯形、主元、自由变量。</li>
 <li>增广矩阵 [A|b]；对整个增广矩阵同步进行行变换。</li>
 <li>主元数等于秩 r；齐次解的自由变量数为 n−r。</li>
 </ul>
-<h3 id="section-9">4.1 解的存在与数量</h3>
+<h3 id="section-13">4.1 解的存在与数量</h3>
 <table>
 <thead>
 <tr>
@@ -125,13 +157,18 @@
 x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 \]</p>
 <p>例：x+y=2、2x+2y=4 只提供一个独立约束，通解为 (2−t,t)^T。</p>
-<h3 id="section-10">4.2 方阵可逆的等价条件</h3>
+<h3 id="section-14">4.2 方阵可逆的等价条件</h3>
 <p>对 n×n 矩阵，下列条件等价：可逆；秩为 n；行列式非零；零空间只有零向量；列向量构成 Rⁿ 的基；对每个 b，Ax=b 都有唯一解；0 不是特征值。</p>
-<h3 id="section-11">为什么消元不会改变解？</h3>
+<p><strong>逐项证明。</strong> 行变换可逆，故阶梯形矩阵与原方程组有相同解集。增广列出现额外主元当且仅当某行变为 \(0=1\) 型矛盾，因此有解当且仅当两个秩相等，也等价于 b 是 A 的列向量线性组合。相容时每个自由变量可任取，主变量由回代唯一确定：自由变量数为 \(n-r\)，所以 r=n 时解唯一，r&lt;n 时在实数域有无穷多解。两个特解之差属于零空间，反过来特解加任意零空间向量仍为解，得到 \(x=x_p+x_h\)；取 \(x_p=(2,0)^T\)、\(x_h=(-t,t)^T\) 即得例中的通解。</p>
+<p>对 n 阶方阵，r=n 等价于每列有主元，进一步等价于齐次解仅有零解、每个 b 恰有一个解及列向量构成基。消元中若 r=n，可将 A 化为 I；把同样的初等行变换依次施于 I 得到矩阵 B，使 BA=I。由对每个 b 的唯一可解性，A 的每个标准基向量原像组成矩阵 C 满足 AC=I，而 B=B(AC)=(BA)C=C，故 A 可逆。反之可逆时 \(Ax=0\) 两边左乘逆矩阵即得 x=0。行列式逐次消元时只按非零倍数改变符号或大小，最终阶梯矩阵行列式是主元之积；因此行列式非零当且仅当有 n 个主元。最后 \(0\) 是特征值恰指存在非零 v 满足 Av=0，故它不是特征值等价于零空间为零。</p>
+<h3 id="section-15">为什么消元不会改变解？</h3>
 <p>交换两个方程、把一个方程乘非零数、或把一个方程的倍数加到另一个方程，都能通过反向操作恢复原方程组，因此变换前后的解集相同。消元把复杂约束逐步化简，同时保留解。</p>
 <p>例如 \(x+y=3,\;2x-y=0\)，第二式减去第一式的2倍得到 \(-3y=-6\)，所以 \(y=2,x=1\)。这类方程组用于库存配比、网络流量和电路分析。</p>
-<h2 id="section-12">5. 行列式【核心】</h2>
-<p>只对方阵定义，可理解为有向体积缩放因子。</p>
+<h2 id="section-16">5. 行列式【核心】</h2>
+<h3 id="section-17">初学者先理解什么？</h3>
+<p><strong>行列式</strong>是方阵对应的一个数，几何上描述有向面积或体积的缩放；等于 0 意味着变换把至少一个维度压扁。</p>
+<p>例如 \(A=\operatorname{diag}(2,3)\) 的行列式为 6，单位正方形被映为面积 6 的矩形；若 \(A=\operatorname{diag}(2,0)\)，面积变为 0，矩阵不可逆。行列式只对方阵定义。</p>
+<p>只对方阵定义，可理解为有向体积缩放因子。证明：若 A 的列线性无关，Gram–Schmidt 给出 \(A=QR\)，Q 正交、R 上三角且对角元为正；逐列构造平行体时，每一步的垂直高度为相应 \(r_{ii}\)，故体积为 \(\prod_i r_{ii}=|\det A|\)，Q 保持长度和体积。若 A 的列相关，像落在低维空间，n 维体积与行列式都为零。带方向时正交部分的 \(\det Q=\pm1\) 记录是否反转定向，故有向缩放因子为 \(\det A\)。这里依赖平行体体积的底乘高性质。</p>
 <ul>
 <li>det(I)=1；det(A^T)=det(A)；det(AB)=det(A)det(B)。</li>
 <li>交换两行变号；一行乘 k，行列式乘 k；一行加另一行倍数不变。</li>
@@ -144,7 +181,15 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 <li>克拉默法则：det(A)≠0 时 x_i=det(A_i)/det(A)，A_i 用 b 替换第 i 列。</li>
 </ul>
 <p><strong>易错：</strong> det(A+B) 一般不等于 det(A)+det(B)；行列式非零说明可逆，不说明元素都非零。</p>
-<h2 id="section-13">6. 子空间、秩与四个基本空间【核心】</h2>
+<h3 id="section-18">行列式公式的核验思路</h3>
+<p>由排列展开式 \(\det A=\sum_{\pi}\operatorname{sgn}(\pi)\prod_i a_{i,\pi(i)}\)：单位矩阵只有恒等排列贡献 1；交换两行会使每个排列对应项符号反转；某一行乘 \(k\) 则每项恰乘 \(k\)。每行同时乘 \(k\) 得 \(\det(kA)=k^n\det A\)。把一行加另一行的倍数，用行的线性性拆成两项，其中新增项含两条相同行，交换这两行既不改变矩阵又使行列式变号，所以该项为零。</p>
+<p>转置不改变行列式：排列 \(\pi\) 与逆排列 \(\pi^{-1}\) 符号相同，逐项重新编号即可。三角矩阵的排列展开中非对角排列至少含一个零元素，因此只剩对角元乘积。沿固定一行把排列按该行选中的列分组，得到代数余子式展开；按列同理。伴随矩阵的第 \((i,j)\) 元是 \(C_{ji}\)，因此 \((A\operatorname{adj}A)_{ij}=\sum_k a_{ik}C_{jk}\)：\(i=j\) 时是按第 \(i\) 行展开的 \(\det A\)，\(i\ne j\) 时相当于将第 \(j\) 行替换成第 \(i\) 行后的行列式，含重复行而为零。所以 \(A\operatorname{adj}A=(\det A)I\)。</p>
+<p>对于乘积，固定 \(A\)，函数 \(B\mapsto\det(AB)\) 对 \(B\) 的列分别线性且交替，因此由行列式的唯一性等于 \(\det(A)\det(B)\)，常数由 \(B=I\) 确定。若 \(A\) 可逆，对 \(AA^{-1}=I\) 使用乘积公式，得到 \(\det(A^{-1})=1/\det A\)。克拉默法则：将 \(A\) 的第 \(i\) 列换为 \(b=Ax=\sum_jx_jA_j\)，对该列线性展开；\(j\ne i\) 的项有重复列而为零，只剩 \(\det A_i=x_i\det A\)。因而当 \(\det A\ne0\) 时可除以它得到 \(x_i=\det A_i/\det A\)。</p>
+<p><strong>行列式唯一性补证。</strong> 若 n 列函数 D 对每列线性、交换两列变号且 \(D(e_1,\ldots,e_n)=1\)，把每列展开为 \(A_j=\sum_i a_{ij}e_i\)，多重线性给出所有 \(D(e_{i_1},\ldots,e_{i_n})\) 的和。下标重复的项因交替性为零；其余恰按排列分类，值为排列的符号，故 D 必等于排列求和定义的行列式。这同时说明上一段乘积证明中使用的唯一性。这里的标量域为实数或复数，故交换同一对列后得到 \(D=-D\) 可推出 D=0。</p>
+<h2 id="section-19">6. 子空间、秩与四个基本空间【核心】</h2>
+<h3 id="section-20">初学者先理解什么？</h3>
+<p><strong>子空间</strong>是包含零向量、并对加法和数乘封闭的集合。矩阵的<strong>列空间</strong>由各列的线性组合组成；<strong>零空间</strong>由所有满足 \(Ax=0\) 的向量组成。</p>
+<p>例如 \(A=[1\ 1]\) 的零空间是 \(\{(t,-t):t\in\mathbb R\}\)，是一条过原点的直线。<strong>秩</strong>是列空间的维数；对 \(m\times n\) 矩阵，秩加零空间维数等于 \(n\)。</p>
 <p>子空间需包含零向量，并对向量加法、数乘封闭。非齐次解集通常是仿射空间，不是子空间。</p>
 <table>
 <thead>
@@ -190,7 +235,21 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 <li>子空间维数公式：dim(U+V)=dim U+dim V−dim(U∩V)。</li>
 <li>正交关系：Null(A)=Row(A) 的正交补，Null(A^T)=Col(A) 的正交补。</li>
 </ul>
-<h2 id="section-14">7. 线性映射与换基【核心】</h2>
+<h3 id="section-21">秩、零空间和维数公式的核验</h3>
+<p><strong>有限维基扩充补证。</strong> 在 \(\mathbb R^n\) 或任意有有限生成集的向量空间中，先取线性无关组 \(v_1,\ldots,v_k\)，按顺序检查一个有限生成集；若某向量不在当前张成空间中就加入，否则跳过。加入不在张成空间中的向量保持线性无关；有限步后生成集中的每个向量都在所得组的张成空间中，所以所得组既线性无关又张成全空间，是一组基。</p>
+<p>对 \(\mathbb R^n\) 的任意子空间 W，不先假设它有有限生成集：若 W 非零，选一个非零向量；只要已选向量未张成 W，就从 W 中选择一个不在其张成空间中的向量。每次选择保持线性无关，而超过 n 个 \(\mathbb R^n\) 向量不可能线性无关：把它们作为矩阵的列，齐次线性方程组的未知数多于方程数，消元得到自由变量及非零解。因此至多选 n 次便停止；停止时所选组张成 W，故是有限基。W={0} 时空组即其基。这补足秩—零度证明中零空间存在有限基的环节。</p>
+<ol>
+<li><strong>秩—零度：</strong> 视 \(A:\mathbb R^n\to\mathbb R^m\)。取零空间一组基 \(v_1,\dots,v_k\)，将它扩充为定义域的一组基 \(v_1,\dots,v_k,w_1,\dots,w_{n-k}\)。任意向量经 \(A\) 映射后是 \(Aw_j\) 的线性组合；若 \(\sum_jc_jAw_j=0\)，则 \(\sum_jc_jw_j\) 在零空间内，也能由 \(v_i\) 表示。由扩充后的基线性无关，所有 \(c_j=0\)。故 \(Aw_j\) 是像空间的一组基，秩为 \(n-k\)，得到 \(\dim\operatorname{Null}(A)+\operatorname{rank}(A)=n\)。这里使用有限维空间的基扩充定理。</li>
+<li><strong>行、列秩：</strong> 初等行变换左乘可逆矩阵，所以保持列向量之间的线性关系及列秩；也不改变行向量的张成空间。阶梯形矩阵的每个非零行有不同主元列，因此非零行线性无关；主元列数既等于行秩也等于列秩。选原矩阵的主元列作列空间基，而不是直接把消元后的列当作原列空间的向量。</li>
+<li><strong>两个正交补：</strong> \(Ax=0\) 等价于 \(A\) 的每一行与 \(x\) 的内积均为零，也等价于 \(x\) 与整个行空间正交，故 \(\operatorname{Null}(A)=\operatorname{Row}(A)^\perp\)。把同一论证应用于 \(A^T\)，得 \(\operatorname{Null}(A^T)=\operatorname{Col}(A)^\perp\)。</li>
+<li><strong>乘积的秩：</strong> \(\operatorname{Im}(AB)\subseteq\operatorname{Im}(A)\)，所以 \(\operatorname{rank}(AB)\le\operatorname{rank}(A)\)。另一方面 \(AB\) 的像是 \(A\) 限制在 \(\operatorname{Im}(B)\) 上的像，其维数不超过 \(\operatorname{rank}(B)\)。若左右乘相容的可逆矩阵，再乘其逆即可反向得到等式，故秩不变。</li>
+<li><strong>子空间维数公式：</strong> 对有限维子空间 \(U,V\)，定义 \(T:U\times V\to U+V,\ T(u,v)=u+v\)。它满射，且核为 \(\{(w,-w):w\in U\cap V\}\)，核的维数是 \(\dim(U\cap V)\)。将秩—零度用于 \(T\)，得到 \(\dim(U+V)=\dim U+\dim V-\dim(U\cap V)\)。</li>
+<li><strong>秩与子式：</strong> 设秩为 \(r&gt;0\)，从 \(A\) 取 \(r\) 个线性无关的列组成 \(C\)。由行秩等于列秩，\(C\) 有 \(r\) 个线性无关的行，它们组成可逆的 \(r\) 阶方阵，因此 \(A\) 至少有一个非零 \(r\) 阶子式。另一方面任何 \(r+1\) 列都线性相关，故所有更高阶方形子矩阵的列也相关，行列式为零。\(r=0\) 时矩阵全零，没有正阶非零子式，按约定最高阶记为 0。</li>
+</ol>
+<h2 id="section-22">7. 线性映射与换基【核心】</h2>
+<h3 id="section-23">初学者先理解什么？</h3>
+<p><strong>线性映射</strong>同时保持加法与数乘：\(T(u+v)=T(u)+T(v)\)，\(T(cu)=cT(u)\)。矩阵是选定输入、输出基后记录这种规则的方式。</p>
+<p>例如 \(T(x,y)=(2x,y)\) 将横坐标放大两倍，是线性映射；\(T(x,y)=(x+1,y)\) 把原点移走，不是线性映射。<strong>换基</strong>改变坐标描述，不能误以为几何对象本身被移动。</p>
 <p>T 是线性映射，指 T(αx+βy)=αT(x)+βT(y)。在有限维、选定基后可以用矩阵表示。</p>
 <ul>
 <li>核 Ker(T)：被映到零的向量；像 Im(T)：所有可能输出。</li>
@@ -200,7 +259,13 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 <li>同一线性算子的新矩阵：B=P⁻¹AP，称 A、B 相似。</li>
 <li>相似矩阵有相同特征多项式、特征值、迹、行列式；相同特征值不保证相似。</li>
 </ul>
-<h2 id="section-15">8. 内积、正交与投影【核心；机器学习重点】</h2>
+<p><strong>换基公式的核验。</strong> 若 \(P\) 的列是新基在旧基中的坐标，则同一个向量满足 \(x_{\rm old}=Px_{\rm new}\)。设同一线性算子在旧基中的矩阵为 \(A\)，在新基中的矩阵为 \(B\)，对任意新坐标 \(x\)，先作用再换坐标可写成 \(PBx=APx\)，因此 \(PB=AP\)、\(B=P^{-1}AP\)。这里 \(P\) 必须是可逆的基变换矩阵。利用迹的循环性质和行列式乘积性质，\(\operatorname{tr}(B)=\operatorname{tr}(A)\)、\(\det B=\det A\)，且 \(\det(tI-B)=\det(P^{-1}(tI-A)P)=\det(tI-A)\)，所以特征多项式相同。</p>
+<p>相同特征值并不足以保证相似：\(I=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\) 和 \(J=\begin{pmatrix}1&amp;1\\0&amp;1\end{pmatrix}\) 的特征值均为两个 1，但若 \(J=P^{-1}IP\) 就必有 \(J=I\)，矛盾。</p>
+<h2 id="section-24">8. 内积、正交与投影【核心；机器学习重点】</h2>
+<h3 id="section-25">初学者先理解什么？</h3>
+<p><strong>内积</strong>给出长度和方向关系；非零向量内积为 0 时互相<strong>正交</strong>。<strong>投影</strong>是一个向量沿指定方向的部分，剩余向量与该方向垂直。</p>
+<p><img src="../assets/figures/linear-projection.svg" alt="向量投影与垂直残差" /></p>
+<p>例如 \(b=(3,1.5)\) 投影到横轴得到 \(p=(3,0)\)，残差 \(b-p=(0,1.5)\) 与横轴垂直。投影方向必须由非零向量指定。</p>
 <p>\[
 \langle x,y\rangle=x^Ty,\quad\|x\|_2=\sqrt{x^Tx},\quad
 \cos\theta=\frac{x^Ty}{\|x\|\|y\|}.
@@ -212,6 +277,8 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 <li>非零正交向量组必线性无关。</li>
 <li>正交矩阵 Q 满足 Q^TQ=I，故 Q⁻¹=Q^T，保持长度、内积和夹角。</li>
 </ul>
+<p><strong>内积基本不等式逐项证明。</strong> 若 y=0，柯西—施瓦茨不等式显然成立；若 y≠0，对 \(t=(x^Ty)/(y^Ty)\) 展开 \(0\le\|x-ty\|^2=\|x\|^2-(x^Ty)^2/\|y\|^2\)，便得 \(|x^Ty|\le\|x\|\|y\|\)。等号恰在 \(x=ty\) 时成立；连同 y=0，等号情形恰为 x、y 线性相关。再展开 \(\|x+y\|^2=\|x\|^2+2x^Ty+\|y\|^2\)，用柯西—施瓦茨估计交叉项并对两边取非负平方根，得到三角不等式。</p>
+<p>若非零向量组两两正交且 \(\sum_i c_iv_i=0\)，两边与 \(v_j\) 点乘，得到 \(c_j\|v_j\|^2=0\)，故所有 \(c_j=0\)，该组线性无关。若 Q 为实正交方阵，则 \((Qx)^T(Qy)=x^TQ^TQy=x^Ty\)，从而长度保持；非零向量的夹角余弦也保持，且 \(Q^{-1}=Q^T\)。若 Q 是仅列正交的矩形矩阵，只能得到 \(Q^TQ=I\)，一般没有方阵意义下的逆。</p>
 <p>向非零向量 u 的投影：</p>
 <p>\[
 \operatorname{proj}_u x=\frac{u^Tx}{u^Tu}u.
@@ -221,25 +288,30 @@ x=x_p+x_h,\qquad Ax_p=b,\quad Ax_h=0.
 p=Px,\qquad P=A(A^TA)^{-1}A^T.
 \]</p>
 <p>若 Q 的列为该子空间的一组标准正交基，则 P=QQ^T。正交投影矩阵满足 P²=P、P^T=P，残差 x−p 与子空间正交。</p>
-<h3 id="section-16">8.1 Gram–Schmidt 与 QR</h3>
+<p><strong>投影公式的核验。</strong> 非零 \(u\) 上的投影写为 \(cu\)，要求残差与 \(u\) 垂直，即 \(u^T(x-cu)=0\)，所以 \(c=(u^Tx)/(u^Tu)\)。分母正因为 \(u\ne0\)。如果 \(A\) 列满秩，\(z^TA^TAz=\|Az\|^2&gt;0\) 对非零 \(z\) 成立，因此 \(A^TA\) 可逆；对 \(p=A(A^TA)^{-1}A^Tx\)，有 \(A^T(x-p)=0\)，所以残差与每个列向量正交，亦与列空间正交。任意其他列空间向量 \(q\) 满足 \(x-q=(x-p)+(p-q)\)，两项正交，由勾股定理 \(\|x-q\|^2=\|x-p\|^2+\|p-q\|^2\ge\|x-p\|^2\)，所以它确为最近点。直接相乘可得 \(P^2=P\)、\(P^T=P\)；当 \(Q^TQ=I\) 且 \(Q\) 的列张成同一空间时，代入 \(A=Q\) 得 \(P=QQ^T\)。</p>
+<h3 id="section-26">8.1 Gram–Schmidt 与 QR</h3>
 <p>\[
 u_k=v_k-\sum_{j&lt;k}(q_j^Tv_k)q_j,\qquad q_k=u_k/\|u_k\|.
 \]</p>
 <p>输入线性无关时每个 u_k 非零。A 列满秩时可分解 A=QR，Q 列正交归一，R 为可逆上三角矩阵；数值实现通常采用更稳定的正交化方法。</p>
-<h3 id="section-17">投影公式的推导：把力分解到指定方向</h3>
+<p><strong>Gram–Schmidt 与 QR 的核验。</strong> 假设之前的 \(q_j\) 已单位正交，计算 \(q_i^Tu_k=q_i^Tv_k-\sum_{j&lt;k}(q_j^Tv_k)q_i^Tq_j=0\)。若 \(u_k=0\)，则 \(v_k\) 可由前面的 \(q_j\) 表示，从而落在前面 \(v_j\) 张成空间中，与输入线性无关矛盾；故可将其除以长度得到 \(q_k\)。每个 \(v_k\) 由 \(q_1,\ldots,q_k\) 线性表示，把系数放入第 \(k\) 列得到上三角 \(R\)，因各 \(u_k\ne0\)，对角元非零，所以 \(R\) 可逆。</p>
+<h3 id="section-27">投影公式的推导：把力分解到指定方向</h3>
 <p>设非零向量 \(u\) 为前进方向，向量 \(x\) 表示受力。寻找最接近 \(x\) 的方向分量 \(cu\)，使残差 \(x-cu\) 垂直于 \(u\)：</p>
 <p>\[
 u^T(x-cu)=0\quad\Rightarrow\quad c=\frac{u^Tx}{u^Tu}.
 \]</p>
 <p>因此投影是 \((u^Tx/u^Tu)u\)。这个公式也用于信号分解和最小二乘；分母非零依赖 \(u\ne0\)。</p>
-<h3 id="section-18">空间向量、距离和夹角</h3>
-<p>空间直角坐标中 \(\mathbf a=(a_1,a_2,a_3)\)，\(\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3\)，\(|\mathbf a|=\sqrt{a_1^2+a_2^2+a_3^2}\)。两非零向量夹角满足 \(\cos\theta=(\mathbf a\cdot\mathbf b)/(|\mathbf a||\mathbf b|)\)。直线方向向量平行可判线线方向一致；平面法向量垂直于平面内任意方向向量。两平面夹角可用法向量夹角的锐角或直角解释，线面角则是直线与其在平面上射影的夹角。</p>
-<p>点 \(P\) 到平面 \(Ax+By+Cz+D=0\) 的距离为
+<h3 id="section-28">空间向量、距离和夹角</h3>
+<p>空间直角坐标中 \(\mathbf a=(a_1,a_2,a_3)\)，\(\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3\)，\(|\mathbf a|=\sqrt{a_1^2+a_2^2+a_3^2}\)。两非零向量夹角满足 \(\cos\theta=(\mathbf a\cdot\mathbf b)/(|\mathbf a||\mathbf b|)\)。直线方向向量平行可判线线方向一致；平面法向量垂直于平面内任意方向向量。两平面夹角可用法向量夹角的锐角或直角解释；直线不垂直于平面时，线面角可由直线与其在平面上非零射影的锐角或零角确定。直线垂直于平面时射影方向为零，线面角为 90°，不能计算与零向量的夹角。</p>
+<p>点 \(P\) 到平面 \(Ax+By+Cz+D=0\) 的距离如下；此处要求法向量非零，即 \(A^2+B^2+C^2&gt;0\)：
 \[
 d=\frac{|Ax_P+By_P+Cz_P+D|}{\sqrt{A^2+B^2+C^2}}.
 \]
 这是点到平面的法向投影长度。空间几何向量化的流程是：建立坐标系、写出方向/法向量、用点积表达垂直或夹角，最后核对角的定义范围。建筑净空、最短距离和光线夹角都可转成该类计算。</p>
-<h2 id="section-19">9. 最小二乘【核心；机器学习重点】</h2>
+<h2 id="section-29">9. 最小二乘【核心；机器学习重点】</h2>
+<h3 id="section-30">初学者先理解什么？</h3>
+<p>当 \(Ax=b\) 无精确解时，<strong>最小二乘</strong>寻找使残差平方和 \(\|Ax-b\|^2\) 最小的 \(x\)。几何上，\(Ax\) 是 \(b\) 在列空间中的正交投影。</p>
+<p>例如用一个常数 \(c\) 拟合数据 1、2、3，最小化 \((c-1)^2+(c-2)^2+(c-3)^2\)，得到 \(c=2\)。最小二乘解不一定唯一；正规方程求解时要检查秩条件。</p>
 <p>方程 Ax=b 可能无解，改为求：</p>
 <p>\[
 \min_x\|Ax-b\|_2^2.
@@ -261,9 +333,10 @@ A^TA\hat x=A^Tb.
 \hat x=(A^TA+\lambda I)^{-1}A^Tb.
 \]</p>
 <p>即使 A 秩亏，上式也唯一；此写法对所有参数施加惩罚，实际模型有时不惩罚截距。</p>
-<h3 id="section-20">实际问题：如何拟合没有精确解的数据？</h3>
+<p><strong>岭回归公式核验。</strong> 展开目标函数并对 \(x\) 求梯度，驻点满足 \((A^TA+\lambda I)x=A^Tb\)。若 \(\lambda&gt;0\)，对任意非零 \(v\)，\(v^T(A^TA+\lambda I)v=\|Av\|^2+\lambda\|v\|^2&gt;0\)，所以系数矩阵正定、可逆，驻点唯一。对任意扰动 \(h\)，目标函数在驻点的增量为 \(\|Ah\|^2+\lambda\|h\|^2\)，非零 \(h\) 时严格为正，因此该解是唯一全局最小点；这个结论不要求 \(A\) 列满秩。</p>
+<h3 id="section-31">实际问题：如何拟合没有精确解的数据？</h3>
 <p>测量直线上三个点可能因为噪声而不能同时精确落在同一条线上。令参数为 \(x\)，设计矩阵为 \(A\)，观测值为 \(b\)，选择使平方误差 \(\|Ax-b\|^2\) 最小的解。</p>
-<h3 id="section-21">正规方程的推导</h3>
+<h3 id="section-32">正规方程的推导</h3>
 <p>将误差展开：</p>
 <p>\[
 L(x)=(Ax-b)^T(Ax-b)=x^TA^TAx-2b^TAx+b^Tb.
@@ -274,11 +347,15 @@ A^TA\hat x=A^Tb.
 \]</p>
 <p>反过来，若 \(\hat x\) 满足正规方程，则任意 \(h\) 有 \(L(\hat x+h)=L(\hat x)+\|Ah\|^2\)，因此它确是全局最小点。若 A 列满秩，则 \(A^TA\) 正定，解唯一；否则仍有最小二乘解，但参数可能不唯一。</p>
 <p><strong>几何解释：</strong> \(A^T(b-A\hat x)=0\) 表示残差与 A 每一列垂直，即预测 \(A\hat x\) 是观测值在列空间中的正交投影。线性回归、传感器标定和数据拟合均可采用这一思想。</p>
-<h2 id="section-22">10. 特征值与对角化【核心】</h2>
+<h2 id="section-33">10. 特征值与对角化【核心】</h2>
+<h3 id="section-34">初学者先理解什么？</h3>
+<p>对方阵 \(A\)，若非零向量 \(v\) 满足 \(Av=\lambda v\)，则 \(v\) 是<strong>特征向量</strong>，\(\lambda\) 是<strong>特征值</strong>；当 \(\lambda\) 为非零实数时变换在这个方向上只产生伸缩或反向，\(\lambda=0\) 时则被映为零向量。复数特征值按复向量空间理解。</p>
+<p>例如 \(A=\operatorname{diag}(2,3)\)，\((1,0)^T\) 的特征值为 2，\((0,1)^T\) 的特征值为 3。零向量不能作为特征向量；并非每个实矩阵都能在实数域对角化。</p>
+<p><strong>跟着算一遍。</strong> 对上述矩阵，\(\det(A-\lambda I)=(2-\lambda)(3-\lambda)=0\)，所以候选特征值为 2、3。分别解 \((A-2I)v=0\) 和 \((A-3I)v=0\)，得到沿横轴和纵轴的非零向量。特征值是数，特征向量是向量；同一方向上任意非零倍数仍是特征向量。</p>
 <p>\[
 Av=\lambda v,\qquad v\neq0.
 \]</p>
-<p>v 是保持在同一直线方向上的向量；λ 控制伸缩，负号表示反向。</p>
+<p>当 v、λ 均为实数且 λ≠0 时，v 的像位于同一条过原点的直线上；λ 控制伸缩，负号表示反向。λ=0 时像为零向量，不再有方向。</p>
 <ul>
 <li>特征值满足 det(λI−A)=0。</li>
 <li>特征空间 E_λ=Null(A−λI)，包含零向量；零向量不是特征向量。</li>
@@ -290,10 +367,17 @@ Av=\lambda v,\qquad v\neq0.
 <li>特征值按重数计，和为 tr(A)，积为 det(A)，可在复数域理解。</li>
 <li>对角化后 A^k=PD^kP⁻¹，适合研究重复变换和线性递推。</li>
 </ul>
-<h3 id="section-23">特征值解决什么问题？</h3>
+<h3 id="section-35">特征值与对角化公式的核验</h3>
+<p>\(Av=\lambda v\) 且 \(v\ne0\) 等价于 \((\lambda I-A)v=0\) 有非零解；方阵非零解存在当且仅当该矩阵不可逆，也即 \(\det(\lambda I-A)=0\)。如果 \(Av_i=\lambda_i v_i\) 且 \(P=[v_1\ \cdots\ v_n]\) 可逆，则 \(AP=PD\)，两边左乘 \(P^{-1}\) 得 \(A=PDP^{-1}\)；反过来对角化等式的各列正是线性无关的特征向量。反复相乘时中间的 \(P^{-1}P=I\)，归纳得到 \(A^k=PD^kP^{-1}\)（\(k\) 为非负整数）。</p>
+<p>不同特征值的特征向量线性无关可用归纳证明：假设 \(\sum_{i=1}^r c_iv_i=0\)，对等式应用 \(A-\lambda_r I\) 得 \(\sum_{i&lt;r}c_i(\lambda_i-\lambda_r)v_i=0\)，归纳得前 \(r-1\) 个系数为零，再由 \(v_r\ne0\) 得最后一个为零。若某特征空间维数为 \(k\)，把其一组基扩充为全空间的基，在该基下矩阵的前 \(k\) 列形成 \(\lambda I_k\)，特征多项式因此含 \((t-\lambda)^k\) 因子，所以几何重数不超过代数重数。</p>
+<p><strong>特征值之和与积的证明。</strong> 按排列公式展开 \(p(t)=\det(tI-A)\)。最高次项只能从每个对角因子中取 t，故其系数为 1；\(t^{n-1}\) 项只能从一个对角因子取 \(-a_{ii}\)、其余取 t，系数为 \(-\sum_i a_{ii}=-\operatorname{tr}A\)。任何非恒等排列至少移动两个指标，故其乘积次数至多为 n−2。常数项为 \(p(0)=(-1)^n\det A\)。在复数域，由代数基本定理将 p 分解为 \(\prod_{i=1}^n(t-\lambda_i)\)，其中根按代数重数重复；比较 \(t^{n-1}\) 和常数项，得到 \(\sum_i\lambda_i=\operatorname{tr}A\)、\(\prod_i\lambda_i=\det A\)。这两个等式不要求 A 可对角化；其依赖是复数域的代数基本定理。</p>
+<h3 id="section-36">特征值解决什么问题？</h3>
 <p>重复作用 \(x_{k+1}=Ax_k\) 时，若 \(Av=\lambda v\)，则 \(A^kv=\lambda^kv\)：特征方向上的变化被简化成标量乘方。它可用于研究离散动力系统与矩阵反复变换，但整体稳定性还取决于全部相关方向和矩阵结构。</p>
 <p><strong>计算例子：</strong> \(A=\begin{pmatrix}2&amp;0\\0&amp;1/2\end{pmatrix}\)，两个坐标轴分别是特征方向，重复作用 \(k\) 次后坐标变为 \((2^kx_1,2^{-k}x_2)\)。第一方向放大，第二方向缩小。</p>
-<h2 id="section-24">11. 对称矩阵、谱定理与二次型【核心】</h2>
+<h2 id="section-37">11. 对称矩阵、谱定理与二次型【核心】</h2>
+<h3 id="section-38">初学者先理解什么？</h3>
+<p><strong>对称矩阵</strong>满足 \(A^T=A\)；实对称矩阵有实特征值，并可用正交基对角化。<strong>二次型</strong>形如 \(x^TAx\)，常用于表示曲面的弯曲程度或误差。</p>
+<p>例如 \(x^2+2y^2\) 在非零点处为正，系数矩阵 \(\operatorname{diag}(1,2)\) 是正定的；\(x^2-y^2\) 可正可负，对应不定二次型。</p>
 <p>实对称矩阵 A=A^T：</p>
 <ol>
 <li>特征值全为实数。</li>
@@ -334,13 +418,31 @@ Av=\lambda v,\qquad v\neq0.
 </table>
 <ul>
 <li>Sylvester 判据：实对称矩阵正定，当且仅当所有顺序主子式均&gt;0。</li>
-<li>半正定不能只检查顺序主子式非负；等价条件之一是所有主子式非负。</li>
+<li>半正定不能只检查顺序主子式非负；例如 diag(0,−1) 的两个顺序主子式均为零，却不是半正定。等价条件之一是所有主子式非负。</li>
 <li>A^TA 总半正定；当且仅当 A 列满秩时正定。</li>
-<li>二次型换元 x=Py 得到 P^TAP，叫合同；与相似 P⁻¹AP 不同。</li>
+<li>二次型换元 x=Py 得到 P^TAP；当 P 为可逆方阵时称 A 与 P^TAP 合同，与相似变换 P⁻¹AP 不同。</li>
 <li>惯性定律：可逆实合同变换保持正、负、零惯性指数。</li>
 </ul>
 <p>与高数联系：对称 A 下，f(x)=½x^TAx−b^Tx 的梯度为 Ax−b，Hessian 为 A；A 正定时存在唯一全局最小点 A⁻¹b。</p>
-<h2 id="section-25">12. SVD、伪逆与低秩近似【扩展重点】</h2>
+<h3 id="section-39">实对称矩阵谱定理与正定性的核验</h3>
+<p>先说明实特征值：若复向量 \(z\ne0\) 满足 \(Az=\lambda z\)，其中实矩阵 \(A=A^T\)，则 \(z^*Az=\lambda z^*z\)。左侧等于自身共轭，且 \(z^*z&gt;0\)，故 \(\lambda\) 为实数。若实特征向量 \(u,v\) 分别对应不同特征值 \(\lambda,\mu\)，由 \(u^TAv=(Au)^Tv\) 得 \((\mu-\lambda)u^Tv=0\)，因此它们正交。</p>
+<p>谱定理可从实单位球面上连续函数取得最大值出发。令 \(q(x)=x^TAx\) 在 \(\|x\|=1\) 上于 \(v\) 取得最大值；沿任意与 \(v\) 正交的方向做单位球面上的微小变化，极值的一阶条件给出该方向与 \(Av\) 正交，因此 \(Av\) 平行于 \(v\)，即存在实特征值。对任何 \(w\perp v\)，\(v^TAw=(Av)^Tw=\lambda v^Tw=0\)，所以 \(v^\perp\) 在 \(A\) 下不变。将同一论证在维数减少的正交补上归纳，得到一组正交归一特征向量，组成正交矩阵 \(Q\)，从而 \(A=Q\Lambda Q^T\)。这里依赖紧集上连续函数的最值定理及所述极值条件。</p>
+<p>令 \(y=Q^Tx\)，则 \(x^TAx=y^T\Lambda y=\sum_i\lambda_i y_i^2\)。由于 \(Q\) 可逆，非零 \(x\) 对应非零 \(y\)，因此正定等价于所有 \(\lambda_i&gt;0\)，半正定等价于所有 \(\lambda_i\ge0\)；有正有负特征值时选对应特征向量可分别得到正、负值，故不定。对任意实矩阵 \(B\)，\(x^TB^TBx=\|Bx\|^2\ge0\)，且它对所有非零 \(x\) 严格大于零当且仅当 \(Bx=0\) 只有零解，也即 \(B\) 列满秩。</p>
+<p><strong>Sylvester 判据与合同。</strong> 若实对称 \(A\) 正定，它的每个前 \(k\) 阶顺序主子矩阵也正定，所以其特征值均正、行列式 \(\Delta_k&gt;0\)。反过来，若所有顺序主子式 \(\Delta_k&gt;0\)，对第一主元做对称消元并迭代，可得 \(A=LDL^T\)，其中 \(L\) 为单位下三角矩阵，\(D=\operatorname{diag}(d_1,\ldots,d_n)\)，且 \(d_k=\Delta_k/\Delta_{k-1}&gt;0\)，约定 \(\Delta_0=1\)。于是非零 \(x\) 有 \(x^TAx=(L^Tx)^TD(L^Tx)&gt;0\)，故 \(A\) 正定；各步前置主子式非零保证消元可进行。换元 \(x=Py\) 时二次型变为 \(y^TP^TAPy\)；可逆 \(P\) 双射地对应各子空间并保持二次型取值的正负，故最大正定子空间维数、最大负定子空间维数与零空间维数不变，这就是合同惯性定律的几何依据。</p>
+<p>对于半正定，任意主子矩阵仍半正定，其行列式是非负特征值之积，因此所有主子式非负。反过来若所有主子式非负，对任意 \(\varepsilon&gt;0\)，每个顺序主子矩阵 \(A_k+\varepsilon I\) 的行列式按所选对角项展开，是 \(A_k\) 各主子式乘非负的 \(\varepsilon\) 次幂之和，并包含严格为正的 \(\varepsilon^k\) 项，因此顺序主子式全部严格为正。由刚证明的 Sylvester 判据，\(A+\varepsilon I\) 正定；对任意 \(x\)，令 \(\varepsilon\to0^+\)，得 \(x^TAx=\lim_{\varepsilon\to0^+}x^T(A+\varepsilon I)x\ge0\)，故 \(A\) 半正定。</p>
+<p><strong>对称消元与惯性维数的补证。</strong> 对所有顺序主子式非零的对称矩阵，写成 \(A=\begin{pmatrix}a&amp;b^T\\b&amp;C\end{pmatrix}\)，其中 \(a=\Delta_1\ne0\)。令 \(S=C-bb^T/a\)，直接相乘得
+\[
+A=\begin{pmatrix}1&amp;0\\b/a&amp;I\end{pmatrix}
+\begin{pmatrix}a&amp;0\\0&amp;S\end{pmatrix}
+\begin{pmatrix}1&amp;b^T/a\\0&amp;I\end{pmatrix}.
+\]
+对每个 k 阶顺序主子矩阵使用同样分块，\(\Delta_k=a\det S_{k-1}\)，所以 S 的顺序主子式也非零。对 S 归纳得到 \(A=LDL^T\)。L 的各顺序主子矩阵行列式为 1，因此 \(\Delta_k=d_1\cdots d_k\)，推出 \(d_k=\Delta_k/\Delta_{k-1}\)。当各 \(\Delta_k&gt;0\) 时这些 d 均为正，严格得到上面的正定充分性。</p>
+<p>由谱定理可把实对称矩阵二次型变为 \(\sum_{i=1}^{p}\lambda_i y_i^2-\sum_{i=p+1}^{p+q}|\lambda_i|y_i^2\)，其余 z 个坐标对应零特征值。前 p 个坐标张成 p 维正定子空间；若某正定子空间维数大于 p，它与“前 p 个坐标为零”的 \((q+z)\) 维子空间必有非零交向量，而该向量的二次型非正，矛盾。因此正定子空间最大维数恰为 p；同理负定子空间最大维数为 q，核空间维数为 z。可逆合同将任意子空间双射地映为同维子空间且保持对应二次型值，所以这三个最大维数在合同下不变，即正、负、零惯性指数不变。</p>
+<h2 id="section-40">12. SVD、伪逆与低秩近似【扩展重点】</h2>
+<h3 id="section-41">初学者先理解什么？</h3>
+<p><strong>奇异值分解</strong>写作 \(A=U\Sigma V^T\)，把线性变换拆成正交方向变化与沿各方向的非负伸缩；奇异值可以按大小排序。</p>
+<p>例如 \(\operatorname{diag}(3,1)\) 的奇异值为 3、1。保留较大奇异值可得到低秩近似；<strong>伪逆</strong>推广逆矩阵，但计算时需要对零或很小的奇异值谨慎处理。</p>
+<p><strong>跟着算一遍：压缩与误差。</strong> 对 \(A=\operatorname{diag}(3,1)\)，保留最大的奇异值 3 得到秩 1 近似 \(A_1=\operatorname{diag}(3,0)\)。被舍弃部分为 \(A-A_1=\operatorname{diag}(0,1)\)，其 Frobenius 范数平方为 1。这个例子没有压缩误差为零：减少一个方向的同时也丢失了那个方向的信息。</p>
 <p>任意实 m×n 矩阵均有奇异值分解：</p>
 <p>\[
 A=U\Sigma V^T.
@@ -351,10 +453,26 @@ A=U\Sigma V^T.
 <li>几何解释：V^T 改变正交坐标，Σ 沿正交方向缩放，U 再变换输出坐标。</li>
 <li>伪逆 A⁺=VΣ⁺U^T，Σ⁺ 对非零奇异值取倒数，零保持零，并交换矩形尺寸。</li>
 <li>x=A⁺b 是最小二乘解中欧氏范数最小的一个；秩亏时不代表所有最小二乘解都唯一。</li>
-<li>截断 SVD：A_k=Σ[i=1到k] σ_i u_i v_i^T。它是谱范数、Frobenius 范数下的最佳秩至多 k 近似；最优解不一定唯一。</li>
+<li>截断 SVD：当 \(0\le k\le r\) 为整数，A_k=Σ[i=1到k] σ_i u_i v_i^T（k=0 时为空和，即零矩阵）。它是谱范数、Frobenius 范数下的最佳秩至多 k 近似；最优解不一定唯一。</li>
 <li>Frobenius 误差：‖A−A_k‖_F²=Σ[i&gt;k]σ_i²。</li>
 </ul>
-<h2 id="section-26">13. PCA 与数据表示【应用】</h2>
+<p><strong>SVD 与伪逆公式的核验。</strong> \(A^TA\) 实对称半正定，按谱定理取一组正交归一特征向量 \(v_i\)，特征值记为 \(\sigma_i^2\ge0\)。对每个 \(\sigma_i&gt;0\) 定义 \(u_i=Av_i/\sigma_i\)，则
+\[
+u_i^Tu_j=\frac{v_i^TA^TAv_j}{\sigma_i\sigma_j}=\delta_{ij}.
+\]
+若 \(\sigma_i=0\)，则 \(\|Av_i\|^2=v_i^TA^TAv_i=0\)，所以 \(Av_i=0\)。将非零奇异值对应的 \(u_i\) 扩充为输出空间的正交基，令 \(U,V\) 分别由两组基组成，得到 \(A=U\Sigma V^T\)。非零奇异值个数等于 \(A\) 的秩，因为它们恰好是 \(A^TA\) 的非零特征值个数，且 \(\operatorname{Null}(A^TA)=\operatorname{Null}(A)\)。</p>
+<p>对于最小二乘，置 \(z=V^Tx,c=U^Tb\)。正交变换保持范数，故 \(\|Ax-b\|^2=\|\Sigma z-c\|^2\)。每个非零奇异值对应坐标的误差在 \(z_i=c_i/\sigma_i\) 时最小；零奇异值对应的自由坐标不影响误差，要使 \(\|x\|=\|z\|\) 最小就取零。这给出最小范数解 \(x=V\Sigma^+U^Tb=A^+b\)，即使秩亏也成立。截断后残差 \(A-A_k=\sum_{i&gt;k}\sigma_i u_iv_i^T\)，这些秩一矩阵在 Frobenius 内积下互相正交，所以残差范数平方为 \(\sum_{i&gt;k}\sigma_i^2\)。其在所有秩至多 \(k\) 的矩阵中达到最小的断言还依赖 Eckart–Young 定理，不能仅从此计算直接推出。</p>
+<p><strong>最佳低秩近似的下界。</strong> 把缺少的奇异值补零并按降序排列。对任意秩至多 \(k\) 的 \(B\)，令 \(P\) 为到 \(B\) 的行空间的正交投影，则 \(B=BP\)、\(\operatorname{rank}P\le k\)。利用 \(P\) 与 \(I-P\) 正交及 Frobenius 内积，
+\[
+\|A-B\|_F^2\ge\|A(I-P)\|_F^2
+=\sum_i\sigma_i^2(1-\|Pv_i\|^2).
+\]
+其中 \(0\le\|Pv_i\|^2\le1\)，总和等于 \(\operatorname{rank}P\le k\)。由于 \(\sigma_i^2\) 按降序排列，加权和 \(\sum_i\sigma_i^2\|Pv_i\|^2\) 不超过前 \(k\) 个 \(\sigma_i^2\) 的和，故右侧至少为 \(\sum_{i&gt;k}\sigma_i^2\)；截断 SVD 恰好达到它。对谱范数，前 \(k+1\) 个右奇异向量张成的空间维数为 \(k+1\)，而 \(B\) 的核余维至多为 \(k\)，故两者有非零交向量；取其中单位向量 \(v\)，则 \(Bv=0\)、\(\|(A-B)v\|=\|Av\|\ge\sigma_{k+1}\)。截断 SVD 的残差谱范数恰为 \(\sigma_{k+1}\)。当 \(k\) 不小于秩时，原矩阵本身已可取作精确近似。</p>
+<h2 id="section-42">13. PCA 与数据表示【应用】</h2>
+<h3 id="section-43">初学者先理解什么？</h3>
+<p>**主成分分析（PCA）**寻找数据变化较大的正交方向，用较少坐标描述原数据。常见步骤是中心化、求协方差矩阵或对中心化数据作 SVD，再选择主成分。</p>
+<p>例如二维数据沿一条倾斜直线附近分布时，用沿该直线的一个坐标可保留主要变化，但会丢失垂直方向的信息。变量量纲差异大时，是否标准化会影响结果。</p>
+<p><strong>跟着算一遍：两个样本。</strong> 样本 \((1,1)\)、\((-1,-1)\) 的均值为 \((0,0)\)，因此已经中心化。按下方除以 \(N-1\) 的定义，样本协方差矩阵为 \(\begin{pmatrix}2&amp;2\\2&amp;2\end{pmatrix}\)。其最大特征值为 4，对应单位方向 \((1,1)/\sqrt2\)；两个样本都在这条直线上，所以投影到该方向没有损失。这里例子很特殊，真实数据通常会有非零残差。</p>
 <p>数据矩阵 X：每行为一个样本、每列为一个特征，先对各列减去均值，得到中心化矩阵 X_c。</p>
 <p>\[
 S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
@@ -366,9 +484,13 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <li>解释方差比为前 k 个特征值之和/全部特征值之和，要求总方差&gt;0。</li>
 <li>也可直接对中心化数据做 SVD，右奇异向量给出主方向。</li>
 <li>量纲差异大时需决定是否标准化；标准化改变问题中的距离与方差含义。</li>
-<li>PCA 保留大方差方向，不保证保留最有助于预测标签的信息。</li>
+<li>PCA 保留大方差方向，不保证保留最有助于预测标签的信息。例如四个等权点 \((\pm10,\pm1)\) 的标签是第二坐标的符号；中心化后的协方差为对角矩阵，第一坐标方差大于第二坐标，故一维 PCA 保留第一坐标。每个第一坐标都对应正、负两种标签，而被舍弃的第二坐标可完美确定标签。</li>
 </ul>
-<h2 id="section-27">14. 矩阵分解与数值意识【扩展】</h2>
+<p><strong>PCA 方差与解释比例的核验。</strong> 对单位向量 \(v\)，中心化数据的投影样本方差为 \(\|X_cv\|^2/(N-1)=v^TSv\)。若 \(S=Q\Lambda Q^T\)，写 \(v=Qc\)，则 \(\sum c_i^2=1\)，故 \(v^TSv=\sum_i\lambda_ic_i^2\le\lambda_{\max}\)；取最大特征值对应单位特征向量即可达到上界。若取多个正交方向，对应投影方差之和按相同的权重约束至多为前 \(k\) 个特征值之和，可由选取对应特征向量达到。总方差为 \(\operatorname{tr}S=\sum_i\lambda_i\)，非零时相除得到解释方差比。特征值有并列时，最优方向可能不唯一。</p>
+<h2 id="section-44">14. 矩阵分解与数值意识【扩展】</h2>
+<h3 id="section-45">初学者先理解什么？</h3>
+<p><strong>矩阵分解</strong>把问题转换成更易求解的形式，例如 LU 常用于消元，QR 用于正交化与最小二乘。<strong>条件数</strong>衡量输入扰动可能被问题放大的程度。</p>
+<p>例如两列几乎平行的矩阵虽然可能理论上满秩，计算出的参数仍可能对小误差很敏感；求解线性方程通常优先使用分解，而非显式求逆。</p>
 <table>
 <thead>
 <tr>
@@ -406,7 +528,15 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 </tbody>
 </table>
 <p>可逆矩阵的2范数条件数 κ₂(A)=σ_max/σ_min。很小的奇异值意味着某些方向被强烈压缩，反推输入时误差可能被放大。</p>
-<h2 id="section-28">15. 易错点与验收</h2>
+<p><strong>正规方程与条件数。</strong> 若 A 列满秩，非零奇异值为 \(\sigma_1\ge\cdots\ge\sigma_n&gt;0\)。由 \(A^TA=V\operatorname{diag}(\sigma_1^2,\ldots,\sigma_n^2)V^T\)，其最大、最小奇异值分别为 \(\sigma_1^2,\sigma_n^2\)，所以 \(\kappa_2(A^TA)=\kappa_2(A)^2\)。这是问题对相对扰动的最坏情况放大尺度，因此数值求解中通常优先考虑 QR 或 SVD；并非说正规方程在所有实际问题中都必然给出不可用结果。A 秩亏时 \(A^TA\) 奇异，标准可逆条件数为无穷，不能套用有限条件数公式。</p>
+<p><strong>分解与条件数的核验。</strong> Cholesky 分解对维数归纳：把实对称正定矩阵写成 \(A=\begin{pmatrix}a&amp;b^T\\b&amp;C\end{pmatrix}\)。由正定性 a&gt;0；对任意非零 z，将向量 \((-b^Tz/a,z)^T\) 代入二次型可得 \(z^T(C-bb^T/a)z&gt;0\)，所以 Schur 补仍正定。对其归纳分解为 \(L_1L_1^T\)，直接相乘验证
+\[
+L=\begin{pmatrix}\sqrt a&amp;0\\b/\sqrt a&amp;L_1\end{pmatrix},\quad A=LL^T.
+\]
+取 L 的对角元均为正时分解唯一：首列由 A 第一列唯一确定，其余由 Schur 补递归确定。</p>
+<p>带置换 LU 来自高斯消元：每一步把可用的非零主元行交换到当前位置，再用单位下三角消元矩阵消去其下元素；记录各次消元系数并按同一置换调整先前记录，可得到 \(PA=LU\)。若某列余下元素均为零则跳过该列；具体矩形或秩亏情形的 L、U 形状约定须单独说明。QR 的满列秩情形由前节 Gram–Schmidt 给出；秩亏时可补充正交基，R 可能有零对角元，不能直接用满秩正规方程公式。</p>
+<p>设 A 为可逆方阵，\(A=U\Sigma V^T\)。正交矩阵保持欧氏长度，因此 \(\|A\|_2=\max_{\|x\|=1}\|\Sigma V^Tx\|=\sigma_{\max}\)，且 \(\|A^{-1}\|_2=1/\sigma_{\min}\)，相乘得到条件数公式。若只扰动右端，\(A\Delta x=\Delta b\)，则 \(\|\Delta x\|\le\|A^{-1}\|\|\Delta b\|\)，结合 \(\|b\|\le\|A\|\|x\|\) 得 \(\|\Delta x\|/\|x\|\le\kappa_2(A)\|\Delta b\|/\|b\|\)，其中 b、x 非零；这是上界而非每次扰动都恰好放大这么多。</p>
+<h2 id="section-46">15. 易错点与验收</h2>
 <ul>
 <li>维度不匹配不能相乘；AB 与 BA 次序不同。</li>
 <li>行变换保持解集与行空间，但列空间本身可能改变。</li>
@@ -417,21 +547,32 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <li>机器学习中数值稳定性与纸笔公式正确性需要同时考虑。</li>
 </ul>
 <p>验收：能独立消元、判定解的数量、寻找基与维数、解释投影、推导正规方程、计算特征值与二次型，并说明 SVD 和 PCA 各自解决的问题。</p>
-<h2 id="section-29">16. 练习与参考答案</h2>
+<h2 id="section-47">16. 练习与参考答案</h2>
 <ol>
 <li>A 的两行为 (1,2)、(2,4)，求秩与零空间。</li>
 <li>将 b=(3,1)^T 投影到 u=(1,1)^T 张成的直线上。</li>
 <li>A=diag(2,−1)，求特征值，判断是否正定。</li>
 <li>A 的三行为 (1,0)、(1,1)、(1,2)，b=(1,2,2)^T，求最小二乘直线参数。</li>
 </ol>
-<p>答案：</p>
+<p>逐题推导与检验：</p>
 <ol>
-<li>秩1；Null(A)=span{(−2,1)^T}。</li>
-<li>投影为 (2,2)^T，残差 (1,−1)^T 与 u 正交。</li>
-<li>特征值2、−1；对称但不定。</li>
-<li>A^TA 的两行为 (3,3)、(3,5)，A^Tb=(5,6)^T；解为截距7/6、斜率1/2。</li>
+<li>第二行是第一行的两倍，第一行非零，故只有一个独立行，秩为 1。方程组 \(Ax=0\) 化为 \(x_1+2x_2=0\)；令 \(x_2=t\)，得 \(x=t(-2,1)^T\)，因此 \(\operatorname{Null}(A)=\operatorname{span}\{(-2,1)^T\}\)。代入原两行均得零。</li>
+<li>\(u^Tb=4\)、\(u^Tu=2\)，投影为 \((4/2)u=(2,2)^T\)。残差为 \(b-p=(1,-1)^T\)，且 \(u^T(b-p)=0\)，可独立检验它与投影方向正交。</li>
+<li>\(\det(A-\lambda I)=(2-\lambda)(-1-\lambda)\)，特征值为 2、−1。取 \(x=(1,0)^T\) 得 \(x^TAx=2&gt;0\)，取 \(x=(0,1)^T\) 得 −1，所以对称矩阵 \(A\) 不定，因而不是正定矩阵。</li>
+<li>\(A^TA=\begin{pmatrix}3&amp;3\\3&amp;5\end{pmatrix}\)，\(A^Tb=(5,6)^T\)。正规方程为 \(3\beta_0+3\beta_1=5\)、\(3\beta_0+5\beta_1=6\)；两式相减得 \(2\beta_1=1\)，故 \(\beta_1=1/2,\ \beta_0=7/6\)。将参数代回正规方程，两式均成立；\(\det(A^TA)=6&gt;0\)，故解唯一。</li>
 </ol>
-<h2 id="section-30">17. 学习资源与记录</h2>
+<h3 id="section-48">正文旧例的独立复算</h3>
+<ol>
+<li>\((3,2)=3(1,0)+2(0,1)\)；\((2,4)=2(1,2)\)，因此后两向量张成 \(\{t(1,2):t\in\mathbb R\}\)，不是整个平面。</li>
+<li>\(\operatorname{diag}(2,1)(1,1)^T=(2,1)^T\)；另一个算例中逐行计算 \(\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}(3,4)^T=(11,4)^T\)。</li>
+<li>方程 \(x+y=2,x-y=0\) 两式相加得 \(2x=2\)，所以 \((x,y)=(1,1)\)，代入两式均成立。\(x+y=2,2x+2y=4\) 的第二式是第一式两倍，故解为 \((2-t,t)\)。</li>
+<li>\(A=[1\ 1]\) 满足 \(Ax=x_1+x_2=0\)，故零空间恰为 \((t,-t)\)。向量 \((3,1.5)\) 对横轴的投影为 \((3,0)\)，其余量 \((0,1.5)\) 与横轴正交。</li>
+<li>对拟合常数 c，平方和 \((c-1)^2+(c-2)^2+(c-3)^2=3(c-2)^2+2\)，最小值 2 在且仅在 \(c=2\) 取得。</li>
+<li>\(\operatorname{diag}(2,3)\) 作用于标准基分别得到其 2 倍与 3 倍；特征方程为 \((2-\lambda)(3-\lambda)=0\)。\(\operatorname{diag}(1,2)\) 的二次型 \(x^2+2y^2\) 对非零向量为正；\(x^2-y^2\) 分别在 \((1,0)\)、\((0,1)\) 取正、负值。</li>
+<li>\(A=\operatorname{diag}(3,1)\) 时 \(A^TA=\operatorname{diag}(9,1)\)，奇异值为 3、1；\(A_1=\operatorname{diag}(3,0)\) 的残差为 \(\operatorname{diag}(0,1)\)，Frobenius 范数平方为 1。</li>
+<li>样本 \((1,1),(-1,-1)\) 的均值为零，样本协方差是两次外积之和除以 \(2-1\)，即 \(\begin{pmatrix}2&amp;2\\2&amp;2\end{pmatrix}\)。该矩阵乘 \((1,1)^T\) 得 \(4(1,1)^T\)，乘 \((1,-1)^T\) 得零；所以单位主方向为 \((1,1)/\sqrt2\)，两样本均在其张成空间，投影残差为零。</li>
+</ol>
+<h2 id="section-49">17. 学习资源与记录</h2>
 <p>中文主教材选一套大学基础线性代数教材即可；<a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/">MIT 18.06</a> 配合系统理解，<a href="https://www.3blue1brown.com/topics/linear-algebra">3Blue1Brown</a> 补几何直觉。</p>
 <table>
 <thead>
@@ -452,4 +593,4 @@ S=\frac1{N-1}X_c^TX_c,\qquad N&gt;1.
 <td></td>
 </tr>
 </tbody>
-</table></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h2" href="#section-1">1. 核心问题与学习顺序</a><a class="toc-h2" href="#section-2">2. 向量与线性组合【基础】</a><a class="toc-h3" href="#section-3">平面向量数量积与解三角形</a><a class="toc-h2" href="#section-4">3. 矩阵与运算【基础】</a><a class="toc-h3" href="#section-5">3.1 运算规则</a><a class="toc-h3" href="#section-6">3.2 逆矩阵</a><a class="toc-h3" href="#section-7">矩阵乘法为什么要这样定义？</a><a class="toc-h2" href="#section-8">4. 消元与线性方程组【核心】</a><a class="toc-h3" href="#section-9">4.1 解的存在与数量</a><a class="toc-h3" href="#section-10">4.2 方阵可逆的等价条件</a><a class="toc-h3" href="#section-11">为什么消元不会改变解？</a><a class="toc-h2" href="#section-12">5. 行列式【核心】</a><a class="toc-h2" href="#section-13">6. 子空间、秩与四个基本空间【核心】</a><a class="toc-h2" href="#section-14">7. 线性映射与换基【核心】</a><a class="toc-h2" href="#section-15">8. 内积、正交与投影【核心；机器学习重点】</a><a class="toc-h3" href="#section-16">8.1 Gram–Schmidt 与 QR</a><a class="toc-h3" href="#section-17">投影公式的推导：把力分解到指定方向</a><a class="toc-h3" href="#section-18">空间向量、距离和夹角</a><a class="toc-h2" href="#section-19">9. 最小二乘【核心；机器学习重点】</a><a class="toc-h3" href="#section-20">实际问题：如何拟合没有精确解的数据？</a><a class="toc-h3" href="#section-21">正规方程的推导</a><a class="toc-h2" href="#section-22">10. 特征值与对角化【核心】</a><a class="toc-h3" href="#section-23">特征值解决什么问题？</a><a class="toc-h2" href="#section-24">11. 对称矩阵、谱定理与二次型【核心】</a><a class="toc-h2" href="#section-25">12. SVD、伪逆与低秩近似【扩展重点】</a><a class="toc-h2" href="#section-26">13. PCA 与数据表示【应用】</a><a class="toc-h2" href="#section-27">14. 矩阵分解与数值意识【扩展】</a><a class="toc-h2" href="#section-28">15. 易错点与验收</a><a class="toc-h2" href="#section-29">16. 练习与参考答案</a><a class="toc-h2" href="#section-30">17. 学习资源与记录</a></aside></div></div></body></html>
+</table></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h2" href="#section-1">1. 核心问题与学习顺序</a><a class="toc-h2" href="#section-2">2. 向量与线性组合【基础】</a><a class="toc-h3" href="#section-3">初学者先理解什么？</a><a class="toc-h3" href="#section-4">平面向量数量积与解三角形</a><a class="toc-h2" href="#section-5">3. 矩阵与运算【基础】</a><a class="toc-h3" href="#section-6">初学者先理解什么？</a><a class="toc-h3" href="#section-7">3.1 运算规则</a><a class="toc-h3" href="#section-8">矩阵运算公式的逐项核验</a><a class="toc-h3" href="#section-9">3.2 逆矩阵</a><a class="toc-h3" href="#section-10">矩阵乘法为什么要这样定义？</a><a class="toc-h2" href="#section-11">4. 消元与线性方程组【核心】</a><a class="toc-h3" href="#section-12">初学者先理解什么？</a><a class="toc-h3" href="#section-13">4.1 解的存在与数量</a><a class="toc-h3" href="#section-14">4.2 方阵可逆的等价条件</a><a class="toc-h3" href="#section-15">为什么消元不会改变解？</a><a class="toc-h2" href="#section-16">5. 行列式【核心】</a><a class="toc-h3" href="#section-17">初学者先理解什么？</a><a class="toc-h3" href="#section-18">行列式公式的核验思路</a><a class="toc-h2" href="#section-19">6. 子空间、秩与四个基本空间【核心】</a><a class="toc-h3" href="#section-20">初学者先理解什么？</a><a class="toc-h3" href="#section-21">秩、零空间和维数公式的核验</a><a class="toc-h2" href="#section-22">7. 线性映射与换基【核心】</a><a class="toc-h3" href="#section-23">初学者先理解什么？</a><a class="toc-h2" href="#section-24">8. 内积、正交与投影【核心；机器学习重点】</a><a class="toc-h3" href="#section-25">初学者先理解什么？</a><a class="toc-h3" href="#section-26">8.1 Gram–Schmidt 与 QR</a><a class="toc-h3" href="#section-27">投影公式的推导：把力分解到指定方向</a><a class="toc-h3" href="#section-28">空间向量、距离和夹角</a><a class="toc-h2" href="#section-29">9. 最小二乘【核心；机器学习重点】</a><a class="toc-h3" href="#section-30">初学者先理解什么？</a><a class="toc-h3" href="#section-31">实际问题：如何拟合没有精确解的数据？</a><a class="toc-h3" href="#section-32">正规方程的推导</a><a class="toc-h2" href="#section-33">10. 特征值与对角化【核心】</a><a class="toc-h3" href="#section-34">初学者先理解什么？</a><a class="toc-h3" href="#section-35">特征值与对角化公式的核验</a><a class="toc-h3" href="#section-36">特征值解决什么问题？</a><a class="toc-h2" href="#section-37">11. 对称矩阵、谱定理与二次型【核心】</a><a class="toc-h3" href="#section-38">初学者先理解什么？</a><a class="toc-h3" href="#section-39">实对称矩阵谱定理与正定性的核验</a><a class="toc-h2" href="#section-40">12. SVD、伪逆与低秩近似【扩展重点】</a><a class="toc-h3" href="#section-41">初学者先理解什么？</a><a class="toc-h2" href="#section-42">13. PCA 与数据表示【应用】</a><a class="toc-h3" href="#section-43">初学者先理解什么？</a><a class="toc-h2" href="#section-44">14. 矩阵分解与数值意识【扩展】</a><a class="toc-h3" href="#section-45">初学者先理解什么？</a><a class="toc-h2" href="#section-46">15. 易错点与验收</a><a class="toc-h2" href="#section-47">16. 练习与参考答案</a><a class="toc-h3" href="#section-48">正文旧例的独立复算</a><a class="toc-h2" href="#section-49">17. 学习资源与记录</a></aside></div></div></body></html>

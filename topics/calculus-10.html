@@ -1,7 +1,10 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>多元函数微分｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
  <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
  <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="foundations-2.html">初中：数与代数</a><a class="topic-link"  href="foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="foundations-6.html">高中：三角函数</a><a class="topic-link"  href="foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="foundations-11.html">数学思想与解题方法</a><a class="topic-link"  href="foundations-formulas.html">公式与定理速查</a><a class="topic-link"  href="junior-textbook-catalog.html">初中人教版教材目录</a><a class="topic-link"  href="high-school-textbook-catalog.html">高中人教 A 版教材目录</a></div></details><details class="subject" open><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="calculus-3.html">连续性</a><a class="topic-link"  href="calculus-4.html">导数与微分</a><a class="topic-link"  href="calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="calculus-6.html">不定积分</a><a class="topic-link"  href="calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="calculus-8.html">反常积分</a><a class="topic-link"  href="calculus-9.html">空间几何与向量</a><a class="topic-link active" aria-current="page" href="calculus-10.html">多元函数微分</a><a class="topic-link"  href="calculus-11.html">二重与三重积分</a><a class="topic-link"  href="calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="calculus-13.html">常微分方程</a><a class="topic-link"  href="calculus-14.html">数项级数</a><a class="topic-link"  href="calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="linear-2.html">向量与线性组合</a><a class="topic-link"  href="linear-3.html">矩阵与运算</a><a class="topic-link"  href="linear-4.html">消元与线性方程组</a><a class="topic-link"  href="linear-5.html">行列式</a><a class="topic-link"  href="linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="linear-7.html">线性映射与换基</a><a class="topic-link"  href="linear-8.html">内积、正交与投影</a><a class="topic-link"  href="linear-9.html">最小二乘</a><a class="topic-link"  href="linear-10.html">特征值与对角化</a><a class="topic-link"  href="linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="probability-4.html">随机变量与分布</a><a class="topic-link"  href="probability-5.html">常见离散分布</a><a class="topic-link"  href="probability-6.html">常见连续分布</a><a class="topic-link"  href="probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="probability-8.html">多维分布与独立性</a><a class="topic-link"  href="probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="probability-11.html">样本与抽样分布</a><a class="topic-link"  href="probability-12.html">参数估计</a><a class="topic-link"  href="probability-13.html">假设检验</a><a class="topic-link"  href="probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="probability-15.html">贝叶斯统计</a><a class="topic-link"  href="probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="history-timeline.html">数学发展时间轴</a><a class="topic-link"  href="history-1.html">从计数和测量开始</a><a class="topic-link"  href="history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="history-4.html">解析几何与微积分</a><a class="topic-link"  href="history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="../archive/math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
- <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 多元函数微分</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>多元函数微分</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">10.1 极限、偏导与可微</h3>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 多元函数微分</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>多元函数微分</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">初学者先理解什么？</h3>
+<p><strong>多元函数</strong>的输出依赖多个输入。<strong>偏导数</strong>表示其他变量暂时不变时对某一变量的变化率；<strong>梯度</strong>把所有一阶偏导按顺序组成向量。</p>
+<p>例如 \(f(x,y)=x^2+y^2\) 的梯度为 \((2x,2y)\)，在 \((1,2)\) 处是 \((2,4)\)。对可微函数且梯度非零时，它指出局部上升最快的单位方向；偏导存在本身不能保证函数可微。</p>
+<h3 id="section-2">10.1 极限、偏导与可微</h3>
 <p>多元极限要求沿定义域内所有趋近路径得到同一值；两条路径结果不同即可证明不存在，若干条路径相同不能证明存在。</p>
 <p>\[
 f_x(x,y)=\lim_{h\to0}\frac{f(x+h,y)-f(x,y)}h.
@@ -12,11 +15,13 @@ f_x(x,y)=\lim_{h\to0}\frac{f(x+h,y)-f(x,y)}h.
 \]</p>
 <ul>
 <li>可微 ⇒ 连续且各偏导存在。</li>
-<li>各偏导存在不一定连续，更不一定可微。</li>
+<li>各偏导存在不一定连续，更不一定可微。例如令 \(f(x,y)=xy/(x^2+y^2)\)（\((x,y)\ne(0,0)\)）、\(f(0,0)=0\)，两坐标轴上值均为零，故原点两个偏导均为零；沿 \(y=x\ne0\) 却恒为 1/2，故原点不连续，因而不可微。</li>
 <li>各偏导在某邻域存在并在该点连续，是该点可微的充分条件。</li>
 <li>若二阶混合偏导在邻域连续，则 f_xy=f_yx。</li>
 </ul>
-<h3 id="section-2">10.2 链式法则、梯度与方向导数</h3>
+<p><strong>充分条件及混合偏导的证明。</strong> 记 \(h=(h_1,h_2)\)，把增量拆成先改变 x、再改变 y 的两段。分别对两段使用一元中值定理，可得增量等于 \(f_x(x+\theta h_1,y)h_1+f_y(x+h_1,y+\eta h_2)h_2\)，其中 \(0&lt;\theta,\eta&lt;1\)。两偏导在考察点连续，故与 \(f_x(x,y)h_1+f_y(x,y)h_2\) 的差为 \(o(\|h\|)\)，证明可微。反过来，将可微增量限制在各坐标方向即可得到偏导；令 h 趋零也立即得到连续。</p>
+<p>对混合偏导，考虑矩形差 \(D=f(x+h,y+k)-f(x+h,y)-f(x,y+k)+f(x,y)\)。先沿 x 再沿 y 用中值定理，\(D=hk f_{xy}(x+\theta h,y+\eta k)\)；颠倒次序同样得到 \(D=hk f_{yx}(x+\theta&#x27;h,y+\eta&#x27;k)\)。当 h、k 非零并趋于零时，由混合偏导在该点的连续性，两式除以 hk 后趋于各自的点值，故相等。不能仅因为两个混合偏导在该点存在就省去连续性等附加条件。</p>
+<h3 id="section-3">10.2 链式法则、梯度与方向导数</h3>
 <p>若 z=f(x,y)，x=x(t)、y=y(t)，且满足可微条件：</p>
 <p>\[
 \frac{dz}{dt}=f_x\frac{dx}{dt}+f_y\frac{dy}{dt}.
@@ -30,14 +35,20 @@ D_{\mathbf u}f=\nabla f\cdot\mathbf u\quad(|\mathbf u|=1).
 <p>\[
 z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0).
 \]</p>
-<h3 id="section-3">10.3 隐函数与雅可比矩阵</h3>
+<p><strong>多元链式法则与方向导数的核验。</strong> 若 \(f\) 在 \(x\) 可微，则 \(f(x+h)-f(x)=\nabla f(x)^Th+o(\|h\|)\)。令 \(h=tu\)，其中 \(\|u\|=1\)，差商为 \(\nabla f(x)^Tu+o(|t|)/t\)，令 \(t\to0\) 得方向导数 \(D_uf=\nabla f\cdot u\)。柯西—施瓦茨不等式进一步给出 \(D_uf\le\|\nabla f\|\)，梯度非零时沿 \(u=\nabla f/\|\nabla f\|\) 取等；梯度为零时所有方向的一阶变化率均为零。若可微曲线 \(r(t)\) 位于正则等值面 \(f=c\) 上，链式法则给出 \(\nabla f(r(t))\cdot r&#x27;(t)=0\)，故梯度与每个切向量正交。</p>
+<p>若向量值映射 \(g\) 在 \(x\) 可微、\(f\) 在 \(g(x)\) 可微，则增量 \(g(x+h)-g(x)=J_g(x)h+o(\|h\|)\)。将它代入 \(f\) 的线性近似并利用该增量为 \(O(\|h\|)\)，得到 \(J_{f\circ g}(x)=J_f(g(x))J_g(x)\)。单参数式是该矩阵等式的一行特例。切平面公式来自把 \(f(x_0+\Delta x,y_0+\Delta y)\) 保留一阶项；存在偏导本身还不足以保证这种线性近似，需检查可微性。</p>
+<h3 id="section-4">10.3 隐函数与雅可比矩阵</h3>
 <ul>
-<li>F(x,y)=0：F 连续可微且 F_y≠0 ⇒ 局部可解 y=y(x)，y′=−F_x/F_y。</li>
-<li>F(x,y,z)=0 且 F_z≠0：z_x=−F_x/F_z，z_y=−F_y/F_z。</li>
+<li>在 \((x_0,y_0)\) 邻域内 F 连续可微，且 \(F(x_0,y_0)=0\)、\(F_y(x_0,y_0)\ne0\)，则附近局部唯一可解 y=y(x)，并有 y′=−F_x/F_y。</li>
+<li>在零点附近 F 连续可微且该点 \(F_z\ne0\) 时：局部唯一可解 z=z(x,y)，并有 z_x=−F_x/F_z，z_y=−F_y/F_z。</li>
 <li>雅可比矩阵 J 收集向量值函数的一阶偏导，描述局部线性变换；复合映射的雅可比按矩阵乘法连接。</li>
 <li>逆函数定理：连续可微映射在一点的雅可比行列式非零，则该点附近有连续可微的局部逆映射。非零行列式不直接保证全局一一对应。</li>
 </ul>
-<h3 id="section-4">10.4 多元泰勒与极值</h3>
+<p><strong>隐函数求导的核验。</strong> 假设隐函数定理的条件已经保证附近存在可导函数 \(y(x)\) 且 \(F(x,y(x))=0\)，对恒等式用链式法则求导得 \(F_x+F_yy&#x27;=0\)。因为 \(F_y\ne0\)，可以除以它得到 \(y&#x27;=-F_x/F_y\)。三变量情形分别固定另一个自变量并同样求偏导，得到 \(z_x=-F_x/F_z\)、\(z_y=-F_y/F_z\)。这个计算证明的是<strong>已有隐函数时的导数公式</strong>；隐函数在局部存在并可导仍依赖隐函数定理本身，不能单靠代数除法证明。</p>
+<p><strong>局部逆与隐函数存在性的证明。</strong> 设 \(G:\mathbb R^n\to\mathbb R^n\) 在 \(a\) 附近连续可微，\(A=DG(a)\) 可逆。由导数连续性，可取以 a 为中心的闭球 B，使其上 \(\|I-A^{-1}DG(x)\|\le q&lt;1\)。对给定的 y 定义 \(T_y(x)=x-A^{-1}(G(x)-y)\)。沿线段积分，得到 \(\|T_y(x)-T_y(z)\|\le q\|x-z\|\)。当 y 足够接近 \(G(a)\) 时，\(\|T_y(a)-a\|&lt;(1-q)\operatorname{radius}(B)\)，于是 \(T_y\) 将 B 映入自身且固定点位于 B 的内部。</p>
+<p>从 B 内任一点反复迭代 \(x_{n+1}=T_y(x_n)\)，相邻项距离依次至多缩小为 q 倍，故几何级数和实数完备性保证它收敛到 B 内的固定点；连续性使固定点满足 \(G(x)=y\)，压缩估计又保证它在 B 中唯一。令 \(V=\operatorname{int}(B)\cap G^{-1}(W)\)，其中 W 是以上足够小的 y 的开邻域；每个 y 的固定点都在 B 的内部，因此 \(G:V\to W\) 双射。比较两个固定点得逆映射局部 Lipschitz。再由 \(G(x+h)-G(x)=DG(x)h+o(\|h\|)\)，以及附近的 \(DG(x)\) 可逆和逆映射的 Lipschitz 性，可反解出 \(D(G^{-1})(G(x))=[DG(x)]^{-1}\)。矩阵求逆在可逆矩阵集合上连续，故局部逆连续可微。</p>
+<p>将 \(F(x,y)=0\) 化为映射 \(G(x,y)=(x,F(x,y))\)。其雅可比行列式为 \(F_y\)，在所给零点非零；局部逆应用于 \((x,0)\)，便得到唯一的连续可微隐函数 \(y=y(x)\)。三变量情形对 \(G(x,y,z)=(x,y,F(x,y,z))\) 相同，其雅可比行列式为 \(F_z\)。以上为局部结论，所用基础包括有限维闭球的完备性及连续导数沿线段的积分公式。</p>
+<h3 id="section-5">10.4 多元泰勒与极值</h3>
 <p>f 二阶连续可微时：</p>
 <p>\[
 f(\mathbf x+\mathbf h)=f(\mathbf x)+\nabla f(\mathbf x)^T\mathbf h
@@ -47,9 +58,12 @@ f(\mathbf x+\mathbf h)=f(\mathbf x)+\nabla f(\mathbf x)^T\mathbf h
 <ul>
 <li>驻点 Hessian 正定 ⇒ 严格局部极小；负定 ⇒ 严格局部极大；不定 ⇒ 鞍点；半正定或半负定一般不能直接判定。</li>
 <li>二元情形：D=f_xx f_yy−f_xy²。在二阶连续可微的驻点，D&gt;0、f_xx&gt;0 为极小；D&gt;0、f_xx&lt;0 为极大；D&lt;0 为鞍点；D=0 待定。</li>
-<li>拉格朗日乘数法：单个等式约束 g=c 下，正则内点约束极值满足 ∇f=λ∇g，前提 ∇g≠0；候选点仍需比较，边界与奇异点另查。</li>
-<li>紧集上连续函数取得最值；多元最值不能遗漏边界。</li>
+<li>拉格朗日乘数法：f、g 在点的邻域连续可微，单个等式约束 g=c 下，正则内点约束极值满足 ∇f=λ∇g，前提 ∇g≠0；候选点仍需比较，边界与奇异点另查。</li>
+<li>非空紧集上连续函数取得最值；多元最值不能遗漏边界。证明：若不有界，可取 \(x_n\) 使 \(|f(x_n)|&gt;n\)，紧性给出收敛子列，而连续性使对应函数值收敛，矛盾。再按上确界定义取 \(f(x_n)\to\sup f\)，由紧性取收敛子列 \(x_{n_j}\to x_*\) 且 \(x_*\) 仍在集合内，连续性得 \(f(x_*)=\sup f\)；最小值对 −f 同理。这里使用有限维紧集的序列紧性。</li>
 </ul>
-<h3 id="section-5">梯度为什么指向上升最快的方向？</h3>
+<p><strong>Hessian 判别的核验。</strong> 在驻点 \(\nabla f(x_0)=0\)，二阶展开为 \(f(x_0+h)-f(x_0)=\tfrac12h^THh+o(\|h\|^2)\)。若实对称 \(H\) 正定，其最小特征值 \(m&gt;0\)，于是 \(h^THh\ge m\|h\|^2\)；充分小的余项绝对值小于 \(m\|h\|^2/4\)，所以非零小 \(h\) 都使函数值增大，是严格局部极小。负定同理；若 \(H\) 不定，沿正、负特征方向取足够小的 \(h\) 可分别得到函数增大和减小，故为鞍点。半正定或半负定时该二阶项可能沿某些方向为零，需要更高阶或其他方法。二元情形将对称矩阵 \(\begin{pmatrix}f_{xx}&amp;f_{xy}\\f_{xy}&amp;f_{yy}\end{pmatrix}\) 的正负定条件写成 \(D\) 与 \(f_{xx}\) 的条件，即得到正文所列判别。</p>
+<p><strong>二阶展开与乘数法的证明。</strong> 对固定 h 令 \(\phi(t)=f(x+th)\)，一元二阶泰勒公式给出 \(\phi(1)=\phi(0)+\phi&#x27;(0)+\tfrac12\phi&#x27;&#x27;(\xi)\)。链式法则给出 \(\phi&#x27;(0)=\nabla f(x)^Th\)、\(\phi&#x27;&#x27;(\xi)=h^TH(x+\xi h)h\)；H 连续使最后一项与 \(h^TH(x)h\) 之差为 \(o(\|h\|^2)\)。内点极值沿每个坐标方向都是一元极值，故每个偏导为零。</p>
+<p>对于单个等式约束，设 \(g(x_0)=c\)、\(\nabla g(x_0)\ne0\)。对任意切向量 v（即 \(\nabla g(x_0)^Tv=0\)），利用非零偏导和隐函数定理可构造位于约束面上的可微曲线 \(\gamma\)，满足 \(\gamma(0)=x_0,\gamma&#x27;(0)=v\)。约束极值使 \((f\circ\gamma)&#x27;(0)=\nabla f(x_0)^Tv=0\)。因此 \(\nabla f\) 与 \(\nabla g\) 的正交补中每个 v 都正交，只能属于 \(\operatorname{span}\{\nabla g\}\)，故存在 λ 使 \(\nabla f=\lambda\nabla g\)。这是必要条件；还要检查边界、奇异点并比较所有候选值。</p>
+<h3 id="section-6">梯度为什么指向上升最快的方向？</h3>
 <p>可微函数在 \(x\) 处沿单位方向 \(u\) 的变化率为 \(D_uf=\nabla f\cdot u\)。柯西—施瓦茨不等式给出 \(D_uf\le\|\nabla f\|\)。当梯度非零，取 \(u=\nabla f/\|\nabla f\|\) 时取等号，因此梯度是欧氏距离下的最速上升方向；负梯度是最速下降方向。</p>
-<p><strong>应用：</strong> 调整机器学习参数时，用负梯度减少损失。该结论只描述局部一阶变化；步长太大仍可能使损失上升。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-9.html">← 空间几何与向量</a><a href="calculus-11.html">二重与三重积分 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">10.1 极限、偏导与可微</a><a class="toc-h3" href="#section-2">10.2 链式法则、梯度与方向导数</a><a class="toc-h3" href="#section-3">10.3 隐函数与雅可比矩阵</a><a class="toc-h3" href="#section-4">10.4 多元泰勒与极值</a><a class="toc-h3" href="#section-5">梯度为什么指向上升最快的方向？</a></aside></div></div></body></html>
+<p><strong>应用：</strong> 调整机器学习参数时，用负梯度减少损失。该结论只描述局部一阶变化；步长太大仍可能使损失上升。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-9.html">← 空间几何与向量</a><a href="calculus-11.html">二重与三重积分 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">初学者先理解什么？</a><a class="toc-h3" href="#section-2">10.1 极限、偏导与可微</a><a class="toc-h3" href="#section-3">10.2 链式法则、梯度与方向导数</a><a class="toc-h3" href="#section-4">10.3 隐函数与雅可比矩阵</a><a class="toc-h3" href="#section-5">10.4 多元泰勒与极值</a><a class="toc-h3" href="#section-6">梯度为什么指向上升最快的方向？</a></aside></div></div></body></html>

@@ -1,8 +1,11 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>曲线积分、曲面积分与场论｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
  <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
  <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="foundations-2.html">初中：数与代数</a><a class="topic-link"  href="foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="foundations-6.html">高中：三角函数</a><a class="topic-link"  href="foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="foundations-11.html">数学思想与解题方法</a><a class="topic-link"  href="foundations-formulas.html">公式与定理速查</a><a class="topic-link"  href="junior-textbook-catalog.html">初中人教版教材目录</a><a class="topic-link"  href="high-school-textbook-catalog.html">高中人教 A 版教材目录</a></div></details><details class="subject" open><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="calculus-3.html">连续性</a><a class="topic-link"  href="calculus-4.html">导数与微分</a><a class="topic-link"  href="calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="calculus-6.html">不定积分</a><a class="topic-link"  href="calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="calculus-8.html">反常积分</a><a class="topic-link"  href="calculus-9.html">空间几何与向量</a><a class="topic-link"  href="calculus-10.html">多元函数微分</a><a class="topic-link"  href="calculus-11.html">二重与三重积分</a><a class="topic-link active" aria-current="page" href="calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="calculus-13.html">常微分方程</a><a class="topic-link"  href="calculus-14.html">数项级数</a><a class="topic-link"  href="calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="linear-2.html">向量与线性组合</a><a class="topic-link"  href="linear-3.html">矩阵与运算</a><a class="topic-link"  href="linear-4.html">消元与线性方程组</a><a class="topic-link"  href="linear-5.html">行列式</a><a class="topic-link"  href="linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="linear-7.html">线性映射与换基</a><a class="topic-link"  href="linear-8.html">内积、正交与投影</a><a class="topic-link"  href="linear-9.html">最小二乘</a><a class="topic-link"  href="linear-10.html">特征值与对角化</a><a class="topic-link"  href="linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="probability-4.html">随机变量与分布</a><a class="topic-link"  href="probability-5.html">常见离散分布</a><a class="topic-link"  href="probability-6.html">常见连续分布</a><a class="topic-link"  href="probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="probability-8.html">多维分布与独立性</a><a class="topic-link"  href="probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="probability-11.html">样本与抽样分布</a><a class="topic-link"  href="probability-12.html">参数估计</a><a class="topic-link"  href="probability-13.html">假设检验</a><a class="topic-link"  href="probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="probability-15.html">贝叶斯统计</a><a class="topic-link"  href="probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="history-timeline.html">数学发展时间轴</a><a class="topic-link"  href="history-1.html">从计数和测量开始</a><a class="topic-link"  href="history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="history-4.html">解析几何与微积分</a><a class="topic-link"  href="history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="../archive/math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
- <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 曲线积分、曲面积分与场论</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>曲线积分、曲面积分与场论</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">12.1 两类曲线积分</h3>
-<p>曲线参数 r(t)，a≤t≤b，分段光滑：</p>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 曲线积分、曲面积分与场论</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>曲线积分、曲面积分与场论</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">初学者先理解什么？</h3>
+<p><strong>曲线积分</strong>沿路径累计，<strong>曲面积分</strong>沿曲面累计；积分对象、方向和法向约定决定公式的含义。沿路径的力与位移点积可表示做功，穿过曲面的向量场法向分量可表示通量。</p>
+<p>例如恒力 \(F=(1,0)\) 沿从 \((0,0)\) 到 \((2,0)\) 的线段做功为 2；反向走同一路径时为 −2。使用格林、高斯或斯托克斯公式之前，必须检查区域、边界方向及光滑等条件。</p>
+<h3 id="section-2">12.1 两类曲线积分</h3>
+<p>曲线参数 r(t)，a≤t≤b，分段光滑；标量函数 f 与向量场 F 沿曲线连续，第二类曲线积分采用参数增大的方向：</p>
 <p>\[
 \int_C f\,ds=\int_a^b f(\mathbf r(t))|\mathbf r&#x27;(t)|dt,
 \]
@@ -11,8 +14,8 @@
 =\int_a^b\mathbf F(\mathbf r(t))\cdot\mathbf r&#x27;(t)dt.
 \]</p>
 <p>第一类按弧长累加，不随方向反转而变号；第二类表示沿路径做功等，方向反转会变号。</p>
-<h3 id="section-2">12.2 格林公式与势函数</h3>
-<p>P、Q 在包含有界平面区域 D 的邻域内有连续一阶偏导，边界分段光滑、取正向时：</p>
+<h3 id="section-3">12.2 格林公式与势函数</h3>
+<p>P、Q 在包含有界平面区域 D 的邻域内有连续一阶偏导；若 D 可分成有限个内部分离、同时沿 x 和 y 方向简单的区域，边界分段光滑并取正向，则：</p>
 <p>\[
 \oint_{\partial D}Pdx+Qdy
 =\iint_D(Q_x-P_y)dA.
@@ -23,15 +26,15 @@
 \int_C\mathbf F\cdot d\mathbf r=\phi(B)-\phi(A).
 \]</p>
 <p>这时路径无关，闭合积分为0。二维开单连通区域内，连续可微场满足 P_y=Q_x，可推出存在势函数；有孔区域不能只凭偏导相等就下结论。</p>
-<h3 id="section-3">12.3 两类曲面积分</h3>
-<p>光滑参数曲面 r(u,v)，取不重复覆盖的参数区域 G：</p>
+<h3 id="section-4">12.3 两类曲面积分</h3>
+<p>取分段光滑的有界参数区域 G，曲面参数 r 在其邻域连续可微、正则且不重复覆盖曲面，标量函数 f 在曲面上连续：</p>
 <p>\[
 \iint_S f\,dS=\iint_G f(\mathbf r(u,v))|\mathbf r_u\times\mathbf r_v|dudv.
 \]</p>
 <p>z=g(x,y) 时，\(dS=\sqrt{1+g_x^2+g_y^2}\,dxdy\)。</p>
 <p>通量：\(\iint_S\mathbf F\cdot\mathbf n\,dS\)，n 为指定的单位法向量；改变定向，通量变号。</p>
-<h3 id="section-4">12.4 高斯与斯托克斯公式</h3>
-<p>F 连续可微，区域、曲面与边界具备相应分段光滑性：</p>
+<h3 id="section-5">12.4 高斯与斯托克斯公式</h3>
+<p>F 在相关区域的邻域内连续可微。下文直接证明的情形中，高斯公式的区域是有限个坐标简单、分段光滑区域的并；斯托克斯公式的曲面是有限张兼容定向的正则 C² 参数片之并，边界分段光滑：</p>
 <p>\[
 \oiint_{\partial\Omega}\mathbf F\cdot\mathbf n\,dS
 =\iiint_\Omega\operatorname{div}\mathbf F\,dV,
@@ -45,4 +48,21 @@
 <p>\[
 \nabla\times\mathbf F=(R_y-Q_z,\ P_z-R_x,\ Q_x-P_y).
 \]</p>
-<p>直观：散度衡量局部净流出，旋度刻画局部环流。若场在区域内有奇点，必须先检查定理能否使用。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-11.html">← 二重与三重积分</a><a href="calculus-13.html">常微分方程 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">12.1 两类曲线积分</a><a class="toc-h3" href="#section-2">12.2 格林公式与势函数</a><a class="toc-h3" href="#section-3">12.3 两类曲面积分</a><a class="toc-h3" href="#section-4">12.4 高斯与斯托克斯公式</a></aside></div></div></body></html>
+<p>直观：散度衡量局部净流出，旋度刻画局部环流。若场在区域内有奇点，必须先检查定理能否使用。</p>
+<p>**逐项推导与适用范围：**光滑曲线上的小位移为 \(r&#x27;(t)\Delta t+o(\Delta t)\)，小弧长为 \(|r&#x27;(t)|\Delta t+o(\Delta t)\)，分别累加得到两类曲线积分；反向参数代换时弧长不变而位移变号。对势场，链式法则给出 \(\nabla\phi(r(t))\cdot r&#x27;(t)=d\phi(r(t))/dt\)，再用微积分基本定理即得端点差。</p>
+<p>对同时为纵向和横向简单的区域，边界上 \(\oint Pdx\) 等于下边界的 P 积分减去上边界的 P 积分，由一元基本定理化为 \(-\iint P_y\)；同理 \(\oint Qdy=\iint Q_x\)。将上文有限分割中的子区域相加，内部公共边按相反方向相消，得格林公式。若 \(P_y=Q_x\)，在开集内任一小矩形上构造 \(\psi(x,y)=\int_{x_0}^xP(s,y_0)ds+\int_{y_0}^yQ(x,t)dt\)；直接求偏导并使用 \(Q_x=P_y\)，得 \(\nabla\psi=(P,Q)\)，故矩形内闭路积分为零。若整个开集单连通，同端点的两条分段光滑路径拼成的闭路可缩至一点；把分段光滑缩合同伦的参数方形细分，使每个小方块的像落在一个开集内的小矩形中。每个小方块边界积分由局部势函数为零，相邻边反向抵消，故原闭路积分为零。固定起点定义路径积分 \(\phi\)，路径无关；分别沿 x、y 的微小线段求差商，连续性给出 \(\phi_x=P,\phi_y=Q\)。这里使用单连通开集中的分段光滑闭路可作分段光滑缩合同伦的标准拓扑引理。单连通条件不可省：在穿孔平面上 \(F=(-y/(x^2+y^2),x/(x^2+y^2))\) 满足 \(P_y=Q_x\)，但沿单位圆的环流为 \(2\pi\)，因而没有全局势函数。</p>
+<p>曲面参数小块的两条边近似为 \(r_u\Delta u\) 与 \(r_v\Delta v\)，叉积给出有向面积向量；其模给出第一类曲面积分，选定法向后点乘场给出通量。图形曲面取 \(r=(x,y,g(x,y))\)，叉积为 \((-g_x,-g_y,1)\)，其模即所列面积因子。</p>
+<p>对长方体，x 方向两相对面的外向通量之和为 \(\iint[P(b,y,z)-P(a,y,z)]dydz=\iiint P_xdV\)，y、z 分量同理，相加得高斯公式；对上文限定的有限个坐标简单子区域，使用下方的截面证明后让内部界面通量相消。对一张正则参数曲面，将边界环流拉回参数平面后应用格林公式；链式法则展开所得被积函数恰为 \((\nabla\times F)\cdot(r_u\times r_v)\)，故得到斯托克斯公式。有限张兼容定向的曲面拼接时公共边方向相反而相消；定向必须与边界右手规则一致。更一般的粗糙区域或曲面需要额外定理，不由此处证明覆盖。</p>
+<p><strong>斯托克斯公式的参数计算。</strong> 对正则 \(C^2\) 参数片 \(r(u,v)\)，令 \(A(u,v)=F(r(u,v))\cdot r_u\)、\(B(u,v)=F(r(u,v))\cdot r_v\)。边界上的线积分经参数化恰为 \(\oint(Adu+Bdv)\)，且取参数平面正向时对应法向 \(r_u\times r_v\)。链式法则及 \(r_{uv}=r_{vu}\) 给出
+\[
+\partial_uB-\partial_vA
+=\sum_{i,j}\partial_jF_i(r)\bigl((r_u)_j(r_v)_i-(r_v)_j(r_u)_i\bigr)
+=(\nabla\times F)(r)\cdot(r_u\times r_v).
+\]
+对参数区域使用格林公式便得到这一参数片上的斯托克斯公式；对由有限张兼容定向的参数片组成的曲面，内部公共边的方向相反而抵消。此证明明确依赖参数区域上的格林公式以及可按要求分片的正则性；有奇点或不具备这些条件的曲面不能直接照搬。</p>
+<p><strong>高斯公式在坐标简单区域的证明。</strong> 假设 \(\Omega\) 同时可沿三条坐标方向分解为上下图形之间的区间，并具有分段 \(C^1\) 边界。对 z 方向写成 \(h_-(x,y)\le z\le h_+(x,y)\)，上、下图形的外向面积向量的 z 分量分别是 \(+dxdy\)、\(-dxdy\)，侧面 z 分量为零。因此 R 分量的总外向通量为
+\[
+\iint_D[R(x,y,h_+)-R(x,y,h_-)]dxdy
+=\iiint_\Omega R_z\,dV,
+\]
+最后一步是逐条竖线使用一元微积分基本定理，再用累次积分。x、y 方向完全类似，分别得到 \(\iiint P_x\)、\(\iiint Q_y\)，相加即得散度公式。若区域是有限个这类子区域的并，内部界面通量成对抵消；更一般区域还需要额外逼近或散度定理的正则性假设。</p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-11.html">← 二重与三重积分</a><a href="calculus-13.html">常微分方程 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">初学者先理解什么？</a><a class="toc-h3" href="#section-2">12.1 两类曲线积分</a><a class="toc-h3" href="#section-3">12.2 格林公式与势函数</a><a class="toc-h3" href="#section-4">12.3 两类曲面积分</a><a class="toc-h3" href="#section-5">12.4 高斯与斯托克斯公式</a></aside></div></div></body></html>

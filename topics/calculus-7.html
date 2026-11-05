@@ -1,7 +1,12 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>定积分与微积分基本定理｜数学札记</title><link rel="stylesheet" href="../assets/notebook.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="../assets/notebook.js"></script></head><body>
  <a class="skip" href="#content">跳到正文</a><header class="mobile-bar"><a href="../index.html">数学札记</a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar">打开目录</button></header>
  <aside id="sidebar" class="sidebar"><a class="brand" href="../index.html"><span class="brand-mark">∑</span><span>数学札记<small>MATHEMATICS NOTES</small></span></a><p class="sidebar-caption">循着问题，理解数学。</p><label class="search-label" for="topic-search">查找主题</label><input id="topic-search" type="search" placeholder="搜索主题名称…" autocomplete="off"><nav aria-label="学科目录"><details class="subject" ><summary>初高中数学基础</summary><div class="topic-list"><a class="topic-link"  href="foundations-2.html">初中：数与代数</a><a class="topic-link"  href="foundations-3.html">初中：函数与图像</a><a class="topic-link"  href="foundations-4.html">初中：几何、统计与概率</a><a class="topic-link"  href="foundations-5.html">高中：集合、逻辑与函数</a><a class="topic-link"  href="foundations-6.html">高中：三角函数</a><a class="topic-link"  href="foundations-7.html">高中：向量与解析几何</a><a class="topic-link"  href="foundations-8.html">高中：不等式与数列</a><a class="topic-link"  href="foundations-9.html">高中：计数、概率与统计</a><a class="topic-link"  href="foundations-10.html">高中：复数与导数初步</a><a class="topic-link"  href="foundations-11.html">数学思想与解题方法</a><a class="topic-link"  href="foundations-formulas.html">公式与定理速查</a><a class="topic-link"  href="junior-textbook-catalog.html">初中人教版教材目录</a><a class="topic-link"  href="high-school-textbook-catalog.html">高中人教 A 版教材目录</a></div></details><details class="subject" open><summary>高等数学</summary><div class="topic-list"><a class="topic-link"  href="calculus-2.html">函数、数列与极限</a><a class="topic-link"  href="calculus-3.html">连续性</a><a class="topic-link"  href="calculus-4.html">导数与微分</a><a class="topic-link"  href="calculus-5.html">中值定理、泰勒公式与导数应用</a><a class="topic-link"  href="calculus-6.html">不定积分</a><a class="topic-link active" aria-current="page" href="calculus-7.html">定积分与微积分基本定理</a><a class="topic-link"  href="calculus-8.html">反常积分</a><a class="topic-link"  href="calculus-9.html">空间几何与向量</a><a class="topic-link"  href="calculus-10.html">多元函数微分</a><a class="topic-link"  href="calculus-11.html">二重与三重积分</a><a class="topic-link"  href="calculus-12.html">曲线积分、曲面积分与场论</a><a class="topic-link"  href="calculus-13.html">常微分方程</a><a class="topic-link"  href="calculus-14.html">数项级数</a><a class="topic-link"  href="calculus-15.html">幂级数与傅里叶级数</a></div></details><details class="subject" ><summary>线性代数</summary><div class="topic-list"><a class="topic-link"  href="linear-2.html">向量与线性组合</a><a class="topic-link"  href="linear-3.html">矩阵与运算</a><a class="topic-link"  href="linear-4.html">消元与线性方程组</a><a class="topic-link"  href="linear-5.html">行列式</a><a class="topic-link"  href="linear-6.html">子空间、秩与四个基本空间</a><a class="topic-link"  href="linear-7.html">线性映射与换基</a><a class="topic-link"  href="linear-8.html">内积、正交与投影</a><a class="topic-link"  href="linear-9.html">最小二乘</a><a class="topic-link"  href="linear-10.html">特征值与对角化</a><a class="topic-link"  href="linear-11.html">对称矩阵、谱定理与二次型</a><a class="topic-link"  href="linear-12.html">SVD、伪逆与低秩近似</a><a class="topic-link"  href="linear-13.html">PCA 与数据表示</a><a class="topic-link"  href="linear-14.html">矩阵分解与数值意识</a></div></details><details class="subject" ><summary>概率统计</summary><div class="topic-list"><a class="topic-link"  href="probability-2.html">随机事件与概率公理</a><a class="topic-link"  href="probability-3.html">条件概率、独立与贝叶斯</a><a class="topic-link"  href="probability-4.html">随机变量与分布</a><a class="topic-link"  href="probability-5.html">常见离散分布</a><a class="topic-link"  href="probability-6.html">常见连续分布</a><a class="topic-link"  href="probability-7.html">随机变量函数的分布</a><a class="topic-link"  href="probability-8.html">多维分布与独立性</a><a class="topic-link"  href="probability-9.html">期望、方差、协方差</a><a class="topic-link"  href="probability-10.html">概率不等式与极限定理</a><a class="topic-link"  href="probability-11.html">样本与抽样分布</a><a class="topic-link"  href="probability-12.html">参数估计</a><a class="topic-link"  href="probability-13.html">假设检验</a><a class="topic-link"  href="probability-14.html">卡方检验、方差分析与回归</a><a class="topic-link"  href="probability-15.html">贝叶斯统计</a><a class="topic-link"  href="probability-16.html">信息量与机器学习连接</a><a class="topic-link"  href="probability-17.html">实际研究中的统计意识</a></div></details><details class="subject" ><summary>数学史</summary><div class="topic-list"><a class="topic-link"  href="history-timeline.html">数学发展时间轴</a><a class="topic-link"  href="history-1.html">从计数和测量开始</a><a class="topic-link"  href="history-2.html">希腊传统：从计算到证明</a><a class="topic-link"  href="history-3.html">印度、阿拉伯与代数化</a><a class="topic-link"  href="history-4.html">解析几何与微积分</a><a class="topic-link"  href="history-5.html">19 世纪：严格化与抽象化</a><a class="topic-link"  href="history-6.html">20 世纪至今：结构、计算与数据</a><a class="topic-link"  href="history-7.html">学数学时为什么要看历史</a></div></details></nav><p id="search-empty" hidden>没有匹配的主题</p><nav class="utilities" aria-label="辅助入口"><a href="../reference.html">公式与定理速查</a><a href="../archive/math-study-schedule.html">学习计划</a><a href="../downloads/math-study-documents.zip" download>下载文档合集 ↗</a></nav></aside>
- <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 定积分与微积分基本定理</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>定积分与微积分基本定理</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">7.1 定义与性质</h3>
+ <div class="workspace"><div class="breadcrumb">数学札记 <span>/</span> 高等数学 / 定积分与微积分基本定理</div><div class="reading-layout"><main id="content" class="content"><article><div class="eyebrow">高等数学</div><h1>定积分与微积分基本定理</h1><p class="page-note"><a href="../docs/advanced-mathematics-knowledge.md" download>下载本学科完整笔记</a></p><h3 id="section-1">初学者先理解什么？</h3>
+<p><strong>定积分</strong>把许多小区间上的“函数值 × 宽度”相加，再让最大区间宽度趋于 0；在满足可积条件时得到一个数。函数表示速度时，定积分对应带方向的位移，和始终非负的行驶路程不同。</p>
+<p><img src="../assets/figures/calculus-integral.svg" alt="用右端点矩形近似直线下方的面积" /></p>
+<p>例如 \(\int_0^2x\,dx=2\)，也是图中直角三角形的面积。\(\int_0^2(-x)\,dx=-2\) 是带符号的累计量，而几何面积为 2。</p>
+<p><strong>跟着算一遍：用原函数计算。</strong> 因为 \(F(x)=x^2\) 的导数是 \(2x\)，微积分基本定理给出 \(\int_0^2 2x\,dx=F(2)-F(0)=4\)。先找到原函数，再分别代入上限和下限做减法；这里的 \(x\) 是积分变量，可以换成其他未占用的符号，结果不变。</p>
+<h3 id="section-2">7.1 定义与性质</h3>
 <p>黎曼积分通过分割区间、求和并取极限定义：</p>
 <p>\[
 \int_a^b f(x)dx=\lim_{\max\Delta x_i\to0}\sum_i f(\xi_i)\Delta x_i,
@@ -10,11 +15,16 @@
 <ul>
 <li>线性、区间可加性、交换上下限变号。</li>
 <li>f≤g ⇒ ∫f≤∫g（相同区间，上限大于下限）。</li>
-<li>\(\left|\int_a^b f\right|\leq\int_a^b|f|\)。</li>
+<li>当 \(a\le b\) 时，\(\left|\int_a^b f\right|\leq\int_a^b|f|\)。上下限反过来时，右侧有向积分非正，不能直接使用此式。</li>
 <li>奇函数在 [−a,a] 上积分为0，偶函数为 \(2\int_0^a f\)，要求可积且 a&gt;0。</li>
 <li>积分中值定理：f 在 [a,b] 连续，a&lt;b，则存在 ξ∈[a,b]，使 ∫f=f(ξ)(b−a)。</li>
 </ul>
-<h3 id="section-2">7.2 基本定理</h3>
+<p><strong>积分性质的核验。</strong> 线性、区间可加性及 \(f\le g\) 时的保序性，可先对共同分割上的有限黎曼和验证，再令分割网格趋于零；保序性要求上下限按 \(a\le b\) 排列。因为 \(-|f|\le f\le|f|\)，保序性给出 \(-\int_a^b|f|\le\int_a^b f\le\int_a^b|f|\)，从而得到绝对值不等式。若 \(f\) 在 \([-a,a]\) 可积，把负半区间换元 \(x=-t\)，与正半区间相加：奇函数的两部分抵消，偶函数的两部分相等。</p>
+<p>积分中值定理还用到连续函数在闭区间取得最值及介值定理。设最小值 \(m\)、最大值 \(M\)，保序性得 \(m(b-a)\le\int_a^b f\le M(b-a)\)。\(b-a&gt;0\)，故平均值 \(\int_a^b f/(b-a)\in[m,M]\)；连续性保证某个 \(\xi\) 处函数值等于该平均值。</p>
+<p><strong>连续函数与有限间断函数的可积性。</strong> 先证明闭区间连续函数一致连续：若不一致连续，就存在 ε&gt;0 和 \(x_n,y_n\in[a,b]\)，使 \(|x_n-y_n|&lt;1/n\) 而 \(|f(x_n)-f(y_n)|\ge\varepsilon\)。有界数列 \(x_n\) 有收敛子列，其极限 c 属于闭区间；对应的 \(y_n\) 也趋于 c，与 f 在 c 连续矛盾。</p>
+<p>记分割 P 上每段函数上、下确界为 \(M_i,m_i\)，上下和之差为 \(U(P)-L(P)=\sum_i(M_i-m_i)\Delta x_i\)。一致连续保证分割足够细时每段振幅任意小，故上下和差也任意小。对任意两个分割取共同加细，可知所有下和不超过所有上和；选取上下和差任意小的分割，便知下和上确界等于上和下确界，这个共同值夹住任意足够细分割的黎曼和，因此函数可积。最后从上下和判据转为任意取点的网格极限时，可用固定分割的有限个分点附近小区间总长度随网格趋零来控制跨分点的误差。</p>
+<p>若 f 有界且仅有有限个间断点，先用有限个小区间覆盖这些点，使其总长度足够小；设 \(|f|\le M\)，这些区间对上下和差的贡献至多为 \(2M\) 乘其总长度。在其余有限个闭区间上 f 连续、一致连续，细分可使其余贡献也任意小，因此仍满足上下和判据。间断点处函数值可以任意取，只要整体有界；这与有无限多个间断点也可能可积并不矛盾。</p>
+<h3 id="section-3">7.2 基本定理</h3>
 <p>若 f 连续，\(A(x)=\int_a^x f(t)dt\)，则</p>
 <p>\[
 A&#x27;(x)=f(x).
@@ -24,12 +34,18 @@ A&#x27;(x)=f(x).
 \boxed{\int_a^b f(x)dx=F(b)-F(a)}.
 \]</p>
 <p>连续性是此处采用的便于学习的充分条件，不是所有版本所需的最弱条件。</p>
+<p><strong>基本定理的证明。</strong> 对内点 \(x\) 及充分小的非零 \(h\)，区间可加性给出
+\[
+\frac{A(x+h)-A(x)}h-f(x)
+=\frac1h\int_x^{x+h}[f(t)-f(x)]\,dt.
+\]
+当 \(h&lt;0\) 时交换积分上下限后取绝对值，同样可将右侧绝对值控制在该小区间上 \(|f(t)-f(x)|\) 的上界之内。\(f\) 在 \(x\) 连续使该上界趋于零，因此 \(A&#x27;(x)=f(x)\)。若 \(F&#x27;=f\)，则 \((F-A)&#x27;=0\)；由中值定理，\(F-A\) 在区间上为常数。代入 \(x=a,b\)，得到 \(\int_a^b f=F(b)-F(a)\)。端点导数采用适当的单侧含义。</p>
 <p>变上限：若 f 连续、u 和 v 可导，则</p>
 <p>\[
 \frac d{dx}\int_{u(x)}^{v(x)}f(t)dt=f(v(x))v&#x27;(x)-f(u(x))u&#x27;(x).
 \]</p>
 <p>若被积函数本身还含参数 x，不能只套上式，通常还需对被积函数求偏导并检查交换条件。</p>
-<h3 id="section-3">7.3 换元与分部积分</h3>
+<h3 id="section-4">7.3 换元与分部积分</h3>
 <p>\[
 \int_a^b f(g(t))g&#x27;(t)dt=\int_{g(a)}^{g(b)}f(u)du,
 \]</p>
@@ -37,7 +53,8 @@ A&#x27;(x)=f(x).
 <p>\[
 \int_a^b u v&#x27;\,dx=[uv]_a^b-\int_a^b u&#x27;v\,dx.
 \]</p>
-<h3 id="section-4">7.4 应用</h3>
+<p><strong>换元与分部积分的核验。</strong> 设 \(F&#x27;=f\)，链式法则给出 \((F(g(t)))&#x27;=f(g(t))g&#x27;(t)\)。在给出的连续、可导条件下应用基本定理，左侧等于 \(F(g(b))-F(g(a))\)，右侧也等于这一差；即使 \(g\) 改变单调方向，该等式在这些条件下仍成立，因为上下限是有向的。对连续可导的 \(u,v\)，由 \((uv)&#x27;=u&#x27;v+uv&#x27;\) 两边从 \(a\) 积分到 \(b\) 并移项，即得分部积分公式。</p>
+<h3 id="section-5">7.4 应用</h3>
 <table>
 <thead>
 <tr>
@@ -48,15 +65,15 @@ A&#x27;(x)=f(x).
 <tbody>
 <tr>
 <td>平面面积</td>
-<td>\(\int_a^b\lvert f-g\rvert dx\)，有交点时按需分段</td>
+<td>\(\int_a^b\lvert f-g\rvert dx\)，a≤b 且 f、g 连续；有交点时按需分段</td>
 </tr>
 <tr>
 <td>旋转体体积</td>
-<td>绕 x 轴：\(\pi\int_a^b[R(x)^2-r(x)^2]dx\)，0≤r≤R</td>
+<td>绕 x 轴：\(\pi\int_a^b[R(x)^2-r(x)^2]dx\)，a≤b、R 和 r 连续且 0≤r≤R</td>
 </tr>
 <tr>
 <td>截面体积</td>
-<td>\(V=\int_a^b A(x)dx\)</td>
+<td>\(V=\int_a^b A(x)dx\)，a≤b 且截面积 A 可积并适用截面体积定理</td>
 </tr>
 <tr>
 <td>图像弧长</td>
@@ -64,21 +81,21 @@ A&#x27;(x)=f(x).
 </tr>
 <tr>
 <td>函数平均值</td>
-<td>\(\bar f=(b-a)^{-1}\int_a^b f(x)dx\)</td>
+<td>\(\bar f=(b-a)^{-1}\int_a^b f(x)dx\)，a&lt;b 且 f 可积</td>
 </tr>
 <tr>
 <td>位移与路程</td>
-<td>位移 ∫v dt，路程 ∫∣v∣dt</td>
+<td>一维连续速度下位移 ∫v dt，路程 ∫∣v∣dt</td>
 </tr>
 <tr>
 <td>变力做功</td>
-<td>一维有向位移下 \(W=\int F(x)dx\)</td>
+<td>一维有向位移且 F 连续时 \(W=\int F(x)dx\)</td>
 </tr>
 </tbody>
 </table>
-<h3 id="section-5">从小矩形累加到定积分</h3>
+<h3 id="section-6">从小矩形累加到定积分</h3>
 <p>以 \(f(x)=x\) 在 \([0,1]\) 下的面积为例，均分为 \(n\) 段，取右端点，则和为</p>
 <p>\[
 \frac1n\sum_{i=1}^{n}\frac{i}{n}=\frac{n+1}{2n}\longrightarrow\frac12.
 \]</p>
-<p>连续函数的黎曼和在分割最细长度趋零时给出同一个积分。这解释面积、流量和质量等累积计算；函数为负时积分是有符号量。微积分基本定理再把此累积和与原函数相连。<a href="https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/">微积分历史</a></p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-6.html">← 不定积分</a><a href="calculus-8.html">反常积分 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">7.1 定义与性质</a><a class="toc-h3" href="#section-2">7.2 基本定理</a><a class="toc-h3" href="#section-3">7.3 换元与分部积分</a><a class="toc-h3" href="#section-4">7.4 应用</a><a class="toc-h3" href="#section-5">从小矩形累加到定积分</a></aside></div></div></body></html>
+<p>连续函数的黎曼和在分割最细长度趋零时给出同一个积分。这解释面积、流量和质量等累积计算；函数为负时积分是有符号量。上述应用可逐项核验：两曲线间的竖直截线长度为 \(|f-g|\)，取黎曼和得面积；旋转后的截面为外半径 R、内半径 r 的圆环，面积为 \(\pi(R^2-r^2)\)，再按截面积积分得体积。对 C¹ 曲线 \(r(x)=(x,f(x))\)，\(|r&#x27;(x)|=\sqrt{1+f&#x27;(x)^2}\)。其折线长与速度模黎曼和之差至多为 \(\sum_i|\Delta r_i-r&#x27;(\xi_i)\Delta x_i|\le(b-a)\omega(\|P\|)\)，其中 \(\omega\) 是连续导数的一致连续模；当分割网格趋零时该界趋零，所以弧长等于速度模的积分。函数平均值是累计量除以区间长度；一维位移由速度积分得到，路程是对速度绝对值的累计。连续变力在小有向位移上的功近似 \(F(x_i)\Delta x_i\)，令分割变细即得做功积分。上述面积和截面体积使用相应的积分定义或定理，不能仅凭形式套用。<a href="https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/">微积分历史</a></p><nav class="page-turn" aria-label="相邻主题"><a href="calculus-6.html">← 不定积分</a><a href="calculus-8.html">反常积分 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">初学者先理解什么？</a><a class="toc-h3" href="#section-2">7.1 定义与性质</a><a class="toc-h3" href="#section-3">7.2 基本定理</a><a class="toc-h3" href="#section-4">7.3 换元与分部积分</a><a class="toc-h3" href="#section-5">7.4 应用</a><a class="toc-h3" href="#section-6">从小矩形累加到定积分</a></aside></div></div></body></html>
