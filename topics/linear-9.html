@@ -38,4 +38,5 @@ L(x)=(Ax-b)^T(Ax-b)=x^TA^TAx-2b^TAx+b^Tb.
 A^TA\hat x=A^Tb.
 \]</p>
 <p>反过来，若 \(\hat x\) 满足正规方程，则任意 \(h\) 有 \(L(\hat x+h)=L(\hat x)+\|Ah\|^2\)，因此它确是全局最小点。若 A 列满秩，则 \(A^TA\) 正定，解唯一；否则仍有最小二乘解，但参数可能不唯一。</p>
+<p><strong>存在性不能仅由驻点方程推出。</strong> 取 Col(A) 的标准正交基组成 Q，令 \(p=QQ^Tb\)。p 属于 Col(A)，所以按列空间定义存在 \(\hat x\) 使 \(A\hat x=p\)。又 \(b-p\) 与 Col(A) 正交，故 \(\|Ax-b\|^2=\|b-p\|^2+\|Ax-p\|^2\)。于是该 \(\hat x\) 达到最小，所有最优解必须满足 Ax=p。Col(A)={0} 时 p=0，每个 x 都最优。所有最优参数恰为 \(\hat x+\operatorname{Null}(A)\)，因而唯一性恰等价于列满秩。</p>
 <p><strong>几何解释：</strong> \(A^T(b-A\hat x)=0\) 表示残差与 A 每一列垂直，即预测 \(A\hat x\) 是观测值在列空间中的正交投影。线性回归、传感器标定和数据拟合均可采用这一思想。</p><nav class="page-turn" aria-label="相邻主题"><a href="linear-8.html">← 内积、正交与投影</a><a href="linear-10.html">特征值与对角化 →</a></nav></article><footer>数学札记 · 理解概念，也记住结论成立的条件。</footer></main><aside class="toc" aria-label="本文目录"><div class="toc-label">本文目录</div><a class="toc-h3" href="#section-1">初学者先理解什么？</a><a class="toc-h3" href="#section-2">实际问题：如何拟合没有精确解的数据？</a><a class="toc-h3" href="#section-3">正规方程的推导</a></aside></div></div></body></html>

@@ -155,6 +155,24 @@ spherical = s.Matrix([rho*s.sin(phi)*s.cos(theta), rho*s.sin(phi)*s.sin(theta), 
 assert s.trigsimp(spherical.jacobian([rho,phi,theta]).det()) == rho**2*s.sin(phi)
 for standard_deviations, rounded in [(1, 0.68), (2, 0.95), (3, 0.997)]:
     assert abs(math.erf(standard_deviations / math.sqrt(2)) - rounded) < 0.005
+
+# Recent Leibniz section: compare direct differentiation with the stated
+# general expression, and check the two model calculations separately.
+for order in range(0, 11):
+    expected = s.exp(x)*(x**2 + 2*order*x + order*(order-1))
+    assert s.simplify(s.diff(x**2*s.exp(x), x, order)-expected) == 0
+    u, v = x**3+s.sin(x), s.exp(2*x)
+    formula = sum(s.binomial(order, k)*s.diff(u, x, k)*s.diff(v, x, order-k)
+                  for k in range(order+1))
+    assert s.simplify(s.diff(u*v, x, order)-formula) == 0
+price, sales = 100+x, 20+2*x
+revenue = s.expand(price*sales)
+assert revenue == 2000+220*x+2*x**2
+assert s.diff(revenue, x) == 220+4*x and s.diff(revenue, x, 2) == 4
+mass, velocity = s.Function('m')(x), s.Function('v')(x)
+assert s.expand(s.diff(mass*velocity, x, 2) - (
+    s.diff(mass, x, 2)*velocity + 2*s.diff(mass, x)*s.diff(velocity, x)
+    + mass*s.diff(velocity, x, 2))) == 0
 # PCA counterexample: high-variance first coordinate is independent of label.
 counterexample = s.Matrix([[10, 1], [10, -1], [-10, 1], [-10, -1]])
 assert counterexample.T * counterexample == s.diag(400, 4)

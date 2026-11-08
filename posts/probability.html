@@ -8,12 +8,12 @@
       <p>条件概率改变了我们观察世界的样本空间。知道 B 发生后，我们不再面对全部可能结果，而是在 B 所限定的范围内重新计算。</p>
 
       <h2 id="section-2">2. 全概率公式</h2>
-      <p>如果事件 B₁、B₂、……、Bₙ 两两互斥并且覆盖所有可能性，那么 A 可以按不同情形拆开：</p>
+      <p>如果事件 B₁、B₂、……、Bₙ 两两互斥、每个 P(Bᵢ)&gt;0，并且覆盖所有可能性，那么 A 可以按不同情形拆开：</p>
       <div class="formula">P(A) = Σ P(A|Bᵢ)P(Bᵢ)</div>
       <p>它的意义是：先按原因或情形分组，再把每组对 A 的贡献加起来。</p>
 
       <h2 id="section-3">3. 贝叶斯公式</h2>
-      <div class="theorem"><strong>贝叶斯公式：</strong><div class="formula">P(B|A) = P(A|B)P(B) / P(A)</div><p>它把“在原因 B 下观察到证据 A”转换为“看到证据 A 后，原因 B 有多可信”。</p></div>
+      <div class="theorem"><strong>贝叶斯公式：</strong>要求 P(A)&gt;0 且 P(B)&gt;0。<div class="formula">P(B|A) = P(A|B)P(B) / P(A)</div><p>它把“在原因 B 下观察到证据 A”转换为“看到证据 A 后，原因 B 有多可信”。</p></div>
       <p>公式中的四个角色：</p>
       <ul><li><strong>先验 P(B)：</strong>看到新证据之前的判断。</li><li><strong>似然 P(A|B)：</strong>假设 B 成立时，看到 A 的可能性。</li><li><strong>证据 P(A)：</strong>A 在所有情形下出现的总概率。</li><li><strong>后验 P(B|A)：</strong>看到 A 之后更新后的判断。</li></ul>
 
