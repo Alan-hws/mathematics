@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-labelledby="title desc">
+  <title id="title">截线与八个角</title>
+  <desc id="desc">实线 t 截两条不一定平行的实线 l1 和 l2；上交点四角依次为左上1、右上2、左下3、右下4，下交点四角依次为左上5、右上6、左下7、右下8。</desc>
+  <rect width="720" height="360" rx="18" fill="#f7f9f8"/>
+  <g fill="none" stroke="#40535b" stroke-width="3" stroke-linecap="round">
+    <path d="M90 116 H630"/>
+    <path d="M90 266 L630 244"/>
+    <path d="M360 28 V332"/>
+  </g>
+  <g fill="#40535b" font-family="system-ui, sans-serif" font-size="22" font-style="italic">
+    <text x="55" y="123">l<tspan baseline-shift="sub" font-size="14">1</tspan></text>
+    <text x="55" y="274">l<tspan baseline-shift="sub" font-size="14">2</tspan></text>
+    <text x="374" y="44">t</text>
+  </g>
+  <g fill="#365f81" font-family="system-ui, sans-serif" font-size="23" font-weight="600" text-anchor="middle">
+    <text x="327" y="101">1</text><text x="392" y="101">2</text>
+    <text x="327" y="150">3</text><text x="392" y="150">4</text>
+    <text x="327" y="238">5</text><text x="392" y="238">6</text>
+    <text x="327" y="288">7</text><text x="392" y="288">8</text>
+  </g>
+  <g fill="#40535b"><circle cx="360" cy="116" r="4"/><circle cx="360" cy="255" r="4"/></g>
+</svg>
