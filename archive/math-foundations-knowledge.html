@@ -334,6 +334,42 @@ x_1+x_2=-\frac ba,\qquad x_1x_2=\frac ca.
 <li>平行四边形、矩形、菱形、正方形、梯形的性质与判定。</li>
 <li>轴对称、平移、旋转；识别变换中保持不变的量。</li>
 </ul>
+<p><strong>全等三角形的判定方法怎么读？</strong> 全等指两个图形的形状和大小都相同，通过平移、旋转或翻转可以完全重合。判定全等时，S 取自英文 Side（边），A 取自 Angle（角）；字母的顺序帮助我们记住已知边和角的位置。</p>
+<p>若写成 \(\triangle ABC\cong\triangle DEF\)，顶点按顺序对应：\(A\leftrightarrow D\)、\(B\leftrightarrow E\)、\(C\leftrightarrow F\)。例如 \(AB\) 与 \(DE\) 是对应边，\(\angle B\) 与 \(\angle E\) 是对应角。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>名称</th>
+<th>可以判定全等的条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSS</td>
+<td>边边边</td>
+<td>三组对应边分别相等。</td>
+</tr>
+<tr>
+<td>SAS</td>
+<td>边角边</td>
+<td>两组对应边和它们的<strong>夹角</strong>分别相等。</td>
+</tr>
+<tr>
+<td>ASA</td>
+<td>角边角</td>
+<td>两组对应角和它们的<strong>夹边</strong>分别相等。</td>
+</tr>
+<tr>
+<td>AAS</td>
+<td>角角边</td>
+<td>两组对应角和其中一组角的<strong>对应对边</strong>分别相等。</td>
+</tr>
+</tbody>
+</table>
+<p>例如，\(AB=DE\)、\(AC=DF\)、\(\angle BAC=\angle EDF\) 时，已知角分别夹在两条已知边之间，故可用 SAS 判定 \(\triangle ABC\cong\triangle DEF\)。判定全等后，才可进一步得到 \(BC=EF\) 等对应边角相等的结论。</p>
+<p><strong>为什么 AAS 有效？</strong> 如果 \(\angle A=\angle D\)、\(\angle B=\angle E\)、\(AC=DF\)，由三角形内角和可得 \(\angle C=\angle F\)。此时 \(AC\)、\(DF\) 分别夹在对应的 \(A,C\) 与 \(D,F\) 两角之间，所以可转化为 ASA。这里使用了<strong>化归和等量代换</strong>的思想。</p>
+<p><strong>容易混淆：</strong> SSA 中的角不是两条已知边的夹角，一般不能判定全等；AAA 只能判定相似，例如边长不同的两个等边三角形三个角都相等，但并不全等。直角三角形另有 HL（斜边、直角边）判定：必须先确认两个三角形均为直角三角形，再检查斜边和一组对应直角边分别相等。后文“全等判定：对应与夹角”还有各方法的具体例子。</p>
 <h3 id="section-62">4.1.1 相似三角形面积比的证明</h3>
 <p>若两个相似三角形的对应边长之比为 \(k&gt;0\)，对应高的比也为 \(k\)：它们形成的一组直角三角形具有相同锐角，故对应边成比例。利用 \(S=\text{底}\times\text{高}/2\)，面积之比为 \(k\cdot k=k^2\)。</p>
 <p><strong>证明使用的思想：</strong> 化归、数形结合、比例。<strong>应用：</strong> 地图上的相似区域边长放大3倍，面积变为9倍；面积不按边长只放大3倍。</p>
