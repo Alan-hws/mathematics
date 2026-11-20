@@ -583,6 +583,54 @@ x_1+x_2=-\frac ba,\qquad x_1x_2=\frac ca.
 <h3 id="section-118">集合与逻辑：先认识符号</h3>
 <p><strong>集合</strong>是确定对象组成的整体，里面每个对象叫<strong>元素</strong>；\(x\in A\) 表示 x 是集合 A 的元素，\(x\notin A\) 表示不是。\(A\subseteq B\) 表示 A 的每个元素都属于 B，例如 \(\{1,2\}\subseteq\{1,2,3\}\)；元素与集合的关系用 \(\in\)，集合与集合的包含关系用 \(\subseteq\)。\(A\cap B\) 是共同元素组成的<strong>交集</strong>，\(A\cup B\) 是至少属于一个集合的元素组成的<strong>并集</strong>；相对于全集 U，\(A\) 的<strong>补集</strong>是 U 中不属于 A 的元素。</p>
 <p>可以判断真假的陈述叫<strong>命题</strong>。若 \(p\Rightarrow q\)，p 是 q 的<strong>充分条件</strong>，q 是 p 的<strong>必要条件</strong>；若双向都成立，二者是<strong>充要条件</strong>。例如“x=2”是“x²=4”的充分条件，但不是必要条件，因为 x 也可能为 −2。“对所有 x”是<strong>全称量词</strong>，“存在某个 x”是<strong>存在量词</strong>；否定“所有学生都到场”是“至少有一名学生没到场”。这些逻辑用于检查证明和筛选条件。</p>
+<p><strong>“且”“或”与“不属于”的符号。</strong> 设 \(p\) 和 \(q\) 是命题，\(x\) 是元素，\(A,B\) 是集合：</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>读法</th>
+<th>含义和例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(p\land q\)</td>
+<td>p 且 q</td>
+<td>两个命题都成立。例如“是整数且大于 0”。</td>
+</tr>
+<tr>
+<td>\(p\lor q\)</td>
+<td>p 或 q</td>
+<td>至少一个命题成立，也允许两个都成立；如“选数学课或物理课”，两门都选也算。</td>
+</tr>
+<tr>
+<td>\(x\in A\)</td>
+<td>x 属于 A</td>
+<td>x 是 A 的元素；若 \(A=\{1,2\}\)，则 \(1\in A\)。</td>
+</tr>
+<tr>
+<td>\(x\notin A\)</td>
+<td>x 不属于 A</td>
+<td>x 不是 A 的元素；若 \(A=\{1,2\}\)，则 \(3\notin A\)。符号是在“属于”上加一条斜线。</td>
+</tr>
+<tr>
+<td>\(A\cap B\)</td>
+<td>A 交 B</td>
+<td>同时属于 A 和 B 的元素组成的集合。</td>
+</tr>
+<tr>
+<td>\(A\cup B\)</td>
+<td>A 并 B</td>
+<td>至少属于 A、B 之一的元素组成的集合。</td>
+</tr>
+</tbody>
+</table>
+<p>逻辑符号连接的是命题，集合符号连接的是集合；虽然含义相关，不能混写。它们的关系可以写成：</p>
+<p>\[
+x\in A\cap B\iff (x\in A)\land(x\in B),\qquad
+x\in A\cup B\iff (x\in A)\lor(x\in B).
+\]</p>
+<p>\(\land\) 像尖顶，读“且”；\(\lor\) 像字母 V，读“或”。\(\cap\) 和 \(\cup\) 是集合的交、并运算，形状更圆。逻辑“或”通常包含“两者都成立”的情况；若题目要求“二者恰有一个”，需要另行说明。若公式没有渲染而显示为反斜线代码，请检查网络：网页使用 MathJax 加载数学符号。</p>
 <h3 id="section-119">图解交集、并集与补集</h3>
 <p><img src="../assets/figures/sets-venn.svg" alt="两个相交的集合：A 含 1、2、3，B 含 3、4" /></p>
 <p>图中矩形代表全集 \(U\)，两个圆分别代表 \(A=\{1,2,3\}\) 和 \(B=\{3,4\}\)。两圆重叠的部分是<strong>交集</strong> \(A\cap B=\{3\}\)；属于至少一个圆的元素组成<strong>并集</strong> \(A\cup B=\{1,2,3,4\}\)。例如若全集还有元素 5，A 的补集包括 4 和 5；补集必须先确定全集，不能脱离 U 讨论。</p>
